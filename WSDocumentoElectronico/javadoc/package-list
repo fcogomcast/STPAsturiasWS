@@ -1,0 +1,10 @@
+es.tributasenasturias.docel
+es.tributasenasturias.docel.bd
+es.tributasenasturias.docel.exceptions
+es.tributasenasturias.docel.io
+es.tributasenasturias.docel.preferencias
+es.tributasenasturias.docel.soap
+es.tributasenasturias.lanzador
+es.tributasenasturias.lanzador.impl
+es.tributasenasturias.lanzador.response
+es.tributasenasturias.log

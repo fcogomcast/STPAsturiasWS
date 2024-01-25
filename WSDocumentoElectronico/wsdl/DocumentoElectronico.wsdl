@@ -1,0 +1,477 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+	xmlns:tns="http://docel.tributasenasturias.es/servicios/DocumentoElectronico/"
+	xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+	name="DocumentoElectronico"
+	targetNamespace="http://docel.tributasenasturias.es/servicios/DocumentoElectronico/">
+	<wsdl:types>
+		<xsd:schema
+			targetNamespace="http://docel.tributasenasturias.es/servicios/DocumentoElectronico/">
+			<xsd:element name="GenerarDocumento">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element name="Documento"
+							type="tns:DocumentoType" minOccurs="1" maxOccurs="1" />
+						<xsd:element name="AccionesGeneracion"
+							type="tns:AccionesGeneracionDocumentoType" maxOccurs="1"
+							minOccurs="1">
+						</xsd:element>
+						<xsd:element name="Metadatos"
+							type="tns:MetadatosDocumentoType" minOccurs="1" maxOccurs="1">
+						</xsd:element>
+
+						<xsd:element name="Trazabilidad"
+							type="tns:TrazabilidadType">
+						</xsd:element>
+
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="GenerarDocumentoResponse">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element name="Resultado"
+							type="tns:ResultadoGenerarType" />
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+
+			<xsd:complexType name="DocumentoType">
+				<xsd:sequence>
+					<xsd:element name="Contenido"
+						type="xsd:base64Binary" minOccurs="1" maxOccurs="1">
+					</xsd:element>
+					<xsd:element name="NombreFormato" type="xsd:string"
+						minOccurs="1" maxOccurs="1">
+						<xsd:annotation>
+							<xsd:documentation>
+								Nombre del formato del fichero.
+							</xsd:documentation>
+						</xsd:annotation>
+					</xsd:element>
+
+					<xsd:element name="NombreFichero" type="xsd:string"
+						minOccurs="1" maxOccurs="1">
+					</xsd:element>
+					
+					<xsd:element name="IdAdar" type="xsd:int"
+						minOccurs="0" maxOccurs="1">
+					</xsd:element>
+					<xsd:element name="IdGdre" type="xsd:int"
+						minOccurs="0" maxOccurs="1">
+					</xsd:element>
+				</xsd:sequence>
+			</xsd:complexType>
+
+
+
+			<xsd:complexType name="FirmasInfoType">
+				<xsd:sequence>
+					<xsd:element name="FirmarDocumento" minOccurs="1">
+						<xsd:simpleType>
+							<xsd:restriction base="xsd:string">
+								<xsd:enumeration value="S"></xsd:enumeration>
+								<xsd:enumeration value="N"></xsd:enumeration>
+							</xsd:restriction>
+						</xsd:simpleType>
+					</xsd:element>
+
+
+					<xsd:element name="CSV" type="tns:CSVType"
+						minOccurs="0">
+					</xsd:element>
+					<xsd:element name="Certificado"
+						type="tns:CertificadoType" minOccurs="0">
+					</xsd:element>
+
+				</xsd:sequence>
+			</xsd:complexType>
+
+			<xsd:complexType name="MetadatosDocumentoType">
+				<xsd:sequence>
+					<xsd:element name="FechaCaptura" type="xsd:dateTime"
+						minOccurs="1" maxOccurs="1">
+					</xsd:element>
+					<xsd:element name="OrigenDocumento"
+						type="tns:OrigenDocumentoType" minOccurs="1" maxOccurs="1">
+						<xsd:annotation>
+							<xsd:documentation>
+								Origen del documento. Ciudadano o
+								Administración
+							</xsd:documentation>
+						</xsd:annotation>
+					</xsd:element>
+					<xsd:element name="EstadoElaboracion"
+						type="tns:EstadoElaboracionType" minOccurs="1" maxOccurs="1">
+					</xsd:element>
+					<xsd:element name="TipoDocumental"
+						type="tns:TipoDocumentalType" minOccurs="1" maxOccurs="1">
+					</xsd:element>
+					<xsd:element name="NombreNatural" type="xsd:string"
+						minOccurs="0" maxOccurs="1">
+					</xsd:element>
+					<xsd:element name="Descripcion" type="xsd:string"
+						minOccurs="0" maxOccurs="1">
+					</xsd:element>
+				</xsd:sequence>
+			</xsd:complexType>
+
+			<xsd:simpleType name="OrigenDocumentoType">
+				<xsd:annotation>
+					<xsd:documentation>
+						Tipos de origen para el documento.
+					</xsd:documentation>
+				</xsd:annotation>
+				<xsd:restriction base="xsd:string">
+					<xsd:enumeration value="C"></xsd:enumeration>
+					<xsd:enumeration value="A"></xsd:enumeration>
+				</xsd:restriction>
+			</xsd:simpleType>
+
+			<xsd:complexType name="EstadoElaboracionType">
+				<xsd:sequence>
+					<xsd:element name="ValorEstadoElaboracion"
+						type="xsd:string">
+					</xsd:element>
+					<xsd:element name="IdDocumentoOrigen"
+						type="xsd:string">
+					</xsd:element>
+				</xsd:sequence>
+			</xsd:complexType>
+
+			<xsd:simpleType name="TipoDocumentalType">
+				<xsd:restriction base="xsd:string"></xsd:restriction>
+			</xsd:simpleType>
+
+
+			<xsd:complexType name="ResultadoGenerarType">
+				<xsd:sequence>
+					<xsd:element name="EsError" type="xsd:boolean"></xsd:element>
+					<xsd:element name="Codigo" type="xsd:string"></xsd:element>
+					<xsd:element name="Mensaje" type="xsd:string"></xsd:element>
+					<xsd:element name="IdDocumentoElectronico"
+						type="xsd:string">
+					</xsd:element>
+				</xsd:sequence>
+			</xsd:complexType>
+
+			<xsd:complexType name="TrazabilidadType">
+				<xsd:sequence>
+					<xsd:element name="Usuario" type="xsd:string"
+						minOccurs="1" maxOccurs="1">
+						<xsd:annotation>
+							<xsd:documentation>
+								Usuario que se asociará a la petición de
+								generación de documento
+							</xsd:documentation>
+						</xsd:annotation>
+					</xsd:element>
+					<xsd:element name="IdEnl" type="xsd:int"
+						minOccurs="0" maxOccurs="1">
+						<xsd:annotation>
+							<xsd:documentation>
+								Identificador que enlazará el documento electrónico
+								con su original.
+							</xsd:documentation>
+						</xsd:annotation>
+					</xsd:element>
+				</xsd:sequence>
+			</xsd:complexType>
+
+			<xsd:complexType name="AccionesGeneracionDocumentoType">
+				<xsd:sequence>
+					<xsd:element name="Firmas" type="tns:FirmasInfoType"
+						minOccurs="1" maxOccurs="1">
+						<xsd:annotation>
+							<xsd:documentation>
+								Indicadores sobre las firmas a aplicar
+								en el documento. Las firmas se aplicará
+								siempre en el servidor, esto servirá
+								solo para indicar qué se debe aplicar.
+							</xsd:documentation>
+						</xsd:annotation>
+					</xsd:element>
+					<xsd:element name="ComprimirContenidoGzip">
+						<xsd:simpleType>
+							<xsd:restriction base="xsd:string">
+								<xsd:enumeration value="S"></xsd:enumeration>
+								<xsd:enumeration value="N"></xsd:enumeration>
+							</xsd:restriction>
+						</xsd:simpleType>
+					</xsd:element>
+				</xsd:sequence>
+			</xsd:complexType>
+
+			<xsd:complexType name="CSVType">
+				<xsd:sequence>
+					<xsd:element name="FirmaCSV">
+						<xsd:simpleType>
+							<xsd:restriction base="xsd:string">
+								<xsd:enumeration value="S"></xsd:enumeration>
+								<xsd:enumeration value="N"></xsd:enumeration>
+							</xsd:restriction>
+						</xsd:simpleType>
+					</xsd:element>
+					<xsd:element name="Firmante" type="xsd:string"></xsd:element>
+				</xsd:sequence>
+			</xsd:complexType>
+
+			<xsd:complexType name="CertificadoType">
+				<xsd:sequence>
+					<xsd:element name="FirmaCertificado">
+						<xsd:simpleType>
+							<xsd:restriction base="xsd:string">
+								<xsd:enumeration value="S"></xsd:enumeration>
+								<xsd:enumeration value="N"></xsd:enumeration>
+							</xsd:restriction>
+						</xsd:simpleType>
+					</xsd:element>
+					<xsd:element name="LTV">
+						<xsd:simpleType>
+							<xsd:restriction base="xsd:string">
+								<xsd:enumeration value="S"></xsd:enumeration>
+								<xsd:enumeration value="N"></xsd:enumeration>
+							</xsd:restriction>
+						</xsd:simpleType>
+					</xsd:element>
+					<xsd:element name="FirmaExterna" type="xsd:string"></xsd:element>
+				</xsd:sequence>
+			</xsd:complexType>
+
+			<xsd:complexType name="FirmarDocumentoType"></xsd:complexType>
+			<xsd:element name="ConsultaDocumento">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element name="IdDocumentoElectronico"
+							type="xsd:int" minOccurs="1">
+						</xsd:element>
+						<xsd:element name="usuarioConsulta"
+							type="xsd:string">
+						</xsd:element>
+						<xsd:element name="ObtenerContenidoDocumento"
+							minOccurs="0">
+							<xsd:simpleType>
+								<xsd:restriction base="xsd:string">
+									<xsd:enumeration value="S"></xsd:enumeration>
+									<xsd:enumeration value="N"></xsd:enumeration>
+								</xsd:restriction>
+							</xsd:simpleType>
+						</xsd:element>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="ConsultaDocumentoResponse">
+				<xsd:complexType>
+					<xsd:sequence>
+
+						<xsd:element name="EsError" type="xsd:boolean"
+							minOccurs="1">
+						</xsd:element>
+                        <xsd:element name="CodigoResultado" type="xsd:string" minOccurs="1">
+						</xsd:element>
+                        <xsd:element name="MensajeResultado" type="xsd:string" minOccurs="1">
+						</xsd:element>
+                        <xsd:element name="Contenido"
+							type="xsd:base64Binary" minOccurs="0">
+						</xsd:element>
+						<xsd:element name="ValorHuella"
+							type="xsd:string" minOccurs="0">
+						</xsd:element>
+						<xsd:element name="FuncionResumen"
+							type="xsd:string" minOccurs="0">
+						</xsd:element>
+						<xsd:element name="MetadatosMinimosENI"
+							type="tns:MetadatosMinimosENIType" minOccurs="0">
+						</xsd:element>
+						<xsd:element name="MetadatosComplementariosENI"
+							type="tns:MetadatosComplementariosENIType" minOccurs="0">
+						</xsd:element>
+
+
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+
+			<xsd:complexType name="MetadatosMinimosENIType">
+				<xsd:sequence>
+					<xsd:element name="Version_NTI" type="xsd:string"></xsd:element>
+					<xsd:element name="Identificador"
+						type="xsd:string">
+					</xsd:element>
+					<xsd:element name="Organos">
+						<xsd:complexType>
+							<xsd:sequence>
+								<xsd:element name="Organo"
+									type="xsd:string" minOccurs="1" maxOccurs="unbounded">
+								</xsd:element>
+							</xsd:sequence>
+						</xsd:complexType>
+					</xsd:element>
+					<xsd:element name="FechaCaptura"
+						type="xsd:dateTime">
+					</xsd:element>
+					<xsd:element name="Origen" type="xsd:string"></xsd:element>
+					<xsd:element name="EstadoElaboracion"
+						type="xsd:string">
+					</xsd:element>
+					<xsd:element name="IdentificadorDocumentoOrigen"
+						type="xsd:string">
+					</xsd:element>
+					<xsd:element name="NombreFormato"
+						type="xsd:string">
+					</xsd:element>
+					<xsd:element name="TipoDocumental"
+						type="xsd:string">
+					</xsd:element>
+
+
+
+					<xsd:element name="TiposFirma" type="tns:TiposFirmaComplexType">
+					</xsd:element>
+				</xsd:sequence>
+			</xsd:complexType>
+
+			<xsd:complexType name="MetadatosComplementariosENIType">
+				<xsd:sequence>
+					<xsd:element name="NombreNatural"
+						type="xsd:string">
+					</xsd:element>
+					<xsd:element name="Descripcion" type="xsd:string"></xsd:element>
+					<xsd:element name="NombreFichero" type="xsd:string"></xsd:element>
+				</xsd:sequence>
+			</xsd:complexType>
+			<xsd:complexType name="TiposFirmaComplexType">
+				<xsd:sequence>
+					<xsd:element name="Firma" type="tns:TFirmaType" minOccurs="1" maxOccurs="unbounded"></xsd:element>
+				</xsd:sequence>
+			</xsd:complexType>
+		
+            <xsd:complexType name="TFirmaType">
+            <xsd:sequence>
+            		<xsd:element name="TipoFirma" type="xsd:string"></xsd:element>
+					<xsd:element name="ValorCSV" type="xsd:string"></xsd:element>
+					<xsd:element name="DefinicionCSV"
+						type="xsd:string">
+					</xsd:element>
+            </xsd:sequence>
+            </xsd:complexType>
+            <xsd:element name="GenerarTodosDocumentos">
+            	<xsd:complexType>
+            		<xsd:sequence>
+            			<xsd:element name="usuario" type="xsd:string"></xsd:element>
+            			<xsd:element name="DatosDocumento"
+            				type="tns:DatosDocumentoType" minOccurs="1" maxOccurs="unbounded">
+            			</xsd:element>
+            		</xsd:sequence>
+            	</xsd:complexType>
+            </xsd:element>
+            <xsd:element name="GenerarTodosDocumentosResponse">
+            	<xsd:complexType>
+            		<xsd:sequence>
+
+            			<xsd:element name="salida" type="xsd:string"></xsd:element>
+            			<xsd:element name="Error"
+            				type="xsd:string">
+            			</xsd:element>
+            		</xsd:sequence>
+            	</xsd:complexType>
+            </xsd:element>
+		
+            <xsd:complexType name="DatosDocumentoType">
+            <xsd:sequence>
+            	<xsd:element name="Documento"
+							type="tns:DocumentoType" minOccurs="1" maxOccurs="1" />
+				<xsd:element name="Metadatos"
+							type="tns:MetadatosDocumentoType" minOccurs="1" maxOccurs="1" />
+				<xsd:element name="IdEnl" type="xsd:int"
+						minOccurs="0" maxOccurs="1">
+						<xsd:annotation>
+							<xsd:documentation>
+								Identificador que enlazará el documento electrónico
+								con su original.
+							</xsd:documentation>
+						</xsd:annotation>
+					</xsd:element>
+            </xsd:sequence>
+            </xsd:complexType>
+        </xsd:schema>
+	</wsdl:types>
+	<wsdl:message name="GenerarDocumentoRequest">
+		<wsdl:part element="tns:GenerarDocumento" name="parameters" />
+	</wsdl:message>
+	<wsdl:message name="GenerarDocumentoResponse">
+		<wsdl:part element="tns:GenerarDocumentoResponse"
+			name="parameters" />
+	</wsdl:message>
+	<wsdl:message name="ConsultaDocumentoRequest">
+		<wsdl:part name="parameters" element="tns:ConsultaDocumento"></wsdl:part>
+	</wsdl:message>
+	<wsdl:message name="ConsultaDocumentoResponse">
+		<wsdl:part name="parameters"
+			element="tns:ConsultaDocumentoResponse">
+		</wsdl:part>
+	</wsdl:message>
+	<wsdl:message name="GenerarTodosDocumentosRequest">
+		<wsdl:part name="parameters" element="tns:GenerarTodosDocumentos"></wsdl:part>
+	</wsdl:message>
+	<wsdl:message name="GenerarTodosDocumentosResponse">
+		<wsdl:part name="parameters" element="tns:GenerarTodosDocumentosResponse"></wsdl:part>
+	</wsdl:message>
+	<wsdl:portType name="DocumentoElectronico">
+		<wsdl:operation name="GenerarDocumento">
+			<wsdl:input message="tns:GenerarDocumentoRequest" />
+			<wsdl:output message="tns:GenerarDocumentoResponse" />
+		</wsdl:operation>
+		<wsdl:operation name="ConsultaDocumento">
+			<wsdl:input message="tns:ConsultaDocumentoRequest"></wsdl:input>
+			<wsdl:output message="tns:ConsultaDocumentoResponse"></wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="GenerarTodosDocumentos">
+			<wsdl:input message="tns:GenerarTodosDocumentosRequest"></wsdl:input>
+			<wsdl:output message="tns:GenerarTodosDocumentosResponse"></wsdl:output>
+		</wsdl:operation>
+	</wsdl:portType>
+	<wsdl:binding name="DocumentoElectronicoSOAP"
+		type="tns:DocumentoElectronico">
+		<soap:binding style="document"
+			transport="http://schemas.xmlsoap.org/soap/http" />
+		<wsdl:operation name="GenerarDocumento">
+			<soap:operation
+				soapAction="http://www.tributasenasturias.es/servicios/DocumentoElectronico/GenerarDocumento" />
+			<wsdl:input>
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="ConsultaDocumento">
+			<soap:operation
+				soapAction="http://www.tributasenasturias.es/servicios/DocumentoElectronico/ConsultaDocumento" />
+			<wsdl:input>
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="GenerarTodosDocumentos">
+			<soap:operation
+				soapAction="http://www.tributasenasturias.es/servicios/DocumentoElectronico/GenerarTodosDocumentos" />
+			<wsdl:input>
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+	</wsdl:binding>
+	<wsdl:service name="DocumentoElectronico">
+		<wsdl:port binding="tns:DocumentoElectronicoSOAP"
+			name="DocumentoElectronicoSOAP">
+			<soap:address
+				location="http://bus:7101/WSExpedientesElectronicos/ProxyServices/PXDocumentoElectronico" />
+		</wsdl:port>
+	</wsdl:service>
+</wsdl:definitions>
