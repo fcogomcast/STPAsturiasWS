@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://www.tributasenasturias.es/AutenticacionLocalEPST/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="AutenticacionLocalEPST" targetNamespace="http://www.tributasenasturias.es/AutenticacionLocalEPST/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://www.tributasenasturias.es/AutenticacionLocalEPST/">
+      <xsd:element name="validar">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="certificado" type="xsd:string"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="validarResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="resultado" type="tns:resultadoType"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+    
+      <xsd:complexType name="resultadoType">
+      	<xsd:sequence>
+
+      		<xsd:element name="Id_Fiscal" type="xsd:string"></xsd:element>
+      		<xsd:element name="Nombre" type="xsd:string"
+      			minOccurs="0">
+      		</xsd:element>
+      		<xsd:element name="Apellido1" type="xsd:string"
+      			minOccurs="0">
+      		</xsd:element>
+      		<xsd:element name="Apellido2" type="xsd:string"
+      			minOccurs="0">
+      		</xsd:element>
+      		<xsd:element name="Razon_Social" type="xsd:string"
+      			minOccurs="0">
+      		</xsd:element>
+
+
+      		<xsd:element name="Tipo">
+      			<xsd:simpleType>
+      				<xsd:restriction base="xsd:string">
+      					<xsd:enumeration value="J"></xsd:enumeration>
+      					<xsd:enumeration value="F"></xsd:enumeration>
+      				</xsd:restriction>
+      			</xsd:simpleType>
+      		</xsd:element>
+      		<xsd:element name="esValido" type="xsd:boolean"></xsd:element>
+      	</xsd:sequence>
+      </xsd:complexType>
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="validarRequest">
+    <wsdl:part element="tns:validar" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="validarResponse">
+    <wsdl:part element="tns:validarResponse" name="parameters"/>
+  </wsdl:message>
+  <wsdl:portType name="ValidarCertificadoLocalEPST">
+    <wsdl:operation name="validar">
+      <wsdl:input message="tns:validarRequest"/>
+      <wsdl:output message="tns:validarResponse"/>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="ValidarCertificadoLocalEPSTSOAP" type="tns:ValidarCertificadoLocalEPST">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="validar">
+      <soap:operation soapAction="http://www.tributasenasturias.es/AutenticacionLocalEPST/validar"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="ValidarCertificadoLocalEPST">
+    <wsdl:port binding="tns:ValidarCertificadoLocalEPSTSOAP" name="ValidarCertificadoLocalEPSTSOAP">
+      <soap:address location="http://bus.desa.epst.pa:7101/WSAutenticacionLocalEPST/ValidarCertificadoLocalEPST"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

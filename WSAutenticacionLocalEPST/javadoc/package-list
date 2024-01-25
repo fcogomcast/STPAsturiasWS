@@ -1,0 +1,12 @@
+es.tributasenasturias.autenticacionlocalepst
+es.tributasenasturias.autenticacionlocalepst.business
+es.tributasenasturias.autenticacionlocalepst.exceptions
+es.tributasenasturias.autenticacionlocalepst.prefs
+es.tributasenasturias.autenticacionlocalepst.soap
+es.tributasenasturias.autenticacionlocalepst.utils
+es.tributasenasturias.lanzador
+es.tributasenasturias.lanzador.impl
+es.tributasenasturias.lanzador.response
+es.tributasenasturias.log
+es.tributasenasturias.seguridad
+es.tributasenasturias.seguridad.autenticacion

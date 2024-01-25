@@ -1,3 +1,3 @@
 rootProject.name = "STPAsturiasWS"
-include ("WSConsultaDoinDocumentos","WSDocumentoElectronico")
+include ("WSConsultaDoinDocumentos","WSDocumentoElectronico","WSAutenticacionLocalEPST")
 
