@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://WSConsultaDoinDocumentos.ws.services.tributasenasturias.es/WSConsultaDoinDocumentos/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="WSConsultaDoinDocumentos" targetNamespace="http://WSConsultaDoinDocumentos.ws.services.tributasenasturias.es/WSConsultaDoinDocumentos/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://WSConsultaDoinDocumentos.ws.services.tributasenasturias.es/WSConsultaDoinDocumentos/">
+
+      <xsd:element name="ConsultaDoinDocumento">
+        <xsd:complexType>
+          <xsd:sequence>
+          	<xsd:element name="nombre" type="xsd:string" minOccurs="1" maxOccurs="1" />
+          	<xsd:element name="tipo" type="xsd:string" minOccurs="1" maxOccurs="1"> </xsd:element>
+          	<xsd:element name="descomprimir" type="xsd:boolean" minOccurs="1" maxOccurs="1"></xsd:element>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+
+      <xsd:element name="AltaDoinDocumento">
+        <xsd:complexType>
+          <xsd:sequence>
+          	<xsd:element name="nombre" type="xsd:string" minOccurs="1"
+          		maxOccurs="1" />
+          	<xsd:element name="tipo" type="xsd:string" minOccurs="1"
+          		maxOccurs="1">
+          	</xsd:element>
+          	<xsd:element name="codVerif" type="xsd:string"
+          		minOccurs="1" maxOccurs="1">
+          	</xsd:element>
+          	<xsd:element name="nifSp" type="xsd:string" minOccurs="1"
+          		maxOccurs="1">
+          	</xsd:element>
+          	<xsd:element name="nifPr" type="xsd:string" minOccurs="1"
+          		maxOccurs="1">
+          	</xsd:element>
+          	<xsd:element name="xmlData" type="xsd:string"
+          		minOccurs="1" maxOccurs="1">
+          	</xsd:element>
+          	<xsd:element name="tipoDoc" type="xsd:string"
+          		minOccurs="1" maxOccurs="1">
+          	</xsd:element>
+                        <xsd:element name="idSesion" type="xsd:string" maxOccurs="1" minOccurs="0"></xsd:element>
+                        <xsd:element name="comprimir" type="xsd:boolean"
+          		minOccurs="1" maxOccurs="1">
+          	</xsd:element>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+
+      <xsd:element name="ConsultaDoinDocumentoResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+          	<xsd:element name="documento" type="xsd:string" />
+          	<xsd:element name="error" type="xsd:string"></xsd:element>
+          	<xsd:element name="resultado" type="xsd:string"></xsd:element>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+
+      <xsd:element name="AltaDoinDocumentoResponse">
+      	<xsd:complexType>
+      	  <xsd:sequence>
+          	<xsd:element name="documento" type="xsd:string" />
+          	<xsd:element name="error" type="xsd:string"></xsd:element>
+          	<xsd:element name="resultado" type="xsd:string"></xsd:element>
+     	  </xsd:sequence>
+      	</xsd:complexType>
+      </xsd:element>
+    </xsd:schema>
+  </wsdl:types>
+
+  <wsdl:message name="ConsultaDoinDocumentoRequest">
+    <wsdl:part element="tns:ConsultaDoinDocumento" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="ConsultaDoinDocumentoResponse">
+    <wsdl:part element="tns:ConsultaDoinDocumentoResponse" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="AltaDoinDocumentoRequest">
+    <wsdl:part element="tns:AltaDoinDocumento" name="parameters"/>  </wsdl:message>
+  <wsdl:message name="AltaDoinDocumentoResponse">
+  	<wsdl:part element="tns:AltaDoinDocumentoResponse" name="parameters"></wsdl:part>
+  </wsdl:message>
+
+  <wsdl:portType name="WSConsultaDoinDocumentos">
+    <wsdl:operation name="ConsultaDoinDocumento">
+      <wsdl:input message="tns:ConsultaDoinDocumentoRequest"/>
+      <wsdl:output message="tns:ConsultaDoinDocumentoResponse"/>
+    </wsdl:operation>
+    <wsdl:operation name="AltaDoinDocumento">
+      <wsdl:input message="tns:AltaDoinDocumentoRequest"/>
+      <wsdl:output message="tns:AltaDoinDocumentoResponse"></wsdl:output>
+    </wsdl:operation>
+  </wsdl:portType>
+
+  <wsdl:binding name="WSConsultaDoinDocumentosSOAP" type="tns:WSConsultaDoinDocumentos">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="ConsultaDoinDocumento">
+      <soap:operation soapAction="http://WSConsultaDoinDocumentos.ws.services.tributasenasturias.es/WSConsultaDoinDocumentos/ConsultaDoinDocumento"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+	<wsdl:operation name="AltaDoinDocumento">
+      <soap:operation soapAction="http://WSConsultaDoinDocumentos.ws.services.tributasenasturias.es/WSConsultaDoinDocumentos/AltaDoinDocumento"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="WSConsultaDoinDocumentos">
+    <wsdl:port binding="tns:WSConsultaDoinDocumentosSOAP" name="WSConsultaDoinDocumentosSOAP">
+      <soap:address location="http://WSConsultaDoinDocumentos.ws.services.tributasenasturias.es/"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

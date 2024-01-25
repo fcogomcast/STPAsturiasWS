@@ -1,0 +1,7 @@
+es.tributasenasturias.services.ws.wsconsultadoindocumentos
+es.tributasenasturias.services.ws.wsconsultadoindocumentos.bd
+es.tributasenasturias.services.ws.wsconsultadoindocumentos.exception
+es.tributasenasturias.services.ws.wsconsultadoindocumentos.utils
+es.tributasenasturias.services.ws.wsconsultadoindocumentos.utils.Log
+es.tributasenasturias.services.ws.wsconsultadoindocumentos.utils.Log.LogHandler
+es.tributasenasturias.services.ws.wsconsultadoindocumentos.utils.Preferencias
