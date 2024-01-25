@@ -16,7 +16,7 @@ dependencies {
     // Añade las dependencias que necesites desde la carpeta 'webcontent/lib'
     implementation fileTree(dir: 'webcontent/WEB-INF/lib', include: ['*.jar'])
     //implementation fileTree(dir: 'webcontent/WEB-INF', include: ['*.xml'])
-    implementation 'javax.servlet:javax.servlet-api:3.1.0'
+    //implementation 'javax.servlet:javax.servlet-api:3.1.0'
     // Añade otras dependencias aquí
 }
 // Ruta de las clases Java a compilar
@@ -35,17 +35,17 @@ tasks.withType(JavaCompile) {
 
 // Configuración específica para el plugin 'war'
 war {
-    archiveFileName = "$buildDir/target/WSConsultaDoinDocumentos.war" // Cambia esto por el nombre que desees para tu archivo WAR
+    archiveFileName = "$buildDir/target/WSDocumentoElectronico.war" // Cambia esto por el nombre que desees para tu archivo WAR
 
-    from('webcontent/WEB-INF/classes') {
-        include '**/*.properties'
+    from('wsdl') {
+        include '**/*.wsdl'
         into 'WEB-INF/classes'
     }
 
-   /* from('src/es/tributasenasturias/fichas') {
-        include '**//*.xml'
-        into 'WEB-INF/classes/es/tributasenasturias/fichas'
-    }*/
+     from('src/es/tributasenasturias/docel') {
+         include '**/*.xml'
+         into 'WEB-INF/classes/es/tributasenasturias/docel'
+     }
 
     // Agrega solo los archivos XML de la carpeta WEB-INF
     webInf {
