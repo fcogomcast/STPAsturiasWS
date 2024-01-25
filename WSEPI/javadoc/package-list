@@ -1,0 +1,7 @@
+es.tributasenasturias.services.ws.wsepi
+es.tributasenasturias.services.ws.wsepi.bd
+es.tributasenasturias.services.ws.wsepi.exception
+es.tributasenasturias.services.ws.wsepi.utils
+es.tributasenasturias.services.ws.wsepi.utils.log
+es.tributasenasturias.services.ws.wsepi.utils.log.LogHandler
+es.tributasenasturias.services.ws.wsepi.utils.log.Preferencias

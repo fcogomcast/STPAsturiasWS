@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?> 
+  <handler-chains xmlns="http://java.sun.com/xml/ns/javaee"> 
+   <handler-chain> 
+     <handler> 
+       <handler-class>es.tributasenasturias.services.ws.wsepi.utils.log.LogHandler.ServerLogHandler</handler-class> 
+     </handler>
+     <handler>
+     	<handler-class>es.tributasenasturias.services.ws.wsepi.utils.log.LogHandler.CargaContexto</handler-class>
+     </handler>	 
+   </handler-chain> 
+</handler-chains>

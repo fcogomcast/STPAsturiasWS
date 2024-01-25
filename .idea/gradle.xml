@@ -12,6 +12,7 @@
             <option value="$PROJECT_DIR$/WSAutenticacionLocalEPST" />
             <option value="$PROJECT_DIR$/WSConsultaDoinDocumentos" />
             <option value="$PROJECT_DIR$/WSDocumentoElectronico" />
+            <option value="$PROJECT_DIR$/WSEPI" />
           </set>
         </option>
       </GradleProjectSettings>

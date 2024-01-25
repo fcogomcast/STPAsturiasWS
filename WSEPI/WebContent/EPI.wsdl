@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://WSEPI.ws.services.tributasenasturias.es/EPI/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="EPI" targetNamespace="http://WSEPI.ws.services.tributasenasturias.es/EPI/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://WSEPI.ws.services.tributasenasturias.es/EPI/">
+      
+      <xsd:element name="EjecutarCallback">
+        <xsd:complexType>
+          <xsd:sequence>
+          	<xsd:element name="idadar" type="xsd:int" />
+          	<xsd:element name="ideepi" type="xsd:int"></xsd:element>
+          	<xsd:element name="idgdre" type="xsd:int"></xsd:element>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="EjecutarCallbackResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+          	<xsd:element name="IdArchivo" type="xsd:int" />
+          	<xsd:element name="DatosArchivo" type="xsd:string"></xsd:element>
+          	<xsd:element name="Error" type="xsd:string"></xsd:element>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="CuastodiaArchivo">
+      	<xsd:complexType>
+      		<xsd:sequence>
+
+      			<xsd:element name="CodigoUsuario" type="xsd:string"></xsd:element>
+      			<xsd:element name="Identificador" type="xsd:string"></xsd:element>
+      			<xsd:element name="TipoElemento" type="xsd:string"></xsd:element>
+      			<xsd:element name="NombreFichero" type="xsd:string"></xsd:element>
+      			<xsd:element name="Archivo" type="xsd:base64Binary"></xsd:element>
+
+      			<xsd:element name="Hash" type="xsd:string"></xsd:element>
+      			<!--  <xsd:element name="custodiarCsv" type="xsd:string" minOccurs="0" maxOccurs="1"></xsd:element>  -->
+      			<xsd:element name="Firma" type="tns:FirmaType" maxOccurs="1" minOccurs="0"></xsd:element>
+      		</xsd:sequence>
+      	</xsd:complexType>
+      </xsd:element>
+      <xsd:element name="CuastodiaArchivoResponse">
+      	<xsd:complexType>
+      		<xsd:sequence>
+
+      			<xsd:element name="IdArchivo" type="xsd:int"></xsd:element>
+      			<xsd:element name="DatosArchivo" type="xsd:string"></xsd:element>
+      			<xsd:element name="Error" type="xsd:string"></xsd:element>
+      		</xsd:sequence>
+      	</xsd:complexType>
+      </xsd:element>
+      
+      <!--  CRUBENCVS 43599 -->
+      <xsd:complexType name="FirmaType">
+      	<xsd:sequence>
+      		<xsd:element name="CSV" type="tns:CSVType"
+      			minOccurs="0">
+      		</xsd:element>
+      		<xsd:element name="Certificado" type="tns:CertificadoType"
+      			minOccurs="0">
+      		</xsd:element>
+      	</xsd:sequence>
+      </xsd:complexType>
+    
+      <xsd:complexType name="CSVType">
+      	<xsd:sequence>
+      		<xsd:element name="FirmaCSV">
+      			<xsd:simpleType>
+      				<xsd:restriction base="xsd:string">
+      					<xsd:enumeration value="S"></xsd:enumeration>
+      					<xsd:enumeration value="N"></xsd:enumeration>
+      				</xsd:restriction>
+      			</xsd:simpleType>
+      		</xsd:element>
+      		<xsd:element name="Firmante" type="xsd:string"
+      			minOccurs="0">
+      		</xsd:element>
+      		<xsd:element name="Caracteristicas" type="tns:CaracteristicasCSVType" minOccurs="0"></xsd:element>
+      	</xsd:sequence>
+      </xsd:complexType>
+
+      <xsd:complexType name="CertificadoType">
+      	<xsd:sequence>
+      		<xsd:element name="FirmaCertificado" minOccurs="0">
+      			<xsd:simpleType>
+      				<xsd:restriction base="xsd:string">
+      					<xsd:enumeration value="S"></xsd:enumeration>
+      					<xsd:enumeration value="N"></xsd:enumeration>
+      				</xsd:restriction>
+      			</xsd:simpleType>
+      		</xsd:element>
+      		<xsd:element name="LTV" minOccurs="0">
+      			<xsd:simpleType>
+      				<xsd:restriction base="xsd:string">
+      					<xsd:enumeration value="S"></xsd:enumeration>
+      					<xsd:enumeration value="N"></xsd:enumeration>
+      				</xsd:restriction>
+      			</xsd:simpleType>
+      		</xsd:element>
+
+      	</xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="CaracteristicasCSVType">
+      	<xsd:sequence>
+      		<xsd:element name="Fisicas" type="tns:CaracteristicasFisicasCSVType"></xsd:element>
+      	</xsd:sequence>
+      </xsd:complexType>
+    
+      <xsd:complexType name="CaracteristicasFisicasCSVType">
+      	<xsd:sequence>
+      		<xsd:element name="Paginas" type="tns:PaginasCSVType" minOccurs="0"></xsd:element>
+      		<xsd:element name="Posicion" type="tns:PosicionCSVType" minOccurs="0"></xsd:element>
+      	</xsd:sequence>
+      </xsd:complexType>
+    
+      <xsd:complexType name="PaginasCSVType">
+      	<xsd:sequence>
+      		<xsd:element name="Pagina" type="tns:PaginaCSVType" minOccurs="0" maxOccurs="unbounded"></xsd:element>
+      	</xsd:sequence>
+      </xsd:complexType>
+
+      <xsd:complexType name="PosicionCSVType">
+      	<xsd:sequence>
+      		<xsd:element name="X" type="xsd:float" minOccurs="0"></xsd:element>
+      		<xsd:element name="Y" type="xsd:float" minOccurs="0"></xsd:element>
+      	</xsd:sequence>
+      </xsd:complexType>
+
+      <xsd:complexType name="PaginaCSVType">
+      	<xsd:attribute name="numero" type="xsd:int"></xsd:attribute>
+      </xsd:complexType>
+      <!--  CRUBENCVS 43599 -->
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="EjecutarCallbackRequest">
+    <wsdl:part element="tns:EjecutarCallback" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="EjecutarCallbackResponse">
+    <wsdl:part element="tns:EjecutarCallbackResponse" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="CuastodiaArchivoRequest">
+  	<wsdl:part name="parameters" element="tns:CuastodiaArchivo"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="CuastodiaArchivoResponse">
+  	<wsdl:part name="parameters" element="tns:CuastodiaArchivoResponse"></wsdl:part>
+  </wsdl:message>
+  <wsdl:portType name="EPI">
+    <wsdl:operation name="EjecutarCallback">
+      <wsdl:input message="tns:EjecutarCallbackRequest"/>
+      <wsdl:output message="tns:EjecutarCallbackResponse"/>
+    </wsdl:operation>
+    <wsdl:operation name="CuastodiaArchivo">
+    	<wsdl:input message="tns:CuastodiaArchivoRequest"></wsdl:input>
+    	<wsdl:output message="tns:CuastodiaArchivoResponse"></wsdl:output>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="EPISOAP" type="tns:EPI">
+  	<soap:binding style="document"
+  		transport="http://schemas.xmlsoap.org/soap/http" />
+  	<wsdl:operation name="EjecutarCallback">
+  		<soap:operation
+  			soapAction="http://WSEPI.ws.services.tributasenasturias.es/EPI/EjecutarCallback" />
+  		<wsdl:input>
+  			<soap:body use="literal" />
+  		</wsdl:input>
+  		<wsdl:output>
+  			<soap:body use="literal" />
+  		</wsdl:output>
+  	</wsdl:operation>
+  	<wsdl:operation name="CuastodiaArchivo">
+  		<soap:operation
+  			soapAction="http://WSEPI.ws.services.tributasenasturias.es/EPI/CuastodiaArchivo" />
+  		<wsdl:input>
+  			<soap:body use="literal" />
+  		</wsdl:input>
+  		<wsdl:output>
+  			<soap:body use="literal" />
+  		</wsdl:output>
+  	</wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="EPI">
+    <wsdl:port binding="tns:EPISOAP" name="EPISOAP">
+      <soap:address location="http://WSEPI.ws.services.tributasenasturias.es"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
