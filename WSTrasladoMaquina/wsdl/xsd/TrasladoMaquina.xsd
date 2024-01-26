@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema targetNamespace="http://www.tributasenasturias.es/esquemas/TrasladoMaquina" elementFormDefault="qualified" xmlns="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://www.tributasenasturias.es/esquemas/TrasladoMaquina">
+
+    <complexType name="TrasladoMaquinaRequest">
+    	<sequence>
+    		<element name="PETICION" type="tns:PETICIONType"></element>
+    	</sequence>
+    </complexType>
+
+    <complexType name="TrasladoMaquinaResponse">
+    	<sequence>
+    		<element name="PETICION" type="tns:PETICIONType"></element>
+    		<element name="RESPUESTA">
+    			<complexType>
+                    <annotation>
+                    	<documentation></documentation>
+                    </annotation>
+                    <sequence>
+    					<element name="RESULTADO" type="string">
+    						<annotation>
+    							<documentation>
+    								Código de resultado obtenido.
+    							</documentation>
+    						</annotation></element>
+    					<element name="MENSAJE" type="string">
+    						<annotation>
+    							<documentation>
+    								Mensaje descriptivo asociado al
+    								código de resultado obtenido.
+    							</documentation>
+    						</annotation></element>
+    					<element name="JUSTIFICANTE_PDF" type="base64Binary">
+    						<annotation>
+    							<documentation>
+    								Contenido de un documento PDF
+    								justificante del traslado realizado.
+    							</documentation>
+    						</annotation></element>
+    				</sequence>
+    			</complexType></element>
+    	</sequence>
+    </complexType>
+    <complexType name="PETICIONType">
+        <annotation>
+        	<documentation>Datos de la petición</documentation>
+        </annotation>
+        <sequence>
+    		<element name="CIF">
+                <annotation>
+                	<documentation>
+                		CIF de la empresa que pretende realizar el
+                		trámite
+                	</documentation>
+                </annotation>
+                <simpleType>
+    				<restriction base="string">
+    					<maxLength value="10"></maxLength>
+    				</restriction>
+    			</simpleType>
+    		</element>
+    		<element name="NUM_AUTOLIQUIDACION">
+                <annotation>
+                	<documentation>
+                		Número de la autoliquidación presentada
+                	</documentation>
+                </annotation>
+                <simpleType>
+    				<restriction base="string">
+    					<pattern value="\d{13,13}"></pattern>
+    				</restriction>
+    			</simpleType>
+    		</element>
+    		<element name="NUM_LOCAL">
+    			<annotation>
+    				<documentation>
+    					Número de inscripción del local al que se
+    					traslada la máquina
+    				</documentation>
+    			</annotation>
+    			<simpleType>
+    				<restriction base="string">
+    					<length value="12"></length>
+    				</restriction>
+    			</simpleType>
+    		</element>
+    		<element name="NUM_MAQUINA">
+    			<annotation>
+    				<documentation>
+    					Número de inscripción de la máquina que se
+    					traslada
+    				</documentation>
+    			</annotation>
+    			<simpleType>
+    				<restriction base="string">
+
+    					<length value="12"></length>
+    				</restriction>
+    			</simpleType>
+    		</element>
+    	</sequence>
+    </complexType>
+</schema>

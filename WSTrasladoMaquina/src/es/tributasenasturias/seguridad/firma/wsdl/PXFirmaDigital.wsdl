@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WL5G3N0:definitions name="wsFirmaDigital" targetNamespace="http://localhost:7001" xmlns:WL5G3N0="http://schemas.xmlsoap.org/wsdl/" xmlns:WL5G3N1="http://localhost:7001" xmlns:WL5G3N2="http://schemas.xmlsoap.org/wsdl/soap/">
+  <WL5G3N0:types>
+    <xsd:schema xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://localhost:7001" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+      <xsd:import namespace="http://localhost:7001" schemaLocation="FirmaDigital.xsd"/>
+    </xsd:schema>
+  </WL5G3N0:types>
+  <WL5G3N0:message name="Firmar">
+    <WL5G3N0:part element="WL5G3N1:Firmar" name="parameters"/>
+  </WL5G3N0:message>
+  <WL5G3N0:message name="FirmarResponse">
+    <WL5G3N0:part element="WL5G3N1:FirmarResponse" name="parameters"/>
+  </WL5G3N0:message>
+  <WL5G3N0:message name="Exception">
+    <WL5G3N0:part element="WL5G3N1:Exception" name="fault"/>
+  </WL5G3N0:message>
+  <WL5G3N0:message name="Validar">
+    <WL5G3N0:part element="WL5G3N1:Validar" name="parameters"/>
+  </WL5G3N0:message>
+  <WL5G3N0:message name="ValidarResponse">
+    <WL5G3N0:part element="WL5G3N1:ValidarResponse" name="parameters"/>
+  </WL5G3N0:message>
+  <WL5G3N0:message name="InsertarCertificado">
+    <WL5G3N0:part element="WL5G3N1:InsertarCertificado" name="parameters"/>
+  </WL5G3N0:message>
+  <WL5G3N0:message name="InsertarCertificadoResponse">
+    <WL5G3N0:part element="WL5G3N1:InsertarCertificadoResponse" name="parameters"/>
+  </WL5G3N0:message>
+  <WL5G3N0:message name="FirmarSOAP">
+    <WL5G3N0:part element="WL5G3N1:FirmarSOAP" name="parameters"/>
+  </WL5G3N0:message>
+  <WL5G3N0:message name="FirmarSOAPResponse">
+    <WL5G3N0:part element="WL5G3N1:FirmarSOAPResponse" name="parameters"/>
+  </WL5G3N0:message>
+  <WL5G3N0:message name="FirmarAncert">
+    <WL5G3N0:part element="WL5G3N1:FirmarAncert" name="parameters"/>
+  </WL5G3N0:message>
+  <WL5G3N0:message name="FirmarAncertResponse">
+    <WL5G3N0:part element="WL5G3N1:FirmarAncertResponse" name="parameters"/>
+  </WL5G3N0:message>
+  <WL5G3N0:message name="FirmarCIRCE">
+    <WL5G3N0:part element="WL5G3N1:FirmarCIRCE" name="parameters"/>
+  </WL5G3N0:message>
+  <WL5G3N0:message name="FirmarCIRCEResponse">
+    <WL5G3N0:part element="WL5G3N1:FirmarCIRCEResponse" name="parameters"/>
+  </WL5G3N0:message>
+  <WL5G3N0:message name="FirmarXML">
+    <WL5G3N0:part element="WL5G3N1:FirmarXML" name="parameters"/>
+  </WL5G3N0:message>
+  <WL5G3N0:message name="FirmarXMLResponse">
+    <WL5G3N0:part element="WL5G3N1:FirmarXMLResponse" name="parameters"/>
+  </WL5G3N0:message>
+  <WL5G3N0:portType name="FirmaDigital">
+    <WL5G3N0:operation name="Firmar">
+      <WL5G3N0:input message="WL5G3N1:Firmar"/>
+      <WL5G3N0:output message="WL5G3N1:FirmarResponse"/>
+      <WL5G3N0:fault message="WL5G3N1:Exception" name="Exception"/>
+    </WL5G3N0:operation>
+    <WL5G3N0:operation name="Validar">
+      <WL5G3N0:input message="WL5G3N1:Validar"/>
+      <WL5G3N0:output message="WL5G3N1:ValidarResponse"/>
+      <WL5G3N0:fault message="WL5G3N1:Exception" name="Exception"/>
+    </WL5G3N0:operation>
+    <WL5G3N0:operation name="InsertarCertificado">
+      <WL5G3N0:input message="WL5G3N1:InsertarCertificado"/>
+      <WL5G3N0:output message="WL5G3N1:InsertarCertificadoResponse"/>
+      <WL5G3N0:fault message="WL5G3N1:Exception" name="Exception"/>
+    </WL5G3N0:operation>
+    <WL5G3N0:operation name="FirmarSOAP">
+      <WL5G3N0:input message="WL5G3N1:FirmarSOAP"/>
+      <WL5G3N0:output message="WL5G3N1:FirmarSOAPResponse"/>
+    </WL5G3N0:operation>
+    <WL5G3N0:operation name="FirmarAncert">
+      <WL5G3N0:input message="WL5G3N1:FirmarAncert"/>
+      <WL5G3N0:output message="WL5G3N1:FirmarAncertResponse"/>
+      <WL5G3N0:fault message="WL5G3N1:Exception" name="Exception"/>
+    </WL5G3N0:operation>
+    <WL5G3N0:operation name="FirmarCIRCE">
+      <WL5G3N0:input message="WL5G3N1:FirmarCIRCE"/>
+      <WL5G3N0:output message="WL5G3N1:FirmarCIRCEResponse"/>
+      <WL5G3N0:fault message="WL5G3N1:Exception" name="Exception"/>
+    </WL5G3N0:operation>
+    <WL5G3N0:operation name="FirmarXML">
+      <WL5G3N0:input message="WL5G3N1:FirmarXML"/>
+      <WL5G3N0:output message="WL5G3N1:FirmarXMLResponse"/>
+      <WL5G3N0:fault message="WL5G3N1:Exception" name="Exception"/>
+    </WL5G3N0:operation>
+  </WL5G3N0:portType>
+  <WL5G3N0:binding name="servicesPortBinding" type="WL5G3N1:FirmaDigital">
+    <WL5G3N2:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <WL5G3N0:operation name="Firmar">
+      <WL5G3N2:operation/>
+      <WL5G3N0:input>
+        <WL5G3N2:body use="literal"/>
+      </WL5G3N0:input>
+      <WL5G3N0:output>
+        <WL5G3N2:body use="literal"/>
+      </WL5G3N0:output>
+      <WL5G3N0:fault name="Exception">
+        <WL5G3N2:fault name="Exception" use="literal"/>
+      </WL5G3N0:fault>
+    </WL5G3N0:operation>
+    <WL5G3N0:operation name="Validar">
+      <WL5G3N2:operation/>
+      <WL5G3N0:input>
+        <WL5G3N2:body use="literal"/>
+      </WL5G3N0:input>
+      <WL5G3N0:output>
+        <WL5G3N2:body use="literal"/>
+      </WL5G3N0:output>
+      <WL5G3N0:fault name="Exception">
+        <WL5G3N2:fault name="Exception" use="literal"/>
+      </WL5G3N0:fault>
+    </WL5G3N0:operation>
+    <WL5G3N0:operation name="InsertarCertificado">
+      <WL5G3N2:operation/>
+      <WL5G3N0:input>
+        <WL5G3N2:body use="literal"/>
+      </WL5G3N0:input>
+      <WL5G3N0:output>
+        <WL5G3N2:body use="literal"/>
+      </WL5G3N0:output>
+      <WL5G3N0:fault name="Exception">
+        <WL5G3N2:fault name="Exception" use="literal"/>
+      </WL5G3N0:fault>
+    </WL5G3N0:operation>
+    <WL5G3N0:operation name="FirmarSOAP">
+      <WL5G3N2:operation/>
+      <WL5G3N0:input>
+        <WL5G3N2:body use="literal"/>
+      </WL5G3N0:input>
+      <WL5G3N0:output>
+        <WL5G3N2:body use="literal"/>
+      </WL5G3N0:output>
+    </WL5G3N0:operation>
+    <WL5G3N0:operation name="FirmarAncert">
+      <WL5G3N2:operation/>
+      <WL5G3N0:input>
+        <WL5G3N2:body use="literal"/>
+      </WL5G3N0:input>
+      <WL5G3N0:output>
+        <WL5G3N2:body use="literal"/>
+      </WL5G3N0:output>
+      <WL5G3N0:fault name="Exception">
+        <WL5G3N2:fault name="Exception" use="literal"/>
+      </WL5G3N0:fault>
+    </WL5G3N0:operation>
+    <WL5G3N0:operation name="FirmarCIRCE">
+      <WL5G3N2:operation/>
+      <WL5G3N0:input>
+        <WL5G3N2:body use="literal"/>
+      </WL5G3N0:input>
+      <WL5G3N0:output>
+        <WL5G3N2:body use="literal"/>
+      </WL5G3N0:output>
+      <WL5G3N0:fault name="Exception">
+        <WL5G3N2:fault name="Exception" use="literal"/>
+      </WL5G3N0:fault>
+    </WL5G3N0:operation>
+    <WL5G3N0:operation name="FirmarXML">
+      <WL5G3N2:operation/>
+      <WL5G3N0:input>
+        <WL5G3N2:body use="literal"/>
+      </WL5G3N0:input>
+      <WL5G3N0:output>
+        <WL5G3N2:body use="literal"/>
+      </WL5G3N0:output>
+      <WL5G3N0:fault name="Exception">
+        <WL5G3N2:fault name="Exception" use="literal"/>
+      </WL5G3N0:fault>
+    </WL5G3N0:operation>
+  </WL5G3N0:binding>
+  <WL5G3N0:service name="wsFirmaDigital">
+    <WL5G3N0:port binding="WL5G3N1:servicesPortBinding" name="servicesPort">
+      <WL5G3N2:address location="http://bus:7101/WSInternos/ProxyServices/PXFirmaDigital"/>
+    </WL5G3N0:port>
+  </WL5G3N0:service>
+</WL5G3N0:definitions>

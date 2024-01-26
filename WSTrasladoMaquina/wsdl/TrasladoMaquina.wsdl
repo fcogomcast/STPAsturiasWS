@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://www.tributasenasturias.es/servicios/TrasladoMaquina/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="TrasladoMaquina" targetNamespace="http://www.tributasenasturias.es/servicios/TrasladoMaquina/" xmlns:pref="http://www.tributasenasturias.es/esquemas/TrasladoMaquina" xmlns:ds="http://www.w3.org/2000/09/xmldsig#">
+  <wsdl:types>
+    <xsd:schema
+    	targetNamespace="http://www.tributasenasturias.es/servicios/TrasladoMaquina/"
+    	xmlns:pref="http://www.tributasenasturias.es/esquemas/TrasladoMaquina"
+    	xmlns:ds="http://www.w3.org/2000/09/xmldsig#">
+
+    	<xsd:import
+    		namespace="http://www.tributasenasturias.es/esquemas/TrasladoMaquina"
+    		schemaLocation="xsd/TrasladoMaquina.xsd">
+    	</xsd:import>
+
+    	<xsd:import namespace="http://www.w3.org/2000/09/xmldsig#" schemaLocation="xsd/xmldsig-core-schema.xsd"></xsd:import>
+    	<xsd:element name="TrasladoMaquinaRequest" type="pref:TrasladoMaquinaRequest"/>
+    	<xsd:element name="TrasladoMaquinaResponse" type="pref:TrasladoMaquinaResponse"/>
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="TrasladarMaquinaRequest">
+    <wsdl:part name="TrasladoMaquinaRequest" element="tns:TrasladoMaquinaRequest" />
+    <wsdl:part name="Signature" element="ds:Signature"/>
+  </wsdl:message>
+  <wsdl:message name="TrasladarMaquinaResponse">
+    <wsdl:part element="tns:TrasladoMaquinaResponse" name="TrasladoMaquinaResponse"/>
+    <wsdl:part name="Signature" element="ds:Signature"/>
+  </wsdl:message>
+  <wsdl:portType name="TrasladoMaquina">
+    <wsdl:operation name="TrasladarMaquina">
+      <wsdl:input message="tns:TrasladarMaquinaRequest"/>
+      <wsdl:output message="tns:TrasladarMaquinaResponse"/>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="TrasladoMaquinaSOAP" type="tns:TrasladoMaquina">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="TrasladarMaquina">
+      <soap:operation soapAction="http://www.tributasenasturias.es/servicios/TrasladoMaquina/TrasladarMaquina"/>
+      <wsdl:input>
+      	<soap:header use="literal" part="Signature" message="tns:TrasladarMaquinaRequest"/>
+        <soap:body use="literal" parts="TrasladoMaquinaRequest"/>
+      </wsdl:input>
+      <wsdl:output>
+      	<soap:header use="literal" part="Signature" message="tns:TrasladarMaquinaResponse"/>
+        <soap:body use="literal" parts="TrasladoMaquinaResponse"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="TrasladoMaquina">
+    <wsdl:port binding="tns:TrasladoMaquinaSOAP" name="TrasladoMaquinaSOAP">
+      <soap:address location="http://bus:7101/WSTrasladoMaquina/ProxyServices/PXTrasladoMaquina"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

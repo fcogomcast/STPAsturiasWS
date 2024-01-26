@@ -1,0 +1,1122 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<wsdl:definitions xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+	xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+	xmlns:tns="http://expedientes.ws.teac.gob.es"
+	xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+	xmlns:ns1="http://schemas.xmlsoap.org/soap/http"
+	name="ServicioEnvioExpedientes"
+	targetNamespace="http://expedientes.ws.teac.gob.es">
+	<wsdl:types>
+		<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+			xmlns:tns="http://www.w3.org/2000/09/xmldsig#"
+			xmlns:ds="http://www.w3.org/2000/09/xmldsig#"
+			elementFormDefault="qualified"
+			targetNamespace="http://www.w3.org/2000/09/xmldsig#" version="1.0">
+
+			<xs:element name="CanonicalizationMethod"
+				type="tns:CanonicalizationMethodType" />
+
+			<xs:element name="DSAKeyValue" type="tns:DSAKeyValueType" />
+
+			<xs:element name="DigestMethod" type="tns:DigestMethodType" />
+
+			<xs:element name="DigestValue" type="xs:base64Binary" />
+
+			<xs:element name="KeyInfo" type="tns:KeyInfoType" />
+
+			<xs:element name="KeyName" type="xs:string" />
+
+			<xs:element name="KeyValue" type="tns:KeyValueType" />
+
+			<xs:element name="Manifest" type="tns:ManifestType" />
+
+			<xs:element name="MgmtData" type="xs:string" />
+
+			<xs:element name="Object" type="tns:ObjectType" />
+
+			<xs:element name="PGPData" type="tns:PGPDataType" />
+
+			<xs:element name="RSAKeyValue" type="tns:RSAKeyValueType" />
+
+			<xs:element name="Reference" type="tns:ReferenceType" />
+
+			<xs:element name="RetrievalMethod"
+				type="tns:RetrievalMethodType" />
+
+			<xs:element name="SPKIData" type="tns:SPKIDataType" />
+
+			<xs:element name="Signature" type="tns:SignatureType" />
+
+			<xs:element name="SignatureMethod"
+				type="tns:SignatureMethodType" />
+
+			<xs:element name="SignatureProperties"
+				type="tns:SignaturePropertiesType" />
+
+			<xs:element name="SignatureProperty"
+				type="tns:SignaturePropertyType" />
+
+			<xs:element name="SignatureValue"
+				type="tns:SignatureValueType" />
+
+			<xs:element name="SignedInfo" type="tns:SignedInfoType" />
+
+			<xs:element name="Transform" type="tns:TransformType" />
+
+			<xs:element name="Transforms" type="tns:TransformsType" />
+
+			<xs:element name="X509Data" type="tns:X509DataType" />
+
+			<xs:complexType name="SignatureType">
+				<xs:sequence>
+					<xs:element name="SignedInfo"
+						type="tns:SignedInfoType" />
+					<xs:element name="SignatureValue"
+						type="tns:SignatureValueType" />
+					<xs:element minOccurs="0" name="KeyInfo"
+						type="tns:KeyInfoType" />
+					<xs:element maxOccurs="unbounded" minOccurs="0"
+						name="Object" type="tns:ObjectType" />
+				</xs:sequence>
+				<xs:attribute name="Id" type="xs:ID" />
+			</xs:complexType>
+
+			<xs:complexType name="SignedInfoType">
+				<xs:sequence>
+					<xs:element name="CanonicalizationMethod"
+						type="tns:CanonicalizationMethodType" />
+					<xs:element name="SignatureMethod"
+						type="tns:SignatureMethodType" />
+					<xs:element maxOccurs="unbounded" name="Reference"
+						type="tns:ReferenceType" />
+				</xs:sequence>
+				<xs:attribute name="Id" type="xs:ID" />
+			</xs:complexType>
+
+			<xs:complexType mixed="true"
+				name="CanonicalizationMethodType">
+				<xs:sequence>
+					<xs:any maxOccurs="unbounded" minOccurs="0"
+						namespace="##other" processContents="lax" />
+				</xs:sequence>
+				<xs:attribute name="Algorithm" type="xs:anyURI"
+					use="required" />
+			</xs:complexType>
+
+			<xs:complexType mixed="true" name="ObjectType">
+				<xs:sequence>
+					<xs:any maxOccurs="unbounded" minOccurs="0"
+						namespace="##other" processContents="lax" />
+				</xs:sequence>
+				<xs:attribute name="Id" type="xs:ID" />
+				<xs:attribute name="MimeType" type="xs:string" />
+				<xs:attribute name="Encoding" type="xs:anyURI" />
+			</xs:complexType>
+
+			<xs:complexType name="ReferenceType">
+				<xs:sequence>
+					<xs:element minOccurs="0" name="Transforms"
+						type="tns:TransformsType" />
+					<xs:element name="DigestMethod"
+						type="tns:DigestMethodType" />
+					<xs:element name="DigestValue"
+						type="xs:base64Binary" />
+				</xs:sequence>
+				<xs:attribute name="Id" type="xs:ID" />
+				<xs:attribute name="URI" type="xs:anyURI" />
+				<xs:attribute name="Type" type="xs:anyURI" />
+			</xs:complexType>
+
+			<xs:complexType name="TransformsType">
+				<xs:sequence>
+					<xs:element maxOccurs="unbounded" name="Transform"
+						type="tns:TransformType" />
+				</xs:sequence>
+			</xs:complexType>
+
+			<xs:complexType mixed="true" name="TransformType">
+				<xs:sequence>
+					<xs:choice maxOccurs="unbounded" minOccurs="0">
+						<xs:element name="XPath" type="xs:string" />
+						<xs:any namespace="##other"
+							processContents="lax" />
+					</xs:choice>
+				</xs:sequence>
+				<xs:attribute name="Algorithm" type="xs:anyURI"
+					use="required" />
+			</xs:complexType>
+
+			<xs:complexType mixed="true" name="DigestMethodType">
+				<xs:sequence>
+					<xs:any maxOccurs="unbounded" minOccurs="0"
+						namespace="##other" processContents="lax" />
+				</xs:sequence>
+				<xs:attribute name="Algorithm" type="xs:anyURI"
+					use="required" />
+			</xs:complexType>
+
+			<xs:complexType mixed="true" name="SignatureMethodType">
+				<xs:sequence>
+					<xs:choice maxOccurs="unbounded" minOccurs="0">
+						<xs:element name="HMACOutputLength"
+							type="xs:integer" />
+						<xs:any namespace="##other"
+							processContents="lax" />
+					</xs:choice>
+				</xs:sequence>
+				<xs:attribute name="Algorithm" type="xs:anyURI"
+					use="required" />
+			</xs:complexType>
+
+			<xs:complexType name="X509IssuerSerialType">
+				<xs:sequence>
+					<xs:element name="X509IssuerName" type="xs:string" />
+					<xs:element name="X509SerialNumber"
+						type="xs:integer" />
+				</xs:sequence>
+			</xs:complexType>
+
+			<xs:complexType name="X509DataType">
+				<xs:sequence>
+					<xs:choice maxOccurs="unbounded" minOccurs="0">
+						<xs:element name="X509IssuerSerial"
+							type="tns:X509IssuerSerialType" />
+						<xs:element name="X509SubjectName"
+							type="xs:string" />
+						<xs:element name="X509Certificate"
+							type="xs:base64Binary" />
+						<xs:element name="X509CRL"
+							type="xs:base64Binary" />
+						<xs:element name="X509SKI"
+							type="xs:base64Binary" />
+						<xs:any namespace="##other"
+							processContents="lax" />
+					</xs:choice>
+				</xs:sequence>
+			</xs:complexType>
+
+			<xs:complexType name="SPKIDataType">
+				<xs:sequence>
+					<xs:choice maxOccurs="unbounded" minOccurs="0">
+						<xs:element name="SPKISexp"
+							type="xs:base64Binary" />
+						<xs:any namespace="##other"
+							processContents="lax" />
+					</xs:choice>
+				</xs:sequence>
+			</xs:complexType>
+
+			<xs:complexType mixed="true" name="KeyInfoType">
+				<xs:sequence>
+					<xs:choice maxOccurs="unbounded" minOccurs="0">
+						<xs:element ref="tns:RetrievalMethod" />
+						<xs:element ref="tns:KeyValue" />
+						<xs:element ref="tns:MgmtData" />
+						<xs:element ref="tns:PGPData" />
+						<xs:element ref="tns:SPKIData" />
+						<xs:element ref="tns:KeyName" />
+						<xs:element ref="tns:X509Data" />
+						<xs:any namespace="##other"
+							processContents="lax" />
+					</xs:choice>
+				</xs:sequence>
+				<xs:attribute name="Id" type="xs:ID" />
+			</xs:complexType>
+
+			<xs:complexType mixed="true" name="KeyValueType">
+				<xs:sequence>
+					<xs:choice maxOccurs="unbounded" minOccurs="0">
+						<xs:element ref="tns:RSAKeyValue" />
+						<xs:element ref="tns:DSAKeyValue" />
+						<xs:any namespace="##other"
+							processContents="lax" />
+					</xs:choice>
+				</xs:sequence>
+			</xs:complexType>
+
+			<xs:complexType name="PGPDataType">
+				<xs:sequence>
+					<xs:choice maxOccurs="unbounded" minOccurs="0">
+						<xs:element name="PGPKeyPacket"
+							type="xs:base64Binary" />
+						<xs:element name="PGPKeyID"
+							type="xs:base64Binary" />
+						<xs:any namespace="##other"
+							processContents="lax" />
+					</xs:choice>
+				</xs:sequence>
+			</xs:complexType>
+
+			<xs:complexType name="ManifestType">
+				<xs:sequence>
+					<xs:element maxOccurs="unbounded" name="Reference"
+						type="tns:ReferenceType" />
+				</xs:sequence>
+				<xs:attribute name="Id" type="xs:ID" />
+			</xs:complexType>
+
+			<xs:complexType name="RSAKeyValueType">
+				<xs:sequence>
+					<xs:element name="Modulus" type="xs:base64Binary" />
+					<xs:element name="Exponent" type="xs:base64Binary" />
+				</xs:sequence>
+			</xs:complexType>
+
+			<xs:complexType name="DSAKeyValueType">
+				<xs:sequence>
+					<xs:element minOccurs="0" name="P"
+						type="xs:base64Binary" />
+					<xs:element minOccurs="0" name="Q"
+						type="xs:base64Binary" />
+					<xs:element minOccurs="0" name="G"
+						type="xs:base64Binary" />
+					<xs:element name="Y" type="xs:base64Binary" />
+					<xs:element minOccurs="0" name="J"
+						type="xs:base64Binary" />
+					<xs:element minOccurs="0" name="Seed"
+						type="xs:base64Binary" />
+					<xs:element minOccurs="0" name="PgenCounter"
+						type="xs:base64Binary" />
+				</xs:sequence>
+			</xs:complexType>
+
+			<xs:complexType name="SignatureValueType">
+				<xs:simpleContent>
+					<xs:extension base="xs:string">
+						<xs:attribute name="Id" type="xs:ID" />
+					</xs:extension>
+				</xs:simpleContent>
+			</xs:complexType>
+
+			<xs:complexType name="RetrievalMethodType">
+				<xs:sequence>
+					<xs:element minOccurs="0" name="Transforms"
+						type="tns:TransformsType" />
+				</xs:sequence>
+				<xs:attribute name="URI" type="xs:anyURI" />
+				<xs:attribute name="Type" type="xs:anyURI" />
+			</xs:complexType>
+
+			<xs:complexType mixed="true" name="SignaturePropertyType">
+				<xs:sequence>
+					<xs:any maxOccurs="unbounded" minOccurs="0"
+						namespace="##other" processContents="lax" />
+				</xs:sequence>
+				<xs:attribute name="Target" type="xs:anyURI"
+					use="required" />
+				<xs:attribute name="Id" type="xs:ID" />
+			</xs:complexType>
+
+			<xs:complexType name="SignaturePropertiesType">
+				<xs:sequence>
+					<xs:element maxOccurs="unbounded"
+						name="SignatureProperty" type="tns:SignaturePropertyType" />
+				</xs:sequence>
+				<xs:attribute name="Id" type="xs:ID" />
+			</xs:complexType>
+
+		</xs:schema>
+		<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+			xmlns:tns="http://expedientes.ws.teac.gob.es/ExpedienteTEAC"
+			xmlns:ns8="http://administracionelectronica.gob.es/ENI/XSD/v1.0/documento-e"
+			xmlns:ns7="http://administracionelectronica.gob.es/ENI/XSD/v1.0/firma"
+			xmlns:ns6="http://administracionelectronica.gob.es/ENI/XSD/v1.0/documento-e/metadatos"
+			xmlns:ns5="http://administracionelectronica.gob.es/ENI/XSD/v1.0/metadatosComplementarios"
+			xmlns:ns4="http://administracionelectronica.gob.es/ENI/XSD/v1.0/expediente-e"
+			xmlns:ns3="http://administracionelectronica.gob.es/ENI/XSD/v1.0/documento-e/contenido"
+			xmlns:ns2="http://administracionelectronica.gob.es/ENI/XSD/v1.0/expediente-e/metadatos"
+			xmlns:ns1="http://administracionelectronica.gob.es/ENI/XSD/v1.0/expediente-e/indice-e"
+			attributeFormDefault="unqualified" elementFormDefault="qualified"
+			targetNamespace="http://expedientes.ws.teac.gob.es/ExpedienteTEAC">
+			<xs:import
+				namespace="http://administracionelectronica.gob.es/ENI/XSD/v1.0/expediente-e/indice-e" />
+			<xs:import
+				namespace="http://administracionelectronica.gob.es/ENI/XSD/v1.0/expediente-e/metadatos" />
+			<xs:import
+				namespace="http://administracionelectronica.gob.es/ENI/XSD/v1.0/documento-e/contenido" />
+			<xs:import
+				namespace="http://administracionelectronica.gob.es/ENI/XSD/v1.0/expediente-e" />
+			<xs:import
+				namespace="http://administracionelectronica.gob.es/ENI/XSD/v1.0/metadatosComplementarios" />
+			<xs:import
+				namespace="http://administracionelectronica.gob.es/ENI/XSD/v1.0/documento-e/metadatos" />
+			<xs:import
+				namespace="http://administracionelectronica.gob.es/ENI/XSD/v1.0/firma" />
+			<xs:import
+				namespace="http://administracionelectronica.gob.es/ENI/XSD/v1.0/documento-e" />
+			<xs:complexType name="AcuseRecibo">
+				<xs:sequence>
+					<xs:element name="respuesta" type="tns:Respuesta" />
+					<xs:element minOccurs="0" name="numeroReclamacion"
+						type="xs:string" />
+				</xs:sequence>
+			</xs:complexType>
+			<xs:complexType name="Respuesta">
+				<xs:sequence>
+					<xs:element name="codigo" type="xs:string" />
+					<xs:element name="descripcion" type="xs:string" />
+					<xs:element minOccurs="0" name="detalle"
+						type="xs:string" />
+				</xs:sequence>
+			</xs:complexType>
+			<xs:complexType name="ExpedienteIntercambio">
+				<xs:sequence>
+					<xs:element name="expediente"
+						type="ns4:TipoExpediente" />
+					<xs:element minOccurs="0"
+						name="datosComplementariosExpediente"
+						type="ns5:TipoMetadatosComplementarios" />
+				</xs:sequence>
+			</xs:complexType>
+			<xs:complexType name="EstadoEnvio">
+				<xs:sequence>
+					<xs:element name="estadoEnvioExpediente"
+						type="xs:string" />
+					<xs:element maxOccurs="unbounded" minOccurs="0"
+						name="envioDocumentacion" nillable="true"
+						type="tns:EnvioDocumento" />
+				</xs:sequence>
+			</xs:complexType>
+			<xs:complexType name="EnvioDocumento">
+				<xs:sequence>
+					<xs:element name="idDocumento" type="xs:string" />
+					<xs:element name="estadoEnvioDocumento"
+						type="xs:string" />
+				</xs:sequence>
+			</xs:complexType>
+			<xs:complexType name="DocumentoIntercambio">
+				<xs:sequence>
+					<xs:element name="documento"
+						type="ns8:TipoDocumento" />
+					<xs:element minOccurs="0"
+						name="datosComplementariosDocumento"
+						type="ns5:TipoMetadatosComplementarios" />
+				</xs:sequence>
+			</xs:complexType>
+			<xs:complexType name="Interesado">
+				<xs:sequence>
+					<xs:element name="identificador" type="xs:string" />
+					<xs:element name="nombre" type="xs:string" />
+				</xs:sequence>
+			</xs:complexType>
+		</xs:schema>
+		<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+			xmlns:ns4="http://administracionelectronica.gob.es/ENI/XSD/v1.0/documento-e"
+			xmlns:ns3="http://administracionelectronica.gob.es/ENI/XSD/v1.0/metadatosComplementarios"
+			xmlns:ns2="http://administracionelectronica.gob.es/ENI/XSD/v1.0/expediente-e"
+			xmlns:ns1="http://expedientes.ws.teac.gob.es/ExpedienteTEAC"
+			xmlns="http://expedientes.ws.teac.gob.es"
+			attributeFormDefault="unqualified" elementFormDefault="qualified"
+			targetNamespace="http://expedientes.ws.teac.gob.es">
+			<xs:import
+				namespace="http://expedientes.ws.teac.gob.es/ExpedienteTEAC" />
+			<xs:import
+				namespace="http://administracionelectronica.gob.es/ENI/XSD/v1.0/expediente-e" />
+			<xs:import
+				namespace="http://administracionelectronica.gob.es/ENI/XSD/v1.0/metadatosComplementarios" />
+			<xs:import
+				namespace="http://administracionelectronica.gob.es/ENI/XSD/v1.0/documento-e" />
+			<xs:element name="AnularEnvioExpediente">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="codEmisor" type="xs:string" />
+						<xs:element name="idExpediente"
+							type="xs:string" />
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="AnularEnvioExpedienteFault">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="AnularEnvioExpedienteFault"
+							type="xs:string" />
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="AnularEnvioExpedienteResponse">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="respuesta"
+							type="ns1:Respuesta" />
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="ConsultarEstadoEnvioExpediente">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="codEmisor" type="xs:string" />
+						<xs:element name="idExpediente"
+							type="xs:string" />
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="ConsultarEstadoEnvioExpedienteFault">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element
+							name="ConsultarEstadoEnvioExpedienteFault" type="xs:string" />
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="ConsultarEstadoEnvioExpedienteResponse">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="estadoEnvio"
+							type="ns1:EstadoEnvio" />
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="EnviarDocumentoElectronico">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="codEmisor" type="xs:string" />
+						<xs:element name="idExpediente"
+							type="xs:string" />
+						<xs:element name="documentoIntercambio"
+							type="ns1:DocumentoIntercambio" />
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="EnviarDocumentoElectronicoFault">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element
+							name="EnviarDocumentoElectronicoFault" type="xs:string" />
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="EnviarDocumentoElectronicoResponse">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="respuesta"
+							type="ns1:Respuesta" />
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="IniciarEnvioExpediente">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="codEmisor" type="xs:string" />
+						<xs:element name="expedienteIntercambio"
+							type="ns1:ExpedienteIntercambio" />
+						<xs:element minOccurs="0" name="codDestinatario"
+							type="xs:string" />
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="IniciarEnvioExpedienteFault">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="IniciarEnvioExpedienteFault"
+							type="xs:string" />
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="IniciarEnvioExpedienteResponse">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="respuesta"
+							type="ns1:Respuesta" />
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="SolicitarAcuseReciboExpediente">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="codEmisor" type="xs:string" />
+						<xs:element name="idExpediente"
+							type="xs:string" />
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="SolicitarAcuseReciboExpedienteFault">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element
+							name="SolicitarAcuseReciboExpedienteFault" type="xs:string" />
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="SolicitarAcuseReciboExpedienteResponse">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="acuseRecibo"
+							type="ns1:AcuseRecibo" />
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+		</xs:schema>
+		<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+			xmlns:tns="http://administracionelectronica.gob.es/ENI/XSD/v1.0/metadatosComplementarios"
+			elementFormDefault="qualified"
+			targetNamespace="http://administracionelectronica.gob.es/ENI/XSD/v1.0/metadatosComplementarios"
+			version="1.0">
+
+			<xs:complexType name="TipoMetadatosComplementarios">
+				<xs:sequence>
+					<xs:element maxOccurs="unbounded"
+						name="MetadatoComplementario"
+						type="tns:TipoMetadatoComplementario" />
+				</xs:sequence>
+			</xs:complexType>
+
+			<xs:complexType name="TipoMetadatoComplementario">
+				<xs:sequence>
+					<xs:element name="valor" type="xs:anyType" />
+				</xs:sequence>
+				<xs:attribute name="tipo" type="xs:QName" />
+				<xs:attribute name="nombre" type="xs:string"
+					use="required" />
+			</xs:complexType>
+
+		</xs:schema>
+		<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+			xmlns:tns="http://administracionelectronica.gob.es/ENI/XSD/v1.0/firma"
+			elementFormDefault="qualified"
+			targetNamespace="http://administracionelectronica.gob.es/ENI/XSD/v1.0/firma"
+			version="1.0">
+
+			<xs:element name="firmas" type="tns:firmas" />
+
+			<xs:complexType name="firmas">
+				<xs:sequence>
+					<xs:element maxOccurs="unbounded" name="firma"
+						type="tns:TipoFirmasElectronicas" />
+				</xs:sequence>
+			</xs:complexType>
+
+			<xs:complexType name="TipoFirmasElectronicas">
+				<xs:sequence>
+					<xs:element name="TipoFirma" type="xs:string" />
+					<xs:element name="ContenidoFirma">
+						<xs:complexType>
+							<xs:sequence>
+								<xs:element minOccurs="0" name="CSV">
+									<xs:complexType>
+										<xs:sequence>
+											<xs:element name="ValorCSV"
+												type="xs:string" />
+											<xs:element
+												name="RegulacionGeneracionCSV" type="xs:string" />
+										</xs:sequence>
+									</xs:complexType>
+								</xs:element>
+								<xs:element minOccurs="0"
+									name="FirmaConCertificado">
+									<xs:complexType>
+										<xs:sequence>
+											<xs:element minOccurs="0"
+												name="FirmaBase64" type="xs:base64Binary" />
+											<xs:element
+												xmlns:ns1="http://www.w3.org/2000/09/xmldsig#" minOccurs="0"
+												ref="ns1:Signature" />
+											<xs:element minOccurs="0"
+												name="ReferenciaFirma" type="xs:anyType" />
+										</xs:sequence>
+									</xs:complexType>
+								</xs:element>
+							</xs:sequence>
+						</xs:complexType>
+					</xs:element>
+				</xs:sequence>
+				<xs:attribute name="Id" type="xs:ID" />
+				<xs:attribute name="ref" type="xs:string" />
+			</xs:complexType>
+
+		</xs:schema>
+		<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+			xmlns:tns="http://administracionelectronica.gob.es/ENI/XSD/v1.0/expediente-e/metadatos"
+			elementFormDefault="qualified"
+			targetNamespace="http://administracionelectronica.gob.es/ENI/XSD/v1.0/expediente-e/metadatos"
+			version="1.0">
+
+			<xs:element name="metadatosExp" type="tns:TipoMetadatos" />
+
+			<xs:complexType name="TipoMetadatos">
+				<xs:sequence>
+					<xs:element name="VersionNTI" type="xs:anyURI" />
+					<xs:element name="Identificador" type="xs:string" />
+					<xs:element maxOccurs="unbounded" name="Organo"
+						type="xs:string" />
+					<xs:element name="FechaAperturaExpediente"
+						type="xs:dateTime" />
+					<xs:element name="Clasificacion" type="xs:string" />
+					<xs:element name="Estado">
+						<xs:simpleType>
+							<xs:restriction
+								base="tns:enumeracionEstados" />
+						</xs:simpleType>
+					</xs:element>
+					<xs:element maxOccurs="unbounded" minOccurs="0"
+						name="Interesado" type="xs:string" />
+				</xs:sequence>
+				<xs:attribute name="Id" type="xs:ID" />
+			</xs:complexType>
+
+			<xs:simpleType name="enumeracionEstados">
+				<xs:restriction base="xs:string">
+					<xs:enumeration value="E01" />
+					<xs:enumeration value="E02" />
+					<xs:enumeration value="E03" />
+				</xs:restriction>
+			</xs:simpleType>
+
+		</xs:schema>
+		<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+			xmlns:tns="http://administracionelectronica.gob.es/ENI/XSD/v1.0/expediente-e/indice-e/contenido"
+			xmlns:eniexpind="http://administracionelectronica.gob.es/ENI/XSD/v1.0/expediente-e/indice-e"
+			xmlns:eniconexpind="http://administracionelectronica.gob.es/ENI/XSD/v1.0/expediente-e/indice-e/contenido"
+			attributeFormDefault="unqualified" elementFormDefault="qualified"
+			targetNamespace="http://administracionelectronica.gob.es/ENI/XSD/v1.0/expediente-e/indice-e/contenido">
+			<xs:import
+				namespace="http://administracionelectronica.gob.es/ENI/XSD/v1.0/expediente-e/indice-e" />
+			<xs:element name="IndiceContenido"
+				type="tns:TipoIndiceContenido" />
+			<xs:complexType name="TipoIndiceContenido">
+				<xs:sequence>
+					<xs:element name="FechaIndiceElectronico"
+						type="xs:dateTime" />
+					<xs:choice maxOccurs="unbounded" minOccurs="0">
+						<xs:element name="ExpedienteIndizado"
+							type="tns:TipoIndiceContenido" />
+						<xs:element name="DocumentoIndizado"
+							type="tns:TipoDocumentoIndizado" />
+						<xs:element name="CarpetaIndizada"
+							type="tns:TipoCarpetaIndizada" />
+					</xs:choice>
+				</xs:sequence>
+				<xs:attribute name="Id" type="xs:ID" />
+			</xs:complexType>
+			<xs:complexType name="TipoDocumentoIndizado">
+				<xs:sequence>
+					<xs:element name="IdentificadorDocumento"
+						type="xs:string" />
+					<xs:element name="ValorHuella" type="xs:string" />
+					<xs:element name="FuncionResumen" type="xs:string" />
+					<xs:element minOccurs="0"
+						name="FechaIncorporacionExpediente" type="xs:dateTime" />
+					<xs:element minOccurs="0"
+						name="OrdenDocumentoExpediente" type="xs:string" />
+				</xs:sequence>
+				<xs:attribute name="Id" type="xs:ID" />
+			</xs:complexType>
+			<xs:complexType name="TipoCarpetaIndizada">
+				<xs:sequence>
+					<xs:element name="IdentificadorCarpeta"
+						type="xs:string" />
+					<xs:choice maxOccurs="unbounded" minOccurs="0">
+						<xs:element name="CarpetaIndizada"
+							type="tns:TipoCarpetaIndizada" />
+						<xs:element name="ExpedienteIndizado"
+							type="tns:TipoIndiceContenido" />
+						<xs:element name="DocumentoIndizado"
+							type="tns:TipoDocumentoIndizado" />
+					</xs:choice>
+				</xs:sequence>
+				<xs:attribute name="Id" type="xs:ID" />
+			</xs:complexType>
+		</xs:schema>
+		<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+			xmlns:tns="http://administracionelectronica.gob.es/ENI/XSD/v1.0/expediente-e/indice-e"
+			xmlns:ns2="http://administracionelectronica.gob.es/ENI/XSD/v1.0/firma"
+			xmlns:ns1="http://administracionelectronica.gob.es/ENI/XSD/v1.0/expediente-e/indice-e/contenido"
+			xmlns:eniexpind="http://administracionelectronica.gob.es/ENI/XSD/v1.0/expediente-e/indice-e"
+			attributeFormDefault="unqualified" elementFormDefault="qualified"
+			targetNamespace="http://administracionelectronica.gob.es/ENI/XSD/v1.0/expediente-e/indice-e">
+			<xs:import
+				namespace="http://administracionelectronica.gob.es/ENI/XSD/v1.0/expediente-e/indice-e/contenido" />
+			<xs:import
+				namespace="http://administracionelectronica.gob.es/ENI/XSD/v1.0/firma" />
+			<xs:element name="IndiceContenido"
+				type="ns1:TipoIndiceContenido" />
+			<xs:element name="indice" type="tns:TipoIndice" />
+			<xs:complexType name="TipoIndice">
+				<xs:sequence>
+					<xs:element ref="tns:IndiceContenido" />
+					<xs:element ref="ns2:firmas" />
+				</xs:sequence>
+				<xs:attribute name="Id" type="xs:ID" />
+			</xs:complexType>
+		</xs:schema>
+		<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+			xmlns:tns="http://administracionelectronica.gob.es/ENI/XSD/v1.0/expediente-e"
+			xmlns:ns5="http://administracionelectronica.gob.es/ENI/XSD/v1.0/documento-e/contenido"
+			xmlns:ns4="http://administracionelectronica.gob.es/ENI/XSD/v1.0/expediente-e/metadatos"
+			xmlns:ns3="http://administracionelectronica.gob.es/ENI/XSD/v1.0/firma"
+			xmlns:ns2="http://administracionelectronica.gob.es/ENI/XSD/v1.0/expediente-e/indice-e/contenido"
+			xmlns:ns1="http://administracionelectronica.gob.es/ENI/XSD/v1.0/expediente-e/indice-e"
+			attributeFormDefault="unqualified" elementFormDefault="qualified"
+			targetNamespace="http://administracionelectronica.gob.es/ENI/XSD/v1.0/expediente-e">
+			<xs:import
+				namespace="http://administracionelectronica.gob.es/ENI/XSD/v1.0/expediente-e/indice-e" />
+			<xs:import
+				namespace="http://administracionelectronica.gob.es/ENI/XSD/v1.0/expediente-e/indice-e/contenido" />
+			<xs:import
+				namespace="http://administracionelectronica.gob.es/ENI/XSD/v1.0/firma" />
+			<xs:import
+				namespace="http://administracionelectronica.gob.es/ENI/XSD/v1.0/expediente-e/metadatos" />
+			<xs:import
+				namespace="http://administracionelectronica.gob.es/ENI/XSD/v1.0/documento-e/contenido" />
+			<xs:element name="expediente" type="tns:TipoExpediente" />
+			<xs:complexType name="TipoExpediente">
+				<xs:sequence>
+					<xs:element ref="ns1:indice" />
+					<xs:element ref="ns4:metadatosExp" />
+					<xs:element minOccurs="0" name="VisualizacionIndice"
+						type="ns5:TipoContenido" />
+				</xs:sequence>
+				<xs:attribute name="Id" type="xs:ID" />
+			</xs:complexType>
+		</xs:schema>
+		<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+			xmlns:tns="http://administracionelectronica.gob.es/ENI/XSD/v1.0/documento-e/metadatos"
+			elementFormDefault="qualified"
+			targetNamespace="http://administracionelectronica.gob.es/ENI/XSD/v1.0/documento-e/metadatos"
+			version="1.0">
+
+			<xs:element name="metadatos" type="tns:TipoMetadatos" />
+
+			<xs:complexType name="TipoMetadatos">
+				<xs:sequence>
+					<xs:element name="VersionNTI" type="xs:anyURI" />
+					<xs:element name="Identificador" type="xs:string" />
+					<xs:element maxOccurs="unbounded" name="Organo"
+						type="xs:string" />
+					<xs:element name="FechaCaptura" type="xs:dateTime" />
+					<xs:element name="OrigenCiudadanoAdministracion"
+						type="xs:boolean" />
+					<xs:element name="EstadoElaboracion"
+						type="tns:TipoEstadoElaboracion" />
+					<xs:element name="TipoDocumental"
+						type="tns:tipoDocumental" />
+				</xs:sequence>
+				<xs:attribute name="Id" type="xs:ID" />
+			</xs:complexType>
+
+			<xs:complexType name="TipoEstadoElaboracion">
+				<xs:sequence>
+					<xs:element name="ValorEstadoElaboracion"
+						type="tns:enumeracionEstadoElaboracion" />
+					<xs:element minOccurs="0"
+						name="IdentificadorDocumentoOrigen" type="xs:string" />
+				</xs:sequence>
+			</xs:complexType>
+
+			<xs:simpleType name="enumeracionEstadoElaboracion">
+				<xs:restriction base="xs:string">
+					<xs:enumeration value="EE01" />
+					<xs:enumeration value="EE02" />
+					<xs:enumeration value="EE03" />
+					<xs:enumeration value="EE04" />
+					<xs:enumeration value="EE99" />
+				</xs:restriction>
+			</xs:simpleType>
+
+			<xs:simpleType name="tipoDocumental">
+				<xs:restriction base="xs:string">
+					<xs:enumeration value="TD01" />
+					<xs:enumeration value="TD02" />
+					<xs:enumeration value="TD03" />
+					<xs:enumeration value="TD04" />
+					<xs:enumeration value="TD05" />
+					<xs:enumeration value="TD06" />
+					<xs:enumeration value="TD07" />
+					<xs:enumeration value="TD08" />
+					<xs:enumeration value="TD09" />
+					<xs:enumeration value="TD10" />
+					<xs:enumeration value="TD11" />
+					<xs:enumeration value="TD12" />
+					<xs:enumeration value="TD13" />
+					<xs:enumeration value="TD14" />
+					<xs:enumeration value="TD15" />
+					<xs:enumeration value="TD16" />
+					<xs:enumeration value="TD17" />
+					<xs:enumeration value="TD18" />
+					<xs:enumeration value="TD19" />
+					<xs:enumeration value="TD20" />
+					<xs:enumeration value="TD99" />
+				</xs:restriction>
+			</xs:simpleType>
+
+		</xs:schema>
+		<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+			xmlns:tns="http://administracionelectronica.gob.es/ENI/XSD/v1.0/documento-e/contenido"
+			elementFormDefault="qualified"
+			targetNamespace="http://administracionelectronica.gob.es/ENI/XSD/v1.0/documento-e/contenido"
+			version="1.0">
+
+			<xs:element name="contenido" type="tns:TipoContenido" />
+
+			<xs:complexType name="TipoContenido">
+				<xs:sequence>
+					<xs:element minOccurs="0" name="DatosXML"
+						type="xs:anyType" />
+					<xs:element minOccurs="0" name="ValorBinario"
+						type="xs:base64Binary" />
+					<xs:element minOccurs="0" name="referenciaFichero"
+						type="xs:string" />
+					<xs:element name="NombreFormato" type="xs:string" />
+				</xs:sequence>
+				<xs:attribute name="Id" type="xs:ID" />
+			</xs:complexType>
+
+		</xs:schema>
+		<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+			xmlns:tns="http://administracionelectronica.gob.es/ENI/XSD/v1.0/documento-e"
+			xmlns:ns3="http://administracionelectronica.gob.es/ENI/XSD/v1.0/firma"
+			xmlns:ns2="http://administracionelectronica.gob.es/ENI/XSD/v1.0/documento-e/metadatos"
+			xmlns:ns1="http://administracionelectronica.gob.es/ENI/XSD/v1.0/documento-e/contenido"
+			attributeFormDefault="unqualified" elementFormDefault="qualified"
+			targetNamespace="http://administracionelectronica.gob.es/ENI/XSD/v1.0/documento-e">
+			<xs:import
+				namespace="http://administracionelectronica.gob.es/ENI/XSD/v1.0/documento-e/contenido" />
+			<xs:import
+				namespace="http://administracionelectronica.gob.es/ENI/XSD/v1.0/documento-e/metadatos" />
+			<xs:import
+				namespace="http://administracionelectronica.gob.es/ENI/XSD/v1.0/firma" />
+			<xs:element name="documento" type="tns:TipoDocumento" />
+			<xs:complexType name="TipoDocumento">
+				<xs:sequence>
+					<xs:element ref="ns1:contenido" />
+					<xs:element ref="ns2:metadatos" />
+					<xs:element minOccurs="0" ref="ns3:firmas" />
+				</xs:sequence>
+				<xs:attribute name="Id" type="xs:ID" />
+			</xs:complexType>
+		</xs:schema>
+	</wsdl:types>
+	<wsdl:message name="SolicitarAcuseReciboExpediente">
+		<wsdl:part element="tns:SolicitarAcuseReciboExpediente"
+			name="parameters">
+		</wsdl:part>
+	</wsdl:message>
+	<wsdl:message name="ConsultarEstadoEnvioExpediente">
+		<wsdl:part element="tns:ConsultarEstadoEnvioExpediente"
+			name="parameters">
+		</wsdl:part>
+	</wsdl:message>
+	<wsdl:message name="AnularEnvioExpedienteResponse">
+		<wsdl:part element="tns:AnularEnvioExpedienteResponse"
+			name="parameters">
+		</wsdl:part>
+	</wsdl:message>
+	<wsdl:message name="AnularEnvioExpedienteFault_Exception">
+		<wsdl:part element="tns:AnularEnvioExpedienteFault"
+			name="AnularEnvioExpedienteFault_Exception">
+		</wsdl:part>
+	</wsdl:message>
+	<wsdl:message name="EnviarDocumentoElectronicoResponse">
+		<wsdl:part element="tns:EnviarDocumentoElectronicoResponse"
+			name="parameters">
+		</wsdl:part>
+	</wsdl:message>
+	<wsdl:message name="EnviarDocumentoElectronicoFault_Exception">
+		<wsdl:part element="tns:EnviarDocumentoElectronicoFault"
+			name="EnviarDocumentoElectronicoFault_Exception">
+		</wsdl:part>
+	</wsdl:message>
+	<wsdl:message
+		name="ConsultarEstadoEnvioExpedienteFault_Exception">
+		<wsdl:part element="tns:ConsultarEstadoEnvioExpedienteFault"
+			name="ConsultarEstadoEnvioExpedienteFault_Exception">
+		</wsdl:part>
+	</wsdl:message>
+	<wsdl:message name="SolicitarAcuseReciboExpedienteResponse">
+		<wsdl:part element="tns:SolicitarAcuseReciboExpedienteResponse"
+			name="parameters">
+		</wsdl:part>
+	</wsdl:message>
+	<wsdl:message
+		name="SolicitarAcuseReciboExpedienteFault_Exception">
+		<wsdl:part element="tns:SolicitarAcuseReciboExpedienteFault"
+			name="SolicitarAcuseReciboExpedienteFault_Exception">
+		</wsdl:part>
+	</wsdl:message>
+	<wsdl:message name="EnviarDocumentoElectronico">
+		<wsdl:part element="tns:EnviarDocumentoElectronico"
+			name="parameters">
+		</wsdl:part>
+	</wsdl:message>
+	<wsdl:message name="IniciarEnvioExpediente">
+		<wsdl:part element="tns:IniciarEnvioExpediente"
+			name="parameters">
+		</wsdl:part>
+	</wsdl:message>
+	<wsdl:message name="IniciarEnvioExpedienteResponse">
+		<wsdl:part element="tns:IniciarEnvioExpedienteResponse"
+			name="parameters">
+		</wsdl:part>
+	</wsdl:message>
+	<wsdl:message name="ConsultarEstadoEnvioExpedienteResponse">
+		<wsdl:part element="tns:ConsultarEstadoEnvioExpedienteResponse"
+			name="parameters">
+		</wsdl:part>
+	</wsdl:message>
+	<wsdl:message name="IniciarEnvioExpedienteFault_Exception">
+		<wsdl:part element="tns:IniciarEnvioExpedienteFault"
+			name="IniciarEnvioExpedienteFault_Exception">
+		</wsdl:part>
+	</wsdl:message>
+	<wsdl:message name="AnularEnvioExpediente">
+		<wsdl:part element="tns:AnularEnvioExpediente"
+			name="parameters">
+		</wsdl:part>
+	</wsdl:message>
+	<wsdl:portType name="ServicioEnvioExpedientes">
+		<wsdl:operation name="SolicitarAcuseReciboExpediente">
+			<wsdl:input message="tns:SolicitarAcuseReciboExpediente"
+				name="SolicitarAcuseReciboExpediente">
+			</wsdl:input>
+			<wsdl:output
+				message="tns:SolicitarAcuseReciboExpedienteResponse"
+				name="SolicitarAcuseReciboExpedienteResponse">
+			</wsdl:output>
+			<wsdl:fault
+				message="tns:SolicitarAcuseReciboExpedienteFault_Exception"
+				name="SolicitarAcuseReciboExpedienteFault_Exception">
+			</wsdl:fault>
+		</wsdl:operation>
+		<wsdl:operation name="IniciarEnvioExpediente">
+			<wsdl:input message="tns:IniciarEnvioExpediente"
+				name="IniciarEnvioExpediente">
+			</wsdl:input>
+			<wsdl:output message="tns:IniciarEnvioExpedienteResponse"
+				name="IniciarEnvioExpedienteResponse">
+			</wsdl:output>
+			<wsdl:fault
+				message="tns:IniciarEnvioExpedienteFault_Exception"
+				name="IniciarEnvioExpedienteFault_Exception">
+			</wsdl:fault>
+		</wsdl:operation>
+		<wsdl:operation name="ConsultarEstadoEnvioExpediente">
+			<wsdl:input message="tns:ConsultarEstadoEnvioExpediente"
+				name="ConsultarEstadoEnvioExpediente">
+			</wsdl:input>
+			<wsdl:output
+				message="tns:ConsultarEstadoEnvioExpedienteResponse"
+				name="ConsultarEstadoEnvioExpedienteResponse">
+			</wsdl:output>
+			<wsdl:fault
+				message="tns:ConsultarEstadoEnvioExpedienteFault_Exception"
+				name="ConsultarEstadoEnvioExpedienteFault_Exception">
+			</wsdl:fault>
+		</wsdl:operation>
+		<wsdl:operation name="AnularEnvioExpediente">
+			<wsdl:input message="tns:AnularEnvioExpediente"
+				name="AnularEnvioExpediente">
+			</wsdl:input>
+			<wsdl:output message="tns:AnularEnvioExpedienteResponse"
+				name="AnularEnvioExpedienteResponse">
+			</wsdl:output>
+			<wsdl:fault
+				message="tns:AnularEnvioExpedienteFault_Exception"
+				name="AnularEnvioExpedienteFault_Exception">
+			</wsdl:fault>
+		</wsdl:operation>
+		<wsdl:operation name="EnviarDocumentoElectronico">
+			<wsdl:input message="tns:EnviarDocumentoElectronico"
+				name="EnviarDocumentoElectronico">
+			</wsdl:input>
+			<wsdl:output
+				message="tns:EnviarDocumentoElectronicoResponse"
+				name="EnviarDocumentoElectronicoResponse">
+			</wsdl:output>
+			<wsdl:fault
+				message="tns:EnviarDocumentoElectronicoFault_Exception"
+				name="EnviarDocumentoElectronicoFault_Exception">
+			</wsdl:fault>
+		</wsdl:operation>
+	</wsdl:portType>
+	<wsdl:binding name="ServicioEnvioExpedientesSoapBinding"
+		type="tns:ServicioEnvioExpedientes">
+		<soap:binding style="document"
+			transport="http://schemas.xmlsoap.org/soap/http" />
+		<wsdl:operation name="SolicitarAcuseReciboExpediente">
+			<soap:operation
+				soapAction="http://expedientes.ws.teac.gob.es/SolicitarAcuseReciboExpediente"
+				style="document" />
+			<wsdl:input name="SolicitarAcuseReciboExpediente">
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output
+				name="SolicitarAcuseReciboExpedienteResponse">
+				<soap:body use="literal" />
+			</wsdl:output>
+			<wsdl:fault
+				name="SolicitarAcuseReciboExpedienteFault_Exception">
+				<soap:fault
+					name="SolicitarAcuseReciboExpedienteFault_Exception" use="literal" />
+			</wsdl:fault>
+		</wsdl:operation>
+		<wsdl:operation name="IniciarEnvioExpediente">
+			<soap:operation
+				soapAction="http://expedientes.ws.teac.gob.es/IniciarEnvioExpediente"
+				style="document" />
+			<wsdl:input name="IniciarEnvioExpediente">
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output name="IniciarEnvioExpedienteResponse">
+				<soap:body use="literal" />
+			</wsdl:output>
+			<wsdl:fault name="IniciarEnvioExpedienteFault_Exception">
+				<soap:fault name="IniciarEnvioExpedienteFault_Exception"
+					use="literal" />
+			</wsdl:fault>
+		</wsdl:operation>
+		<wsdl:operation name="ConsultarEstadoEnvioExpediente">
+			<soap:operation
+				soapAction="http://expedientes.ws.teac.gob.es/ConsultarEstadoEnvioExpediente"
+				style="document" />
+			<wsdl:input name="ConsultarEstadoEnvioExpediente">
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output
+				name="ConsultarEstadoEnvioExpedienteResponse">
+				<soap:body use="literal" />
+			</wsdl:output>
+			<wsdl:fault
+				name="ConsultarEstadoEnvioExpedienteFault_Exception">
+				<soap:fault
+					name="ConsultarEstadoEnvioExpedienteFault_Exception" use="literal" />
+			</wsdl:fault>
+		</wsdl:operation>
+		<wsdl:operation name="AnularEnvioExpediente">
+			<soap:operation
+				soapAction="http://expedientes.ws.teac.gob.es/AnularEnvioExpediente"
+				style="document" />
+			<wsdl:input name="AnularEnvioExpediente">
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output name="AnularEnvioExpedienteResponse">
+				<soap:body use="literal" />
+			</wsdl:output>
+			<wsdl:fault name="AnularEnvioExpedienteFault_Exception">
+				<soap:fault name="AnularEnvioExpedienteFault_Exception"
+					use="literal" />
+			</wsdl:fault>
+		</wsdl:operation>
+		<wsdl:operation name="EnviarDocumentoElectronico">
+			<soap:operation
+				soapAction="http://expedientes.ws.teac.gob.es/EnviarDocumentoElectronico"
+				style="document" />
+			<wsdl:input name="EnviarDocumentoElectronico">
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output name="EnviarDocumentoElectronicoResponse">
+				<soap:body use="literal" />
+			</wsdl:output>
+			<wsdl:fault
+				name="EnviarDocumentoElectronicoFault_Exception">
+				<soap:fault
+					name="EnviarDocumentoElectronicoFault_Exception" use="literal" />
+			</wsdl:fault>
+		</wsdl:operation>
+	</wsdl:binding>
+	<wsdl:service name="ServicioEnvioExpedientes">
+		<wsdl:port binding="tns:ServicioEnvioExpedientesSoapBinding"
+			name="ServicioEnvioExpedientesSOAP">
+			<soap:address
+				location="https://bus:7101/WSTEAC/ProxyServices/PXEnvioExpedientesTEAC" />
+		</wsdl:port>
+	</wsdl:service>
+</wsdl:definitions>
