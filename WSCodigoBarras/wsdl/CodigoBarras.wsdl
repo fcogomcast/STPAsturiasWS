@@ -1,0 +1,304 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://codigobarras.servicios.tributasenasturias.es" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="CodigoBarras" targetNamespace="http://codigobarras.servicios.tributasenasturias.es">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://codigobarras.servicios.tributasenasturias.es">
+      <xsd:element name="generaQR">
+        <xsd:complexType>
+          <xsd:sequence>
+          	<xsd:element name="contenido_a_codificar"
+          		type="xsd:string" minOccurs="1" maxOccurs="1">
+          		<xsd:annotation>
+          			<xsd:documentation>
+          				Contenido a codificar en el código QR.
+          			</xsd:documentation>
+          		</xsd:annotation>
+          	</xsd:element>
+          	<xsd:element name="ancho_imagen_pixeles" type="xsd:int"
+          		minOccurs="1" maxOccurs="1">
+          		<xsd:annotation>
+          			<xsd:documentation>
+          				Ancho de la imagen en píxeles. Hay que contar
+          				que tendrá un margen en blanco entre el código
+          				QR y el borde la imagen. Como las imágenes
+          				serán cuadradas, sólo es necesario este
+          				parámetro.
+          			</xsd:documentation>
+          		</xsd:annotation>
+          	</xsd:element>
+          	<xsd:element name="alto_imagen_pixeles" type="xsd:int"
+          		minOccurs="0" maxOccurs="1">
+          		<xsd:annotation>
+          			<xsd:documentation>
+          				Redundante, dado que las imágenes son
+          				cuadradas. Si en el futuro se permitiesen
+          				rectangulares, podría tener sentido. Por el
+          				momento no interviene en la generación del
+          				código
+          			</xsd:documentation>
+          		</xsd:annotation>
+          	</xsd:element>
+          	<xsd:element name="formato_imagen" minOccurs="0"
+          		maxOccurs="1">
+                            <xsd:annotation>
+                            	<xsd:documentation>
+                            		Formato de la imagen resultante.
+                            		Puede tomar los valores de la
+                            		enumeración, JPG, PNG, GIF. Si no se
+                            		indica, el servicio tomará un
+                            		formato por defecto, e informará a
+                            		la salida.
+                            	</xsd:documentation>
+                            </xsd:annotation>
+                            <xsd:simpleType>
+          			<xsd:restriction base="xsd:string">
+          				<xsd:enumeration value="JPG"></xsd:enumeration>
+          				<xsd:enumeration value="PNG"></xsd:enumeration>
+          				<xsd:enumeration value="GIF"></xsd:enumeration>
+          			</xsd:restriction>
+          		</xsd:simpleType>
+          	</xsd:element>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="generaQRResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+          	<xsd:element name="imagen_qr" type="xsd:base64Binary"
+          		minOccurs="1" maxOccurs="1">
+          		<xsd:annotation>
+          			<xsd:documentation>
+          				Contenido binario de la imagen que contiene el
+          				código QR
+          			</xsd:documentation>
+          		</xsd:annotation>
+          	</xsd:element>
+          	<xsd:element name="formato_imagen" type="xsd:string"
+          		minOccurs="1" maxOccurs="1">
+          		<xsd:annotation>
+          			<xsd:documentation>
+          				Formato de la imagen resultante
+          			</xsd:documentation>
+          		</xsd:annotation>
+          	</xsd:element>
+          	<xsd:element name="ancho_imagen_pixeles" type="xsd:int"
+          		minOccurs="1" maxOccurs="1">
+          		<xsd:annotation>
+          			<xsd:documentation>
+          				Ancho de la imagen resultante. Deberá
+          				corresponder al parámetro de entrada, a menos
+          				que se haya indicado "0", en cuyo caso el
+          				servicio escogerá un tamaño por defecto.
+          			</xsd:documentation>
+          		</xsd:annotation>
+          	</xsd:element>
+          	<xsd:element name="alto_imagen_pixeles" type="xsd:int"
+          		minOccurs="1" maxOccurs="1">
+          		<xsd:annotation>
+          			<xsd:documentation>
+          				Alto de la imagen resultante
+          			</xsd:documentation>
+          		</xsd:annotation>
+          	</xsd:element>
+          	<xsd:element name="es_error" type="xsd:boolean" minOccurs="1" maxOccurs="1">
+          		<xsd:annotation>
+          			<xsd:documentation>
+          				Indicador de error en la ejecución. true= hubo
+          				error, false= no lo hubo
+          			</xsd:documentation>
+          		</xsd:annotation></xsd:element>
+          	<xsd:element name="mensaje_error" type="xsd:string" minOccurs="0" maxOccurs="1">
+          		<xsd:annotation>
+          			<xsd:documentation>
+          				Mensaje de error, en caso de que es_error =
+          				true
+          			</xsd:documentation>
+          		</xsd:annotation></xsd:element>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="generaQRPorTipo">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="tipo_qr" minOccurs="1" maxOccurs="1">
+            	<xsd:annotation>
+            		<xsd:documentation>
+            			Código del tipo de QR a generar. Por ejemplo,
+            			pago por referencia.
+            		</xsd:documentation>
+            	</xsd:annotation>
+            	<xsd:simpleType>
+            		<xsd:restriction base="xsd:string">
+            			<xsd:enumeration value="PAGO_REF"></xsd:enumeration>
+            		</xsd:restriction>
+            	</xsd:simpleType>
+            </xsd:element>
+            <xsd:element name="datos_qr"
+          		type="xsd:string" minOccurs="1" maxOccurs="1">
+          		<xsd:annotation>
+          			<xsd:documentation>
+          				Datos necesarios para la generación del tipo de QR escogido. Por ejemplo, número de referencia para un código QR de pago por referencia.
+          			</xsd:documentation>
+          		</xsd:annotation>
+          	</xsd:element>
+          	<xsd:element name="ancho_imagen_pixeles" type="xsd:int"
+          		minOccurs="1" maxOccurs="1">
+          		<xsd:annotation>
+          			<xsd:documentation>
+          				Ancho de la imagen en píxeles. Hay que contar
+          				que tendrá un margen en blanco entre el código
+          				QR y el borde la imagen. Como las imágenes
+          				serán cuadradas, sólo es necesario este
+          				parámetro.
+          			</xsd:documentation>
+          		</xsd:annotation>
+          	</xsd:element>
+          	<xsd:element name="alto_imagen_pixeles" type="xsd:int"
+          		minOccurs="0" maxOccurs="1">
+          		<xsd:annotation>
+          			<xsd:documentation>
+          				Redundante, dado que las imágenes son
+          				cuadradas. Si en el futuro se permitiesen
+          				rectangulares, podría tener sentido. Por el
+          				momento no interviene en la generación del
+          				código
+          			</xsd:documentation>
+          		</xsd:annotation>
+          	</xsd:element>
+          	<xsd:element name="formato_imagen" minOccurs="0"
+          		maxOccurs="1">
+                            <xsd:annotation>
+                            	<xsd:documentation>
+                            		Formato de la imagen resultante.
+                            		Puede tomar los valores de la
+                            		enumeración, JPG, PNG, GIF. Si no se
+                            		indica, el servicio tomará un
+                            		formato por defecto, e informará a
+                            		la salida.
+                            	</xsd:documentation>
+                            </xsd:annotation>
+                            <xsd:simpleType>
+          			<xsd:restriction base="xsd:string">
+          				<xsd:enumeration value="JPG"></xsd:enumeration>
+          				<xsd:enumeration value="PNG"></xsd:enumeration>
+          				<xsd:enumeration value="GIF"></xsd:enumeration>
+          			</xsd:restriction>
+          		</xsd:simpleType>
+          	</xsd:element>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="generaQRPorTipoResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+          	<xsd:element name="imagen_qr" type="xsd:base64Binary"
+          		minOccurs="1" maxOccurs="1">
+          		<xsd:annotation>
+          			<xsd:documentation>
+          				Contenido binario de la imagen que contiene el
+          				código QR
+          			</xsd:documentation>
+          		</xsd:annotation>
+          	</xsd:element>
+          	<xsd:element name="formato_imagen" type="xsd:string"
+          		minOccurs="1" maxOccurs="1">
+          		<xsd:annotation>
+          			<xsd:documentation>
+          				Formato de la imagen resultante
+          			</xsd:documentation>
+          		</xsd:annotation>
+          	</xsd:element>
+          	<xsd:element name="ancho_imagen_pixeles" type="xsd:int"
+          		minOccurs="1" maxOccurs="1">
+          		<xsd:annotation>
+          			<xsd:documentation>
+          				Ancho de la imagen resultante. Deberá
+          				corresponder al parámetro de entrada, a menos
+          				que se haya indicado "0", en cuyo caso el
+          				servicio escogerá un tamaño por defecto.
+          			</xsd:documentation>
+          		</xsd:annotation>
+          	</xsd:element>
+          	<xsd:element name="alto_imagen_pixeles" type="xsd:int"
+          		minOccurs="1" maxOccurs="1">
+          		<xsd:annotation>
+          			<xsd:documentation>
+          				Alto de la imagen resultante
+          			</xsd:documentation>
+          		</xsd:annotation>
+          	</xsd:element>
+          	<xsd:element name="texto_equivalente_qr" type="xsd:string"
+          		minOccurs="1" maxOccurs="1">
+          		<xsd:annotation>
+          			<xsd:documentation>
+          				Contenido textual equivalente al QR obtenido. Por ejemplo, la URL codificada
+          			</xsd:documentation>
+          		</xsd:annotation>
+          	</xsd:element>
+          	<xsd:element name="es_error" type="xsd:boolean" minOccurs="1" maxOccurs="1">
+          		<xsd:annotation>
+          			<xsd:documentation>
+          				Indicador de error en la ejecución. true= hubo
+          				error, false= no lo hubo
+          			</xsd:documentation>
+          		</xsd:annotation></xsd:element>
+          	<xsd:element name="mensaje_error" type="xsd:string" minOccurs="0" maxOccurs="1">
+          		<xsd:annotation>
+          			<xsd:documentation>
+          				Mensaje de error, en caso de que es_error =
+          				true
+          			</xsd:documentation>
+          		</xsd:annotation></xsd:element>
+          </xsd:sequence>
+        </xsd:complexType>
+        </xsd:element>
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="generaQRRequest">
+    <wsdl:part element="tns:generaQR" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="generaQRResponse">
+    <wsdl:part element="tns:generaQRResponse" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="generaQRPorTipoRequest">
+    <wsdl:part element="tns:generaQRPorTipo" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="generaQRPorTipoResponse">
+    <wsdl:part element="tns:generaQRPorTipoResponse" name="parameters"/>
+  </wsdl:message>
+  <wsdl:portType name="CodigoBarras">
+    <wsdl:operation name="generaQR">
+      <wsdl:input message="tns:generaQRRequest"/>
+      <wsdl:output message="tns:generaQRResponse"/>
+    </wsdl:operation>
+    <wsdl:operation name="generaQRPorTipo">
+      <wsdl:input message="tns:generaQRPorTipoRequest"/>
+      <wsdl:output message="tns:generaQRPorTipoResponse"/>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="CodigoBarrasSOAP" type="tns:CodigoBarras">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="generaQR">
+      <soap:operation soapAction="http://codigobarras.servicios.tributasenasturias.es/generaQR"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="generaQRPorTipo">
+      <soap:operation soapAction="http://codigobarras.servicios.tributasenasturias.es/generaQR"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="CodigoBarras">
+    <wsdl:port binding="tns:CodigoBarrasSOAP" name="CodigoBarrasSOAP">
+      <soap:address location="http://bus:7101/WSInternos/ProxyServices/PXCodigoBarras"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
