@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Created with Liquid XML Studio Developer Edition 8.1.7.2743 (http://www.liquid-technologies.com) -->
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="estructuras">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="estruc">
+          <xs:complexType> 
+            <xs:sequence>
+              <xs:element minOccurs="0" maxOccurs="unbounded" name="fila">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element minOccurs="0" name="ID_ORGA" type="xs:string"/>
+                    <xs:element minOccurs="0" name="TITULO_DARG" type="xs:string"/>
+                    <xs:element minOccurs="0" name="NUM_EXP_DARG" type="xs:string"/>
+                    <xs:element minOccurs="0" name="FECHA_DARG" type="xs:string"/>
+                    <xs:element minOccurs="0" name="DESC_TDOC_DARG" type="xs:string"/>
+                    <xs:element minOccurs="0" name="DESC_SDOC_DARG" type="xs:string"/>
+                    <xs:element minOccurs="0" name="OFI_PROP_DARG" type="xs:string"/>
+                    <xs:element minOccurs="0" name="DESC_OFI_PROP_DARG" type="xs:string"/>
+                    <xs:element minOccurs="0" name="OFI_DEST_DARG" type="xs:string"/>
+                    <xs:element minOccurs="0" name="DESC_OFI_DEST_DARG" type="xs:string"/>
+                    <xs:element minOccurs="0" name="NOM_DEST_DARG" type="xs:string"/>
+                    <xs:element minOccurs="0" name="DIR_DEST_DARG" type="xs:string"/>
+                    <xs:element minOccurs="0" name="CP_DEST_DARG" type="xs:string"/>
+                    <xs:element minOccurs="0" name="MUNI_DEST_DARG" type="xs:string"/>
+                    <xs:element minOccurs="0" name="PROV_DEST_DARG" type="xs:string"/>
+                    <xs:element minOccurs="0" name="NOM_SP_DARG" type="xs:string"/>
+                    <xs:element minOccurs="0" name="NIF_SP_DARG" type="xs:string"/>
+                    <xs:element minOccurs="0" name="TEL_SP_DARG" type="xs:string"/>
+                    <xs:element minOccurs="0" name="DIR_SP_DARG" type="xs:string"/>
+                    <xs:element minOccurs="0" name="CP_SP_DARG" type="xs:string"/>
+                    <xs:element minOccurs="0" name="MUNI_SP_DARG" type="xs:string"/>
+                    <xs:element minOccurs="0" name="PROV_SP_DARG" type="xs:string"/>
+                    <xs:element minOccurs="0" name="EXAMINADO_DARG" type="xs:string"/>
+                    <xs:element minOccurs="0" name="CONSIDERANDO_DARG" type="xs:string"/>
+                    <xs:element minOccurs="0" name="PROPUESTA_DARG" type="xs:string" />
+                    <xs:element minOccurs="0" name="ID_TEXT_RECURSO" type="xs:string" />
+                    <xs:element minOccurs="0" name="RATIFICACION_DARG" type="xs:string"/>
+                    <xs:element minOccurs="0" name="PIE_CARGO_DARG" type="xs:string"/>
+                    <xs:element minOccurs="0" name="PIE_FECHA_DARG" type="xs:string"/>
+                    <xs:element minOccurs="0" name="FIRMA_DARG" type="xs:string"/>
+                    <xs:element minOccurs="0" name="CONCEPTO_DARG" type="xs:string"/>
+                    <xs:element minOccurs="0" name="MUNICIPIO_DARG" type="xs:string"/>
+                    <xs:element minOccurs="0" name="OBJETO_TRIB_DARG" type="xs:string"/>
+                    <xs:element minOccurs="0" name="NUM_FIJO_DARG" type="xs:string"/>
+                    <xs:element minOccurs="0" name="IU_NUM_DARG" type="xs:string"/>
+                    <xs:element minOccurs="0" name="IU_ESC_DARG" type="xs:string"/>
+                    <xs:element minOccurs="0" name="IU_REF_CAT_1_DARG" type="xs:string"/>
+                    <xs:element minOccurs="0" name="IU_REF_CAT_2_DARG" type="xs:string"/>
+                    <xs:element minOccurs="0" name="IU_REF_CAT_NUM_DARG" type="xs:string"/>
+                    <xs:element minOccurs="0" name="IU_REF_CAT_DC_1_DARG" type="xs:string"/>
+                    <xs:element minOccurs="0" name="IU_REF_CAT_DC_2_DARG" type="xs:string"/>
+                    <xs:element minOccurs="0" name="IAE_DOMICILIO" type="xs:string"/>
+                    <xs:element minOccurs="0" name="IAE_SECCION_DARG" type="xs:string"/>
+                    <xs:element minOccurs="0" name="IAE_EPIGRAFE_DARG" type="xs:string"/>
+                    <xs:element minOccurs="0" name="IAE_TARIFA_DARG" type="xs:string"/>
+                    <xs:element minOccurs="0" name="IAE_COEF_UNICO_DARG" type="xs:string"/>
+                    <xs:element minOccurs="0" name="IAE_INDICE_SITUACION_DARG" type="xs:string"/>
+                    <xs:element minOccurs="0" name="IAE_RECARGO_PROV_DARG" type="xs:string"/>
+                    <xs:element minOccurs="0" name="IAE_BONIFICACION_DARG" type="xs:string"/>
+                    <xs:element minOccurs="0" name="IAE_IMPORTE_DARG" type="xs:string"/>
+                    <xs:element minOccurs="0" name="IVTM_NUM_BASTIDOR_DARG" type="xs:string"/>
+                    <xs:element minOccurs="0" name="OTROS_DATOS_DARG" type="xs:string"/>
+                    <xs:element minOccurs="0" name="ORGANO_PIE_DARG" type="xs:string"/>
+                    <xs:element minOccurs="0" name="COD_SUCO_SUCO" type="xs:string"/>
+                    <xs:element minOccurs="0" name="COD_CONC_CONC" type="xs:string"/>
+                    <xs:element minOccurs="0" name="POSICION" type="xs:string" />
+                    <xs:element minOccurs="0" name="COD_TEXT_TEXTOS" type="xs:string" />
+                    <xs:element minOccurs="0" name="STRING_CADE" type="xs:string" />
+                    <xs:element minOccurs="0" name="NOMBRE_CONTRIB_RICA" type="xs:string" />
+                    <xs:element minOccurs="0" name="NIF_CONTRIB_RICA" type="xs:string" />
+                    <xs:element minOccurs="0" name="CALLE_DIRE" type="xs:string" />
+                    <xs:element minOccurs="0" name="CALLE_AMPLIACION_DIRE" type="xs:string"/>
+                    <xs:element minOccurs="0" name="DISTRITO_DIRE" type="xs:string" />
+                    <xs:element minOccurs="0" name="MUNICIPIO_RICA" type="xs:string" />
+                    <xs:element minOccurs="0" name="PROVINCIA_RICA" type="xs:string" />
+                    <xs:element minOccurs="0" name="NOMBRE_ORGA" type="xs:string" />
+                    <xs:element minOccurs="0" name="DESCR_CONC" type="xs:string" />
+                    <xs:element minOccurs="0" name="PERIODO_VALO" type="xs:string" />
+                    <xs:element minOccurs="0" name="ANYO_CARGO_CARG" type="xs:string" />
+                    <xs:element minOccurs="0" name="OBJ_TRIB_VALO" type="xs:string"/>
+                    <xs:element minOccurs="0" name="NUM_FIJO_VALO" type="xs:string" />
+                    <xs:element minOccurs="0" name="FECHA_INICIO_VOLU" type="xs:string" />
+                    <xs:element minOccurs="0" name="FECHA_FIN_VOLU" type="xs:string" />
+                    <xs:element minOccurs="0" name="NUMERO_VALO" type="xs:string" />
+                    <xs:element minOccurs="0" name="NOMBRE_SP_VALO" type="xs:string" />
+                    <xs:element minOccurs="0" name="NIF_SP_VALO" type="xs:string" />
+                    <xs:element minOccurs="0" name="REFERENCIA_RICA" type="xs:string" />
+                    <xs:element minOccurs="0" name="IDENTIFICACION_RICA" type="xs:string" />
+                    <xs:element minOccurs="0" name="IMPORTE_VALO" type="xs:string" />
+                    <xs:element minOccurs="0" name="ENTIDAD_VOLU" type="xs:string" />
+                    <xs:element minOccurs="0" name="PLAZ_ACTUAL_RICA" type="xs:string" />
+                    <xs:element minOccurs="0" name="PLAZOS_PTES_RICA" type="xs:string"/>
+                    <xs:element minOccurs="0" name="IMPORTE_PTE_RICA" type="xs:string"/>
+                    <xs:element minOccurs="0" name="FECHA_ALTA_DOMV" type="xs:string"/>
+                    <xs:element minOccurs="0" name="CCC_DOMV" type="xs:string"/>
+                    <xs:element minOccurs="0" name="COD_TFVA" type="xs:string" />
+                    <xs:element minOccurs="0" name="PRINCIPAL_RV" type="xs:string" />
+                    <xs:element minOccurs="0" name="PORC_RECARGO_RV" type="xs:string" />
+                    <xs:element minOccurs="0" name="RECARGO_RV" type="xs:string" />
+                    <xs:element minOccurs="0" name="COSTAS_RV" type="xs:string" />
+                    <xs:element minOccurs="0" name="INTERESES_RV" type="xs:string" />
+                    <xs:element minOccurs="0" name="INGRESOS_RV" type="xs:string" />
+                    <xs:element minOccurs="0" name="TIPOINFORMEACCESS" type="xs:string" />
+                    <xs:element minOccurs="0" name="DETALLE_1_RICA" type="xs:string" />
+                    <xs:element minOccurs="0" name="DETALLE_2_RICA" type="xs:string" />
+                    <xs:element minOccurs="0" name="DETALLE_3_RICA" type="xs:string" />
+                    <xs:element minOccurs="0" name="DETALLE_4_RICA" type="xs:string" />
+                    <xs:element minOccurs="0" name="DETALLE_5_RICA" type="xs:string"/>
+                    <xs:element minOccurs="0" name="DETALLE_6_RICA" type="xs:string"/>
+                    <xs:element minOccurs="0" name="DETALLE_7_RICA" type="xs:string"/>
+                    <xs:element minOccurs="0" name="DETALLE_8_RICA" type="xs:string"/>
+                    <xs:element minOccurs="0" name="DETALLE_9_RICA" type="xs:string"/>
+                    <xs:element minOccurs="0" name="DETALLE_10_RICA" type="xs:string" />
+                    <xs:element minOccurs="0" name="DETALLE_11_RICA" type="xs:string" />
+                    <xs:element minOccurs="0" name="DETALLE_12_RICA" type="xs:string" />
+                    <xs:element minOccurs="0" name="DETALLE_13_RICA" type="xs:string" />
+                    <xs:element minOccurs="0" name="DETALLE_14_RICA" type="xs:string"/>
+                    <xs:element minOccurs="0" name="DETALLE_15_RICA" type="xs:string"/>
+                    <xs:element minOccurs="0" name="COD_TESV_RICA" type="xs:string" />
+                    <xs:element minOccurs="0" name="DESC_FOPA_RICA" type="xs:string" />
+                    <xs:element minOccurs="0" name="FECHA_COBRO_RICA" type="xs:string"/>
+                    <xs:element minOccurs="0" name="USCO_RICA" type="xs:string" />
+                    <xs:element minOccurs="0" name="DESCRL_CONC" type="xs:string" />
+                    <xs:element minOccurs="0" name="ACTIV_CONC" type="xs:string"/>
+                    <xs:element minOccurs="0" name="MUNICIPIO_VALO_RICA" type="xs:string"/>
+                    <xs:element minOccurs="0" name="TISU_RICA" type="xs:string"/>
+                    <xs:element minOccurs="0" name="N_FRACCION_VALO" type="xs:string"/>
+                    <xs:element minOccurs="0" name="TOTALN_FRACCIONES" type="xs:string"/>
+                    <xs:element minOccurs="0" name="ID_PADRE_VALO" type="xs:string"/>
+                    <xs:element minOccurs="0" name="MODO_EMIS_RICA" type="xs:string" />
+                    <xs:element minOccurs="0" name="ID_EPER_RICA" type="xs:string"/>
+                    <xs:element minOccurs="0" name="DESCUENTO_RV" type="xs:string"/>
+                    <xs:element minOccurs="0" name="REF_DOMI_RICA" type="xs:string" />
+                    <xs:element minOccurs="0" name="NOMBRE_REPR_RICA" type="xs:string" />
+                    <xs:element minOccurs="0" name="NIF_REPR_RICA" type="xs:string" />
+                    <xs:element minOccurs="0" name="STRING_CAOR" type="xs:string" />
+                    <xs:element minOccurs="0" name="ORDEN_CAOR" type="xs:string"/>
+                    <xs:element minOccurs="0" name="STRING1_CANU" type="xs:string" />
+                    <xs:element minOccurs="0" name="STRING2_CANU" type="xs:string" />
+                    <xs:element minOccurs="0" name="STRING3_CANU" type="xs:string" />
+                    <xs:element minOccurs="0" name="STRING4_CANU" type="xs:string" />
+                    <xs:element minOccurs="0" name="NUME1_CANU" type="xs:string" />
+                    <xs:element minOccurs="0" name="NUME2_CANU" type="xs:string" />
+                    <xs:element minOccurs="0" name="NUME3_CANU" type="xs:string" />
+                    <xs:element minOccurs="0" name="NUME4_CANU" type="xs:string"/>
+                    <xs:element minOccurs="0" name="FECHA1_CANU" type="xs:string"/>
+                    <xs:element minOccurs="0" name="FECHA2_CANU" type="xs:string"/>
+                    <xs:element minOccurs="0" name="FECHA3_CANU" type="xs:string"/>
+                    <xs:element minOccurs="0" name="FECHA4_CANU" type="xs:string"/>
+                    <xs:element minOccurs="0" name="STRING5_CANU" type="xs:string"/>
+                    <xs:element minOccurs="0" name="TEXTO1_TEII" type="xs:string"/>
+                    <xs:element minOccurs="0" name="TEXTO2_TEII" type="xs:string"/>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+            <xs:attribute name="nombre" type="xs:string" />
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

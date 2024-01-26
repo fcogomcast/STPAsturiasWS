@@ -9,6 +9,7 @@
         <option name="modules">
           <set>
             <option value="$PROJECT_DIR$" />
+            <option value="$PROJECT_DIR$/DocumentoPago" />
             <option value="$PROJECT_DIR$/WSAutenticacionLocalEPST" />
             <option value="$PROJECT_DIR$/WSConsultaDoinDocumentos" />
             <option value="$PROJECT_DIR$/WSDocumentoElectronico" />
