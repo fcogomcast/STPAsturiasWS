@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://servicios.tributasenasturias.es/Terceros/RecepcionDocumentacion" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="RecepcionDocumentacion" targetNamespace="http://servicios.tributasenasturias.es/Terceros/RecepcionDocumentacion">
+  <wsdl:types>
+    <xsd:schema
+    	targetNamespace="http://servicios.tributasenasturias.es/Terceros/RecepcionDocumentacion"
+    	xmlns:pref="http://servicios.tributasenasturias.es/Terceros/RecepcionDocumentacion">
+
+    	<!--  <xsd:import namespace="http://servicios.tributasenasturias.es/Terceros/RecepcionDocumentacion" schemaLocation="./xsd/recepcionDocumentacion.xsd"></xsd:import> -->
+    	<xsd:include schemaLocation="./xsd/recepcionDocumentacion.xsd"></xsd:include>
+    	<xsd:element name="recepcionDocumentosIn">
+    		<xsd:complexType>
+    			<xsd:sequence>
+    				<xsd:element ref="pref:documentacionRequest" ></xsd:element>
+    			</xsd:sequence>
+    		</xsd:complexType>
+    	</xsd:element>
+    	<xsd:element name="recepcionDocumentosOut">
+    		<xsd:complexType>
+    			<xsd:sequence>
+    				<xsd:element ref="pref:documentacionResponse"/>
+    			</xsd:sequence>
+    		</xsd:complexType>
+    	</xsd:element>
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="recibirDocumentosRequest">
+    <wsdl:part element="tns:documentacionRequest" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="recibirDocumentosResponse">
+    <wsdl:part element="tns:documentacionResponse" name="parameters"/>
+  </wsdl:message>
+  <wsdl:portType name="RecepcionDocumentacion">
+    <wsdl:operation name="recibirDocumentos">
+      <wsdl:input message="tns:recibirDocumentosRequest"/>
+      <wsdl:output message="tns:recibirDocumentosResponse"/>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="RecepcionDocumentacionSOAP" type="tns:RecepcionDocumentacion">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="recibirDocumentos">
+      <soap:operation soapAction="RecepcionDocumentacion"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="RecepcionDocumentacion">
+    <wsdl:port binding="tns:RecepcionDocumentacionSOAP" name="RecepcionDocumentacionSOAP">
+      <soap:address location="http://servicios.tributasenasturias.es/Terceros/RecepcionDocumentacion"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	targetNamespace="http://servicios.tributasenasturias.es/Terceros/RecepcionDocumentacion"
+	    	       xmlns="http://servicios.tributasenasturias.es/Terceros/RecepcionDocumentacion"
+	xmlns:ds="http://www.w3.org/2000/09/xmldsig#">
+
+<!--  ================================================================================================	-->
+<!-- 						INICIO DEL ELEMENTO RAIZ  DOCUMENTACION						-->
+<!--  ================================================================================================	-->
+
+
+<xs:import schemaLocation="xmldsig-core-schema.xsd" namespace="http://www.w3.org/2000/09/xmldsig#">
+	<xs:annotation>
+    		<xs:documentation>
+			Este es el esquema http://www.w3.org/TR/2008/REC-xmldsig-core-20080610/xmldsig-core-schema.xsd .
+			Para evitar errores en las herramientas se ha eliminado la declaración DOCTYPE al principio del documento,
+			pero es totalmente equivalente.  
+    		</xs:documentation>
+     	</xs:annotation>
+</xs:import>
+<xs:element name="documentacionRequest" type="documentacionInType"></xs:element>
+<xs:element name="documentacionResponse" type="documentacionOutType"/>
+<xs:complexType name="documentacionInType">
+	<xs:annotation>
+		<xs:documentation>
+			Tipo principal.
+			Engloba los elementos de documentación que se reciben
+			listaDocumentos: Lista de documentos que se reciben.
+			ds:Signature: Firma en el caso de que el mensaje vaya firmado.
+		</xs:documentation>
+	</xs:annotation>
+	<xs:sequence>
+	<xs:element name="listaDocumentos" type="listaDocumentosType"/>
+	<xs:element ref="ds:Signature" 				minOccurs="0" />			
+	</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="listaDocumentosType">
+	<xs:annotation>
+		<xs:documentation>
+			Tipo con la lista de documentos a recibir.
+			En el momento de creación de este servicio, se tratará únicamente de una copia
+			electrónica de un documento de escritura.
+		</xs:documentation>
+	</xs:annotation>
+	<xs:sequence>
+		<xs:element name="escritura" type="escrituraType"/>
+	</xs:sequence>
+	<!-- 	Inicio Atributos lista Documentos			-->
+	<xs:attribute name="ID" 			  type="idFirmaType"	use="required">
+		<xs:annotation>
+			<xs:documentation>
+				Identificador arbitrario. Sólo se usará por el servicio en caso de que el 
+				mensaje esté firmado, y será este Id el que permita referenciar 
+				la parte firmada.
+			</xs:documentation>
+		</xs:annotation>
+	</xs:attribute>
+</xs:complexType>
+<!-- Tipo de documento de escritura -->
+<xs:complexType name="escrituraType">
+<xs:sequence>
+	<xs:element name="codNotario" 		            minOccurs="1" type="string30Type" >
+		<xs:annotation>
+			<xs:documentation>
+				Código de notario que autoriza la escritura
+			</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="codNotaria" 	                minOccurs="1" type="string30Type">
+		<xs:annotation>
+			<xs:documentation>
+				Código de notaría del notario en la fecha de autorización
+			</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="numProtocolo" 	            minOccurs="1" type="digito13Type">
+		<xs:annotation>
+			<xs:documentation>
+				Número de protocolo de la escritura.
+			</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="numProtocoloBis" 	            minOccurs="1" type="digito4Type">
+		<xs:annotation>
+			<xs:documentation>
+				Numero de protocolo bis de la escritura, en su caso
+			</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="fechaAutorizacion"            minOccurs="1" type="fechaType">
+		<xs:annotation>
+			<xs:documentation>
+				Fecha de autorización de la escritura
+			</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<!-- Tanto documento escritura como firma se tratarán internamente como cadenas, aunque el WSDL publicado debería generar byte[] -->
+	<xs:element name="documentoEscritura" 			minOccurs="1" type="xs:string">
+		<xs:annotation>
+			<xs:documentation>
+				Copia del documento de escritura, en formato PDF codificado en Base 64
+			</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="firmaEscritura" 				minOccurs="0" type="xs:string">
+		<xs:annotation>
+			<xs:documentation>
+				Firma de la copia del documento de escritura.
+			</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+</xs:sequence>
+</xs:complexType>
+<!-- Tipo de salida que informa del resultado de la operación -->
+<xs:complexType name="documentacionOutType">
+	<xs:annotation>
+		<xs:documentation>
+			Tipo de salida.
+			Engloba los elementos que permiten conocer el estado de finalización del servicio
+			resultado: Información sobre el resultado de la operación.
+			ds:Signature: Firma en el caso de que el mensaje se devuelva firmado.
+		</xs:documentation>
+	</xs:annotation>
+	<xs:sequence>
+		<xs:element name="resultado" type="resultadoTypeOut" minOccurs="1"/>
+		<xs:element ref="ds:Signature" minOccurs="0"/>
+	</xs:sequence>
+</xs:complexType>
+<!-- Tipo de resultado, indicando el código de finalización y una descripción -->
+<xs:complexType name="resultadoTypeOut">
+	<xs:sequence>
+		<xs:element name="codigo" 		type="codigoResultadoType"/>
+		<xs:element name="descripcion"	type="descripcionResultadoType"/>
+	</xs:sequence>
+	<!--Identificador de resultado -->
+	<xs:attribute name="ID" 	  type="idFirmaType"	use="required">
+		<xs:annotation>
+			<xs:documentation>
+				Identificador arbitrario. Sólo se usará por el servicio en caso de que el 
+				mensaje esté firmado, y será este Id el que permita referenciar 
+				la parte firmada.
+			</xs:documentation>
+		</xs:annotation>
+	</xs:attribute>
+</xs:complexType>	
+<!--  ================================================================================================	-->
+<!-- 				DEFINICION DE TIPOS DE ELEMENTOS SIMPLES 						-->
+<!--  ================================================================================================	-->	
+<xs:simpleType name="string30Type">
+	<xs:restriction base="xs:string">
+		<xs:minLength	value="1"/>
+
+		<xs:maxLength	value="30"/>
+	</xs:restriction>
+</xs:simpleType>
+<xs:simpleType name="digito4Type">
+	<xs:restriction base="xs:string">
+		<xs:pattern 	value="[0-9]{0,4}"/>
+	</xs:restriction>
+</xs:simpleType>
+<xs:simpleType name="digito13Type">
+	<xs:restriction base="xs:string">
+		<xs:minLength 	value="1"/>
+		<xs:pattern 	value="[0-9]{1,13}"/>
+	</xs:restriction>
+</xs:simpleType>
+<xs:simpleType name="fechaType">
+	<xs:restriction base="xs:string">
+		<xs:pattern 	value="(((0[1-9])|((1|2)[0-9])|(3(0|1)))/((0[1-9])|(1[0-2]))/[1-9][0-9]{3})?"/>
+	</xs:restriction>
+</xs:simpleType>
+<xs:simpleType name="pdfB64Type">
+	<xs:restriction base="xs:base64Binary">
+	</xs:restriction>
+</xs:simpleType>
+<xs:simpleType name="codigoResultadoType">
+	<xs:restriction base="xs:string">
+		<xs:minLength	value="1"/>
+
+		<xs:maxLength	value="5"/>
+	</xs:restriction>
+</xs:simpleType>
+<xs:simpleType name="descripcionResultadoType">
+	<xs:restriction base="xs:string">
+		<xs:minLength	value="1"/>
+
+		<xs:maxLength	value="255"/>
+	</xs:restriction>
+</xs:simpleType>
+<xs:simpleType name="idFirmaType">
+	<xs:restriction base="xs:string">
+		<xs:minLength	value="1"/>
+	</xs:restriction>
+</xs:simpleType>	
+</xs:schema>

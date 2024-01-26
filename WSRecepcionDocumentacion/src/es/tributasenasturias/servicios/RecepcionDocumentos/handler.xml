@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<handler-chains xmlns="http://java.sun.com/xml/ns/javaee">
+  <handler-chain>
+    <handler>
+      <handler-name>es.tributasenasturias.soap.handler.ValidacionEsquema</handler-name>
+      <handler-class>es.tributasenasturias.soap.handler.ValidacionEsquema</handler-class>
+    </handler>  
+    <handler>
+      <handler-name>es.tributasenasturias.soap.handler.FirmaHandler</handler-name>
+      <handler-class>es.tributasenasturias.soap.handler.FirmaHandler</handler-class>
+    </handler>
+  </handler-chain>
+</handler-chains>
