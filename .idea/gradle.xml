@@ -14,6 +14,7 @@
             <option value="$PROJECT_DIR$/WSConsultaDoinDocumentos" />
             <option value="$PROJECT_DIR$/WSDocumentoElectronico" />
             <option value="$PROJECT_DIR$/WSEPI" />
+            <option value="$PROJECT_DIR$/WSMultas" />
           </set>
         </option>
       </GradleProjectSettings>
