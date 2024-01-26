@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:gtt="tns:tributos"
+    xmlns:foo="http://bar.foo.com/"
+    targetNamespace="tns:tributos" elementFormDefault="qualified">
+    
+<!-- Importación de esquemas -->
+<xsd:include schemaLocation="Comunes.xsd"/>
+
+<xsd:element name="AltaMultaRequest"/>
+
+  <!-- REQUEST -->    
+<!--Información del contribuyente para la Request -->
+<xsd:complexType name="AltaMultaRequestType">
+    <xsd:sequence>
+      <xsd:element name="UDID" type="xsd:string" minOccurs="1" maxOccurs="1"/>
+      <xsd:element name="Suborganismo" type="gtt:CadenaNumericaType" minOccurs="1" maxOccurs="1"/>
+      <xsd:element name="NumeroAgenteAgmu" type="xsd:string" minOccurs="1" maxOccurs="1"/>
+      <!-- Propietario -->
+      <xsd:element name="NifPropietario" type="xsd:string" minOccurs="0" maxOccurs="1"/>      
+      <xsd:element name="NombreCompletoPropietario" type="gtt:CadenaMax60" minOccurs="0" maxOccurs="1"/>      
+      <xsd:element name="PaisPropietario" type="xsd:string" minOccurs="0" maxOccurs="1"/>
+      <xsd:element name="CallePropietario" type="xsd:string" minOccurs="0" maxOccurs="1"/>
+      <xsd:element name="PoblacionPropietario" type="xsd:string" minOccurs="0" maxOccurs="1"/>
+      <xsd:element name="ProvinciaPropietario" type="xsd:string" minOccurs="0" maxOccurs="1"/>
+      <xsd:element name="DistritoPostalPropietario" type="gtt:CadenaNumericaType" minOccurs="0" maxOccurs="1"/>      
+      <!-- Infractor -->
+      <xsd:element name="NifInfractor" type="xsd:string" minOccurs="1" maxOccurs="1"/>
+      <xsd:element name="NombreCompletoInfractor" type="xsd:string" minOccurs="1" maxOccurs="1"/>
+      <xsd:element name="PaisInfractor" type="xsd:string" minOccurs="0" maxOccurs="1"/>
+      <xsd:element name="CalleInfractor" type="xsd:string" minOccurs="1" maxOccurs="1"/>
+      <xsd:element name="PoblacionInfractor" type="xsd:string" minOccurs="0" maxOccurs="1"/>
+      <xsd:element name="ProvinciaInfractor" type="xsd:string" minOccurs="1" maxOccurs="1"/>
+      <xsd:element name="DistritoPostalInfractor" type="gtt:CadenaNumericaType" minOccurs="0" maxOccurs="1"/>
+      <!-- Conductor -->
+      <xsd:element name="NifConductor" type="xsd:string" minOccurs="0" maxOccurs="1"/>
+      <xsd:element name="NombreCompletoConductor" type="xsd:string" minOccurs="0" maxOccurs="1"/>
+      <xsd:element name="PaisConductor" type="xsd:string" minOccurs="0" maxOccurs="1"/>
+      <xsd:element name="CalleConductor" type="xsd:string" minOccurs="0" maxOccurs="1"/>
+      <xsd:element name="PoblacionConductor" type="xsd:string" minOccurs="0" maxOccurs="1"/>
+      <xsd:element name="ProvinciaConductor" type="xsd:string" minOccurs="0" maxOccurs="1"/>
+      <xsd:element name="DistritoPostalConductor" type="gtt:CadenaNumericaType" minOccurs="0" maxOccurs="1"/>
+      <!-- Datos Boletín -->
+      <xsd:element name="Matricula" type="xsd:string" minOccurs="0" maxOccurs="1"/>
+      <xsd:element name="Marca" type="xsd:string" minOccurs="0" maxOccurs="1"/>
+      <xsd:element name="Modelo" type="xsd:string" minOccurs="0" maxOccurs="1"/>
+      <xsd:element name="NumBoletin" type="gtt:Cadena16" minOccurs="1" maxOccurs="1" />
+      <xsd:element name="NumExpediente" type="xsd:string" minOccurs="0" maxOccurs="1" />
+            
+      <xsd:element name="CodigoArmu" type="gtt:CadenaNumericaType" minOccurs="1" maxOccurs="1"/>
+      <xsd:element name="HechoDenunciado" type="gtt:CadenaMax255" minOccurs="1" maxOccurs="1"/>
+      <xsd:element name="HechoDenunciadoCoof" type="gtt:CadenaMax255" minOccurs="0" maxOccurs="1"/>
+      <xsd:element name="HechoDenunciadoCooficial" type="gtt:CadenaMax255" minOccurs="0" maxOccurs="1"/>      
+      <xsd:element name="IdTimu" type="xsd:string" minOccurs="1" maxOccurs="1"/>
+      <xsd:element name="IdCamu" type="gtt:CadenaNumericaType" minOccurs="1" maxOccurs="1"/>
+      <xsd:element name="IdClve" type="gtt:CadenaNumericaType" minOccurs="1" maxOccurs="1"/>
+      <xsd:element name="IdTamu" type="gtt:IdTamuType" minOccurs="1" maxOccurs="1"/>
+
+      <xsd:element name="ViaPenal" type="gtt:CadenaSN" minOccurs="1" maxOccurs="1"/>
+      <xsd:element name="Retencion" type="gtt:CadenaSN" minOccurs="1" maxOccurs="1"/>
+      <xsd:element name="Velocidad" type="xsd:double" minOccurs="0" maxOccurs="1"/>
+      <xsd:element name="VelocidadMaxima" type="xsd:double" minOccurs="0" maxOccurs="1"/>
+      <xsd:element name="VelocidadCorregida" type="xsd:double" minOccurs="0" maxOccurs="1"/>
+      <xsd:element name="DispositivoMedicion" type="xsd:string" minOccurs="0" maxOccurs="1"/>
+            
+      <!-- Datos fecha y lugar -->
+      <xsd:element name="FechaInfraccion" type="xsd:date" minOccurs="1" maxOccurs="1"/>
+      <xsd:element name="HoraInfraccion" type="gtt:TimeType" minOccurs="1" maxOccurs="1"/>
+      
+      <xsd:element name="NombreVia" type="gtt:CadenaMax100" minOccurs="1" maxOccurs="1"/>      
+        <xsd:choice minOccurs="1" maxOccurs="2">
+        <xsd:element name="NumVia" type="gtt:CadenaNumericaType" minOccurs="1" maxOccurs="1"/>
+        <xsd:element name="AmpliacionVia" type="xsd:string" minOccurs="1" maxOccurs="1"/>
+      </xsd:choice>
+      <!--<xsd:element name="Latitud" type="xsd:double" minOccurs="0" maxOccurs="1"/> NO SE USAN EN EL PL-->
+      <!--<xsd:element name="Longitud" type="xsd:double" minOccurs="0" maxOccurs="1"/>-->
+      
+     <!-- Datos pago, no se usan de momento-->
+      <xsd:element name="Pagado" type="gtt:CadenaNumericaType" minOccurs="0" maxOccurs="1"/>
+      <xsd:element name="FormaPago" type="xsd:string" minOccurs="0" maxOccurs="1"/>
+      <xsd:element name="FechaCobro" type="xsd:date" minOccurs="0" maxOccurs="1"/>
+      <xsd:element name="Importe" type="gtt:CadenaNumericaType" minOccurs="0" maxOccurs="1"/>
+      <xsd:element name="Justificante" type="xsd:string" minOccurs="0" maxOccurs="1"/>
+      <xsd:element name="MotivoAnulacion" type="xsd:string" minOccurs="0" maxOccurs="1"/>      
+      <xsd:element name="Propiedades" type="gtt:PropiedadesType" minOccurs="0" maxOccurs="1"/>
+      <xsd:element name="Imagenes" type="gtt:ImagenesType" minOccurs="0" maxOccurs="1"/>
+
+      <!-- Identificador para generar documento de consulta a la DGT-->
+      <xsd:element name="IdComa" type="gtt:CadenaNumericaType" minOccurs="0" maxOccurs="1"/>
+      <xsd:element name="ModificadaDireccion" type="gtt:CadenaSN" minOccurs="0" maxOccurs="1"/>            
+      <xsd:element name="IdTamu2" type="xsd:string" minOccurs="0" maxOccurs="1"/>
+      <xsd:element name="NumeroAgenteAgmu2" type="xsd:string" minOccurs="0" maxOccurs="1"/>            
+      <xsd:element name="Notas" type="gtt:NotasType" minOccurs="0" maxOccurs="1"/>      
+      <xsd:element name="ImagenOCR" type="gtt:ImagenType" minOccurs="0" maxOccurs="1"/>
+      <xsd:element name="TipoDenuncia" type="xsd:string" minOccurs="0" maxOccurs="1"/>
+      <xsd:element name="VoluntariaNombreDenunciante" type="xsd:string" minOccurs="0" maxOccurs="1"/>
+      <xsd:element name="VoluntariaDireccionDenunciante" type="xsd:string" minOccurs="0" maxOccurs="1"/>
+      <xsd:element name="VoluntariaOtrosDatosDenunciante" type="xsd:string" minOccurs="0" maxOccurs="1"/>
+      <xsd:element name="VoluntariaHechosComprobados" type="xsd:string" minOccurs="0" maxOccurs="1"/>      
+      
+    </xsd:sequence>
+</xsd:complexType>
+  
+  <xsd:complexType name="NotaType">
+    <xsd:sequence>
+      <xsd:element name="Descripcion" type="xsd:string" minOccurs="1" maxOccurs="1"/>
+      <xsd:element name="Usuario" type="xsd:string" minOccurs="0" maxOccurs="1"/>
+      <xsd:element name="NumRege" type="xsd:string" minOccurs="0" maxOccurs="1"/>
+      <xsd:element name="FechaAgenda" type="xsd:string" minOccurs="0" maxOccurs="1"/>
+      <xsd:element name="HoraDesde" type="xsd:string" minOccurs="0" maxOccurs="1"/>
+      <xsd:element name="HoraHasta" type="xsd:string" minOccurs="0" maxOccurs="1"/>
+    </xsd:sequence>
+  </xsd:complexType>
+
+  <xsd:complexType name="NotasType">
+    <xsd:sequence>
+      <xsd:element name="Nota" type="gtt:NotaType" minOccurs="0" maxOccurs="unbounded" />
+    </xsd:sequence>
+  </xsd:complexType>  
+  
+</xsd:schema>

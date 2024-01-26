@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://www.gtt.es/WS" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="ServiciosSmartMultas" targetNamespace="http://www.gtt.es/WS">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://www.gtt.es/WS">
+    <!--  Los campos de cabecera  -->
+    <xsd:element name="SesionOrga" type="xsd:string"></xsd:element>
+    <xsd:element name="SesionId" type="xsd:string"></xsd:element>
+    <xsd:element name="Operacion" type="xsd:string"></xsd:element>
+    <!-- Los campos de petición --> 
+      <xsd:element name="XmlRequest">
+        <xsd:complexType>
+          <xsd:sequence>
+          	<xsd:element name="XmlDataRequest" type="xsd:string" form="qualified" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="XmlResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="XmlDataResponse" type="xsd:string" form="qualified"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="XmlRequest">
+    <wsdl:part element="tns:XmlRequest" name="parameters"/>
+    <wsdl:part element="tns:SesionOrga" name="SesionOrga"/>
+    <wsdl:part element="tns:SesionId" name="SesionId"/>
+    <wsdl:part element="tns:Operacion" name="Operacion"/>
+  </wsdl:message>
+  <wsdl:message name="XmlResponse">
+    <wsdl:part element="tns:XmlResponse" name="parameters"/>
+  </wsdl:message>
+  <wsdl:portType name="ServiciosSmartMultas">
+    <wsdl:operation name="XmlRequest">
+      <wsdl:input message="tns:XmlRequest"/>
+      <wsdl:output message="tns:XmlResponse"/>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="ServiciosSmartMultasSOAP" type="tns:ServiciosSmartMultas">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="XmlRequest">
+      <soap:operation soapAction="http://www.gtt.es/WS/XmlRequest"/>
+      <wsdl:input>
+        <soap:body use="literal" parts="parameters"/>
+        <soap:header use="literal" part="SesionOrga" message="tns:XmlRequest"/>
+        <soap:header use="literal" part="SesionId" message="tns:XmlRequest"/>
+        <soap:header use="literal" part="Operacion" message="tns:XmlRequest"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="ServiciosSmartMultas">
+    <wsdl:port binding="tns:ServiciosSmartMultasSOAP" name="ServiciosSmartMultasSOAP">
+      <soap:address location="http://bus:7101/WSMultas/ProxyServices/PXServiciosSmartMultas"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

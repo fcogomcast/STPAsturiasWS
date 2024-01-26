@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:gtt="tns:tributos"
+    targetNamespace="tns:tributos" elementFormDefault="qualified">
+
+
+  <!-- Lista de documentos -->
+  <xsd:complexType name="ListaDocumentosType">
+    <xsd:sequence>
+      <xsd:element name="Documento" type="gtt:DocumentoType" minOccurs="0" maxOccurs="unbounded"/>
+    </xsd:sequence>
+  </xsd:complexType>
+
+
+  <!-- Documento -->
+  <xsd:complexType name="DocumentoType">
+    <xsd:sequence>
+      <xsd:element name="IdDocumento"    type="xsd:string" minOccurs="0"/>
+      <xsd:element name="TipoDocumento"    type="xsd:string" minOccurs="0"/>
+      <xsd:element name="IdElemento"    type="xsd:string" minOccurs="0"/>
+      <xsd:element name="Archivo" type="xsd:base64Binary" minOccurs="0"/>
+      <!-- INIPETISIT-38057 MCMARCO ** 16/09/2020 ** SW obtención de documentos -->
+      <xsd:element name="Descripcion"    type="xsd:string" minOccurs="0"/>
+      <!-- FINPETISIT-38057 MCMARCO ** 16/09/2020 ** SW obtención de documentos -->
+    </xsd:sequence>
+  </xsd:complexType>
+
+  <xsd:complexType name="ResultadoType">
+    <xsd:sequence>
+      <xsd:element name="Codigo" minOccurs="1">
+        <xsd:annotation>
+          <xsd:documentation>Código de resultado.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="Descripcion" type="xsd:string" minOccurs="0">
+        <xsd:annotation>
+          <xsd:documentation>Descripción del código devuelto (correcto o error)</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <!-- INIPETI2016-27309-04 EPENA ** 29/11/2017 ** AR:SW con experta alta domiciliaciones desde OVT. Justificantes domiciliación -->
+      <xsd:element name="Documento" type="xsd:base64Binary" minOccurs="0">
+        <xsd:annotation>
+          <xsd:documentation>Documento devuelto</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <!-- FINPETI2016-27309-04 EPENA ** 29/11/2017 ** AR:SW con experta alta domiciliaciones desde OVT. Justificantes domiciliación -->
+    </xsd:sequence>
+  </xsd:complexType>
+
+  <xsd:simpleType name="IdiomaType">
+    <xsd:restriction base="xsd:string">
+      <xsd:enumeration value="CA"/>
+      <xsd:enumeration value="VA"/>
+      <xsd:enumeration value="GA"/>
+      <xsd:enumeration value="EU"/>
+      <xsd:enumeration value="CT"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+
+  <xsd:simpleType name="IBANType">
+    <xsd:restriction base="xsd:string">
+      <xsd:maxLength value="34"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+
+  <xsd:simpleType name="IdFiscalType">
+    <xsd:restriction base="xsd:string">
+      <xsd:maxLength value="10"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+
+  <xsd:simpleType name="NombreRazonSocialType">
+    <xsd:restriction base="xsd:string">
+      <xsd:maxLength value="60"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+
+  <xsd:simpleType name="ApellidoType">
+    <xsd:restriction base="xsd:string">
+      <xsd:maxLength value="60"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+
+  <xsd:simpleType name="TelefonoType">
+    <xsd:restriction base="xsd:string">
+      <xsd:maxLength value="14"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+
+  <xsd:simpleType name="EmailType">
+    <xsd:restriction base="xsd:string">
+      <xsd:pattern value="^([0-9a-zA-Z]([-.\w]*[0-9a-zA-Z])*@([0-9a-zA-Z][-\w]*[0-9a-zA-Z]\.)+[a-zA-Z]{2,9})$"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+
+  <xsd:simpleType name="BICType">
+    <xsd:restriction base="xsd:string">
+      <xsd:maxLength value="11"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+
+  <xsd:simpleType name="CadenaNumericaType">
+    <xsd:restriction base="xsd:string">
+      <xsd:pattern value="[*]{0}|[0-9]+"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+
+  <!-- INIPETI2015-13236-01 CPEREZ ** 05/02/2016 ** Dispositivos de movilidad para multas -->
+  <xsd:simpleType name="CadenaSN">
+    <xsd:restriction base="xsd:string">
+      <xsd:enumeration value="S"/>
+      <xsd:enumeration value="N"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+
+  <!-- INIPETI2016-19239-01 JPENARRUBIA ** 03/10/2016 ** Habilitar autoliquidaciones genéricas ya calculadas por WS -->
+  <xsd:simpleType name="Cadena14">
+    <xsd:restriction base="xsd:string">
+      <xsd:length value="14"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+  <!-- FINPETI2016-19239-01 JPENARRUBIA ** 03/10/2016 ** Habilitar autoliquidaciones genéricas ya calculadas por WS -->
+
+  <xsd:simpleType name="Cadena16">
+    <xsd:restriction base="xsd:string">
+      <xsd:length value="16"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+
+  <xsd:simpleType name="CadenaMax60">
+    <xsd:restriction base="xsd:string">
+      <xsd:maxLength value="60"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+
+  <xsd:simpleType name="CadenaMax100">
+    <xsd:restriction base="xsd:string">
+      <xsd:maxLength value="100"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+
+  <xsd:simpleType name="CadenaMax255">
+    <xsd:restriction base="xsd:string">
+      <xsd:maxLength value="255"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+
+  <xsd:simpleType name="TimeType">
+    <xsd:restriction base="xsd:string">
+      <xsd:pattern value="[0-2][0-9]:[0-5][0-9]" />
+    </xsd:restriction>
+  </xsd:simpleType>
+
+  <xsd:simpleType name="IdTamuType">
+    <xsd:restriction base="xsd:string">
+      <xsd:enumeration value="PL"/>
+      <xsd:enumeration value="AM"/>
+      <!-- INIPETISIT-36463 CPEREZ ** 28/07/2020 ** Añadir nuevo tipo agente -->
+      <xsd:enumeration value="AP"/>
+      <!-- FINPETISIT-36463 CPEREZ ** 28/07/2020 ** Añadir nuevo tipo agente -->
+      <!-- INIPETISIT-63540 RNAVARRO ** 02/05/2022 ** AR:SIT SANCIONA: ERROR AL DAR DE ALTA UNA DENUNCIA AGENTE NO PL -->
+      <xsd:enumeration value="VI"/>
+      <!-- FINPETISIT-63540 RNAVARRO ** 02/05/2022 ** AR:SIT SANCIONA: ERROR AL DAR DE ALTA UNA DENUNCIA AGENTE NO PL -->
+    </xsd:restriction>
+  </xsd:simpleType>
+
+  <xsd:complexType name="PropiedadType">
+    <xsd:sequence>
+      <xsd:element name="Nombre" type="xsd:string" minOccurs="1" />
+      <xsd:element name="Valor"  type="xsd:string" minOccurs="1" />
+    </xsd:sequence>
+  </xsd:complexType>
+
+  <xsd:complexType name="PropiedadesType">
+    <xsd:sequence>
+      <xsd:element name="Propiedad" type="gtt:PropiedadType" maxOccurs="unbounded" minOccurs="0" />
+    </xsd:sequence>
+  </xsd:complexType>
+
+  <xsd:complexType name="ImagenType">
+    <xsd:sequence>
+      <xsd:element name="Nombre" type="xsd:string" minOccurs="1" />
+      <xsd:element name="Base64"  type="xsd:string" minOccurs="1" />
+    </xsd:sequence>
+  </xsd:complexType>
+
+  <xsd:complexType name="ImagenesType">
+    <xsd:sequence>
+      <xsd:element name="Imagen" type="gtt:ImagenType" minOccurs="0" maxOccurs="5" />
+    </xsd:sequence>
+  </xsd:complexType>
+
+  <!-- FINPETI2015-13236-01 CPEREZ ** 05/02/2016 ** Dispositivos de movilidad para multas -->
+
+
+  <xsd:simpleType name="NumResultadosType">
+    <xsd:restriction base="xsd:int">
+      <xsd:enumeration value="10"/>
+      <xsd:enumeration value="25"/>
+      <xsd:enumeration value="50"/>
+      <xsd:enumeration value="100"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+
+
+</xsd:schema>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<handler-chains xmlns="http://java.sun.com/xml/ns/javaee">
+  <handler-chain>
+  <handler>
+      <handler-name>es.stpa.smartmultas.soap.GestionUsernameToken</handler-name>
+      <handler-class>es.stpa.smartmultas.soap.GestionUsernameToken</handler-class>
+    </handler>
+    <handler>
+      <handler-name>es.stpa.smartmultas.soap.SoapServerHandler</handler-name>
+      <handler-class>es.stpa.smartmultas.soap.SoapServerHandler</handler-class>
+    </handler>
+    <handler>
+      <handler-name>es.stpa.smartmultas.soap.CargaContexto</handler-name>
+      <handler-class>es.stpa.smartmultas.soap.CargaContexto</handler-class>
+    </handler>
+  </handler-chain>
+</handler-chains>

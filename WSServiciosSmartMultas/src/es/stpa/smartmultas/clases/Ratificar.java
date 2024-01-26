@@ -1,0 +1,75 @@
+package es.stpa.smartmultas.clases;
+
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+
+import org.w3c.dom.Document;
+
+import es.stpa.smartmultas.configuracion.utils.Utiles;
+import es.stpa.smartmultas.preferencias.Preferencias;
+import es.stpa.smartmultas.responses.SmartfinesResponse;
+import es.stpa.smartmultas.soap.SoapClientHandler;
+import es.tributasenasturias.log.ILog;
+import es.tributasenasturias.services.lanzador.client.LanzadorFactory;
+import es.tributasenasturias.services.lanzador.client.ParamType;
+import es.tributasenasturias.services.lanzador.client.ProcedimientoAlmacenado;
+import es.tributasenasturias.services.lanzador.client.TLanzador;
+import es.tributasenasturias.services.lanzador.client.response.RespuestaLanzador;
+import es.tributasenasturias.xml.XMLDOMUtils;
+
+// ServiciosSmartFines.Multas.Ratificar
+public class Ratificar extends A_MultasBase {
+	
+	public Ratificar(Preferencias pref, String idLlamada, Document datosEntrada, ILog log) {
+		super(pref, idLlamada, datosEntrada, log);
+	}
+	
+	@Override
+	public String Inicializar() {
+
+		final String ES05 = "ES05_ESTRUCTURA_UNI05";
+		String datosRespuesta = "";
+		
+		try
+		{	
+			Integer idMulta = Integer.parseInt(_datosEntrada.getElementsByTagName("IdEper").item(0).getTextContent());
+			String ratificacion = _datosEntrada.getElementsByTagName("RatificacionAgente").item(0).getTextContent();
+			String observaciones = _datosEntrada.getElementsByTagName("Observaciones").item(0).getTextContent();
+			String auxFecha = new SimpleDateFormat("dd/MM/yyyy").format((Calendar.getInstance()).getTime());
+			
+			TLanzador lanzador = LanzadorFactory.newTLanzador(_pref.getEndpointLanzador(), new SoapClientHandler(this._idLlamada));
+			ProcedimientoAlmacenado proc = new ProcedimientoAlmacenado("EXPTRAFICO_ACTUACIONES.CONTESTACIONAGENTE", _pref.getEsquemaBD());
+			Utiles.AgregarCabeceraGeneralPL(proc);
+
+			proc.param(idMulta + "", ParamType.NUMERO);			// ideper
+			proc.param(ratificacion, ParamType.CADENA);			// ratifica
+			proc.param(null, ParamType.FECHA);					//fecharegent
+			proc.param(null, ParamType.CADENA);					//numregent
+			proc.param(null, ParamType.FECHA);					//fecharegsal
+			proc.param(null, ParamType.CADENA);					//numregsal
+			proc.param(auxFecha, ParamType.FECHA);				//fechacon
+			proc.param(observaciones, ParamType.CADENA);		//observaciones
+			proc.param("N", ParamType.CADENA);					//previsualizar
+			proc.param(null, ParamType.CADENA);					//numAgente ???
+	
+
+			String soapResponse = lanzador.ejecutar(proc);
+			RespuestaLanzador response = new RespuestaLanzador(soapResponse);
+			
+			if(!response.esErronea() && response.getNumFilasEstructura(ES05) > 0 && response.getValue(ES05, 1, "C1").equals("OK")) 
+			{
+				datosRespuesta = XMLDOMUtils.Serialize(new SmartfinesResponse("Ok"));
+			}
+			else
+			{
+				datosRespuesta = Utiles.MensajeErrorXml(1, "Error: " + response.getTextoError(), _log);
+			}
+		} 
+		catch (Exception ex) 
+		{
+			datosRespuesta = Utiles.MensajeErrorXml(1, "Error: " + ex.getMessage(), _log);
+		}
+		
+		return datosRespuesta;
+	}
+}
