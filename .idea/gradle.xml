@@ -18,6 +18,9 @@
             <option value="$PROJECT_DIR$/WSEPI" />
             <option value="$PROJECT_DIR$/WSMultas" />
             <option value="$PROJECT_DIR$/WSNotificaAdviser" />
+            <option value="$PROJECT_DIR$/WSNotificaGestionEnvios" />
+            <option value="$PROJECT_DIR$/WSNumeroAutoLiquidacion" />
+            <option value="$PROJECT_DIR$/WSRecepcionDocumentacion" />
           </set>
         </option>
       </GradleProjectSettings>

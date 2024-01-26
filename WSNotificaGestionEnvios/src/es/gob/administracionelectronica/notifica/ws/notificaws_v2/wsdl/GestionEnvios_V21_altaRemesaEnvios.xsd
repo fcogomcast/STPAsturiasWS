@@ -1,0 +1,334 @@
+<schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:not="https://administracionelectronica.gob.es/notifica/ws/notificaws_v2/1.0/altaRemesaEnvios" xmlns:xsd="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" targetNamespace="https://administracionelectronica.gob.es/notifica/ws/notificaws_v2/1.0/altaRemesaEnvios">
+  <element name="altaRemesaEnvios" type="not:altaRemesaEnvios"></element>
+  <complexType name="altaRemesaEnvios">
+    <all>
+      <element name="codigoOrganismoEmisor" type="not:CodigoDIR"></element>
+      <element name="tipoEnvio" type="not:TipoEnvio"></element>
+      <element name="concepto">
+        <simpleType>
+          <restriction base="string">
+            <whiteSpace value="preserve"></whiteSpace>
+            <maxLength value="255"></maxLength>
+          </restriction>
+        </simpleType>
+      </element>
+      <element minOccurs="0" name="descripcion">
+        <simpleType>
+          <restriction base="string">
+            <whiteSpace value="preserve"></whiteSpace>
+            <maxLength value="1000"></maxLength>
+          </restriction>
+        </simpleType>
+      </element>
+      <element minOccurs="0" name="fechaEnvioProgramado" type="date"></element>
+      <element minOccurs="0" name="procedimiento" type="string"></element>
+      <element name="documento" type="not:Documento"></element>
+      <element name="envios" type="not:Envios"></element>
+      <element minOccurs="0" name="opcionesRemesa" type="not:Opciones">
+        <annotation>
+          <documentation>
+                        Opciones para una remesa de envios (opcion : valor)
+                        -retardo : integer
+                        -caducidad: YYYY-MM-DD
+                    </documentation>
+        </annotation>
+      </element>
+    </all>
+  </complexType>
+  <complexType name="Envios">
+    <sequence maxOccurs="100">
+      <element name="envio" type="not:Envio"></element>
+    </sequence>
+  </complexType>
+  <complexType name="Envio">
+    <all>
+      <element minOccurs="0" name="referenciaEmisor">
+        <simpleType>
+          <restriction base="string">
+            <maxLength value="20"></maxLength>
+          </restriction>
+        </simpleType>
+      </element>
+      <element name="titular" type="not:Persona"></element>
+      <element minOccurs="0" name="destinatarios" type="not:Destinatarios"></element>
+      <element minOccurs="0" name="entregaPostal" type="not:EntregaPostal"></element>
+      <element minOccurs="0" name="entregaDEH" type="not:EntregaDEH"></element>
+    </all>
+  </complexType>
+  <complexType name="EntregaDEH">
+    <all>
+      <element name="obligado" type="boolean"></element>
+      <element minOccurs="0" name="codigoProcedimiento" type="string"></element>
+    </all>
+  </complexType>
+  <complexType name="EntregaPostal">
+    <all>
+      <element minOccurs="0" name="organismoPagadorPostal" type="not:OrganismoPagadorPostal"></element>
+      <element minOccurs="0" name="organismoPagadorCIE" type="not:OrganismoPagadorCIE"></element>
+      <element name="tipoDomicilio" type="not:TipoDomicilio"></element>
+      <element minOccurs="0" name="tipoVia">
+        <simpleType>
+          <restriction base="string">
+            <length value="5"></length>
+          </restriction>
+        </simpleType>
+      </element>
+      <element minOccurs="0" name="nombreVia">
+        <simpleType>
+          <restriction base="string">
+            <length value="50"></length>
+          </restriction>
+        </simpleType>
+      </element>
+      <element minOccurs="0" name="numeroCasa">
+        <simpleType>
+          <restriction base="string">
+            <length value="5"></length>
+          </restriction>
+        </simpleType>
+      </element>
+      <element minOccurs="0" name="puntoKilometrico">
+        <simpleType>
+          <restriction base="string">
+            <length value="5"></length>
+          </restriction>
+        </simpleType>
+      </element>
+      <element minOccurs="0" name="portal">
+        <simpleType>
+          <restriction base="string">
+            <length value="3"></length>
+          </restriction>
+        </simpleType>
+      </element>
+      <element minOccurs="0" name="puerta">
+        <simpleType>
+          <restriction base="string">
+            <length value="3"></length>
+          </restriction>
+        </simpleType>
+      </element>
+      <element minOccurs="0" name="escalera">
+        <simpleType>
+          <restriction base="string">
+            <length value="3"></length>
+          </restriction>
+        </simpleType>
+      </element>
+      <element minOccurs="0" name="planta">
+        <simpleType>
+          <restriction base="string">
+            <length value="3"></length>
+          </restriction>
+        </simpleType>
+      </element>
+      <element minOccurs="0" name="bloque">
+        <simpleType>
+          <restriction base="string">
+            <length value="3"></length>
+          </restriction>
+        </simpleType>
+      </element>
+      <element minOccurs="0" name="complemento">
+        <simpleType>
+          <restriction base="string">
+            <length value="40"></length>
+          </restriction>
+        </simpleType>
+      </element>
+      <element minOccurs="0" name="calificadorNumero">
+        <simpleType>
+          <restriction base="string">
+            <maxLength value="3"></maxLength>
+          </restriction>
+        </simpleType>
+      </element>
+      <element name="codigoPostal">
+        <simpleType>
+          <restriction base="string">
+            <length value="10"></length>
+          </restriction>
+        </simpleType>
+      </element>
+      <element minOccurs="0" name="apartadoCorreos">
+        <simpleType>
+          <restriction base="string">
+            <length value="10"></length>
+          </restriction>
+        </simpleType>
+      </element>
+      <element minOccurs="0" name="municipio">
+        <simpleType>
+          <restriction base="string">
+            <pattern value="[0-9]{6}"></pattern>
+          </restriction>
+        </simpleType>
+      </element>
+      <element minOccurs="0" name="provincia">
+        <simpleType>
+          <restriction base="string">
+            <pattern value="[0-9]{2}"></pattern>
+          </restriction>
+        </simpleType>
+      </element>
+      <element minOccurs="0" name="pais">
+        <simpleType>
+          <restriction base="string">
+            <maxLength value="2"></maxLength>
+          </restriction>
+        </simpleType>
+      </element>
+      <element minOccurs="0" name="poblacion">
+        <simpleType>
+          <restriction base="string">
+            <length value="30"></length>
+          </restriction>
+        </simpleType>
+      </element>
+      <element minOccurs="0" name="linea1">
+        <simpleType>
+          <restriction base="string">
+            <maxLength value="50"></maxLength>
+          </restriction>
+        </simpleType>
+      </element>
+      <element minOccurs="0" name="linea2">
+        <simpleType>
+          <restriction base="string">
+            <maxLength value="50"></maxLength>
+          </restriction>
+        </simpleType>
+      </element>
+      <element minOccurs="0" name="opcionesCIE" type="not:Opciones">
+        <annotation>
+          <documentation>
+                        Opciones para entrega al CIE (opcion : valor)
+                        -cie : identificador del CIE en Notifica (getCies)
+                        -formatoSobre: string (formato del sobre, americano, C5...)
+                        -formatoHoja: string (formato de la hoja, A4, A5, A3...)
+                    </documentation>
+        </annotation>
+      </element>
+    </all>
+  </complexType>
+  <simpleType name="TipoDomicilio">
+    <annotation>
+      <documentation>
+                1: Nacional Normalizado
+                2: Extranjero Normalizado
+                3: Apartado de Correos Normalizado
+                4: Sin Normalizar
+            </documentation>
+    </annotation>
+    <restriction base="integer">
+      <enumeration value="1"></enumeration>
+      <enumeration value="2"></enumeration>
+      <enumeration value="3"></enumeration>
+      <enumeration value="4"></enumeration>
+    </restriction>
+  </simpleType>
+  <complexType name="OrganismoPagadorPostal">
+    <all>
+      <element name="codigoDIR3Postal" type="not:CodigoDIR"></element>
+      <element name="numContratoPostal" type="string"></element>
+      <element name="codClienteFacturacionPostal" type="string"></element>
+      <element name="fechaVigenciaPostal" type="date"></element>
+    </all>
+  </complexType>
+  <complexType name="OrganismoPagadorCIE">
+    <all>
+      <element name="codigoDIR3CIE" type="not:CodigoDIR"></element>
+      <element name="fechaVigenciaCIE" type="date"></element>
+    </all>
+  </complexType>
+  <complexType name="Persona">
+    <all>
+      <element minOccurs="0" name="nif">
+        <simpleType>
+          <restriction base="string">
+            <whiteSpace value="collapse"></whiteSpace>
+            <maxLength value="9"></maxLength>
+          </restriction>
+        </simpleType>
+      </element>
+      <element minOccurs="0" name="nombre" type="string"></element>
+      <element minOccurs="0" name="apellidos" type="string"></element>
+      <element minOccurs="0" name="razonSocial" type="string"></element>
+      <element minOccurs="0" name="email" type="string"></element>
+      <element minOccurs="0" name="telefono" type="string"></element>
+      <element minOccurs="0" name="codigoDestino" type="not:CodigoDIR"></element>
+    </all>
+  </complexType>
+  <complexType name="Destinatarios">
+    <sequence maxOccurs="100">
+      <element name="destinatario" type="not:Persona"></element>
+    </sequence>
+  </complexType>
+  <simpleType name="CodigoDIR">
+    <restriction base="string">
+      <length value="9"></length>
+      <whiteSpace value="collapse"></whiteSpace>
+    </restriction>
+  </simpleType>
+  <simpleType name="TipoEnvio">
+    <annotation>
+      <documentation>
+                Valor 1 para las Comunicaciones, Valor 2 para las Notificaciones
+            </documentation>
+    </annotation>
+    <restriction base="integer">
+      <enumeration value="1"></enumeration>
+      <enumeration value="2"></enumeration>
+    </restriction>
+  </simpleType>
+  <complexType name="Documento">
+    <all>
+      <element minOccurs="0" name="contenido" type="base64Binary"></element>
+      <element name="hash" type="string"></element>
+      <element minOccurs="0" name="enlaceDocumento" type="string"></element>
+      <element minOccurs="0" name="metadatos" type="string"></element>
+      <element minOccurs="0" name="opcionesDocumento" type="not:Opciones">
+        <annotation>
+          <documentation>
+                        Opciones para documento (opcion : valor)
+                        -normalizado : si/no
+                        -generarCsv: si/no
+                    </documentation>
+        </annotation>
+      </element>
+    </all>
+  </complexType>
+  <complexType name="Opcion">
+    <simpleContent>
+      <extension base="string">
+        <attribute name="tipo" type="string" use="required"></attribute>
+      </extension>
+    </simpleContent>
+  </complexType>
+  <complexType name="Opciones">
+    <sequence maxOccurs="100">
+      <element name="opcion" type="not:Opcion"></element>
+    </sequence>
+  </complexType>
+  <element name="resultadoAltaRemesaEnvios" type="not:resultadoAltaRemesaEnvios"></element>
+  <complexType name="resultadoAltaRemesaEnvios">
+    <all>
+      <element name="codigoRespuesta" type="string"></element>
+      <element name="descripcionRespuesta" type="string"></element>
+      <element minOccurs="0" name="codigoOrganismoEmisor" type="not:CodigoDIR"></element>
+      <element minOccurs="0" name="fechaCreacion" nillable="true" type="dateTime"></element>
+      <element minOccurs="0" name="resultadoEnvios" type="not:ResultadoEnvios"></element>
+    </all>
+  </complexType>
+  <complexType name="ResultadoEnvios">
+    <sequence>
+      <element maxOccurs="unbounded" name="item" type="not:ResultadoEnvio"></element>
+    </sequence>
+  </complexType>
+  <complexType name="ResultadoEnvio">
+    <all>
+      <element name="identificador" type="string"></element>
+      <element minOccurs="0" name="nifTitular" type="string"></element>
+    </all>
+  </complexType>
+</schema>

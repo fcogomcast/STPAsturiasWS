@@ -1,0 +1,88 @@
+<definitions xmlns="http://schemas.xmlsoap.org/wsdl/" xmlns:cie="https://administracionelectronica.gob.es/notifica/ws/notificaws_v2/1.0/getCies" xmlns:info="https://administracionelectronica.gob.es/notifica/ws/notificaws_v2/1.0/infoEnvioV2" xmlns:not="https://administracionelectronica.gob.es/notifica/ws/notificaws_v2/1.0/altaRemesaEnvios" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap-enc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:tns="https://administracionelectronica.gob.es/notifica/ws/notificaws_v2/1.0/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="NotificaWsV2" targetNamespace="https://administracionelectronica.gob.es/notifica/ws/notificaws_v2/1.0/">
+  <portType name="NotificaWsV2PortType">
+    <operation name="altaRemesaEnvios">
+      <input message="tns:altaRemesaEnviosRequest"></input>
+      <output message="tns:altaRemesaEnviosResponse"></output>
+    </operation>
+    <operation name="infoEnvioV2">
+      <input message="tns:infoEnvioV2Request"></input>
+      <output message="tns:infoEnvioV2Response"></output>
+    </operation>
+    <operation name="getCies">
+      <input message="tns:getCiesRequest"></input>
+      <output message="tns:getCiesResponse"></output>
+    </operation>
+  </portType>
+  <types>
+    <xsd:schema targetNamespace="https://administracionelectronica.gob.es/notifica/ws/notificaws_v2/1.0/">
+      <xsd:import namespace="https://administracionelectronica.gob.es/notifica/ws/notificaws_v2/1.0/altaRemesaEnvios" schemaLocation="GestionEnvios_V21_altaRemesaEnvios.xsd"></xsd:import>
+      <xsd:import namespace="https://administracionelectronica.gob.es/notifica/ws/notificaws_v2/1.0/infoEnvioV2" schemaLocation="GestionEnvios_V21_infoEnvioV2.xsd"></xsd:import>
+      <xsd:import namespace="https://administracionelectronica.gob.es/notifica/ws/notificaws_v2/1.0/getCies" schemaLocation="GestionEnvios_V21_getCies.xsd"></xsd:import>
+    </xsd:schema>
+  </types>
+  <message name="altaRemesaEnviosHeader">
+    <part name="apiKey" type="xsd:string"></part>
+  </message>
+  <message name="altaRemesaEnviosRequest">
+    <part element="not:altaRemesaEnvios" name="altaRemesaEnvios"></part>
+  </message>
+  <message name="altaRemesaEnviosResponse">
+    <part element="not:resultadoAltaRemesaEnvios" name="resultadoAltaRemesaEnvios"></part>
+  </message>
+  <message name="infoEnvioV2Header">
+    <part name="apiKey" type="xsd:string"></part>
+  </message>
+  <message name="infoEnvioV2Request">
+    <part element="info:infoEnvioV2" name="infoEnvioV2"></part>
+  </message>
+  <message name="infoEnvioV2Response">
+    <part element="info:resultadoInfoEnvioV2" name="resultadoInfoEnvioV2"></part>
+  </message>
+  <message name="getCiesHeader">
+    <part name="apiKey" type="xsd:string"></part>
+  </message>
+  <message name="getCiesRequest">
+    <part element="cie:getCies" name="getCies"></part>
+  </message>
+  <message name="getCiesResponse">
+    <part element="cie:resultadoGetCies" name="resultadoGetCies"></part>
+  </message>
+  <service name="NotificaWsV2Service">
+    <port binding="tns:NotificaWsV2Binding" name="NotificaWsV2Port">
+      <soap:address location="https://se-notificaws.redsara.es/ws/notificaWsV21"></soap:address>
+    </port>
+  </service>
+  <binding name="NotificaWsV2Binding" type="tns:NotificaWsV2PortType">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"></soap:binding>
+    <operation name="altaRemesaEnvios">
+      <soap:operation soapAction="https://administracionelectronica.gob.es/notifica/ws/notificaws_v2/1.0/altaRemesaEnvios"></soap:operation>
+      <input>
+        <soap:body use="literal"></soap:body>
+        <soap:header message="tns:altaRemesaEnviosHeader" part="apiKey" use="literal"></soap:header>
+      </input>
+      <output>
+        <soap:body use="literal"></soap:body>
+      </output>
+    </operation>
+    <operation name="infoEnvioV2">
+      <soap:operation soapAction="https://administracionelectronica.gob.es/notifica/ws/notificaws_v2/1.0/infoEnvioV2"></soap:operation>
+      <input>
+        <soap:body use="literal"></soap:body>
+        <soap:header message="tns:infoEnvioV2Header" part="apiKey" use="literal"></soap:header>
+      </input>
+      <output>
+        <soap:body use="literal"></soap:body>
+      </output>
+    </operation>
+    <operation name="getCies">
+      <soap:operation soapAction="https://administracionelectronica.gob.es/notifica/ws/notificaws_v2/1.0/getCies"></soap:operation>
+      <input>
+        <soap:body use="literal"></soap:body>
+        <soap:header message="tns:getCiesHeader" part="apiKey" use="literal"></soap:header>
+      </input>
+      <output>
+        <soap:body use="literal"></soap:body>
+      </output>
+    </operation>
+  </binding>
+</definitions>

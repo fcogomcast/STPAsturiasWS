@@ -1,0 +1,349 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://notificagestionenvios.stpa.es" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="NotificaGestionEnvios" targetNamespace="http://notificagestionenvios.stpa.es">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://notificagestionenvios.stpa.es">
+      <xsd:element name="AltaRemesaEnvios">
+        <xsd:complexType>
+          <xsd:sequence>
+          	<xsd:element name="CodOrganismoEmisor" type="xsd:string" />
+          	<xsd:element name="IdAdar" type="xsd:string"></xsd:element>
+          	<xsd:element name="TipoEnvio" type="xsd:string"></xsd:element>
+          	<xsd:element name="Concepto" type="xsd:string"></xsd:element>
+          	<xsd:element name="TitNif" type="xsd:string"></xsd:element>
+          	<xsd:element name="TitNombre" type="xsd:string"></xsd:element>
+          	<xsd:element name="TitApellidos" type="xsd:string"></xsd:element>
+          	<xsd:element name="TitRazonSocial" type="xsd:string"></xsd:element>
+          	<xsd:element name="TitTelefono" type="xsd:string"></xsd:element>
+          	<xsd:element name="TitEmail" type="xsd:string"></xsd:element>
+          	<xsd:element name="DestNif" type="xsd:string"></xsd:element>
+          	<xsd:element name="DestNombre" type="xsd:string"></xsd:element>
+          	<xsd:element name="DestApellidos" type="xsd:string"></xsd:element>
+          	<xsd:element name="DestRazonSocial" type="xsd:string"></xsd:element>
+          	<xsd:element name="DestTelefono" type="xsd:string"></xsd:element>
+          	<xsd:element name="DestEmail" type="xsd:string"></xsd:element>
+          	<xsd:element name="DestRefEmisor" type="xsd:string"></xsd:element>
+          	<xsd:element name="DestCaducidad" type="xsd:string"></xsd:element>
+          	<xsd:element name="CodSia" type="xsd:string"></xsd:element>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="AltaRemesaEnviosResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+          	<xsd:element name="CodigoRespuesta" type="xsd:string" />
+          	<xsd:element name="DescripcionRespuesta"
+          		type="xsd:string">
+          	</xsd:element>
+          	<xsd:element name="ListaIdentificadores" type="tns:ListaIdentificadoresType"></xsd:element>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+    
+      <xsd:complexType name="ListaIdentificadoresType">
+      	<xsd:sequence>
+      		<xsd:element name="Identificador" type="tns:IdentificadorType" minOccurs="1" maxOccurs="unbounded"></xsd:element>
+      	</xsd:sequence>
+      </xsd:complexType>
+    
+      <xsd:complexType name="IdentificadorType">
+      	<xsd:sequence>
+      		<xsd:element name="identificador" type="xsd:string"></xsd:element>
+      		<xsd:element name="nifTitular" type="xsd:string"></xsd:element>
+      	</xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="SincronizarEnvio">
+      	<xsd:complexType>
+      		<xsd:sequence>
+
+      			<xsd:element name="organismoEmisor"
+      				type="xsd:string">
+                            <xsd:annotation>
+                            	<xsd:documentation>
+                            		Código del organismo emisor del
+                            		envío.
+                            	</xsd:documentation>
+                            </xsd:annotation>
+      			</xsd:element>
+      			<xsd:element name="identificador" type="xsd:string">
+      				<xsd:annotation>
+      					<xsd:documentation>
+      						Identificador del envío que se está
+      						tratando de sincronizar.
+      					</xsd:documentation>
+      				</xsd:annotation></xsd:element>
+      			<xsd:element name="tipoEntrega">
+      				<xsd:annotation>
+      					<xsd:documentation>
+      						Si se está enviando un datado, una
+      						certificación o ambas cosas Se enviarán
+      						los siguientes valores 1- Datado 2-
+      						Certificación 3- Datado y Certificación
+      					</xsd:documentation>
+      				</xsd:annotation>
+      				<xsd:simpleType>
+      					<xsd:restriction base="xsd:int">
+      						<xsd:enumeration value="1"></xsd:enumeration>
+      						<xsd:enumeration value="2"></xsd:enumeration>
+      						<xsd:enumeration value="3"></xsd:enumeration>
+      					</xsd:restriction>
+      				</xsd:simpleType>
+      			</xsd:element>
+      			<xsd:element name="modoNotificacion">
+      				<xsd:annotation>
+      					<xsd:documentation>
+      						Modo en que se ha realizado la entrega Se
+      						enviarán los siguientes valores 1-
+      						Comparecencia Espontánea 2- Postal 3-
+      						Gestor Organismo Emisor
+      					</xsd:documentation>
+      				</xsd:annotation>
+      				<xsd:simpleType>
+      					<xsd:restriction base="xsd:int">
+      						<xsd:enumeration value="1"></xsd:enumeration>
+      						<xsd:enumeration value="2"></xsd:enumeration>
+      						<xsd:enumeration value="3"></xsd:enumeration>
+      					</xsd:restriction>
+      				</xsd:simpleType>
+      			</xsd:element>
+      			<xsd:element name="estado" type="xsd:string">
+      				<xsd:annotation>
+      					<xsd:documentation>
+      						Estado en que se encuentra el envío, según
+      						los estados del anexo VI del documento
+
+
+      						https://administracionelectronica.gob.es/ctt/resources/Soluciones/706/Descargas/Servicios%20Web%20Organismos%20Emisores.pdf?idIniciativa=706&amp;idElemento=3566
+
+      					</xsd:documentation>
+      				</xsd:annotation></xsd:element>
+      			<xsd:element name="fechaEstado" type="xsd:dateTime">
+      				<xsd:annotation>
+      					<xsd:documentation>
+      						Fecha en la que se produce el cambio de
+      						estado
+      					</xsd:documentation>
+      				</xsd:annotation></xsd:element>
+      			<xsd:element name="nifReceptor" type="xsd:string">
+      				<xsd:annotation>
+      					<xsd:documentation>
+      						NIF del receptor de la notificación
+      					</xsd:documentation>
+      				</xsd:annotation></xsd:element>
+      			<xsd:element name="nombreReceptor"
+      				type="xsd:string">
+                            <xsd:annotation>
+                            	<xsd:documentation>
+                            		Nombre del receptor de la
+                            		notificación
+                            	</xsd:documentation>
+                            </xsd:annotation>
+      			</xsd:element>
+      			<xsd:element name="vinculoReceptor">
+      				<xsd:annotation>
+      					<xsd:documentation>
+      						Relación entre el receptor y la
+      						notificacion
+
+      						Se enviarán los siguientes valores: 1-
+      						Titular 2- Destinatario 3- Apoderado 4-
+      						Funcionario Habilitado 5- Otros
+      					</xsd:documentation>
+      				</xsd:annotation>
+      				<xsd:simpleType>
+      					<xsd:restriction base="xsd:int">
+      						<xsd:enumeration value="1"></xsd:enumeration>
+      						<xsd:enumeration value="2"></xsd:enumeration>
+      						<xsd:enumeration value="3"></xsd:enumeration>
+      						<xsd:enumeration value="4"></xsd:enumeration>
+      						<xsd:enumeration value="5"></xsd:enumeration>
+      					</xsd:restriction>
+      				</xsd:simpleType>
+      			</xsd:element>
+      			<xsd:element name="id_archivo_acuse" type="xsd:int">
+      				<xsd:annotation>
+      					<xsd:documentation>
+      						Identificador en archivo digital del
+      						documento que certifica la entrega
+      					</xsd:documentation>
+      				</xsd:annotation></xsd:element>
+      		</xsd:sequence>
+      	</xsd:complexType>
+      </xsd:element>
+      <xsd:element name="SincronizarEnvioResponse">
+      	<xsd:complexType>
+      		<xsd:sequence>
+
+      			<xsd:element name="codigo" type="xsd:string"></xsd:element>
+      			<xsd:element name="descripcion" type="xsd:string"></xsd:element>
+      		</xsd:sequence>
+      	</xsd:complexType>
+      </xsd:element>
+      <xsd:element name="ActualizarRespuesta">
+        <xsd:complexType>
+          <xsd:sequence>
+          	<xsd:element name="identificadorEnvio" type="xsd:string">
+      				<xsd:annotation>
+      					<xsd:documentation>
+      						Identificador del envío cuya respuesta se quiere actualizar con los datos que tenga Notific@
+      					</xsd:documentation>
+      				</xsd:annotation>
+      	    </xsd:element>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="ActualizarRespuestaResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+          	<xsd:element name="CodigoRespuesta" type="xsd:string" />
+          	<xsd:element name="DescripcionRespuesta" type="xsd:string">
+          	</xsd:element>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      
+      <!--  CRUBENCVS 46939 08/03/2023 -->
+      <xsd:element name="AltaRemesaEnviosConjunto">
+        <xsd:complexType>
+          <xsd:sequence>
+          	<xsd:element name="CodOrganismoEmisor" type="xsd:string" />
+          	<xsd:element name="Archivos" type="tns:ArchivosType"></xsd:element>
+          	<xsd:element name="TipoEnvio" type="xsd:string"></xsd:element>
+          	<xsd:element name="Concepto" type="xsd:string"></xsd:element>
+          	<xsd:element name="TitNif" type="xsd:string"></xsd:element>
+          	<xsd:element name="TitNombre" type="xsd:string"></xsd:element>
+          	<xsd:element name="TitApellidos" type="xsd:string"></xsd:element>
+          	<xsd:element name="TitRazonSocial" type="xsd:string"></xsd:element>
+          	<xsd:element name="TitTelefono" type="xsd:string"></xsd:element>
+          	<xsd:element name="TitEmail" type="xsd:string"></xsd:element>
+          	<xsd:element name="DestNif" type="xsd:string"></xsd:element>
+          	<xsd:element name="DestNombre" type="xsd:string"></xsd:element>
+          	<xsd:element name="DestApellidos" type="xsd:string"></xsd:element>
+          	<xsd:element name="DestRazonSocial" type="xsd:string"></xsd:element>
+          	<xsd:element name="DestTelefono" type="xsd:string"></xsd:element>
+          	<xsd:element name="DestEmail" type="xsd:string"></xsd:element>
+          	<xsd:element name="DestRefEmisor" type="xsd:string"></xsd:element>
+          	<xsd:element name="DestCaducidad" type="xsd:string"></xsd:element>
+          	<xsd:element name="CodSia" type="xsd:string"></xsd:element>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="AltaRemesaEnviosConjuntoResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+          	<xsd:element name="CodigoRespuesta" type="xsd:string" />
+          	<xsd:element name="DescripcionRespuesta"
+          		type="xsd:string">
+          	</xsd:element>
+          	<xsd:element name="ListaIdentificadores" type="tns:ListaIdentificadoresType"></xsd:element>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <!-- FIN CRUBENCVS 46939 08/03/2023 -->
+    
+      <xsd:complexType name="ArchivosType">
+      	<xsd:sequence>
+      		<xsd:element name="Archivo" type="tns:ArchivoType" minOccurs="1" maxOccurs="unbounded"></xsd:element>
+      	</xsd:sequence>
+      </xsd:complexType>
+    
+      <xsd:complexType name="ArchivoType">
+      	<xsd:sequence>
+      		<xsd:element name="IdAdar" type="xsd:string" minOccurs="1"></xsd:element>
+      		<xsd:element name="NombreFichero" type="xsd:string" minOccurs="1"></xsd:element>
+      	</xsd:sequence>
+      </xsd:complexType>
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="AltaRemesaEnviosRequest">
+    <wsdl:part element="tns:AltaRemesaEnvios" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="AltaRemesaEnviosResponse">
+    <wsdl:part element="tns:AltaRemesaEnviosResponse" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="SincronizarEnvioRequest">
+  	<wsdl:part name="parameters" element="tns:SincronizarEnvio"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="SincronizarEnvioResponse">
+  	<wsdl:part name="parameters" element="tns:SincronizarEnvioResponse"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="ActualizarRespuestaRequest">
+    <wsdl:part element="tns:ActualizarRespuesta" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="ActualizarRespuestaResponse">
+    <wsdl:part element="tns:ActualizarRespuestaResponse" name="parameters"/>
+  </wsdl:message>
+  <!--  CRUBENCVS 46939 08/03/2023 -->
+  <wsdl:message name="AltaRemesaEnviosConjuntoRequest">
+    <wsdl:part element="tns:AltaRemesaEnviosConjunto" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="AltaRemesaEnviosConjuntoResponse">
+    <wsdl:part element="tns:AltaRemesaEnviosConjuntoResponse" name="parameters"/>
+  </wsdl:message>
+  <!-- FIN CRUBENCVS 46939 08/03/2023 -->
+  <wsdl:portType name="NotificaGestionEnvios">
+    <wsdl:operation name="AltaRemesaEnvios">
+      <wsdl:input message="tns:AltaRemesaEnviosRequest"/>
+      <wsdl:output message="tns:AltaRemesaEnviosResponse"/>
+    </wsdl:operation>
+    <wsdl:operation name="SincronizarEnvio">
+    	<wsdl:input message="tns:SincronizarEnvioRequest"></wsdl:input>
+    	<wsdl:output message="tns:SincronizarEnvioResponse"></wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ActualizarRespuesta">
+    	<wsdl:input message="tns:ActualizarRespuestaRequest"></wsdl:input>
+    	<wsdl:output message="tns:ActualizarRespuestaResponse"></wsdl:output>
+    </wsdl:operation>
+    <!--  CRUBENCVS 46939 08/03/2023 -->
+    <wsdl:operation name="AltaRemesaEnviosConjunto">
+      <wsdl:input message="tns:AltaRemesaEnviosConjuntoRequest"/>
+      <wsdl:output message="tns:AltaRemesaEnviosConjuntoResponse"/>
+    </wsdl:operation>
+    <!-- FIN CRUBENCVS 46939 08/03/2023 -->
+  </wsdl:portType>
+  <wsdl:binding name="NotificaGestionEnviosSOAP" type="tns:NotificaGestionEnvios">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="AltaRemesaEnvios">
+      <soap:operation soapAction="http://notificagestionenvios.stpa.es/NewOperation"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SincronizarEnvio">
+      <soap:operation soapAction="http://notificagestionenvios.stpa.es/SincronizarEnvio"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ActualizarRespuesta">
+      <soap:operation soapAction="http://notificagestionenvios.stpa.es/ActualizarRespuesta"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <!--  CRUBENCVS 46939 08/03/2023 -->
+    <wsdl:operation name="AltaRemesaEnviosConjunto">
+      <soap:operation soapAction="http://notificagestionenvios.stpa.es/AltaRemesaEnviosConjunto"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <!-- FIN CRUBENCVS 46939 08/03/2023 -->
+  </wsdl:binding>
+  <wsdl:service name="NotificaGestionEnvios">
+    <wsdl:port binding="tns:NotificaGestionEnviosSOAP" name="NotificaGestionEnviosSOAP">
+      <soap:address location="http://bus:7101/WSNotifica/ProxyServices/PXGestionEnvios"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

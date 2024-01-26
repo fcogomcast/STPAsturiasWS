@@ -1,0 +1,31 @@
+<schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:cie="https://administracionelectronica.gob.es/notifica/ws/notificaws_v2/1.0/getCies" elementFormDefault="qualified" targetNamespace="https://administracionelectronica.gob.es/notifica/ws/notificaws_v2/1.0/getCies">
+  <element name="getCies" type="cie:getCies"></element>
+  <complexType name="getCies">
+    <all>
+      <element name="organismoEmisor" type="string"></element>
+    </all>
+  </complexType>
+  <complexType name="Cie">
+    <all>
+      <element name="id" type="int"></element>
+      <element name="centroImpresion" type="string"></element>
+      <element name="fechaVigencia" type="string"></element>
+      <element name="codigoUnidadRelacionada" type="string"></element>
+      <element name="nombreUnidadRelacionada" type="string"></element>
+      <element name="orden" type="int"></element>
+    </all>
+  </complexType>
+  <complexType name="Cies">
+    <sequence>
+      <element maxOccurs="unbounded" minOccurs="0" name="cie" type="cie:Cie"></element>
+    </sequence>
+  </complexType>
+  <element name="resultadoGetCies" type="cie:resultadoGetCies"></element>
+  <complexType name="resultadoGetCies">
+    <all>
+      <element name="cies" type="cie:Cies"></element>
+      <element name="codigoRespuesta" type="string"></element>
+      <element name="descripcionRespuesta" type="string"></element>
+    </all>
+  </complexType>
+</schema>
