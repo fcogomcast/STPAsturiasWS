@@ -15,15 +15,15 @@ targetCompatibility = 1.8
 dependencies {
     // A�ade las dependencias que necesites desde la carpeta 'webcontent/lib'
     implementation fileTree(dir: 'webcontent/WEB-INF/lib', include: ['*.jar'])
-    implementation 'junit:junit:4.13.2'
-    implementation 'junit:junit:4.13.2'
-    implementation 'junit:junit:4.13.2'
-    testImplementation 'junit:junit:4.13.2'
-    testImplementation 'junit:junit:4.13.2'
     //implementation fileTree(dir: 'webcontent/WEB-INF', include: ['*.xml'])
-    //implementation 'javax.servlet:javax.servlet-api:3.1.0'
+    implementation 'javax.servlet:javax.servlet-api:3.1.0'
+
+    testImplementation 'junit:junit:4.12'
+    implementation 'junit:junit:4.12'
+
     // A�ade otras dependencias aqu�
 }
+
 // Ruta de las clases Java a compilar
 sourceSets {
     main {
@@ -40,7 +40,12 @@ tasks.withType(JavaCompile) {
 
 // Configuraci�n espec�fica para el plugin 'war'
 war {
-    archiveFileName = "$buildDir/target/WSDocumentoElectronico.war" // Cambia esto por el nombre que desees para tu archivo WAR
+    archiveFileName = "$buildDir/target/CalculoModelo600.war" // Cambia esto por el nombre que desees para tu archivo WAR
+
+    from('webcontent/WEB-INF/classes') {
+        include '**/*.properties'
+        into 'WEB-INF/classes'
+    }
 
     // Agrega todos los archivos WSDL
     from('wsdl') {
@@ -48,16 +53,9 @@ war {
         into 'WEB-INF/classes'
     }
 
-    // Agrega archivo HandleChange.xml
-     from('src/es/tributasenasturias/docel') {
-         include '**/*.xml'
-         into 'WEB-INF/classes/es/tributasenasturias/docel'
-     }
-
-    //Agrega archivo PXLanzador.wsdl
-    from('src/es/tributasenasturias/lanzador/impl/wsdl') {
-        include '**/*.wsdl'
-        into 'WEB-INF/classes/es/tributasenasturias/lanzador/impl/wsdl'
+    from('src/es/tributasenasturias/webservice') {
+        include '**/*.xml'
+        into 'WEB-INF/classes/es/tributasenasturias/webservice'
     }
 
     // Agrega solo los archivos XML de la carpeta WEB-INF
@@ -67,4 +65,3 @@ war {
         }
     }
 }
-

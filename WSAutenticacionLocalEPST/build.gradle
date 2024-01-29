@@ -15,6 +15,11 @@ targetCompatibility = 1.8
 dependencies {
     // A�ade las dependencias que necesites desde la carpeta 'webcontent/lib'
     implementation fileTree(dir: 'webcontent/WEB-INF/lib', include: ['*.jar'])
+    implementation 'junit:junit:4.13.2'
+    implementation 'junit:junit:4.13.2'
+    implementation 'junit:junit:4.13.2'
+    testImplementation 'junit:junit:4.13.2'
+    testImplementation 'junit:junit:4.13.2'
     //implementation fileTree(dir: 'webcontent/WEB-INF', include: ['*.xml'])
     //implementation 'javax.servlet:javax.servlet-api:3.1.0'
     // A�ade otras dependencias aqu�

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<xs:schema version="1.0" targetNamespace="http://webservice.tributasenasturias.es/" xmlns:tns="http://webservice.tributasenasturias.es/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+  <xs:element name="getCalculoModelo600" type="tns:getCalculoModelo600"/>
+
+  <xs:element name="getCalculoModelo600Response" type="tns:getCalculoModelo600Response"/>
+
+  <xs:complexType name="getCalculoModelo600">
+    <xs:sequence>
+      <xs:element name="xmlData" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getCalculoModelo600Response">
+    <xs:sequence>
+      <xs:element name="return" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>
+

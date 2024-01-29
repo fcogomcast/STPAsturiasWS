@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE preferences SYSTEM "http://java.sun.com/dtd/preferences.dtd">
+<preferences EXTERNAL_XML_VERSION="1.0">
+  <root type="system">
+    <map>
+      <entry key="Debug" value="1"/>
+      <entry key="Entorno" value="PSEUDOREAL"/>
+      <entry key="ProcedimientoAlmacenado" value="ANCERT.wsCalculoModelo600"/>
+      <entry key="endpoint_lanzador" value="http://bus.desa.epst.pa:7001/WSInternos/ProxyServices/PXLanzador"/>
+    </map>
+  </root>
+</preferences>
