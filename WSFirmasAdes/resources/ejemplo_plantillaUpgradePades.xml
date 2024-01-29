@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<VerifyRequest xmlns="urn:oasis:names:tc:dss:1.0:core:schema"
+	xmlns:ns2="http://www.w3.org/2000/09/xmldsig#"
+	xmlns:ns3="urn:afirma:dss:1.0:profile:XSS:schema">
+	<OptionalInputs>
+		<ClaimedIdentity>
+			<Name>princast.stpa.tributas</Name>
+		</ClaimedIdentity>
+		<ReturnUpdatedSignature Type="" />
+		<ns3:UpdatedSignatureMode>
+			urn:afirma:dss:1.0:profile:XSS:upgrade:NoCertificateValidation
+		</ns3:UpdatedSignatureMode>
+		<ns3:IgnoreGracePeriod
+			xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true" />
+	</OptionalInputs>
+	<SignatureObject>
+		<Base64Signature></Base64Signature>
+	</SignatureObject>
+</VerifyRequest>

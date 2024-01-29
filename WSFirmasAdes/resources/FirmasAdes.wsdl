@@ -1,0 +1,378 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://www.tributasenasturias.es/servicios/FirmasAdes/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="FirmasAdes" targetNamespace="http://www.tributasenasturias.es/servicios/FirmasAdes/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://www.tributasenasturias.es/servicios/FirmasAdes/">
+      <xsd:element name="FirmaXades">
+        <xsd:complexType>
+          <xsd:sequence>
+          	<xsd:element name="Documento"
+          		type="tns:DocumentoXadesInType" />
+          	<xsd:element name="DatosFirma" type="tns:DatosFirmaXadesType"></xsd:element>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="FirmaXadesResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+          	<xsd:element name="Resultado" type="tns:ResultadoType"
+          		minOccurs="1" maxOccurs="1" />
+          	<xsd:element name="Documento" type="tns:DocumentoXadesOutType" minOccurs="0" maxOccurs="1">
+          		<xsd:annotation>
+          			<xsd:documentation>
+          				Datos del documento resultado, siempre que no
+          				se haya producido error
+          			</xsd:documentation>
+          		</xsd:annotation></xsd:element>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+    
+      <xsd:complexType name="DocumentoXadesInType">
+                <xsd:annotation>
+                	<xsd:documentation>
+                		Documento de entrada para firma Xades. Deberá
+                		ser un XML
+                	</xsd:documentation>
+                </xsd:annotation>
+                <xsd:sequence>
+      		<xsd:element name="Base64XML" type="xsd:base64Binary" minOccurs="1" maxOccurs="1">
+      			<xsd:annotation>
+      				<xsd:documentation>
+      					Contenido del documento XML sin firmar, que se
+      					procesará según XAdES. Estará codificado en
+      					Base64, e internamente su codificación de
+      					caracteres deberá ser UTF-8, ya que es como se
+      					tratará.
+      				</xsd:documentation>
+      			</xsd:annotation></xsd:element>
+      	</xsd:sequence>
+      </xsd:complexType>
+    
+      <xsd:complexType name="DatosFirmaXadesType">
+      	<xsd:sequence>
+
+      		<xsd:element name="ModoFirma" minOccurs="1" maxOccurs="1"
+      			type="tns:ModoFirmaXadesType">
+      			<xsd:annotation>
+      				<xsd:documentation>
+      					Modo de firma. Actualmente sólo se implementa
+
+      					INTERNALLY_DETACHED
+      				</xsd:documentation>
+      			</xsd:annotation>
+
+      		</xsd:element>
+      		<xsd:element name="FormatoXades" minOccurs="1"
+      			maxOccurs="1" type="tns:FormatoXadesType">
+      			<xsd:annotation>
+      				<xsd:documentation>
+      					Formato Xades. Actualmente se implementan
+
+      					BES EPES ES-T ES-C ES-X ES-X-L ES-A
+
+
+      				</xsd:documentation>
+      			</xsd:annotation>
+
+      		</xsd:element>
+      		<xsd:element name="AlgoritmoHash" minOccurs="1"
+      			maxOccurs="1" type="tns:AlgoritmoHashType">
+      			<xsd:annotation>
+      				<xsd:documentation>
+      					Algoritmo de resumen utilizado en la firma.
+      				</xsd:documentation>
+      			</xsd:annotation>
+
+      		</xsd:element>
+      		<xsd:element name="PoliticaFirma"
+      			type="tns:PoliticaFirmaXadesType" minOccurs="0"
+      			maxOccurs="1">
+      			<xsd:annotation>
+      				<xsd:documentation>
+      					Datos de la política de firma. Sólo es
+      					necesaria si se desea un formato EPES, se
+      					puede solicitar un formato superior sin
+      					basarlo en EPES.
+      				</xsd:documentation>
+      			</xsd:annotation>
+      		</xsd:element>
+      		<xsd:element name="IdNodoAFirmar" type="xsd:string" minOccurs="0">
+      			<xsd:annotation>
+      				<xsd:documentation>
+      					Id del nodo a firmar
+      				</xsd:documentation>
+      			</xsd:annotation></xsd:element>
+      		<xsd:element name="XPathNodoContenedorFirma" type="xsd:string" minOccurs="0">
+      			<xsd:annotation>
+      				<xsd:documentation>
+      					En firmas ENVELOPED, XPath v1 para localizar
+      					el nodo en el que dejar la firma generada. Si
+      					no se indica, tomará el lugar por defecto, a
+      					continuación del contenido.
+      				</xsd:documentation>
+      			</xsd:annotation></xsd:element>
+      	</xsd:sequence>
+      </xsd:complexType>
+    
+      <xsd:complexType name="ResultadoType">
+                <xsd:annotation>
+                	<xsd:documentation>
+
+                	</xsd:documentation>
+                </xsd:annotation>
+                <xsd:sequence>
+                	<xsd:element name="esError" type="xsd:boolean"
+                		minOccurs="1" maxOccurs="1">
+                		<xsd:annotation>
+                			<xsd:documentation>
+                				Indica si el resultado es error (true) o
+                				no (false)
+                			</xsd:documentation>
+                		</xsd:annotation>
+                	</xsd:element>
+                	<xsd:element name="codigo" type="xsd:string"
+                		minOccurs="1" maxOccurs="1">
+                		<xsd:annotation>
+                			<xsd:documentation>
+                				Código de resultado
+                			</xsd:documentation>
+                		</xsd:annotation>
+                	</xsd:element>
+                	<xsd:element name="descripcion" type="xsd:string" minOccurs="1" maxOccurs="1">
+                		<xsd:annotation>
+                			<xsd:documentation>
+                				Descripción del resultado
+                			</xsd:documentation>
+                		</xsd:annotation></xsd:element>
+                </xsd:sequence>
+      </xsd:complexType>
+    
+      <xsd:complexType name="DocumentoXadesOutType">
+      	<xsd:sequence>
+      		<xsd:element name="Base64XML" type="xsd:base64Binary" minOccurs="1" maxOccurs="1">
+      			<xsd:annotation>
+      				<xsd:documentation>
+      					Documento resultado de la firma, en XML
+      				</xsd:documentation>
+      			</xsd:annotation></xsd:element>
+      	</xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="FirmaPades">
+      	<xsd:complexType>
+      		<xsd:sequence>
+
+      			<xsd:element name="Documento"
+      				type="tns:DocumentoPadesInType">
+      			</xsd:element>
+      			<xsd:element name="DatosFirma" type="tns:DatosFirmaPadesType"></xsd:element>
+      		</xsd:sequence>
+      	</xsd:complexType>
+      </xsd:element>
+      <xsd:element name="FirmaPadesResponse">
+      	<xsd:complexType>
+      		<xsd:sequence>
+
+      			<xsd:element name="Resultado" type="tns:ResultadoType"
+      				minOccurs="1" maxOccurs="1">
+      				<xsd:annotation>
+      					<xsd:documentation>
+      						Resultado del servicio
+      					</xsd:documentation>
+      				</xsd:annotation>
+      			</xsd:element>
+
+      			<xsd:element name="Documento" type="tns:DocumentoPadesOutType" minOccurs="0" maxOccurs="1">
+      				<xsd:annotation>
+      					<xsd:documentation>
+      						Documento PDF firmado, si el servicio
+      						termina con éxito.
+      					</xsd:documentation>
+      				</xsd:annotation></xsd:element>
+      		</xsd:sequence>
+      	</xsd:complexType>
+      </xsd:element>
+    
+      <xsd:complexType name="DocumentoPadesInType">
+      	<xsd:sequence>
+      		<xsd:element name="Base64Pdf" type="xsd:base64Binary" minOccurs="1" maxOccurs="1">
+      			<xsd:annotation>
+      				<xsd:documentation>
+      					Contenido del PDF sin firmar, en base64
+      				</xsd:documentation>
+      			</xsd:annotation></xsd:element>
+      	</xsd:sequence>
+      </xsd:complexType>
+
+      <xsd:complexType name="DatosFirmaPadesType">
+      	<xsd:sequence>
+
+      		<xsd:element name="FormatoPades" minOccurs="1"
+      			maxOccurs="1" type="tns:FormatoPadesType">
+      			<xsd:annotation>
+      				<xsd:documentation>
+      					Formato Pades. Actualmente se soportan (por no
+      					haber probado el resto)
+
+      					BES EPES LTV
+      				</xsd:documentation>
+      			</xsd:annotation>
+
+      		</xsd:element>
+      		<xsd:element name="AlgoritmoHash"
+      			type="tns:AlgoritmoHashType" minOccurs="1" maxOccurs="1">
+      		</xsd:element>
+      		<xsd:element name="PoliticaFirma" type="tns:PoliticaFirmaPadesType" minOccurs="0" maxOccurs="1"></xsd:element>
+      	</xsd:sequence>
+      </xsd:complexType>
+    
+      <xsd:complexType name="DocumentoPadesOutType">
+      	<xsd:sequence>
+      		<xsd:element name="Base64Pdf" type="xsd:base64Binary">
+      			<xsd:annotation>
+      				<xsd:documentation>
+      					Contenido del documento PDF firmado, en base64
+      				</xsd:documentation>
+      			</xsd:annotation></xsd:element>
+      	</xsd:sequence>
+      </xsd:complexType>
+    
+      <xsd:complexType name="PoliticaFirmaPadesType">
+      	<xsd:sequence>
+      		<xsd:element name="PolicyIdentifier" type="xsd:string" minOccurs="1" maxOccurs="1"></xsd:element>
+      		<xsd:element name="PolicyIdentifierHash"
+      			type="xsd:string" minOccurs="1" maxOccurs="1">
+      		</xsd:element>
+      		<xsd:element name="PolicyIdentifierHashAlgorithm"
+      			type="xsd:string" minOccurs="1" maxOccurs="1">
+      		</xsd:element>
+      		<xsd:element name="PolicyQualifier" type="xsd:string" minOccurs="1" maxOccurs="1"></xsd:element>
+      	</xsd:sequence>
+      </xsd:complexType>
+    
+        
+      <xsd:simpleType name="AlgoritmoHashType">
+      	<xsd:annotation>
+      		<xsd:documentation>
+      			Algoritmo de resumen utilizado en la firma. Valores
+      			admitidos 
+      			SHA1 
+      			SHA256 
+      			SHA384 
+      			SHA512
+      		</xsd:documentation>
+      	</xsd:annotation>
+      	<xsd:restriction base="xsd:string">
+      		<xsd:enumeration value="SHA1"></xsd:enumeration>
+      		<xsd:enumeration value="SHA256"></xsd:enumeration>
+      		<xsd:enumeration value="SHA384"></xsd:enumeration>
+      		<xsd:enumeration value="SHA512"></xsd:enumeration>
+      	</xsd:restriction>
+      </xsd:simpleType>
+    
+      <xsd:simpleType name="ModoFirmaXadesType">
+      	<xsd:annotation>
+      		<xsd:documentation>
+      			Modos de firma de Xades
+      		</xsd:documentation>
+      	</xsd:annotation>
+      	<xsd:restriction base="xsd:string">
+      		<xsd:enumeration value="ENVELOPED"></xsd:enumeration>
+      		<xsd:enumeration value="ENVELOPING"></xsd:enumeration>
+      		<xsd:enumeration value="INTERNALLY_DETACHED"></xsd:enumeration>
+      		<xsd:enumeration value="DETACHED"></xsd:enumeration>
+      	</xsd:restriction>
+      </xsd:simpleType>
+    
+      <xsd:simpleType name="FormatoXadesType">
+      	<xsd:restriction base="xsd:string">
+      		<xsd:enumeration value="BES"></xsd:enumeration>
+      		<xsd:enumeration value="EPES"></xsd:enumeration>
+      		<xsd:enumeration value="ES-T"></xsd:enumeration>
+      		<xsd:enumeration value="ES-C"></xsd:enumeration>
+      		<xsd:enumeration value="ES-X"></xsd:enumeration>
+      		<xsd:enumeration value="ES-X-L"></xsd:enumeration>
+      		<xsd:enumeration value="ES-A"></xsd:enumeration>
+      	</xsd:restriction>
+      </xsd:simpleType>
+    
+      <xsd:simpleType name="FormatoPadesType">
+      	<xsd:annotation>
+      		<xsd:documentation>
+      			Formato de firma PADES.
+      		</xsd:documentation>
+      	</xsd:annotation>
+      	<xsd:restriction base="xsd:string">
+      		<xsd:enumeration value="BES"></xsd:enumeration>
+      		 <xsd:enumeration value="EPES"></xsd:enumeration>
+      		<xsd:enumeration value="LTV"></xsd:enumeration>
+      	</xsd:restriction>
+      </xsd:simpleType>
+    
+      <xsd:complexType name="PoliticaFirmaXadesType">
+      	<xsd:sequence>
+      		<xsd:element name="PolicyIdentifier" type="xsd:string"
+      			minOccurs="1" maxOccurs="1">
+      		</xsd:element>
+      		<xsd:element name="PolicyIdentifierHash" type="xsd:string"
+      			minOccurs="1" maxOccurs="1">
+      		</xsd:element>
+      		<xsd:element name="PolicyIdentifierHashAlgorithm"
+      			type="xsd:string" minOccurs="1" maxOccurs="1">
+      		</xsd:element>
+      		<xsd:element name="PolicyQualifier" type="xsd:string"
+      			minOccurs="1" maxOccurs="1">
+      		</xsd:element>
+      		<xsd:element name="PolicyDescription" type="xsd:string" minOccurs="1" maxOccurs="1"></xsd:element>
+      	</xsd:sequence>
+      </xsd:complexType>
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="FirmaXadesRequest">
+    <wsdl:part element="tns:FirmaXades" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="FirmaXadesResponse">
+    <wsdl:part element="tns:FirmaXadesResponse" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="FirmaPadesRequest">
+  	<wsdl:part name="parameters" element="tns:FirmaPades"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="FirmaPadesResponse">
+  	<wsdl:part name="parameters" element="tns:FirmaPadesResponse"></wsdl:part>
+  </wsdl:message>
+  <wsdl:portType name="FirmasAdes">
+    <wsdl:operation name="FirmaXades">
+      <wsdl:input message="tns:FirmaXadesRequest"/>
+      <wsdl:output message="tns:FirmaXadesResponse"/>
+    </wsdl:operation>
+    <wsdl:operation name="FirmaPades">
+    	<wsdl:input message="tns:FirmaPadesRequest"></wsdl:input>
+    	<wsdl:output message="tns:FirmaPadesResponse"></wsdl:output>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="FirmasAdesSOAP" type="tns:FirmasAdes">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="FirmaXades">
+      <soap:operation soapAction="http://www.tributasenasturias.es/servicios/FirmasAdes/FirmaXades"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FirmaPades">
+      <soap:operation soapAction="http://www.tributasenasturias.es/servicios/FirmasAdes/FirmaPades"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="FirmasAdes">
+    <wsdl:port binding="tns:FirmasAdesSOAP" name="FirmasAdesSOAP">
+      <soap:address location="http://bus:7101/WSInternos/ProxyServices/PXFirmasAdes"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
