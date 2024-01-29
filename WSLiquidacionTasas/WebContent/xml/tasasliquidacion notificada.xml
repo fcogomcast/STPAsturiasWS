@@ -1,0 +1,252 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<Paginas>
+	<Pagina>
+		<textobox ID="Etiqueta30"  type="100" fuente="F2" size="10" x="35" y="623" x1="156" y1="14" modo="1">Ref. Externa</textobox>
+		<textobox ID="Etiqueta177" type="100" fuente="F2" size="10" x="251" y="623" x1="156" y1="14" modo="1">Identificación de la Liquidación</textobox>
+		<!-- ini indra10 05/02/02 : Ampliación de datos en validación para multas-->		
+		<!-- <textobox ID="Etiqueta162" type="100" fuente="F2" size="8" x="36" y="326" x1="246" y1="11" modo="1">Validación: </textobox> -->
+<!--**INICIO**04/04/2006**NATALIA**MODIFICAR TEXTO.ELIMINAR REFERENCIA A LA FECHA DE CADUCIDAD**-->		
+		<!--<textobox ID="Etiqueta162" type="100" fuente="F2" size="8" x="36" y="337" x1="246" y1="11" modo="1">Validación: </textobox>-->
+		<textobox ID="Etiqueta162" type="100" fuente="F2" size="8" x="36" y="330" x1="246" y1="11" modo="1">Validación: </textobox>
+<!--**FIN**04/04/2006**NATALIA**MODIFICAR TEXTO.ELIMINAR REFERENCIA A LA FECHA DE CADUCIDAD**-->		
+		<!-- <textobox ID="Etiqueta160" type="100" fuente="F2" size="10" x="36" y="340" x1="530" y1="14" modo="2">Información al Contribuyente</textobox> -->
+		<!-- /* ** INI *** INDRA 69 *** MODIFICACIONES PARA LAS MULTAS *** -->
+		<textobox ID="Etiqueta160" type="100" fuente="F2" size="10" x="36" y="342" x1="530" y1="14" modo="2">Información al Contribuyente</textobox>
+		<textobox ID="Etiqueta160M" type="100" fuente="F2" size="10" x="36" y="342" x1="530" y1="14" modo="2">Información al Deudor</textobox>
+		<!-- /* ** FIN *** INDRA 69 *** MODIFICACIONES PARA LAS MULTAS ***		-->
+
+		<!-- fin indra10 05/02/02 : Ampliación de datos en validación para multas-->	
+<!-- **** INI ** JALVAREZ_SRR **** 16/09/2003 ** Se incluye el cod proc recaudación ** -->
+		<textobox ID="Etiqueta420" type="100" fuente="F2" size="8" x="117" y="260" x1="260" y1="11" modo="1">Cod. Proc. Recaudación: CPR 9052180</textobox>
+<!-- **** FIN ** JALVAREZ_SRR **** 16/09/2003 ** Se incluye el cod proc recaudación ** -->
+		<textobox ID="Etiqueta421" type="100" fuente="F2" size="8" x="313" y="260" x1="258" y1="11" modo="3"> Ejemplar para la Entidad Financiera</textobox>
+		<textobox ID="Etiqueta418" type="100" fuente="F2" size="8" x="463" y="180" x1="105" y1="12" modo="3">Identificación del Valor</textobox>
+		<textobox ID="Etiqueta414" type="100" fuente="F2" size="8" x="336" y="220" x1="84" y1="12" modo="1">Identificador fiscal</textobox>
+		<textobox ID="Etiqueta413" type="100" fuente="F2" size="8" x="117" y="220" x1="136" y1="12" modo="1">Sujeto Pasivo</textobox>
+		<textobox ID="Etiqueta390" type="100" fuente="F2" size="8" x="480" y="246" x1="87" y1="11" modo="1">Importe a Ingresar</textobox>
+<!--**INICIO**31/01/2006**NATALIA**ELIMINAR FECHA CADUCIDAD-->						
+		<!--<textobox ID="Etiqueta178" type="100" fuente="F2" size="10" x="36" y="374" x1="147" y1="14" modo="1">Fecha caducidad documento:</textobox>-->
+		<!--<textobox ID="Etiqueta387" type="100" fuente="F2" size="8" x="202" y="245" x1="53" y1="11" modo="1">Emisora</textobox>-->
+		<textobox ID="Etiqueta387" type="100" fuente="F2" size="8" x="140" y="245" x1="53" y1="11" modo="1">Emisora</textobox>
+<!--**FIN**31/01/2006**NATALIA**ELIMINAR FECHA CADUCIDAD-->				
+		<textobox ID="Etiqueta388" type="100" fuente="F2" size="8" x="293" y="245" x1="86" y1="12" modo="1">Referencia de cobro</textobox>
+		<textobox ID="Etiqueta174" type="100" fuente="F2" size="11" x="35" y="674" x1="147" y1="14" modo="1">Detalle de la Liquidación</textobox>
+		<textobox ID="Etiqueta174" type="100" fuente="F2" size="11" x="320" y="674" x1="470" y1="14" modo="1">Nº de Liquidación:</textobox>
+		
+		<textobox ID="Etiqueta173" type="100" fuente="F2" size="10" x="463" y="790" x1="93" y1="13" modo="3">Identificador fiscal</textobox>
+		<textobox ID="Etiqueta172" type="100" fuente="F2" size="10" x="190" y="790" x1="215" y1="13" modo="1">Apellidos y Nombre</textobox>
+		<textobox ID="Etiqueta2" type="100" fuente="F2" size="10" x="117" y="771" x1="215" y1="13" modo="1">Contribuyente</textobox>
+<!-- *** ini *** mto_tri03 *** 29/12/2005 ***representante tasas -->	
+<!--		<textobox ID="Etiqueta501" type="100" fuente="F4" size="10" x="117" y="750" x1="215" y1="13" modo="1">Sujeto Pasivo</textobox>				-->
+		<textobox ID="Etiqueta501" type="100" fuente="F3" size="10" x="117" y="757" x1="215" y1="13" modo="1">Sujeto Pasivo</textobox>				
+<!-- *** fin *** mto_tri03 *** 29/12/2005 *** representante tasas  -->			
+		<textobox ID="Etiqueta29" type="100" fuente="F2" size="10" x="413" y="623" x1="76" y1="13" modo="1">Nº Fijo</textobox>
+		
+		<!-- /* ** INI *** INDRA 69 *** MODIFICACIONES PARA LAS MULTAS *** -->
+		<textobox ID="Texto211" type="100" fuente="F2" size="12" x="534" y="397" x1="33" y1="18" modo="3">Texto221</textobox>				
+		<textobox ID="Texto211M" type="100" fuente="F2" size="12" x="534" y="360" x1="33" y1="18" modo="3">Texto221</textobox>
+		<!-- /* ** FIN *** INDRA 69 *** MODIFICACIONES PARA LAS MULTAS *** -->
+		
+		<!-- /* ** INI *** INDRA 69 *** MODIFICACIONES PARA LAS MULTAS *** -->
+		<textobox ID="Etiqueta192" type="100" fuente="F2" size="8" x="358" y="808" x1="210" y1="11" modo="3"> Ejemplar para el Contribuyente</textobox>
+		<textobox ID="Etiqueta192M" type="100" fuente="F2" size="8" x="358" y="808" x1="210" y1="11" modo="3"> Ejemplar para el Deudor</textobox>
+		<textobox ID="Etiqueta180" type="100" fuente="F2" size="10" x="466" y="411" x1="102" y1="14" modo="3">Importe a Ingresar</textobox>
+		<textobox ID="Etiqueta180M" type="100" fuente="F2" size="10" x="466" y="374" x1="102" y1="14" modo="3">Importe a Ingresar</textobox>
+		<!-- /* ** FIN *** INDRA 69 *** MODIFICACIONES PARA LAS MULTAS *** -->
+		<textobox ID="Etiqueta389" type="100" fuente="F2" size="8" x="390" y="245" x1="62" y1="11" modo="1">Identificación</textobox>		
+		<textobox ID="Etiqueta187" type="100" fuente="F3" size="7" x="226" y="357" x1="228" y1="12" modo="1">Información en euros: 1 Euro = 166,386 ptas. Total equivalente en euros.</textobox>
+		<textobox ID="Etiqueta233" type="100" fuente="F2" size="8" x="262" y="245" x1="26" y1="11" modo="1">Modo</textobox>
+		<!-- ini indra10 05/02/02 : Ampliación de datos en validación para multas-->
+		<!-- <textobox ID="Etiqueta505" type="100" fuente="F1" size="8" x="36" y="310" x1="245" y1="23" modo="1">Este documento no libera del pago sin la validación de la Entidad  Financiera o si se paga con posterioridad a la fecha de caducidad.</textobox> -->
+<!--**INICIO**04/04/2006**NATALIA**MODIFICAR TEXTO.ELIMINAR REFERENCIA A LA FECHA DE CADUCIDAD**-->
+		<!--<textobox ID="Etiqueta505" type="100" fuente="F1" size="8" x="36" y="323" x1="245" y1="23" modo="1">Este documento no libera del pago sin la validación de la Entidad  Financiera o si se paga con posterioridad a la fecha de caducidad.</textobox>
+		<textobox ID="validacion2" type="100" fuente="F1" size="8" x="36" y="299" x1="245" y1="40" modo="1">El plazo de caducidad indica la fecha límite de admisión de este documento para su pago por Entidad Financiera. En caso de que el plazo de ingreso notificado en la resolución sancionadora sea superior a esta fecha de caducidad podrá obtenerse documento para pago en esta misma oficina.</textobox>-->
+		<textobox ID="Etiqueta505" type="100" fuente="F1" size="8" x="36" y="311" x1="245" y1="23" modo="1">Este documento no libera del pago sin la validación de la Entidad  Financiera.</textobox>
+<!--**FIN**04/04/2006**NATALIA**MODIFICAR TEXTO.ELIMINAR REFERENCIA A LA FECHA DE CADUCIDAD**-->		
+		<!-- <textobox ID="Etiqueta161" type="100" fuente="F2" size="8" x="291" y="326" x1="209" y1="11" modo="1">Lugar de Pago:</textobox> -->
+		<textobox ID="Etiqueta161" type="100" fuente="F2" size="8" x="291" y="330" x1="209" y1="11" modo="1">Lugar de Pago:</textobox> 
+		<!-- fin indra10 05/02/02 : Ampliación de datos en validación para multas-->				
+		<!-- <textobox ID="Etiqueta386" type="100" fuente="F2" size="8" x="117" y="246" x1="79" y1="12" modo="1">Último dia de pago</textobox>		-->
+<!--**INICIO**31/01/2006**NATALIA**ELIMINAR FECHA CADUCIDAD-->						
+		<!--<textobox ID="Etiqueta386" type="100" fuente="F2" size="8" x="117" y="246" x1="79" y1="12" modo="1">Fecha de caducidad</textobox>-->		
+<!--**FIN**31/01/2006**NATALIA**ELIMINAR FECHA CADUCIDAD-->						
+		<textobox ID="Texto212" type="100" fuente="F2" size="10" x="532" y="360" x1="33" y1="12" modo="3">euros</textobox>
+		<cuadro ID="Cuadro164" type="101" x="33" y="423" x1="539" y1="71"/>
+		<!-- ini indra10 05/02/02 : Ampliación de datos en validación para multas-->
+		<!-- <cuadro ID="Cuadro51" type="101" x="33" y="352" x1="539" y1="52"/> -->
+		<cuadro ID="Cuadro51" type="101" x="33" y="350" x1="539" y1="75"/>
+		<!-- fin indra10 05/02/02 : Ampliación de datos en validación para multas-->				
+		<cuadro ID="Cuadro391" type="101" x="115" y="256" x1="456" y1="26"/>
+		<cuadro ID="Cuadro420" type="101" x="115" y="230" x1="456" y1="68"/>
+		<cuadro ID="Cuadro404" type="101" x="32" y="159" x1="539" y1="116"/>
+		<cuadro ID="Cuadro213" type="101" x="33" y="684" x1="539" y1="261"/>
+		
+		<!-- INI INDRA10 18/02/2003 - EFS Revisión de Tasas-->		
+		<cuadro ID="Cuadro213bis" type="101" x="33" y="684" x1="539" y1="334"/>
+		<!-- FIN INDRA10 18/02/2003 - EFS Revisión de Tasas-->				
+		
+		<!-- ini indra10 06/05/02 : Liquidaciones Globales-->
+		<linea ID="linea700" x="33" y="580" x1="572" y1="580"/>	
+		<linea ID="linea701" x="33" y="562" x1="572" y1="562"/>			
+		<textobox ID="nliquidacion" type="100" fuente="F1" size="10" x="425" y="663" x1="120" y1="35" modo="1">Num.Liquidacion</textobox>
+		<!-- /* ** INI *** INDRA 69 *** MODIFICACIONES PARA LAS MULTAS *** -->
+		<textobox ID="IVAM" type="100" fuente="F2" size="10" x="70" y="416" x1="147" y1="14" modo="1"> IVA Repercutido </textobox>
+		<textobox ID="PORCENTAJEIVAM" type="101" fuente="F2" size="7" x="65" y="402" x1="147" y1="14" modo="1"> Porcentaje </textobox>
+		<textobox ID="IMPORTEIVAM" type="101" fuente="F2" size="7" x="65" y="392" x1="147" y1="14" modo="1"> Importe </textobox>
+		<cuadro ID="CuadroIMPORIVAM2" type="101" x="146" y="410" x1="20" y1="9"/>
+		<cuadro ID="CuadroIMPORIVAM" type="101" x="116" y="399" x1="50" y1="9"/>
+		<textobox ID="TEPORCENTAJEIVAM" type="101" fuente="F2" size="6" x="148" y="402" x1="17" y1="14" modo="3"> 10 </textobox>
+		<textobox ID="TEIMPORTEIVAM" type="101" fuente="F2" size="6" x="98" y="391" x1="67" y1="14" modo="3"> 12324123,67890 </textobox>
+		<linea ID="lineaIVAREC" x="180" y="388" x1="180" y1="422"/>
+
+		<textobox ID="RECM" type="100" fuente="F2" size="10" x="214" y="416" x1="147" y1="14" modo="1"> Recargo </textobox>
+		<textobox ID="PORCENTAJERECM" type="101" fuente="F2" size="7" x="201" y="402" x1="147" y1="14" modo="1"> Porcentaje </textobox>
+		<textobox ID="IMPORTERECM" type="101" fuente="F2" size="7" x="201" y="392" x1="147" y1="14" modo="1"> Importe </textobox>
+		<cuadro ID="CuadroIMPORRECM" type="101" x="282" y="410" x1="20" y1="9"/>
+		<cuadro ID="CuadroIMPORRECM2" type="101" x="252" y="399" x1="50" y1="9"/>
+		<textobox ID="TEPORCENTAJERECM" type="101" fuente="F2" size="6" x="284" y="402" x1="17" y1="14" modo="3"> 25 </textobox>
+		<textobox ID="TEIMPORTERECM" type="101" fuente="F2" size="6" x="234" y="391" x1="67" y1="14" modo="3"> 12324345,67890 </textobox>
+		<linea ID="lineaRECINT" x="316" y="388" x1="316" y1="422"/>
+
+		<textobox ID="INTM" type="100" fuente="F2" size="10" x="355" y="416" x1="147" y1="14" modo="1"> Intereses </textobox>
+		<textobox ID="IMPORTEINTM" type="101" fuente="F2" size="7" x="335" y="392" x1="147" y1="14" modo="1"> Importe </textobox>
+		<textobox ID="TEIMPORTEINTM" type="101" fuente="F2" size="6" x="368" y="391" x1="67" y1="14" modo="3"> 12324453,67890 </textobox>
+		<cuadro ID="CuadroIMPORINTM" type="101" x="386" y="399" x1="50" y1="9"/>
+		
+		<textobox ID="TEIMPORTETOTM" type="101" fuente="F2" size="8" x="472" y="391" x1="97" y1="14" modo="3"> 12324453,67890 </textobox>
+		
+		<!-- INI INDRA10 18/02/2003 - EFS Revisión de Tasas-->				
+		<!-- <textobox ID="TEXTOEUROM" type="101" fuente="F1" size="8" x="544" y="429" x1="97" y1="14" modo="1"> euros </textobox> -->
+		<textobox ID="TEXTOEUROM" type="101" fuente="F1" size="8" x="544" y="439" x1="97" y1="14" modo="1"> euros </textobox>
+		<!-- FIN INDRA10 18/02/2003 - EFS Revisión de Tasas-->				
+		
+		<!-- /* ** FIN *** INDRA 69 *** MODIFICACIONES PARA LAS MULTAS *** -->
+		<!-- fin indra10 06/05/02 : Liquidaciones Globales-->
+		
+		<linea1 ID="Línea449" type="102" x="290" y="255" x1="0" y1="0"/>
+		<linea1 ID="Línea379" type="102" x="32" y="670" x1="0" y1="0"/>
+		<linea1 ID="Línea381" type="102" x="33" y="387" x1="0" y1="0"/>
+		<linea1 ID="Línea382" type="102" x="417" y="423" x1="0" y1="0"/>
+		<linea1 ID="Línea394" type="102" x="380" y="255" x1="0" y1="0"/>
+		<linea1 ID="Línea395" type="102" x="457" y="255" x1="0" y1="0"/>
+		<linea1 ID="Línea377" type="102" x="33" y="599" x1="0" y1="0"/>
+		<linea1 ID="Línea507" type="102" x="288" y="333" x1="0" y1="0"/>
+		<linea1 ID="Línea393" type="102" x="259" y="255" x1="0" y1="0"/>
+		<linea1 ID="Línea56" type="102" x="32" y="267" x1="0" y1="0"/>
+		<linea1 ID="Línea392" type="102" x="199" y="255" x1="0" y1="0"/>
+		<imagen tipo="jpeg" x="15" y="690" x1="0" y1="0" ID="logo3" type="103">/LOGOORGA33.JPG</imagen>
+		<imagen tipo="jpeg" x="15" y="165" x1="0" y1="0" ID="logo4" type="103">/LOGOORGA33.JPG</imagen>
+		
+		<textobox ID="Texto6" type="109" fuente="F2" size="11" x="455" y="771" x1="94" y1="14" modo="3">Texto6</textobox>
+		<texto ID="Texto2" type="109" fuente="F2" size="11" x="190" y="768" x1="274" y1="14" modo="0">Texto2</texto>
+<!-- *** ini *** mto_tri03 *** 29/12/2005 *** representante tasas  -->	
+<!--		
+		<textobox ID="Texto502" type="109" fuente="F4" size="11" x="455" y="752" x1="94" y1="14" modo="3">Texto502</textobox>
+		<texto ID="Texto501" type="109" fuente="F4" size="11" x="190" y="747" x1="274" y1="14" modo="0">Texto501</texto>
+-->		 
+		<textobox ID="Texto502" type="109" fuente="F3" size="11" x="455" y="755" x1="94" y1="14" modo="0">Texto502</textobox>
+		<texto ID="Texto501" type="109" fuente="F3" size="11" x="190" y="755" x1="274" y1="14" modo="0">Texto501</texto>
+		<textobox ID="Etiqueta601" type="100" fuente="F3" size="10" x="117" y="745" x1="190" y1="13" modo="1">Representante</textobox>
+		<texto ID="Texto336" type="109" fuente="F3" size="11" x="190" y="740" x1="274" y1="14" modo="0">Texto336</texto>
+		<texto ID="Texto337" type="109" fuente="F3" size="11" x="495" y="740" x1="94" y1="14" modo="0">Texto337</texto>
+<!-- *** fin *** mto_tri03 *** 29/12/2005 *** representante tasas  -->		
+		<texto ID="Texto159" type="109" fuente="F5" size="10" x="64" y="428" x1="501" y1="12" modo="0">Texto159</texto>
+		<texto ID="Texto158" type="109" fuente="F5" size="10" x="64" y="439" x1="501" y1="12" modo="0">Texto158</texto>
+		<texto ID="Texto157" type="109" fuente="F5" size="10" x="64" y="450" x1="501" y1="12" modo="0">Texto157</texto>
+		<texto ID="Texto559" type="109" fuente="F1" size="8" x="117" y="767" x1="241" y1="11" modo="0">Texto559</texto>
+		<texto ID="Texto156" type="109" fuente="F5" size="10" x="64" y="462" x1="501" y1="12" modo="0">Texto156</texto>
+		<textobox ID="Texto182" type="109" fuente="F1" size="10" x="36" y="360" x1="175" y1="14" modo="2">Texto182</textobox>
+		<textobox ID="Texto190" type="109" fuente="F2" size="10" x="458" y="359" x1="73" y1="12" modo="3">Texto190</textobox>
+		<texto ID="Texto148" type="109" fuente="F5" size="10" x="64" y="553" x1="501" y1="12" modo="0">Texto148</texto>
+		<texto ID="Texto155" type="109" fuente="F5" size="10" x="64" y="473" x1="501" y1="12" modo="0">Texto155</texto>
+		<texto ID="Texto154" type="109" fuente="F5" size="10" x="64" y="485" x1="501" y1="12" modo="0">Texto154</texto>
+		<texto ID="Texto153" type="109" fuente="F5" size="10" x="64" y="496" x1="501" y1="12" modo="0">Texto153</texto>
+		<texto ID="Texto152" type="109" fuente="F5" size="10" x="64" y="507" x1="501" y1="12" modo="0">Texto152</texto>
+		<texto ID="Texto558" type="109" fuente="F2" size="8" x="117" y="780" x1="240" y1="12" modo="0">Texto558</texto>
+		<texto ID="Texto151" type="109" fuente="F5" size="10" x="64" y="519" x1="501" y1="12" modo="0">Texto151</texto>
+		<texto ID="Texto150" type="109" fuente="F5" size="10" x="64" y="530" x1="501" y1="12" modo="0">Texto150</texto>
+		
+		<!-- INI INDRA10 18/02/2003 - EFS Revisión de Tasas-->	
+		<!-- <texto ID="Texto9" type="109" fuente="F2" size="10" x="117" y="708" x1="371" y1="14" modo="0">Texto9</texto> -->
+		<texto ID="consejeria" type="109" fuente="F2" size="10" x="117" y="716" x1="371" y1="14" modo="0">Texto9</texto>
+		<texto ID="Texto9" type="109" fuente="F2" size="10" x="117" y="703" x1="371" y1="14" modo="0">Texto9</texto>
+		<!-- FIN INDRA10 18/02/2003 - EFS Revisión de Tasas-->	
+		
+		<texto ID="Texto145" type="109" fuente="F5" size="10" x="64" y="587" x1="501" y1="12" modo="0">Texto145</texto>
+		<texto ID="Texto146" type="109" fuente="F5" size="10" x="64" y="575" x1="501" y1="12" modo="0">Texto146</texto>
+		<texto ID="Texto147" type="109" fuente="F5" size="10" x="64" y="564" x1="501" y1="12" modo="0">Texto147</texto>
+		<texto ID="Texto149" type="109" fuente="F5" size="10" x="64" y="541" x1="501" y1="12" modo="0">Texto149</texto>
+		
+		<!-- /* ** INI *** INDRA 69 *** MODIFICACIONES PARA LAS MULTAS *** -->
+		<textobox ID="Texto185" type="109" fuente="F2" size="12" x="425" y="397" x1="107" y1="18" modo="3">Texto185</textobox>
+		<textobox ID="Texto185M" type="109" fuente="F2" size="12" x="425" y="360" x1="107" y1="18" modo="3">Texto185</textobox>
+		<!-- /* ** FIN *** INDRA 69 *** MODIFICACIONES PARA LAS MULTAS *** -->
+		
+		<!-- INI INDRA10 18/02/2003 - EFS Revisión de Tasas-->		
+		<texto ID="infoEuros" type="109" fuente="F1" size="8" x="240" y="354" x1="250" y1="14" modo="1">Información en euros: 1 Euro = 166,386 ptas.</texto>
+		<!-- FIN INDRA10 18/02/2003 - EFS Revisión de Tasas-->				
+		
+		<textobox ID="Texto448" type="109" fuente="F2" size="8" x="446" y="220" x1="122" y1="12" modo="3">Texto448</textobox>
+		<texto ID="Texto430" type="109" fuente="F2" size="8" x="117" y="180" x1="328" y1="12" modo="0">Texto430</texto>
+		<textobox ID="Texto666" type="109" fuente="F2" size="7" x="320" y="124" x1="243" y1="21" modo="1">Texto666</textobox>
+		<texto ID="Texto427" type="109" fuente="F2" size="10" x="320" y="124" x1="243" y1="11" modo="0">Texto427</texto>
+		<texto ID="Texto426" type="109" fuente="F2" size="10" x="320" y="113" x1="243" y1="25" modo="0">Texto426</texto>
+		<textobox ID="Texto419" type="109" fuente="F1" size="10" x="420" y="169" x1="148" y1="12" modo="3">Texto419</textobox>
+		<texto ID="Texto417" type="109" fuente="F1" size="10" x="117" y="169" x1="299" y1="12" modo="0">Texto417</texto>
+		<textobox ID="Texto416" type="109" fuente="F1" size="10" x="418" y="200" x1="149" y1="26" modo="3">Texto416</textobox>
+		<textobox ID="Texto447" type="109" fuente="F1" size="10" x="186" y="374" x1="73" y1="14" modo="1">Texto447</textobox>
+		<textobox ID="Texto411" type="109" fuente="F2" size="12" x="293" y="237" x1="85" y1="14" modo="1">Texto411</textobox>
+		<textobox ID="Texto410" type="109" fuente="F2" size="12" x="460" y="237" x1="107" y1="14" modo="3">Texto410</textobox>
+<!--**INICIO**31/01/2006**NATALIA**ELIMINAR FECHA CADUCIDAD-->		
+		<!--<texto ID="Texto408" type="109" fuente="F2" size="12" x="202" y="233" x1="56" y1="14" modo="0">Texto408</texto>-->
+		<texto ID="Texto408" type="109" fuente="F2" size="12" x="140" y="233" x1="56" y1="14" modo="0">Texto408</texto>
+<!--**FIN**31/01/2006**NATALIA**ELIMINAR FECHA CADUCIDAD-->		
+		<texto ID="Texto407" type="109" fuente="F2" size="12" x="120" y="233" x1="76" y1="14" modo="0">Texto407</texto>
+		<textobox ID="MODO_EMIS_RICA" type="109" fuente="F2" size="12" x="261" y="237" x1="25" y1="14" modo="2">MODO_EMIS_RICA</textobox>
+		<texto ID="Texto405" type="109" fuente="F2" size="10" x="320" y="135" x1="243" y1="12" modo="0">Texto405</texto>
+		
+		<!-- INI INDRA10 18/02/2003 - EFS Revisión de Tasas-->	
+		<!-- <texto ID="Texto20" type="109" fuente="F2" size="10" x="117" y="722" x1="371" y1="14" modo="0">Texto20</texto> -->
+		<texto ID="Texto20" type="109" fuente="F2" size="10" x="117" y="729" x1="371" y1="14" modo="0">Texto20</texto>
+		<!-- FIN INDRA10 18/02/2003 - EFS Revisión de Tasas-->	
+		
+		<texto ID="NUMERO_NUME" type="109" fuente="F2" size="10" x="503" y="716" x1="56" y1="12" modo="0">NUMERO_NUME</texto>
+		<texto ID="Texto451" type="109" fuente="F2" size="10" x="35" y="403" x1="380" y1="17" modo="0">Texto451</texto>
+		<texto ID="Texto409" type="109" fuente="F2" size="12" x="390" y="232" x1="73" y1="14" modo="0">Texto409</texto>
+		<textobox ID="Texto385" type="109" fuente="F1" size="10" x="340" y="203" x1="79" y1="13" modo="1">Texto385</textobox>
+		<texto ID="Texto384" type="109" fuente="F1" size="10" x="117" y="200" x1="214" y1="14" modo="0">Texto384</texto>
+		<texto ID="salto" type="109" fuente="F2" size="10" x="500" y="736" x1="64" y1="12" modo="0">salto</texto>
+		<texto ID="Texto229" type="109" fuente="F2" size="10" x="38" y="657" x1="265" y1="15" modo="0">Texto229</texto>
+		<textobox ID="Etiqueta506" type="109" fuente="F1" size="8" x="291" y="312" x1="250" y1="20" modo="1">Etiqueta506</textobox>
+		<texto ID="Texto27" type="109" fuente="F1" size="10" x="38" y="640" x1="433" y1="12" modo="0">Texto27</texto>
+		<texto ID="Texto38" type="109" fuente="F1" size="10" x="251" y="606" x1="156" y1="12" modo="0">Texto38</texto>
+		<texto ID="Texto28" type="109" fuente="F1" size="10" x="413" y="606" x1="104" y1="12" modo="0">Texto28</texto>
+		<texto ID="Texto29" type="109" fuente="F1" size="10" x="35" y="606" x1="156" y1="12" modo="0">Texto29</texto>
+		<texto ID="Texto22" type="109" fuente="F2" size="10" x="117" y="690" x1="450" y1="13" modo="0">Texto22</texto>
+		<textobox ID="Texto406" type="109" fuente="F1" size="10" x="250" y="50" x1="313" y1="12" modo="3">Texto406</textobox>
+		<barras ID="CodBarras2" x="330" y="59"></barras>
+		<linea ID="linea1" x="33" y="666" x1="572" y1="666"/>
+		<linea ID="linea2" x="33" y="600" x1="572" y1="600"/>
+		<linea ID="linea3" x="33" y="388" x1="572" y1="388"/>
+		
+		<!-- INI INDRA10 18/02/2003 - EFS Revisión de Tasas-->		
+		<linea ID="linea3bis" x="33" y="405" x1="572" y1="405"/>
+		<!-- FIN INDRA10 18/02/2003 - EFS Revisión de Tasas-->		
+		
+		
+		<!-- /* ** INI *** INDRA 69 *** MODIFICACIONES PARA LAS MULTAS *** -->
+		<linea ID="linea4" x="450" y="423" x1="450" y1="388"/>
+		<linea ID="linea4M" x="460" y="561" x1="460" y1="388"/>
+		<!-- /* ** FIN *** INDRA 69 *** MODIFICACIONES PARA LAS MULTAS *** -->
+		
+		<linea ID="linea5" x="280" y="329" x1="280" y1="300"/>
+		<linea ID="linea6" x="0" y="270" x1="599" y1="270" discontinuo="1"/>
+		<!--<linea ID="linea7" x="195" y="256" x1="195" y1="230"/>-->
+		<linea ID="linea8" x="250" y="255" x1="250" y1="230"/>
+		<linea ID="linea9" x="288" y="255" x1="288" y1="230"/>
+		<linea ID="linea10" x="383" y="255" x1="383" y1="230"/>
+		<linea ID="linea11" x="475" y="255" x1="475" y1="230"/>			
+		<texto ID="Euro" type="100" fuente="F1" size="10" x="218" y="357" x1="222" y1="12" modo="1" codigo="unicode">8364</texto>
+		
+	</Pagina>
+</Paginas>
