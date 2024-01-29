@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<handler-chains xmlns="http://java.sun.com/xml/ns/javaee">
+  <handler-chain>
+    <handler>
+      <handler-name>es.tributasenasturias.webservices.Certificados.soap.handler.ModificacionMensaje</handler-name>
+      <handler-class>es.tributasenasturias.webservices.Certificados.soap.handler.ModificacionMensaje</handler-class>
+    </handler>
+    <handler>
+      <handler-name>es.tributasenasturias.webservices.Certificados.soap.handler.TratarSOAPHeader</handler-name>
+      <handler-class>es.tributasenasturias.webservices.Certificados.soap.handler.TratarSOAPHeader</handler-class>
+    </handler>
+  	<handler>
+      <handler-name>es.tributasenasturias.webservices.Certificados.soap.handler.PermisoServicioHandler</handler-name>
+      <handler-class>es.tributasenasturias.webservices.Certificados.soap.handler.PermisoServicioHandler</handler-class>
+    </handler>
+    <handler>
+      <handler-name>es.tributasenasturias.webservices.Certificados.soap.handler.AutenticaMessageHandler</handler-name>
+      <handler-class>es.tributasenasturias.webservices.Certificados.soap.handler.AutenticaMessageHandler</handler-class>
+    </handler>
+    <handler>
+      <handler-name>es.tributasenasturias.webservices.Certificados.soap.handler.FirmaMessageHandler</handler-name>
+      <handler-class>es.tributasenasturias.webservices.Certificados.soap.handler.FirmaMessageHandler</handler-class>
+    </handler>
+    <handler>
+      <handler-name>es.tributasenasturias.webservices.Certificados.soap.handler.InicioLogMessageHandler</handler-name>
+      <handler-class>es.tributasenasturias.webservices.Certificados.soap.handler.InicioLogMessageHandler</handler-class>
+    </handler> 
+    <handler>
+      <handler-name>es.tributasenasturias.webservices.Certificados.soap.handler.ServerLogHandler</handler-name>
+      <handler-class>es.tributasenasturias.webservices.Certificados.soap.handler.ServerLogHandler</handler-class>
+    </handler>
+  </handler-chain>
+</handler-chains>

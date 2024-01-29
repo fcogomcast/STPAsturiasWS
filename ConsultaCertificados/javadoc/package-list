@@ -1,0 +1,13 @@
+es.tributasenasturias.webservices.Certificados
+es.tributasenasturias.webservices.Certificados.Exceptions
+es.tributasenasturias.webservices.Certificados.General
+es.tributasenasturias.webservices.Certificados.bd
+es.tributasenasturias.webservices.Certificados.impl
+es.tributasenasturias.webservices.Certificados.sesion
+es.tributasenasturias.webservices.Certificados.soap.handler
+es.tributasenasturias.webservices.Certificados.utils
+es.tributasenasturias.webservices.Certificados.utils.Log
+es.tributasenasturias.webservices.Certificados.utils.Preferencias
+es.tributasenasturias.webservices.Certificados.validacion
+es.tributasenasturias.webservices.Certificados.validacion.Certificado
+es.tributasenasturias.webservices.Certificados.validacion.PermisoServicio

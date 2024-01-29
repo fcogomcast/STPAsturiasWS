@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://webservices.tributasenasturias.es/ConsultaCertificados/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="ConsultaCertificados" targetNamespace="http://webservices.tributasenasturias.es/ConsultaCertificados/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://webservices.tributasenasturias.es/ConsultaCertificados/">
+      <xsd:element name="ConsultaCertificadosIn">
+        <xsd:complexType>
+          <xsd:sequence>
+
+          	<xsd:element name="PETICION" type="tns:PETICIONType" minOccurs="1" maxOccurs="1">
+          		<xsd:annotation>
+          			<xsd:documentation>
+          				Datos de la petición de entrada.
+          			</xsd:documentation>
+          		</xsd:annotation></xsd:element>
+
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="ConsultaCertificadosOut">
+        <xsd:complexType>
+          <xsd:sequence>
+          	<xsd:element name="PETICION" type="tns:PETICIONType" >
+          		<xsd:annotation>
+          			<xsd:documentation>
+          				Copia de los datos de la petición para la
+          				salida.
+          			</xsd:documentation>
+          		</xsd:annotation></xsd:element>
+          	<xsd:element name="RESPUESTA" type="tns:RESPUESTAType">
+          		<xsd:annotation>
+          			<xsd:documentation>
+          				Datos específicos de respuesta.
+          			</xsd:documentation>
+          		</xsd:annotation></xsd:element>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+    
+      <xsd:complexType name="PETICIONType">
+                <xsd:annotation>
+                	<xsd:documentation>
+                		Tipo de la petición de entrada: constará de un
+                		certificado y un flag de PDF (en este momento no
+                		se usa el flag).
+                	</xsd:documentation>
+                </xsd:annotation>
+                <xsd:sequence>
+      		<xsd:element name="CERTIFICADO"
+      			type="tns:CERTIFICADOType" minOccurs="1" maxOccurs="1">
+                        <xsd:annotation>
+                        	<xsd:documentation>
+                        		Datos del certificado a solicitar.
+                        	</xsd:documentation>
+                        </xsd:annotation>
+      		</xsd:element>
+
+
+
+
+
+
+
+      		<xsd:element name="PDF" minOccurs="1" maxOccurs="1">
+      			<xsd:annotation>
+      				<xsd:documentation>Flag PDF.</xsd:documentation>
+      			</xsd:annotation>
+
+      			<xsd:simpleType>
+      				<xsd:restriction base="xsd:string">
+      					<xsd:enumeration value="S"></xsd:enumeration>
+      					<xsd:enumeration value="N"></xsd:enumeration>
+      				</xsd:restriction>
+      			</xsd:simpleType>
+      		</xsd:element>
+                </xsd:sequence>
+      </xsd:complexType>
+    
+      <xsd:complexType name="CERTIFICADOType">
+                <xsd:annotation>
+                	<xsd:documentation>
+                		Tipo del certificado. Constará de los datos: 
+                		- NIF 
+                		- Nombre 
+                		- Requirente 
+                		- Nif del solicitante
+                		- Consentimiento 
+                		- Motivo 
+                		- Tipo
+                	</xsd:documentation>
+                </xsd:annotation>
+                <xsd:sequence>
+      		<xsd:element name="NIF" type="xsd:string" minOccurs="1" maxOccurs="1">
+      			<xsd:annotation>
+      				<xsd:documentation>
+      					Nif del que se quiere solicitar el
+      					certificado.
+      				</xsd:documentation>
+      			</xsd:annotation></xsd:element>
+      		<xsd:element name="NOMBRE" type="xsd:string" minOccurs="1" maxOccurs="1">
+      			<xsd:annotation>
+      				<xsd:documentation>
+      					Nombre relacionado con el NIF.
+      				</xsd:documentation>
+      			</xsd:annotation></xsd:element>
+      		<xsd:element name="REQUIRENTE" minOccurs="1" maxOccurs="1" type="xsd:string">
+      			<xsd:annotation>
+      				<xsd:documentation>
+      					Persona u organismo que requiere el
+      					certificado.
+      				</xsd:documentation>
+      			</xsd:annotation>
+      		</xsd:element>
+      		<xsd:element name="NIF_SOLICITANTE" type="xsd:string" minOccurs="1" maxOccurs="1"></xsd:element>
+      		<xsd:element name="NOMBRE_SOLICITANTE"
+      			type="xsd:string" minOccurs="1" maxOccurs="1">
+      		</xsd:element>
+      		<xsd:element name="CONSENTIMIENTO" minOccurs="1"
+      			maxOccurs="1">
+
+                        <xsd:annotation>
+                        	<xsd:documentation>
+                        		SI o LEY
+                        	</xsd:documentation>
+                        </xsd:annotation>
+                        <xsd:simpleType>
+      				<xsd:restriction base="xsd:string">
+      					<xsd:enumeration value="SI"></xsd:enumeration>
+      					<xsd:enumeration value="LEY"></xsd:enumeration>
+      				</xsd:restriction>
+      			</xsd:simpleType>
+      		</xsd:element>
+      		<xsd:element name="MOTIVO" type="xsd:string" minOccurs="1" maxOccurs="1"></xsd:element>
+      		<xsd:element name="TIPO" type="xsd:string" minOccurs="1" maxOccurs="1"></xsd:element>
+      	</xsd:sequence>
+      </xsd:complexType>
+    
+      <xsd:complexType name="RESPUESTAType">
+      	<xsd:sequence>
+      		<xsd:element name="RESULTADO" type="xsd:string"></xsd:element>
+      		<xsd:element name="IDENTIFICACION" type="xsd:string"></xsd:element>
+      		<xsd:element name="FECHA_GENERACION" type="xsd:string"></xsd:element>
+      		<xsd:element name="FECHA_VALIDEZ" type="xsd:string"></xsd:element>
+      		<xsd:element name="CERTIFICADO_PDF" type="xsd:string"></xsd:element>
+      	</xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="ConsultaCertificados_fault">
+      	<xsd:complexType>
+      		<xsd:sequence>
+
+      			<xsd:element name="ConsultaCertificados_fault"
+      				type="xsd:string">
+      			</xsd:element>
+      		</xsd:sequence>
+      	</xsd:complexType>
+      </xsd:element>
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="ConsultaCertificadosIn">
+    <wsdl:part element="tns:ConsultaCertificadosIn" name="parameters">
+    	<wsdl:documentation>Entrada de la consulta de certificado</wsdl:documentation></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="ConsultaCertificadosOut">
+    <wsdl:part element="tns:ConsultaCertificadosOut" name="parameters">
+    	<wsdl:documentation>Salida de la consulta de certificados</wsdl:documentation></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="ConsultaCertificados_faultMsg">
+  	<wsdl:part name="parameters" element="tns:ConsultaCertificados_fault"></wsdl:part>
+  </wsdl:message>
+  <wsdl:portType name="ConsultaCertificados">
+    <wsdl:operation name="ConsultaCertificados">
+      <wsdl:input message="tns:ConsultaCertificadosIn"/>
+      <wsdl:output message="tns:ConsultaCertificadosOut"/>
+            <wsdl:fault name="fault" message="tns:ConsultaCertificados_faultMsg"></wsdl:fault>
+        </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="ConsultaCertificadosSOAP" type="tns:ConsultaCertificados">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="ConsultaCertificados">
+      <soap:operation soapAction="http://webservices.tributasenasturias.es/ConsultaCertificados/ConsultaCertificados"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="ConsultaCertificados">
+    <wsdl:port binding="tns:ConsultaCertificadosSOAP" name="ConsultaCertificadosSOAP">
+      <soap:address location="http://webservices.tributasenasturias.es/"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

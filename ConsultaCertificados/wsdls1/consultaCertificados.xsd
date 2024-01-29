@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:element name="SERVICIOWEB">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="PETICION">
+          <xs:annotation>
+          <xs:documentation>
+                		Petición de entrada: constará de un
+                		certificado y un flag de PDF (en este momento no
+                		se usa el flag).
+          </xs:documentation>
+          </xs:annotation>
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="CERTIFICADO">
+               <xs:annotation>
+                      <xs:documentation>
+                        		Datos del certificado a solicitar.
+                      </xs:documentation>
+               </xs:annotation>
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="NIF" type="xs:string">
+                    <xs:annotation>
+      				<xs:documentation>
+      					Nif del que se quiere solicitar el
+      					certificado.
+      				</xs:documentation>
+      			    </xs:annotation>
+                    </xs:element>
+                    <xs:element name="NOMBRE" type="xs:string">
+                    <xs:annotation>
+      				<xs:documentation>
+      					Nombre relacionado con el NIF.
+      				</xs:documentation>
+      				</xs:annotation>
+                    </xs:element>
+                    <xs:element name="REQUIRENTE" type="xs:string">
+                    <xs:annotation>
+      				<xs:documentation>
+      					Persona u organismo que requiere el
+      					certificado.
+      				</xs:documentation>
+      				</xs:annotation>
+                    </xs:element>
+                    <xs:element name="NIF_SOLICITANTE" type="xs:string">
+                    <xs:annotation>
+      				<xs:documentation>
+      					NIF del solicitante.
+      				</xs:documentation>
+      				</xs:annotation>
+                    </xs:element>
+                    <xs:element name="NOMBRE_SOLICITANTE" type="xs:string">
+                    <xs:annotation>
+      				<xs:documentation>
+      					Nombre del solicitante.
+      				</xs:documentation>
+      				</xs:annotation>
+                    </xs:element>
+                    <xs:element name="CONSENTIMIENTO">
+                    <xs:annotation>
+                        	<xs:documentation>
+                        		SI o LEY
+                        	</xs:documentation>
+                        </xs:annotation>
+                     <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                      <xs:pattern value="([Ss][iI])|([Ll][Ee][Yy])"/>
+                      </xs:restriction>
+                     </xs:simpleType>
+                     </xs:element>
+                    <xs:element name="MOTIVO" type="xs:string" />
+                    <xs:element name="TIPO" type="xs:string" />
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="PDF">
+              <xs:annotation>
+      				<xs:documentation>Flag PDF.</xs:documentation>
+      		  </xs:annotation>
+      		  <xs:simpleType>
+      				<xs:restriction base="xs:string">
+      				<xs:pattern value="([Ss][Ii])|([Nn][Oo])"/>
+      				</xs:restriction>
+      			</xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element minOccurs="0" name="RESPUESTA">
+        <xs:annotation>
+          			<xs:documentation>
+          				Datos específicos de respuesta.
+          			</xs:documentation>
+        </xs:annotation>
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="RESULTADO" type="xs:string" />
+              <xs:element name="IDENTIFICACION" type="xs:string" />
+              <xs:element name="FECHA_GENERACION" type="xs:string" />
+              <xs:element name="FECHA_VALIDEZ" type="xs:string" />
+              <xs:element name="CERTIFICADO_PDF" type="xs:string"/>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+      <xs:attribute name="cliente" type="xs:string" fixed="claveConsejerias" />
+      <xs:attribute name="servicio" type="xs:string" fixed="certificadoTributario" />
+    </xs:complexType>
+  </xs:element>
+</xs:schema>
