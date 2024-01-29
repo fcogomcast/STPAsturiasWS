@@ -1,0 +1,52 @@
+<project name="PagoPresentacionModelo600" basedir="." default="fork_build_client">
+
+  <!--
+  When launching from eclipse we want to run clientgen with the jvm on the user's 
+  classpath, not with the jvm that was used to launch the IDE.  The fork_build_client 
+  target accomplishes this.
+  ${java.home} - user's project's java home
+  classpath - need weblogic.jar, webservices.jar, java.home/lib/tools.jar
+  
+  The build_client target can be run directly with the dev environment setup by 
+  WL_HOME/common/bin/setDomainEnv.  
+  -->
+  <target name="fork_build_client">
+  
+    <java
+        fork="true"
+        failonerror="true"
+        classname="org.apache.tools.ant.launch.Launcher"
+        maxmemory="512m"
+        jvm="${java.home}/bin/java"
+        >
+      <arg value="-f" />
+      <arg value="${ant.file}" />
+      <arg value="build_client" />
+      <classpath>
+        <pathelement path="${java.class.path}"/>
+      </classpath>
+        
+    </java>
+  </target>
+
+  <target name="build_client">
+    <taskdef name="clientgen" classname="weblogic.wsee.tools.anttasks.ClientGenTask" />
+      
+    <clientgen
+        failonerror="true"
+        type="JAXWS"
+        wsdl="http://bus.desa.epst.pa:7001/WSInternos/ProxyServices/PXFirmaDigital?wsdl"
+        destFile="${basedir}/WebContent/WEB-INF/lib/PXFirmaDigital.jar"
+        packageName="es.tributasenasturias.webservices.firmadigital.client"
+        serviceName="services"
+        wsdlLocation="http://bus.desa.epst.pa:7001/WSInternos/ProxyServices/PXFirmaDigital?wsdl"        
+        copyWsdl="false"
+        generateRuntimeCatalog="true"
+        >
+
+
+    </clientgen>
+        
+  </target>
+
+</project>

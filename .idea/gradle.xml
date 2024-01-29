@@ -10,6 +10,7 @@
           <set>
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/DocumentoPago" />
+            <option value="$PROJECT_DIR$/PagoPresentacionModelo600" />
             <option value="$PROJECT_DIR$/WSAutenticacionLocalEPST" />
             <option value="$PROJECT_DIR$/WSClave" />
             <option value="$PROJECT_DIR$/WSCodigoBarras" />
