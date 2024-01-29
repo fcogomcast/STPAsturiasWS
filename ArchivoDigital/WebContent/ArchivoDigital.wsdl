@@ -1,0 +1,533 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://ArchivoDigital.ws.services.tributasenasturias.es/ArchivoDigital/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="ArchivoDigital" targetNamespace="http://ArchivoDigital.ws.services.tributasenasturias.es/ArchivoDigital/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://ArchivoDigital.ws.services.tributasenasturias.es/ArchivoDigital/">
+      <xsd:element name="Custodia">
+        <xsd:complexType>
+          <xsd:sequence>
+          	<xsd:element name="CodigoUsuario" type="xsd:string" />
+          	<xsd:element name="Identificador" type="xsd:string"></xsd:element>
+          	<xsd:element name="TipoElemento" type="xsd:string"></xsd:element>
+          	<xsd:element name="NombreFichero" type="xsd:string"></xsd:element>
+          	<xsd:element name="Comprimido" type="xsd:string"></xsd:element>
+          	<xsd:element name="Archivo" type="xsd:base64Binary"></xsd:element>
+          	<xsd:element name="HashArchivo" type="xsd:string"></xsd:element>
+          	<xsd:element name="Metadatos" type="xsd:string"></xsd:element>
+          	<xsd:element name="Firma" type="tns:FirmaType" maxOccurs="1" minOccurs="0"></xsd:element>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="CustodiaResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+          	<xsd:element name="IdArchivo" type="xsd:int" />
+          	<xsd:element name="Csv" type="xsd:string"></xsd:element>
+          	<xsd:element name="Hash" type="xsd:string"></xsd:element>
+          	<xsd:element name="Error" type="xsd:string"></xsd:element>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="ObtieneArchivoPorId">
+      	<xsd:complexType>
+      		<xsd:sequence>
+
+      			<xsd:element name="CodigoUsuario" type="xsd:string"></xsd:element>
+      			<xsd:element name="IdArchivo" type="xsd:int"></xsd:element>
+      			<xsd:element name="ObtenerSoloDatosArchivo" minOccurs="0">
+      				<xsd:simpleType>
+      					<xsd:restriction base="xsd:string">
+      						<xsd:enumeration value="S"></xsd:enumeration>
+      						<xsd:enumeration value="N"></xsd:enumeration>
+      					</xsd:restriction>
+      				</xsd:simpleType>
+      			</xsd:element>
+      		</xsd:sequence>
+      	</xsd:complexType>
+      </xsd:element>
+      <xsd:element name="ObtieneArchivoPorIdResponse">
+      	<xsd:complexType>
+      		<xsd:sequence>
+
+      			<xsd:element name="Archivo" type="xsd:base64Binary"></xsd:element>
+      			<xsd:element name="DatosArchivo" type="xsd:string"></xsd:element>
+                        <xsd:element name="Error" type="xsd:string"></xsd:element>
+      		</xsd:sequence>
+      	</xsd:complexType>
+      </xsd:element>
+      <xsd:element name="ObtieneArchivoPorCsv">
+      	<xsd:complexType>
+      		<xsd:sequence>
+
+      			<xsd:element name="CodigoUsuario" type="xsd:string"></xsd:element>
+      			<xsd:element name="Csv" type="xsd:string"></xsd:element>
+      		</xsd:sequence>
+      	</xsd:complexType>
+      </xsd:element>
+      <xsd:element name="ObtieneArchivoPorCsvResponse">
+      	<xsd:complexType>
+      		<xsd:sequence>
+
+      			<xsd:element name="Archivo" type="xsd:base64Binary"></xsd:element>
+      			<xsd:element name="DatosArchivo" type="xsd:string"></xsd:element>
+                <xsd:element name="Error" type="xsd:string"></xsd:element>
+      		</xsd:sequence>
+      	</xsd:complexType>
+      </xsd:element>
+      <xsd:element name="ExisteArchivo">
+      	<xsd:complexType>
+      		<xsd:sequence>
+
+      			<xsd:element name="CodigoUsuario" type="xsd:string"></xsd:element>
+      			<xsd:element name="Archivo" type="xsd:base64Binary"></xsd:element>
+      		</xsd:sequence>
+      	</xsd:complexType>
+      </xsd:element>
+      <xsd:element name="ExisteArchivoResponse">
+      	<xsd:complexType>
+      		<xsd:sequence>
+
+      			<xsd:element name="ExisteArchivo" type="xsd:string"></xsd:element>
+      			<xsd:element name="ListaArchivos" type="tns:ListaArchivosType"></xsd:element>
+      			<xsd:element name="Error" type="xsd:string"></xsd:element>
+      		</xsd:sequence>
+      	</xsd:complexType>
+      </xsd:element>
+    
+      <xsd:complexType name="ListaArchivosType">
+      	<xsd:sequence>
+      		<xsd:element name="IdArchivo" type="xsd:string" minOccurs="0" maxOccurs="unbounded"></xsd:element>
+      	</xsd:sequence>
+      </xsd:complexType>
+    
+      <xsd:complexType name="FirmaType">
+      	<xsd:sequence>
+      		<xsd:element name="CSV" type="tns:CSVType"
+      			minOccurs="0">
+      		</xsd:element>
+      		<xsd:element name="Certificado" type="tns:CertificadoType"
+      			minOccurs="0">
+      		</xsd:element>
+
+      		<xsd:element name="FirmaExterna" minOccurs="0">
+      			<xsd:simpleType>
+      				<xsd:restriction base="xsd:string">
+      					<xsd:enumeration value="S"></xsd:enumeration>
+      					<xsd:enumeration value="N"></xsd:enumeration>
+      				</xsd:restriction>
+      			</xsd:simpleType>
+      		</xsd:element>
+      	</xsd:sequence>
+      </xsd:complexType>
+    
+      <xsd:complexType name="CSVType">
+      	<xsd:sequence>
+      		<xsd:element name="FirmaCSV">
+      			<xsd:simpleType>
+      				<xsd:restriction base="xsd:string">
+      					<xsd:enumeration value="S"></xsd:enumeration>
+      					<xsd:enumeration value="N"></xsd:enumeration>
+      				</xsd:restriction>
+      			</xsd:simpleType>
+      		</xsd:element>
+      		<xsd:element name="Firmante" type="xsd:string"
+      			minOccurs="0">
+      		</xsd:element>
+      		<xsd:element name="Caracteristicas" type="tns:CaracteristicasCSVType" minOccurs="0"></xsd:element>
+      	</xsd:sequence>
+      </xsd:complexType>
+
+      <xsd:complexType name="CertificadoType">
+      	<xsd:sequence>
+      		<xsd:element name="FirmaCertificado" minOccurs="0">
+      			<xsd:simpleType>
+      				<xsd:restriction base="xsd:string">
+      					<xsd:enumeration value="S"></xsd:enumeration>
+      					<xsd:enumeration value="N"></xsd:enumeration>
+      				</xsd:restriction>
+      			</xsd:simpleType>
+      		</xsd:element>
+      		<xsd:element name="LTV" minOccurs="0">
+      			<xsd:simpleType>
+      				<xsd:restriction base="xsd:string">
+      					<xsd:enumeration value="S"></xsd:enumeration>
+      					<xsd:enumeration value="N"></xsd:enumeration>
+      				</xsd:restriction>
+      			</xsd:simpleType>
+      		</xsd:element>
+      	</xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="CustodiaFirma">
+      	<xsd:complexType>
+      		<xsd:sequence>
+
+      			<xsd:element name="CodigoUsuario" type="xsd:string"></xsd:element>
+      			<xsd:element name="Idadar" type="xsd:int"></xsd:element>
+      			<xsd:element name="HashFirma" type="xsd:string"></xsd:element>
+      			<xsd:element name="NombreFirmante"
+      				type="xsd:string">
+      			</xsd:element>
+      			<xsd:element name="FechaFirma" type="xsd:string"></xsd:element>
+      			<xsd:element name="IdTransac" type="xsd:string"></xsd:element>
+      			<xsd:element name="CargoUsua" type="xsd:string"></xsd:element>
+      			<xsd:element name="GeneraCsv" type="xsd:string"></xsd:element>
+      			<xsd:element name="FormatoFirma" type="xsd:string" minOccurs="0" maxOccurs="1"></xsd:element>
+      			<xsd:element name="MetadatosFirma"
+      				type="xsd:string" minOccurs="0" maxOccurs="1">
+      			</xsd:element>
+      			<xsd:element name="Base" type="xsd:string" minOccurs="0" maxOccurs="1"></xsd:element>
+      			<xsd:element name="TipoFirma" type="xsd:string" minOccurs="0" maxOccurs="1"></xsd:element>
+      			<xsd:element name="IdFirmaExt" type="xsd:string" minOccurs="0" maxOccurs="1"></xsd:element>
+      			<xsd:element name="FechaFirmaHuella" type="xsd:string" minOccurs="0" maxOccurs="1"></xsd:element>
+      		</xsd:sequence>
+      	</xsd:complexType>
+      </xsd:element>
+      <xsd:element name="CustodiaFirmaResponse">
+      	<xsd:complexType>
+      		<xsd:sequence>
+                <xsd:element name="DatosArchivo" type="xsd:string"></xsd:element>
+      			<xsd:element name="Error" type="xsd:string"></xsd:element>
+      		</xsd:sequence>
+      	</xsd:complexType>
+      </xsd:element>
+      <xsd:element name="FirmaServidorYCustodia">
+      	<xsd:complexType>
+      		<xsd:sequence>
+
+      			<xsd:element name="codigoUsuario" type="xsd:string"></xsd:element>
+      			<xsd:element name="idadar" type="xsd:int"></xsd:element>
+      			<xsd:element name="nombreFirmante"
+      				type="xsd:string">
+      			</xsd:element>
+      			<xsd:element name="fechaFirma" type="xsd:string"></xsd:element>
+      			<xsd:element name="idTransac" type="xsd:string"
+      				minOccurs="0" maxOccurs="1">
+      			</xsd:element>
+      			<xsd:element name="cargoUsua" type="xsd:string"
+      				minOccurs="0" maxOccurs="1">
+      			</xsd:element>
+      			<xsd:element name="generaCsv" type="xsd:string"></xsd:element>
+      			<xsd:element name="formatoFirma" type="xsd:string"></xsd:element>
+      			<xsd:element name="ltv" type="xsd:string"></xsd:element>
+      			<xsd:element name="firmaPIDF" type="xsd:base64Binary" minOccurs="0" maxOccurs="1"></xsd:element>
+      		</xsd:sequence>
+      	</xsd:complexType>
+      </xsd:element>
+      <xsd:element name="FirmaServidorYCustodiaResponse">
+      	<xsd:complexType>
+      		<xsd:sequence>
+
+      			<xsd:element name="DatosArchivo" type="xsd:string"></xsd:element>
+      			<xsd:element name="Error" type="xsd:string"></xsd:element>
+      		</xsd:sequence>
+      	</xsd:complexType>
+      </xsd:element>
+      <xsd:element name="GuardarMetadatos">
+      	<xsd:complexType>
+      		<xsd:sequence>
+
+      			<xsd:element name="CodigoUsuario" type="xsd:string"></xsd:element>
+      			<xsd:element name="IdArchivo" type="xsd:int"></xsd:element>
+      			<xsd:element name="Metadatos" type="xsd:string"></xsd:element>
+      		</xsd:sequence>
+      	</xsd:complexType>
+      </xsd:element>
+      <xsd:element name="GuardarMetadatosResponse">
+      	<xsd:complexType>
+      		<xsd:sequence>
+
+      			<xsd:element name="DatosArchivo" type="xsd:string"></xsd:element>
+      			<xsd:element name="Error" type="xsd:string"></xsd:element>
+      		</xsd:sequence>
+      	</xsd:complexType>
+      </xsd:element>
+      <xsd:element name="VaciarFirmaBio">
+      	<xsd:complexType>
+      		<xsd:sequence>
+      			<xsd:element name="IdArchivo" type="xsd:int"></xsd:element>
+      		</xsd:sequence>
+      	</xsd:complexType>
+      </xsd:element>
+      <xsd:element name="VaciarFirmaBioResponse">
+      	<xsd:complexType>
+      		<xsd:sequence>
+      			<xsd:element name="DatosArchivo" type="xsd:string"></xsd:element>
+      			<xsd:element name="Error" type="xsd:string"></xsd:element>
+      		</xsd:sequence>
+      	</xsd:complexType>
+      </xsd:element>
+      <xsd:element name="CustodiaVersion">
+        <xsd:complexType>
+          <xsd:sequence>
+          	<xsd:element name="CodigoUsuario" type="xsd:string" />
+          	<xsd:element name="Identificador" type="xsd:string"></xsd:element>
+          	<xsd:element name="TipoElemento" type="xsd:string"></xsd:element>
+          	<xsd:element name="NombreFichero" type="xsd:string"></xsd:element>
+          	<xsd:element name="Comprimido" type="xsd:string"></xsd:element>
+          	<xsd:element name="Archivo" type="xsd:base64Binary"></xsd:element>
+          	<xsd:element name="HashArchivo" type="xsd:string"></xsd:element>
+          	<xsd:element name="Metadatos" type="xsd:string"></xsd:element>
+
+			<xsd:element name="IdArchivoAnterior" type="xsd:int" minOccurs="1" maxOccurs="1"></xsd:element>
+          	<xsd:element name="Firma" type="tns:FirmaType" maxOccurs="1" minOccurs="0"></xsd:element>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="CustodiaVersionResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+          	<xsd:element name="IdArchivo" type="xsd:int" />
+          	<xsd:element name="Csv" type="xsd:string"></xsd:element>
+          	<xsd:element name="Hash" type="xsd:string"></xsd:element>
+          	<xsd:element name="Error" type="xsd:string"></xsd:element>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+    
+      <xsd:complexType name="CaracteristicasCSVType">
+      	<xsd:sequence>
+      		<xsd:element name="Fisicas" type="tns:CaracteristicasFisicasCSVType"></xsd:element>
+      	</xsd:sequence>
+      </xsd:complexType>
+    
+      <xsd:complexType name="CaracteristicasFisicasCSVType">
+      	<xsd:sequence>
+      		<xsd:element name="Paginas" type="tns:PaginasCSVType" minOccurs="0"></xsd:element>
+      		<xsd:element name="Posicion" type="tns:PosicionCSVType" minOccurs="0"></xsd:element>
+      	</xsd:sequence>
+      </xsd:complexType>
+    
+      <xsd:complexType name="PaginasCSVType">
+      	<xsd:sequence>
+      		<xsd:element name="Pagina" type="tns:PaginaCSVType" minOccurs="0" maxOccurs="unbounded"></xsd:element>
+      	</xsd:sequence>
+      </xsd:complexType>
+
+      <xsd:complexType name="PosicionCSVType">
+      	<xsd:sequence>
+      		<xsd:element name="X" type="xsd:float" minOccurs="0"></xsd:element>
+      		<xsd:element name="Y" type="xsd:float" minOccurs="0"></xsd:element>
+      	</xsd:sequence>
+      </xsd:complexType>
+
+      <xsd:complexType name="PaginaCSVType">
+      	<xsd:attribute name="numero" type="xsd:int"></xsd:attribute>
+      </xsd:complexType>
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="CustodiaRequest">
+    <wsdl:part name="parameters" element="tns:Custodia"/>
+  </wsdl:message>
+  <wsdl:message name="CustodiaResponse">
+    <wsdl:part element="tns:CustodiaResponse" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="ObtieneArchivoPorIdRequest">
+  	<wsdl:part name="parameters" element="tns:ObtieneArchivoPorId"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="ObtieneArchivoPorIdResponse">
+  	<wsdl:part name="parameters" element="tns:ObtieneArchivoPorIdResponse"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="ObtieneArchivoPorCsvRequest">
+  	<wsdl:part name="parameters" element="tns:ObtieneArchivoPorCsv"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="ObtieneArchivoPorCsvResponse">
+  	<wsdl:part name="parameters" element="tns:ObtieneArchivoPorCsvResponse"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="ExisteArchivoRequest">
+  	<wsdl:part name="parameters" element="tns:ExisteArchivo"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="ExisteArchivoResponse">
+  	<wsdl:part name="parameters" element="tns:ExisteArchivoResponse"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="CustodiaFirmaRequest">
+  	<wsdl:part name="parameters" element="tns:CustodiaFirma"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="CustodiaFirmaResponse">
+  	<wsdl:part name="parameters" element="tns:CustodiaFirmaResponse"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="FirmaServidorYCustodiaRequest">
+  	<wsdl:part name="parameters" element="tns:FirmaServidorYCustodia"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="FirmaServidorYCustodiaResponse">
+  	<wsdl:part name="parameters" element="tns:FirmaServidorYCustodiaResponse"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="GuardarMetadatosRequest">
+  	<wsdl:part name="parameters" element="tns:GuardarMetadatos"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="GuardarMetadatosResponse">
+  	<wsdl:part name="parameters" element="tns:GuardarMetadatosResponse"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="VaciarFirmaBioRequest">
+  	<wsdl:part name="parameters" element="tns:VaciarFirmaBio"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="VaciarFirmaBioResponse">
+  	<wsdl:part name="parameters" element="tns:VaciarFirmaBioResponse"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="CustodiaVersionRequest">
+  	<wsdl:part name="parameters" element="tns:CustodiaVersion"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="CustodiaVersionResponse">
+  	<wsdl:part name="parameters" element="tns:CustodiaVersionResponse"></wsdl:part>
+  </wsdl:message>
+  <wsdl:portType name="ArchivoDigital">
+    <wsdl:operation name="Custodia">
+      <wsdl:input message="tns:CustodiaRequest"/>
+      <wsdl:output message="tns:CustodiaResponse"/>
+    </wsdl:operation>
+    <wsdl:operation name="ObtieneArchivoPorId">
+    	<wsdl:input message="tns:ObtieneArchivoPorIdRequest"></wsdl:input>
+    	<wsdl:output message="tns:ObtieneArchivoPorIdResponse"></wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtieneArchivoPorCsv">
+    	<wsdl:input message="tns:ObtieneArchivoPorCsvRequest"></wsdl:input>
+    	<wsdl:output message="tns:ObtieneArchivoPorCsvResponse"></wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ExisteArchivo">
+    	<wsdl:input message="tns:ExisteArchivoRequest"></wsdl:input>
+    	<wsdl:output message="tns:ExisteArchivoResponse"></wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CustodiaFirma">
+    	<wsdl:input message="tns:CustodiaFirmaRequest"></wsdl:input>
+    	<wsdl:output message="tns:CustodiaFirmaResponse"></wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FirmaServidorYCustodia">
+    	<wsdl:input message="tns:FirmaServidorYCustodiaRequest"></wsdl:input>
+    	<wsdl:output message="tns:FirmaServidorYCustodiaResponse"></wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GuardarMetadatos">
+    	<wsdl:input message="tns:GuardarMetadatosRequest"></wsdl:input>
+    	<wsdl:output message="tns:GuardarMetadatosResponse"></wsdl:output>
+    </wsdl:operation>
+     <wsdl:operation name="VaciarFirmaBio">
+    	<wsdl:input message="tns:VaciarFirmaBioRequest"></wsdl:input>
+    	<wsdl:output message="tns:VaciarFirmaBioResponse"></wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CustodiaVersion">
+    	<wsdl:input message="tns:CustodiaVersionRequest"></wsdl:input>
+    	<wsdl:output message="tns:CustodiaVersionResponse"></wsdl:output>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="ArchivoDigitalSOAP" type="tns:ArchivoDigital">
+
+  	<soap:binding style="document"
+  		transport="http://schemas.xmlsoap.org/soap/http" />
+  	<wsdl:operation name="Custodia">
+
+  		<soap:operation
+  			soapAction="http://ArchivoDigital.ws.services.tributasenasturias.es/ArchivoDigital/Custodia" />
+  		<wsdl:input>
+
+  			<soap:body use="literal" />
+  		</wsdl:input>
+  		<wsdl:output>
+
+  			<soap:body use="literal" />
+  		</wsdl:output>
+  	</wsdl:operation>
+  	<wsdl:operation name="ObtieneArchivoPorId">
+
+  		<soap:operation
+  			soapAction="http://ArchivoDigital.ws.services.tributasenasturias.es/ArchivoDigital/ObtieneArchivoPorId" />
+  		<wsdl:input>
+
+  			<soap:body use="literal" />
+  		</wsdl:input>
+  		<wsdl:output>
+
+  			<soap:body use="literal" />
+  		</wsdl:output>
+  	</wsdl:operation>
+  	  	<wsdl:operation name="ObtieneArchivoPorCsv">
+
+  		<soap:operation
+  			soapAction="http://ArchivoDigital.ws.services.tributasenasturias.es/ArchivoDigital/ObtieneArchivoPorCsv" />
+  		<wsdl:input>
+
+  			<soap:body use="literal" />
+  		</wsdl:input>
+  		<wsdl:output>
+
+  			<soap:body use="literal" />
+  		</wsdl:output>
+  	</wsdl:operation>
+  	<wsdl:operation name="ExisteArchivo">
+
+  		<soap:operation
+  			soapAction="http://ArchivoDigital.ws.services.tributasenasturias.es/ArchivoDigital/ExisteArchivoHash" />
+  		<wsdl:input>
+
+  			<soap:body use="literal" />
+  		</wsdl:input>
+  		<wsdl:output>
+
+  			<soap:body use="literal" />
+  		</wsdl:output>
+  	</wsdl:operation>
+  	<wsdl:operation name="CustodiaFirma">
+
+  		<soap:operation
+  			soapAction="http://ArchivoDigital.ws.services.tributasenasturias.es/ArchivoDigital/CustodiaFirma" />
+  		<wsdl:input>
+
+  			<soap:body use="literal" />
+  		</wsdl:input>
+  		<wsdl:output>
+
+  			<soap:body use="literal" />
+  		</wsdl:output>
+  	</wsdl:operation>
+  	<wsdl:operation name="FirmaServidorYCustodia">
+
+  		<soap:operation
+  			soapAction="http://ArchivoDigital.ws.services.tributasenasturias.es/ArchivoDigital/FirmaServidorYCustodia" />
+  		<wsdl:input>
+
+  			<soap:body use="literal" />
+  		</wsdl:input>
+  		<wsdl:output>
+
+  			<soap:body use="literal" />
+  		</wsdl:output>
+  	</wsdl:operation>
+  	<wsdl:operation name="GuardarMetadatos">
+
+  		<soap:operation
+  			soapAction="http://ArchivoDigital.ws.services.tributasenasturias.es/ArchivoDigital/GuardarMetadatos" />
+  		<wsdl:input>
+
+  			<soap:body use="literal" />
+  		</wsdl:input>
+  		<wsdl:output>
+
+  			<soap:body use="literal" />
+  		</wsdl:output>
+  	</wsdl:operation>
+  	<wsdl:operation name="VaciarFirmaBio">
+
+  		<soap:operation
+  			soapAction="http://ArchivoDigital.ws.services.tributasenasturias.es/ArchivoDigital/VaciarFirmaBio" />
+  		<wsdl:input>
+
+  			<soap:body use="literal" />
+  		</wsdl:input>
+  		<wsdl:output>
+
+  			<soap:body use="literal" />
+  		</wsdl:output>
+  	</wsdl:operation>
+  	<wsdl:operation name="CustodiaVersion">
+  		<soap:operation
+  			soapAction="http://ArchivoDigital.ws.services.tributasenasturias.es/ArchivoDigital/CustodiaVersion" />
+  		<wsdl:input>
+  			<soap:body use="literal" />
+  		</wsdl:input>
+  		<wsdl:output>
+  			<soap:body use="literal" />
+  		</wsdl:output>
+  	</wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="ArchivoDigital">
+    <wsdl:port binding="tns:ArchivoDigitalSOAP" name="ArchivoDigitalSOAP">
+      <soap:address location="http://bus:7101/WSInternos/ProxyServices/PXArchivoDigital"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

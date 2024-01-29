@@ -1,0 +1,8 @@
+es.tributasenasturias.services.ws.archivodigital
+es.tributasenasturias.services.ws.archivodigital.ades
+es.tributasenasturias.services.ws.archivodigital.bd
+es.tributasenasturias.services.ws.archivodigital.exception
+es.tributasenasturias.services.ws.archivodigital.utils
+es.tributasenasturias.services.ws.archivodigital.utils.Preferencias
+es.tributasenasturias.services.ws.archivodigital.utils.log
+es.tributasenasturias.services.ws.archivodigital.utils.log.LogHandler
