@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://servicios.tributasenasturias.es/Asturcon/ConsultaDeuda/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="ConsultaDeuda" targetNamespace="http://servicios.tributasenasturias.es/Asturcon/ConsultaDeuda/">
+  <wsdl:types>
+    <xsd:schema
+        xmlns:tns="http://servicios.tributasenasturias.es/Asturcon/ConsultaDeuda/"
+    	targetNamespace="http://servicios.tributasenasturias.es/Asturcon/ConsultaDeuda/">
+    	<xsd:include schemaLocation="xsd/esquemaConsulta.xsd" ></xsd:include>
+    	<xsd:complexType name="MensajeEntrada">
+		<xsd:sequence>
+			<xsd:element name="Mensaje" type="tns:mensajeInType"></xsd:element>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="MensajeSalida">
+		<xsd:sequence>
+			<xsd:element name="Mensaje" type="tns:mensajeOutType"></xsd:element>
+		</xsd:sequence>
+	</xsd:complexType>
+    	<xsd:element name="solicitarConsulta" type="tns:mensajeInType">
+    	</xsd:element>
+    	<xsd:element name="solicitarConsultaRespuesta" type="tns:mensajeOutType">
+    	</xsd:element>
+    </xsd:schema>
+  </wsdl:types>
+   <wsdl:message name="solicitarConsultaRequest"> 
+    <wsdl:part element="tns:solicitarConsulta" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="solicitarConsultaResponse">
+    <wsdl:part element="tns:solicitarConsultaRespuesta" name="parameters"/>
+  </wsdl:message>
+  
+  <wsdl:portType name="ConsultaDeuda">
+    <wsdl:operation name="solicitarConsulta">
+       <wsdl:input message="tns:solicitarConsultaRequest"/>
+      <wsdl:output message="tns:solicitarConsultaResponse"/>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="ConsultaDeudaSOAP" type="tns:ConsultaDeuda">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="solicitarConsulta">
+      <soap:operation soapAction="http://servicios.tributasenasturias.es/Asturcon/ConsultaDeuda/solicitarConsulta"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="ConsultaDeuda">
+    <wsdl:port binding="tns:ConsultaDeudaSOAP" name="ConsultaDeudaSOAP">
+      <soap:address location="http://bus:7001/WSXXX"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

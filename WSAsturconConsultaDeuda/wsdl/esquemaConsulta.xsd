@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://www.w3.org/2001/XMLSchema"
+		xmlns:tns="http://servicios.tributasenasturias.es/Asturcon/ConsultaDeuda/"
+    	targetNamespace="http://servicios.tributasenasturias.es/Asturcon/ConsultaDeuda/">
+    	<xsd:element name="solicitarConsulta">
+    		<xsd:complexType>
+    			<xsd:sequence>
+    				<xsd:element name="MENSAJE" type="tns:MENSAJEIN" />
+    			</xsd:sequence>
+    		</xsd:complexType>
+    	</xsd:element>
+    	<xsd:element name="solicitarConsultaResponse">
+    		<xsd:complexType>
+    			<xsd:sequence>
+    				<xsd:element name="MENSAJE" type="tns:MENSAJEOUT" />
+    			</xsd:sequence>
+    		</xsd:complexType>
+    	</xsd:element>
+    
+    	<xsd:complexType name="EJECUCIONType">
+    		<xsd:sequence>
+    			<xsd:element name="REGISTRO" type="tns:REGISTROType" minOccurs="1" maxOccurs="unbounded">
+	    			<xsd:annotation>
+		           		<xsd:documentation>
+		           			Estructura que contendrá los datos de un tercero para el que se desea consultar deuda
+		           			  en el sistema Tributas.
+		           		</xsd:documentation>
+	           		</xsd:annotation>
+    			</xsd:element>
+    		</xsd:sequence>
+    		<xsd:attribute name="ID" type="xsd:string">
+	    		<xsd:annotation>
+	        		<xsd:documentation>
+	        			Identificador único de la petición de consulta de deuda.
+	        		</xsd:documentation>
+	       		</xsd:annotation>
+    		</xsd:attribute>
+    		<xsd:attribute name="FECHA" type="xsd:string">
+    			<xsd:annotation>
+	        		<xsd:documentation>
+	        			Fecha de la petición. Formato DD/MM/YYYY
+	        		</xsd:documentation>
+	       		</xsd:annotation>
+    		</xsd:attribute>
+    		<xsd:attribute name="HORA" type="xsd:string">
+    			<xsd:annotation>
+	        		<xsd:documentation>
+	        			Hora de la petición. Formato HH:MI:SS (24 horas).
+	        		</xsd:documentation>
+	       		</xsd:annotation>
+    		</xsd:attribute>
+    		<xsd:attribute name="TIPOEJE" type="xsd:string">
+    			<xsd:annotation>
+	        		<xsd:documentation>
+	        			Valores posibles: test (sólo consulta de la deuda, sin trabar importes), real (se traban los importes de deuda)
+	        		</xsd:documentation>
+	       		</xsd:annotation>
+    		</xsd:attribute>
+    	</xsd:complexType>
+
+    	<xsd:complexType name="REGISTROType">
+    		<xsd:sequence>
+    		<xsd:element minOccurs="1" maxOccurs="1" name="NIF">
+    			<xsd:annotation></xsd:annotation>
+    			<xsd:simpleType>
+    				<xsd:restriction base="xsd:string">
+    					<xsd:length value="9"></xsd:length>
+    				</xsd:restriction>
+    			</xsd:simpleType>
+    		</xsd:element>
+    		<xsd:element minOccurs="1" maxOccurs="1" name="NOMBRE">
+    			<xsd:annotation></xsd:annotation>
+    			<xsd:simpleType>
+    				<xsd:restriction base="xsd:string">
+    					<xsd:maxLength value="100"></xsd:maxLength>
+    				</xsd:restriction>
+    			</xsd:simpleType>
+    		</xsd:element>
+    		<xsd:element minOccurs="1" maxOccurs="1"
+    			name="IMPORTEPAGO">
+    			<xsd:annotation></xsd:annotation>
+    			<xsd:simpleType>
+    				<xsd:restriction base="xsd:string">
+    					<xsd:pattern value="((\-)?\d{1,15}\.\d{2})?"></xsd:pattern>
+    				</xsd:restriction>
+    			</xsd:simpleType>
+    		</xsd:element>
+    	</xsd:sequence>
+    	</xsd:complexType>
+    
+    	<xsd:complexType name="RESPUESTAType">
+    		<xsd:sequence>
+    			<xsd:element name="EJECUCION"
+    				type="tns:EJECUCIONRESPUESTAType">
+    			</xsd:element>
+    			<xsd:element name="RESULTADO"
+    				type="tns:RESULTADOType">
+    			</xsd:element>
+    		</xsd:sequence>
+    		<xsd:attribute name="ID" type="xsd:string"></xsd:attribute>
+    	</xsd:complexType>
+
+    	<xsd:complexType name="EJECUCIONRESPUESTAType">
+    		<xsd:annotation>
+        		<xsd:documentation>
+        			Copia del elemento "EJECUCION" en el mensaje de entrada. Sólo de ese elemento, no de sus hijos.
+        		</xsd:documentation>
+	       	</xsd:annotation>
+    		<xsd:attribute name="ID" type="xsd:string">
+    			<xsd:annotation>
+	        		<xsd:documentation>
+	        			Copia del mismo elemento de "EJECUCION" en el mensaje de entrada.
+	        		</xsd:documentation>
+		       	</xsd:annotation>
+    		</xsd:attribute>
+    		<xsd:attribute name="FECHA" type="xsd:string">
+    			<xsd:annotation>
+	        		<xsd:documentation>
+	        			Copia del mismo elemento de "EJECUCION" en el mensaje de entrada.
+	        		</xsd:documentation>
+		       	</xsd:annotation>
+    		</xsd:attribute>
+    		<xsd:attribute name="HORA" type="xsd:string">
+    			<xsd:annotation>
+	        		<xsd:documentation>
+	        			Copia del mismo elemento de "EJECUCION" en el mensaje de entrada.
+	        		</xsd:documentation>
+		       	</xsd:annotation>
+    		</xsd:attribute>
+    		<xsd:attribute name="TIPOEJE" type="xsd:string">
+    			<xsd:annotation>
+	        		<xsd:documentation>
+	        			Copia del mismo elemento de "EJECUCION" en el mensaje de entrada.
+	        		</xsd:documentation>
+		       	</xsd:annotation>
+    		</xsd:attribute>
+    	</xsd:complexType>
+    
+    	<xsd:complexType name="RESULTADOType">
+    		<xsd:sequence>
+    			<xsd:element name="CODIGO" >
+    				<xsd:annotation>
+    					<xsd:documentation>
+    						Código de resultado.
+    					</xsd:documentation>
+    				</xsd:annotation>
+    				<xsd:simpleType>
+    					<xsd:restriction base="xsd:string">
+    						<xsd:length value="4"></xsd:length>
+    					</xsd:restriction>
+    				</xsd:simpleType>
+    			</xsd:element>
+    			<xsd:element name="DESCRIPCION" type="xsd:string">
+    				<xsd:annotation>
+    					<xsd:documentation>
+    						Mensaje relacionado con el código de
+    						resultado. Normalmente será una descripción
+    						textual de ese código.
+    					</xsd:documentation>
+    				</xsd:annotation>
+    			</xsd:element>
+    		</xsd:sequence>
+    	</xsd:complexType>
+    
+    	<xsd:complexType name="MENSAJEIN">
+    		<xsd:sequence>
+    			<xsd:element name="EJECUCION" type="tns:EJECUCIONType"></xsd:element>
+    		</xsd:sequence>
+    	</xsd:complexType>
+    
+    	<xsd:complexType name="MENSAJEOUT">
+    		<xsd:sequence>
+    			<xsd:element name="RESPUESTA" type="tns:RESPUESTAType"></xsd:element>
+    		</xsd:sequence>
+    	</xsd:complexType>
+    </xsd:schema>

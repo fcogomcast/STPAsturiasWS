@@ -1,0 +1,164 @@
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema"
+xmlns:ds="http://www.w3.org/2000/09/xmldsig#"
+xmlns:tns="http://servicios.tributasenasturias.es/Asturcon/ConsultaDeuda/"
+targetNamespace="http://servicios.tributasenasturias.es/Asturcon/ConsultaDeuda/">
+	<xs:import schemaLocation="xmldsig-core-schema.xsd"
+   		namespace="http://www.w3.org/2000/09/xmldsig#">
+   	</xs:import>
+    <xs:complexType name="EJECUCIONType">
+      <xs:sequence>
+        <xs:element name="REGISTRO" minOccurs="1" maxOccurs="unbounded" type="tns:REGISTROType">
+      		<xs:annotation>
+           		<xs:documentation>
+           			Estructura que contendrá los datos de un tercero para el que se desea consultar deuda
+           			  en el sistema Tributas.
+           		</xs:documentation>
+           	</xs:annotation>        </xs:element>
+      </xs:sequence>
+      <xs:attribute name="ID" type="xs:string" use="required">
+      	<xs:annotation>
+      		<xs:documentation>
+       			Identificador único de la petición de consulta de deuda.
+       		</xs:documentation>
+       	</xs:annotation>
+      </xs:attribute>
+      <xs:attribute name="FECHA" type="xs:string" use="optional">
+      	<xs:annotation>
+      		<xs:documentation>
+       			Fecha de la petición. Formato DD/MM/YYYY
+       		</xs:documentation>
+       	</xs:annotation>
+      </xs:attribute>
+      <xs:attribute name="HORA" type="xs:string" use="optional">
+      	<xs:annotation>
+      		<xs:documentation>
+       			Hora de la petición. Formato HH:MI:SS (24 horas).
+       		</xs:documentation>
+       	</xs:annotation>
+      </xs:attribute>
+      <xs:attribute name="TIPOEJE" type="xs:string" use="required">
+      	<xs:annotation>
+      		<xs:documentation>
+       			Valores posibles: test (sólo consulta de la deuda, sin trabar importes), real (se traban los importes de deuda)
+       		</xs:documentation>
+       	</xs:annotation>
+      </xs:attribute>
+    </xs:complexType>
+    <xs:complexType name="EJECUCIONRESPUESTAType">
+        <xs:annotation>
+      		<xs:documentation>
+       			Copia del elemento "EJECUCION" en el mensaje de entrada.
+       		</xs:documentation>
+       	</xs:annotation>
+     <xs:attribute name="ID" type="xs:string" use="required">
+      	<xs:annotation>
+      		<xs:documentation>
+       			Copia del mismo elemento de "EJECUCION" en el mensaje de entrada.
+       		</xs:documentation>
+       	</xs:annotation>
+      </xs:attribute>
+      <xs:attribute name="FECHA" type="xs:string" use="optional">
+      	<xs:annotation>
+      		<xs:documentation>
+       			Copia del mismo elemento de "EJECUCION" en el mensaje de entrada.
+       		</xs:documentation>
+       	</xs:annotation>
+      </xs:attribute>
+      <xs:attribute name="HORA" type="xs:string" use="optional">
+      	<xs:annotation>
+      		<xs:documentation>
+       			Copia del mismo elemento de "EJECUCION" en el mensaje de entrada.
+       		</xs:documentation>
+       	</xs:annotation>
+      </xs:attribute>
+      <xs:attribute name="TIPOEJE" type="xs:string" use="required">
+      	<xs:annotation>
+      		<xs:documentation>
+       			Copia del mismo elemento de "EJECUCION" en el mensaje de entrada.
+       		</xs:documentation>
+       	</xs:annotation>
+      </xs:attribute>
+     </xs:complexType>
+    <xs:complexType name="RESPUESTAType">
+		<xs:sequence>    		
+    			<xs:element name="EJECUCION" type="tns:EJECUCIONRESPUESTAType" minOccurs="1" maxOccurs="1"></xs:element>
+    			<xs:element name="RESULTADO" type="tns:RESULTADOType" minOccurs="1" maxOccurs="1"></xs:element>
+		</xs:sequence>
+		<xs:attribute name="ID" type="xs:string" use="required">
+      	<xs:annotation>
+      		<xs:documentation>
+       			Identificador único de la petición de consulta a la que se responde.
+       			Coincide con el ID del elemento "EJECUCION"
+       		</xs:documentation>
+       	</xs:annotation>
+      </xs:attribute>
+    </xs:complexType>
+    <xs:complexType name="RESULTADOType">
+    	<xs:sequence>
+    			<xs:element name="CODIGO">
+    				<xs:annotation>
+    					<xs:documentation>
+    						Código de resultado.
+    					</xs:documentation>
+    				</xs:annotation>
+    				<xs:simpleType>
+    					<xs:restriction base="xs:string">
+    						<xs:length value="4"></xs:length>
+    					</xs:restriction>
+    				</xs:simpleType>
+    			</xs:element>
+    			<xs:element name="DESCRIPCION" type="xs:string">
+    				<xs:annotation>
+    					<xs:documentation>
+    						Mensaje relacionado con el código de
+    						resultado. Normalmente será una descripción
+    						textual de ese código.
+    					</xs:documentation>
+    				</xs:annotation>
+    			</xs:element>
+   			</xs:sequence>
+		</xs:complexType>
+
+    <xs:complexType name="REGISTROType">
+    	<xs:sequence>
+    		<xs:element minOccurs="1" maxOccurs="1" name="NIF">
+    			<xs:annotation></xs:annotation>
+    			<xs:simpleType>
+    				<xs:restriction base="xs:string">
+    					<xs:minLength value="9"></xs:minLength>
+    					<xs:maxLength value="9"></xs:maxLength>
+    				</xs:restriction>
+    			</xs:simpleType>
+    		</xs:element>
+    		<xs:element minOccurs="1" maxOccurs="1" name="NOMBRE">
+    			<xs:annotation></xs:annotation>
+    			<xs:simpleType>
+    				<xs:restriction base="xs:string">
+    					<xs:maxLength value="100"></xs:maxLength>
+    				</xs:restriction>
+    			</xs:simpleType>
+    		</xs:element>
+    		<xs:element minOccurs="1" maxOccurs="1"
+    			name="IMPORTEPAGO">
+    			<xs:annotation></xs:annotation>
+    			<xs:simpleType>
+    				<xs:restriction base="xs:double">
+    					<xs:pattern value="(\-)?\d{1,15}\.\d{2}"></xs:pattern>
+    				</xs:restriction>
+    			</xs:simpleType>
+    		</xs:element>
+    	</xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="mensajeInType">
+    		<xs:sequence>
+    		  <xs:element name="EJECUCION" type="tns:EJECUCIONType"></xs:element>
+    		<xs:element ref="ds:Signature" minOccurs="0" maxOccurs="1"></xs:element>
+    		</xs:sequence>
+    	</xs:complexType>
+    	<xs:complexType name="mensajeOutType">
+    		<xs:sequence>
+    		  <xs:element name="RESPUESTA" type="tns:RESPUESTAType"></xs:element>
+    		<xs:element ref="ds:Signature" minOccurs="0" maxOccurs="1"></xs:element>
+    	</xs:sequence>
+    	</xs:complexType>
+</xs:schema>
