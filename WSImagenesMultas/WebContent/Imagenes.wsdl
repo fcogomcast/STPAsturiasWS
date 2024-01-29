@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://ImagenesMultas.ws.services.tributasenasturias.es/Imagenes/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="Imagenes" targetNamespace="http://ImagenesMultas.ws.services.tributasenasturias.es/Imagenes/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://ImagenesMultas.ws.services.tributasenasturias.es/Imagenes/">
+      <xsd:element name="ObtenerImagenes">
+        <xsd:complexType>
+          <xsd:sequence>
+          	<xsd:element name="FechaInfraccion" type="xsd:string" />
+          	<xsd:element name="Boletin" type="xsd:string"></xsd:element>
+          	<xsd:element name="IdFiscal" type="xsd:string"></xsd:element>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="ObtenerImagenesResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+          	<xsd:element name="Imagenes" type="tns:ImagenesType" />
+          	<xsd:element name="Error" type="xsd:string"></xsd:element>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+    
+    		<xsd:complexType name="ImagenType">
+				<xsd:sequence>
+					<xsd:element name="Nombre" type="xsd:string"
+						minOccurs="1">
+					</xsd:element>
+					<xsd:element name="Archivo" type="xsd:base64Binary"
+						minOccurs="1"></xsd:element>
+					<xsd:element name="TipoArchivo" type="xsd:string"
+						minOccurs="1">
+					</xsd:element>
+					<xsd:element name="Error" type="xsd:string"></xsd:element>
+				</xsd:sequence>
+			</xsd:complexType>
+			
+            <xsd:complexType name="ImagenesType">
+            <xsd:sequence>
+					<xsd:element name="Imagenes" type="tns:ImagenType"
+						minOccurs="0" maxOccurs="5">
+					</xsd:element>
+				</xsd:sequence>
+            </xsd:complexType>
+        </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="ObtenerImagenesRequest">
+    <wsdl:part element="tns:ObtenerImagenes" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="ObtenerImagenesResponse">
+    <wsdl:part element="tns:ObtenerImagenesResponse" name="parameters"/>
+  </wsdl:message>
+  <wsdl:portType name="Imagenes">
+    <wsdl:operation name="ObtenerImagenes">
+      <wsdl:input message="tns:ObtenerImagenesRequest"/>
+      <wsdl:output message="tns:ObtenerImagenesResponse"/>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="ImagenesSOAP" type="tns:Imagenes">
+  	<soap:binding style="document"
+  		transport="http://schemas.xmlsoap.org/soap/http" />
+  	<wsdl:operation name="ObtenerImagenes">
+  		<soap:operation
+  			soapAction="http://ImagenesMultas.ws.services.tributasenasturias.es/Imagenes/ObtenerImagenes" />
+  		<wsdl:input>
+  			<soap:body use="literal" />
+  		</wsdl:input>
+  		<wsdl:output>
+  			<soap:body use="literal" />
+  		</wsdl:output>
+  	</wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="Imagenes">
+    <wsdl:port binding="tns:ImagenesSOAP" name="ImagenesSOAP">
+      <soap:address location="http://ImagenesMultas.ws.services.tributasenasturias.es/"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

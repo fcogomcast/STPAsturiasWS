@@ -1,0 +1,7 @@
+es.tributasenasturias.services.ws.imagenesmultas
+es.tributasenasturias.services.ws.imagenesmultas.bd
+es.tributasenasturias.services.ws.imagenesmultas.exception
+es.tributasenasturias.services.ws.imagenesmultas.utils
+es.tributasenasturias.services.ws.imagenesmultas.utils.log
+es.tributasenasturias.services.ws.imagenesmultas.utils.log.LogHandler
+es.tributasenasturias.services.ws.imagenesmultas.utils.log.Preferencias
