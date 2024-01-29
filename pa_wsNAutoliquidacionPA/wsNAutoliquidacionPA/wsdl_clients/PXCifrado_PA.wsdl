@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<s0:definitions name="Cifrado_PA"
+	targetNamespace="http://webservices.cifrado.tributasenasturias.es/"
+	xmlns:s0="http://schemas.xmlsoap.org/wsdl/"
+	xmlns:s1="http://webservices.cifrado.tributasenasturias.es/"
+	xmlns:s2="http://schemas.xmlsoap.org/wsdl/soap12/">
+	<s0:types>
+		<xsd:schema
+			xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/"
+			xmlns:tns="http://webservices.cifrado.tributasenasturias.es/"
+			xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+			<xsd:import
+				namespace="http://webservices.cifrado.tributasenasturias.es/"
+				schemaLocation="http://bus.desa.epst.pa:7001/WSCifradoPAyuda/ProxyServices/PXCifrado_PA?SCHEMA%2FWSCifradoPAyuda%2FResources%2FXSDCifrado_PA" />
+		</xsd:schema>
+	</s0:types>
+	<s0:message name="Cifrar">
+		<s0:part element="s1:Cifrar" name="parameters" />
+	</s0:message>
+	<s0:message name="CifrarResponse">
+		<s0:part element="s1:CifrarResponse" name="parameters" />
+	</s0:message>
+	<s0:message name="Descifrar">
+		<s0:part element="s1:Descifrar" name="parameters" />
+	</s0:message>
+	<s0:message name="DescifrarResponse">
+		<s0:part element="s1:DescifrarResponse" name="parameters" />
+	</s0:message>
+	<s0:portType name="Cifrado_PA">
+		<s0:operation name="Cifrar">
+			<s0:input message="s1:Cifrar" />
+			<s0:output message="s1:CifrarResponse" />
+		</s0:operation>
+		<s0:operation name="Descifrar">
+			<s0:input message="s1:Descifrar" />
+			<s0:output message="s1:DescifrarResponse" />
+		</s0:operation>
+	</s0:portType>
+	<s0:binding name="Cifrado_PABinding" type="s1:Cifrado_PA">
+		<s2:binding style="document"
+			transport="http://schemas.xmlsoap.org/soap/http" />
+		<s0:operation name="Cifrar">
+			<s2:operation />
+			<s0:input>
+				<s2:body use="literal" />
+			</s0:input>
+			<s0:output>
+				<s2:body use="literal" />
+			</s0:output>
+		</s0:operation>
+		<s0:operation name="Descifrar">
+			<s2:operation />
+			<s0:input>
+				<s2:body use="literal" />
+			</s0:input>
+			<s0:output>
+				<s2:body use="literal" />
+			</s0:output>
+		</s0:operation>
+	</s0:binding>
+	<s0:service name="Cifrado_PA">
+		<s0:port binding="s1:Cifrado_PABinding" name="Cifrado_PA">
+			<s2:address
+				location="http://bus.desa.epst.pa:7001/WSCifradoPAyuda/ProxyServices/PXCifrado_PA" />
+		</s0:port>
+	</s0:service>
+</s0:definitions>

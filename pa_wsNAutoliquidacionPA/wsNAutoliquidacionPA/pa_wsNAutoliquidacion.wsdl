@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<wsdl:definitions name="NumerosAutoliquidacion"
+	targetNamespace="http://webservices.numerosautoliquidacion.tributasenasturias.es/"
+	xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+	xmlns:tns="http://webservices.numerosautoliquidacion.tributasenasturias.es/"
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+	xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/"
+	xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+	xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/">
+	<wsdl:types>
+		<schema xmlns="http://www.w3.org/2001/XMLSchema"
+			targetNamespace="http://webservices.numerosautoliquidacion.tributasenasturias.es/"
+			xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+			xmlns:tns="http://webservices.numerosautoliquidacion.tributasenasturias.es/">
+			<xsd:complexType name="getNumerosAutoliquidacion">
+				<xsd:sequence>
+					<xsd:element name="datos" type="xsd:string" />
+				</xsd:sequence>
+			</xsd:complexType>
+			<xsd:element name="getNumerosAutoliquidacion"
+				type="tns:getNumerosAutoliquidacion" />
+			<xsd:complexType name="getNumerosAutoliquidacionResponse">
+				<xsd:sequence>
+					<xsd:element name="return" type="xsd:string" />
+				</xsd:sequence>
+			</xsd:complexType>
+			<xsd:element name="getNumerosAutoliquidacionResponse"
+				type="tns:getNumerosAutoliquidacionResponse" />
+		</schema>
+	</wsdl:types>
+	<wsdl:message name="getNumerosAutoliquidacionInput">
+		<wsdl:part name="parameters"
+			element="tns:getNumerosAutoliquidacion" />
+	</wsdl:message>
+	<wsdl:message name="getNumerosAutoliquidacionOutput">
+		<wsdl:part name="parameters"
+			element="tns:getNumerosAutoliquidacionResponse" />
+	</wsdl:message>
+	<wsdl:portType name="NumerosAutoliquidacion">
+		<wsdl:operation name="getNumerosAutoliquidacion">
+			<wsdl:input message="tns:getNumerosAutoliquidacionInput"
+				xmlns:ns1="http://www.w3.org/2006/05/addressing/wsdl" ns1:Action="" />
+			<wsdl:output message="tns:getNumerosAutoliquidacionOutput"
+				xmlns:ns1="http://www.w3.org/2006/05/addressing/wsdl" ns1:Action="" />
+		</wsdl:operation>
+	</wsdl:portType>
+	<wsdl:binding name="NumerosAutoliquidacionSoapHttp"
+		type="tns:NumerosAutoliquidacion">
+		<soap12:binding style="document"
+			transport="http://www.w3.org/2003/05/soap/bindings/HTTP/" />
+		<wsdl:operation name="getNumerosAutoliquidacion">
+			<soap12:operation soapAction="" soapActionRequired="false" />
+			<wsdl:input>
+				<soap12:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap12:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+	</wsdl:binding>
+	<wsdl:service name="NumerosAutoliquidacion">
+		<wsdl:port name="wsNumerosAutoliquidacion"
+			binding="tns:NumerosAutoliquidacionSoapHttp">
+			<soap12:address
+				location="https://10.112.11.149:101/portal/serviciosWeb/pa_wsNAutoliquidacion.asp" />
+		</wsdl:port>
+	</wsdl:service>
+</wsdl:definitions>

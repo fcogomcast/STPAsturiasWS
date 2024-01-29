@@ -26,6 +26,7 @@
             <option value="$PROJECT_DIR$/WSRecepcionDocumentacion" />
             <option value="$PROJECT_DIR$/WSServiciosSmartMultas" />
             <option value="$PROJECT_DIR$/WSTrasladoMaquina" />
+            <option value="$PROJECT_DIR$/pa_wsNAutoliquidacionPA" />
           </set>
         </option>
       </GradleProjectSettings>
