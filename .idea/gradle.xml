@@ -37,6 +37,7 @@
             <option value="$PROJECT_DIR$/WSServiciosSmartMultas" />
             <option value="$PROJECT_DIR$/WSTrasladoMaquina" />
             <option value="$PROJECT_DIR$/pa_wsNAutoliquidacionPA" />
+            <option value="$PROJECT_DIR$/wsEscriturasAncert" />
           </set>
         </option>
       </GradleProjectSettings>

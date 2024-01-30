@@ -1,0 +1,41 @@
+<project name="wsEscriturasAncert" basedir="." default="fork_build_client">
+
+	  <target name="fork_build_client">
+	  
+	    <java
+	        fork="true"
+	        failonerror="true"
+	        classname="org.apache.tools.ant.launch.Launcher"
+	        maxmemory="512m"
+	        jvm="${java.home}/bin/java"
+	        >
+	      <arg value="-f" />
+	      <arg value="${ant.file}" />
+	      <arg value="build_client" />
+	      <classpath>
+	        <pathelement path="${java.class.path}"/>
+	      </classpath>
+	        
+	    </java>
+	  </target>
+
+	  <target name="build_client">
+	    <taskdef name="clientgen" classname="weblogic.wsee.tools.anttasks.ClientGenTask" />
+	      
+	    <clientgen
+	        failonerror="true"
+	        type="JAXWS"
+	        wsdl="${basedir}/EscriturasAncert/wsdl/PXLanzador.wsdl"
+	        destFile="${basedir}/WebContent/WEB-INF/lib/PXLanzador.jar"
+	        packageName="es.tributasenasturias.webservices.lanzador.clients"
+	        serviceName="lanzaPLService"
+	        copyWsdl="true"
+	        generateRuntimeCatalog="true"
+	        >
+
+
+	    </clientgen>
+	        
+	  </target>
+
+	</project>
