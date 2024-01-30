@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<Paginas>
+	<Pagina>
+		<!-- inicio cabecera documento -->
+		<texto ID="fechaCobro" type="100" fuente="F2" size="8" x="30" y="786"/>
+		<texto ID="Etiqueta7" type="100" fuente="F2" size="8" x = "183" y = "786"> </texto>
+		<imagen tipo="jpeg" x="30" y="680" x1="81" y1="71" ID="logo1" type="103"><orga>recursos\\impresos\\img\\logoOrga33.jpg</orga></imagen>
+		<!-- fin cabecera documento -->	
+
+		<!-- inicio detalle -->
+		<cuadro ID='c' type='101' x='32' y = '620' x1='539' y1='267'/>
+		<texto ID="t" type="101" fuente="F2" size="11" x="38" y="653">Detalle del Justificante de Pago</texto>
+		<Fila ID="linea">
+					<textobox ID="texto" type="101" fuente="F2" size="10" x="50" y="530"  x1="320" y1="150" modo="4"></textobox>
+					<textobox ID="puntos" type="101" fuente="F2" size="10" x="200" y="530" x1="320" y1="150" modo="4">:</textobox>
+					<textobox ID="descr" type="100" fuente="F1" size="10" x="220" y="530" x1="320" y1="150" modo="4"></textobox>
+					
+		</Fila>
+		<!-- fin detalle -->
+		
+		 <!-- ini pie documento -->
+    		<texto ID="t" type="100" fuente="F2" size="8" x="320" y="320">Justificante de Pago - Ejemplar para el Contribuyente</texto>																		 
+		 <!-- fin pie documento -->				
+	</Pagina>
+</Paginas>

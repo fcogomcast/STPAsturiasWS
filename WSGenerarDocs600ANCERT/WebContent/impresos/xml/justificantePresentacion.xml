@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<Paginas>
+	
+	<Pagina papel="A4" ID="pagina2">
+		<imagen tipo="jpeg" x="65" y="655">
+		<orga>impresos\img\LOGOORGA33_V2.JPG</orga></imagen>		
+		<textobox ID="titulopagina2" type="100" fuente="F2" size="10" x="120" y="770" x1="380" y1="14" modo="2">DOCUMENTO DE COMPARECENCIA / JUSTIFICANTE DE REGISTRO</textobox>
+	
+	
+		<cuadro ID="Cuadro147" type="101" x="156" y="744" x1="342" y1="90"/>
+		<texto ID="Etiqueta161" type="100" fuente="F2" size="8" x="292" y="703" x1="59" y1="11" modo="0">Hora de Alta</texto>
+		<texto ID="Etiqueta104" type="100" fuente="F2" size="8" x="158" y="675" x1="70" y1="11" modo="0">Oficina de Alta</texto>
+		<texto ID="Etiqueta102" type="100" fuente="F2" size="8" x="158" y="717" x1="50" y1="11" modo="0">Organismo</texto>
+		<texto ID="Etiqueta71" type="100" fuente="F2" size="8" x="159" y="732" x1="59" y1="11" modo="0">Nº Expediente</texto>
+		<texto ID="Etiqueta68" type="100" fuente="F2" size="8" x="158" y="703" x1="59" y1="11" modo="0">Fecha de alta</texto>
+		<texto ID="Etiqueta11" type="100" fuente="F2" size="8" x="159" y="661" x1="76" y1="12" modo="0">Oficina de Destino</texto>
+		<texto ID="EtiquetaFechaAltaOtraAdmi" type="100" fuente="F2" size="8" x="158" y="689" x1="59" y1="12" modo="0">Fecha Alta Otra Administración</texto>
+		<texto ID="EtiquetaFechaPresent" type="100" fuente="F2" size="8" x="345" y="689" x1="59" y1="12" modo="0">Fecha Presentación</texto>
+		
+		
+
+		<texto ID="NUMERO_NUME_2" type="109" fuente="F1" size="8" x="411" y="732" x1="85" y1="12" modo="0">NUMERO_NUME</texto>
+		<texto ID="etiFechaAlta_2" type="109" fuente="F2" size="8" x="158" y="689" x1="164" y1="12" modo="0">etiFechaAlta</texto>
+		<texto ID="fechaAlta_2" type="109" fuente="F1" size="8" x="326" y="689" x1="74" y1="12" modo="0">fechaAlta</texto>
+		<textobox ID="Texto103_2" type="109" fuente="F1" size="8" x="238" y="675" x1="256" y1="12" modo="1">Texto103</textobox>
+		<textobox ID="Texto101_2" type="109" fuente="F2" size="8" x="217" y="717" x1="279" y1="12" modo="1">Texto101</textobox>
+		<textobox ID="Texto70_2" type="109" fuente="F2" size="8" x="226" y="734" x1="111" y1="11" modo="1">Texto70</textobox>
+		<textobox ID="Texto67_2" type="109" fuente="F1" size="8" x="218" y="703" x1="70" y1="12" modo="1">Texto67</textobox>		
+		<textobox ID="Texto10_2" type="109" fuente="F1" size="8" x="238" y="661" x1="256" y1="12" modo="1">Texto10</textobox>
+		<texto ID="Texto160_2" type="109" fuente="F1" size="8" x="354" y="703" x1="85" y1="12" modo="0">Texto160</texto>
+		<texto ID="tFechaAltaOtraAdmi_2" type="109" fuente="F1" size="8" x="290" y="689" x1="164" y1="12" modo="0">etiFechaAlta</texto>
+		<texto ID="tFechaPresent_2" type="109" fuente="F1" size="8" x="430" y="689" x1="164" y1="12" modo="0">etiFechaAlta</texto>
+		
+		<texto ID="auto" type="100" fuente="F2" size="8" x="70" y="645" x1="400" y1="12" modo="0">Número/s Autoliquidaciones</texto>
+		<Bloque id="auto1">
+		<cuadro ID="Cuadro1" type="101" x="70" y="640" x1="427" y1="95"/>
+		<texto ID="autoliq1" type="100" fuente="F1" size="8" x="75" y="630" x1="400" y1="12" modo="0"></texto>
+		<texto ID="tipoautoliq1" type="100" fuente="F1" size="8" x="150" y="630" x1="200" y1="12" modo="0"></texto>
+		<texto ID="autoliq2" type="100" fuente="F1" size="8" x="75" y="620" x1="400" y1="12" modo="0"></texto>
+		<texto ID="tipoautoliq2" type="100" fuente="F1" size="8" x="150" y="620" x1="200" y1="12" modo="0"></texto>
+		<texto ID="autoliq3" type="100" fuente="F1" size="8" x="75" y="610" x1="200" y1="12" modo="0"></texto>
+		<texto ID="tipoautoliq3" type="100" fuente="F1" size="8" x="150" y="610" x1="200" y1="12" modo="0"></texto>
+		<texto ID="autoliq4" type="100" fuente="F1" size="8" x="75" y="600" x1="200" y1="12" modo="0"></texto>
+		<texto ID="tipoautoliq4" type="100" fuente="F1" size="8" x="150" y="600" x1="200" y1="12" modo="0"></texto>
+		<texto ID="autoliq5" type="100" fuente="F1" size="8" x="75" y="590" x1="200" y1="12" modo="0"></texto>
+		<texto ID="tipoautoliq5" type="100" fuente="F1" size="8" x="150" y="590" x1="200" y1="12" modo="0"></texto>
+		<texto ID="autoliq6" type="100" fuente="F1" size="8" x="75" y="580" x1="200" y1="12" modo="0"></texto>
+		<texto ID="tipoautoliq6" type="100" fuente="F1" size="8" x="150" y="580" x1="200" y1="12" modo="0"></texto>
+		<texto ID="autoliq7" type="100" fuente="F1" size="8" x="75" y="570" x1="200" y1="12" modo="0"></texto>
+		<texto ID="tipoautoliq7" type="100" fuente="F1" size="8" x="150" y="570" x1="200" y1="12" modo="0"></texto>
+		<texto ID="autoliq8" type="100" fuente="F1" size="8" x="75" y="560" x1="200" y1="12" modo="0"></texto>
+		<texto ID="tipoautoliq8" type="100" fuente="F1" size="8" x="150" y="560" x1="200" y1="12" modo="0"></texto>
+		<texto ID="autoliq9" type="100" fuente="F1" size="8" x="75" y="550" x1="200" y1="12" modo="0"></texto>
+		<texto ID="tipoautoliq9" type="100" fuente="F1" size="8" x="150" y="550" x1="200" y1="12" modo="0"></texto>
+		
+		<linea ID="aa" x="210" y="640" x1="210" y1="545"></linea>
+		
+		<texto ID="autoliq10" type="100" fuente="F1" size="8" x="220" y="630" x1="400" y1="12" modo="0"></texto>
+		<texto ID="tipoautoliq10" type="100" fuente="F1" size="8" x="295" y="630" x1="200" y1="12" modo="0"></texto>
+		<texto ID="autoliq11" type="100" fuente="F1" size="8" x="220" y="620" x1="400" y1="12" modo="0"></texto>
+		<texto ID="tipoautoliq11" type="100" fuente="F1" size="8" x="295" y="620" x1="200" y1="12" modo="0"></texto>
+		<texto ID="autoliq12" type="100" fuente="F1" size="8" x="220" y="610" x1="200" y1="12" modo="0"></texto>
+		<texto ID="tipoautoliq12" type="100" fuente="F1" size="8" x="295" y="610" x1="200" y1="12" modo="0"></texto>
+		<texto ID="autoliq13" type="100" fuente="F1" size="8" x="220" y="600" x1="200" y1="12" modo="0"></texto>
+		<texto ID="tipoautoliq13" type="100" fuente="F1" size="8" x="295" y="600" x1="200" y1="12" modo="0"></texto>
+		<texto ID="autoliq14" type="100" fuente="F1" size="8" x="220" y="590" x1="200" y1="12" modo="0"></texto>
+		<texto ID="tipoautoliq14" type="100" fuente="F1" size="8" x="295" y="590" x1="200" y1="12" modo="0"></texto>
+		<texto ID="autoliq15" type="100" fuente="F1" size="8" x="220" y="580" x1="200" y1="12" modo="0"></texto>
+		<texto ID="tipoautoliq15" type="100" fuente="F1" size="8" x="295" y="580" x1="200" y1="12" modo="0"></texto>
+		<texto ID="autoliq16" type="100" fuente="F1" size="8" x="220" y="570" x1="200" y1="12" modo="0"></texto>
+		<texto ID="tipoautoliq16" type="100" fuente="F1" size="8" x="295" y="570" x1="200" y1="12" modo="0"></texto>
+		<texto ID="autoliq17" type="100" fuente="F1" size="8" x="220" y="560" x1="200" y1="12" modo="0"></texto>
+		<texto ID="tipoautoliq17" type="100" fuente="F1" size="8" x="295" y="560" x1="200" y1="12" modo="0"></texto>
+		<texto ID="autoliq18" type="100" fuente="F1" size="8" x="220" y="550" x1="200" y1="12" modo="0"></texto>
+		<texto ID="tipoautoliq18" type="100" fuente="F1" size="8" x="295" y="550" x1="200" y1="12" modo="0"></texto>
+		
+		<linea ID="aa" x="350" y="640" x1="350" y1="545"></linea>
+		
+		<texto ID="autoliq19" type="100" fuente="F1" size="8" x="360" y="630" x1="400" y1="12" modo="0"></texto>
+		<texto ID="tipoautoliq19" type="100" fuente="F1" size="8" x="435" y="630" x1="200" y1="12" modo="0"></texto>
+		<texto ID="autoliq20" type="100" fuente="F1" size="8" x="360" y="620" x1="400" y1="12" modo="0"></texto>
+		<texto ID="tipoautoliq20" type="100" fuente="F1" size="8" x="435" y="620" x1="200" y1="12" modo="0"></texto>
+		<texto ID="autoliq21" type="100" fuente="F1" size="8" x="360" y="610" x1="200" y1="12" modo="0"></texto>
+		<texto ID="tipoautoliq21" type="100" fuente="F1" size="8" x="435" y="610" x1="200" y1="12" modo="0"></texto>
+		<texto ID="autoliq22" type="100" fuente="F1" size="8" x="360" y="600" x1="200" y1="12" modo="0"></texto>
+		<texto ID="tipoautoliq22" type="100" fuente="F1" size="8" x="435" y="600" x1="200" y1="12" modo="0"></texto>
+		<texto ID="autoliq23" type="100" fuente="F1" size="8" x="360" y="590" x1="200" y1="12" modo="0"></texto>
+		<texto ID="tipoautoliq23" type="100" fuente="F1" size="8" x="435" y="590" x1="200" y1="12" modo="0"></texto>
+		<texto ID="autoliq24" type="100" fuente="F1" size="8" x="360" y="580" x1="200" y1="12" modo="0"></texto>
+		<texto ID="tipoautoliq24" type="100" fuente="F1" size="8" x="435" y="580" x1="200" y1="12" modo="0"></texto>
+		<texto ID="autoliq25" type="100" fuente="F1" size="8" x="360" y="570" x1="200" y1="12" modo="0"></texto>
+		<texto ID="tipoautoliq25" type="100" fuente="F1" size="8" x="435" y="570" x1="200" y1="12" modo="0"></texto>
+		<texto ID="autoliq26" type="100" fuente="F1" size="8" x="360" y="560" x1="200" y1="12" modo="0"></texto>
+		<texto ID="tipoautoliq26" type="100" fuente="F1" size="8" x="435" y="560" x1="200" y1="12" modo="0"></texto>
+		<texto ID="autoliq27" type="100" fuente="F1" size="8" x="360" y="550" x1="200" y1="12" modo="0"></texto>
+		<texto ID="tipoautoliq27" type="100" fuente="F1" size="8" x="435" y="550" x1="200" y1="12" modo="0"></texto>
+		
+		</Bloque>
+	
+		
+		<Bloque id="b">
+		<!--cuadro tipo-subtipo-->
+		<cuadro ID="Cuadro1" type="101" x="70" y="541" x1="427" y1="31"/>
+		<texto ID="Etiqueta5" type="100" fuente="F2" size="8" x="72" y="528" x1="83" y1="12" modo="0">Tipo de Expediente</texto>
+		<texto ID="Etiqueta148" type="100" fuente="F2" size="8" x="73" y="514" x1="96" y1="12" modo="0">Subtipo de Expediente</texto>
+		<texto ID="Texto4_2" type="109" fuente="F1" size="8" x="169" y="528" x1="324" y1="12" modo="0">Texto4</texto>
+		<texto ID="Texto6_2" type="109" fuente="F1" size="8" x="169" y="514" x1="323" y1="12" modo="0">Texto6</texto>
+	
+	
+		
+		<!--//**********************************PRESENTADOR**************************************************-->
+		<!--//*************************************************************************************************-->
+		<cuadro ID="Cuadro17" type="101" x="70" y="492" x1="428" y1="45"/>
+		<textobox ID="Etiqueta19" type="100" fuente="F2" size="8" x="70" y="497" x1="427" y1="11" modo="2">PRESENTADOR</textobox>
+		<texto ID="Etiqueta27" type="100" fuente="F2" size="8" x="73" y="465" x1="45" y1="11" modo="0">Id. Fiscal:</texto>
+		<texto ID="Etiqueta30" type="100" fuente="F2" size="8" x="206" y="465" x1="42" y1="11" modo="0">Teléfono:</texto>
+		<texto ID="Etiqueta24" type="100" fuente="F2" size="8" x="73" y="451" x1="45" y1="11" modo="0">Dirección:</texto>
+		<texto ID="nomPres" type="100" fuente="F2" size="8" x="73" y="479" x1="87" y1="11" modo="0">Apellidos y Nombre:</texto>
+		<texto ID="Texto20_2" type="109" fuente="F1" size="8" x="164" y="480" x1="331" y1="12" modo="0">Texto20_2</texto>
+		<texto ID="Texto26_2" type="109" fuente="F1" size="8" x="122" y="465" x1="82" y1="12" modo="0">Texto26_2</texto>
+		<texto ID="Texto29_2" type="109" fuente="F1" size="8" x="252" y="465" x1="85" y1="12" modo="0">Texto29_2</texto>
+		<texto ID="Texto99_2" type="109" fuente="F1" size="8" x="402" y="465" x1="94" y1="12" modo="0">Texto99_2</texto>
+		<texto ID="Texto23_2" type="109" fuente="F1" size="8" x="122" y="451" x1="373" y1="12" modo="0">Texto23_2</texto>
+		<!--//*************************************************************************************************-->
+		<!--//***********************************FIN PRESENTADOR*********************************************************-->
+		
+	
+		
+		<!--//**********************************SUJETO PASIVO**************************************************-->
+		<!--//*************************************************************************************************-->
+		<cuadro ID="cuadroSP" type="101" x="70" y="430" x1="428" y1="31"/>
+		<!--INI FRAN 5416 (16/10/2009) Cambio tipo etiqueta sujeto pasivo -->
+		<!--textobox ID="etiSP" type="100" fuente="F2" size="8" x="70" y="434" x1="428" y1="11" modo="2">SUJETO PASIVO</textobox-->
+		<textobox ID="tetiSP" type="100" fuente="F2" size="8" x="70" y="434" x1="428" y1="11" modo="2">tituloSP_2</textobox>
+		<!--FIN FRAN 5416 (16/10/2009) Cambio tipo etiqueta sujeto pasivo -->
+		<texto ID="nifSP" type="100" fuente="F2" size="8" x="73" y="403" x1="48" y1="11" modo="0">Id. Fiscal:</texto>
+		<texto ID="tnifSP_2" type="109" fuente="F1" size="8" x="164" y="403" x1="85" y1="12" modo="0">tnifSP_2</texto>
+		<texto ID="nomSP" type="100" fuente="F2" size="8" x="73" y="417" x1="87" y1="11" modo="0">Apellidos y Nombre:</texto>
+		<texto ID="tnomSP_2" type="109" fuente="F1" size="8" x="164" y="417" x1="332" y1="12" modo="0">tnomSP_2</texto>
+		<!--//*************************************************************************************************-->
+		<!--//***********************************FIN  SUJETO PASIVO*********************************************************-->
+
+		
+		<!--//**********************************DOCUMENTO ORIGINAL**************************************************-->
+		<cuadro ID="cuadroDOCORI" type="101" x="70" y="380" x1="428" y1="25"/>
+		<textobox ID="etiDOCORI" type="100" fuente="F2" size="8" x="70" y="387" x1="428" y1="11" modo="2">DOCUMENTO ORIGINAL</textobox>
+		<texto ID="numDOCORI" type="100" fuente="F2" size="8" x="73" y="370" x1="87" y1="11" modo="0">Numero de Protocolo:</texto>
+		<texto ID="tnumDOCORI_2" type="109" fuente="F1" size="8" x="164" y="370" x1="100" y1="11" modo="0">tnumDOCORI</texto>
+		<texto ID="fechaprotDOCORI" type="100" fuente="F2" size="8" x="340" y="370" x1="30" y1="11" modo="0">Fecha de documento:</texto>
+		<texto ID="tfechaprotDOCORI_2" type="109" fuente="F1" size="8" x="435" y="370" x1="40" y1="11" modo="0">tfechaprotDOCORI</texto>
+		<texto ID="nombrenotDOCORI" type="100" fuente="F2" size="8" x="73" y="360" x1="48" y1="11" modo="0">Apellidos y nombre:</texto>
+		<texto ID="tnombrenotDOCORI_2" type="109" fuente="F1" size="8" x="164" y="360" x1="85" y1="11" modo="0">tnombrenot</texto>	
+		<texto ID="tipoDOCORI" type="100" fuente="F2" size="8" x="340" y="360" x1="48" y1="11" modo="0">Tipo de Documento:</texto>
+		<texto ID="ttipoDOCORI_2" type="109" fuente="F1" size="8" x="435" y="360" x1="85" y1="11" modo="0">ttipoDOCORI</texto>
+		<!--//***********************************FIN DOCUMENTO ORIGINAL*********************************************************-->
+		
+		<cuadro ID="cuadroExp" type="101" x="70" y="335" x1="428" y1="25"/>
+		<textobox ID="etiExp" type="100" fuente="F2" size="8" x="70" y="344" x1="428" y1="11" modo="2">IDENTIFICACIÓN DEL BIEN, OPERACIÓN O ACTO</textobox>
+		<texto ID="txtconcep1" type="100" fuente="F2" size="8" x="73" y="325" x1="87" y1="11" modo="0">Concepto:</texto>
+		<texto ID="concepto" type="109" fuente="F1" size="8" x="170" y="325" x1="100" y1="11" modo="0"></texto>
+		<texto ID="tIdenAdic" type="100" fuente="F2" size="8" x="73" y="315" x1="48" y1="11" modo="0">Identificación adicional:</texto>
+		<texto ID="adicional" type="109" fuente="F1" size="8" x="170" y="315" x1="85" y1="11" modo="0"></texto>	
+
+		
+		</Bloque>
+		<bloque ID="tpiePagina">
+		<!--texto principal-->
+		<textobox ID="textoPpal" type="100" fuente="F1" size="10" x="73" y="240" x1="420" y1="120" modo="4"></textobox>
+		<!--pie-->
+		<texto ID="fecha" type="100" fuente="F1" size="8" x="220" y="140" x1="83" y1="12" modo="0"></texto>
+		<texto ID="jefe" type="100" fuente="F2" size="8" x="180" y="160" x1="83" y1="12" modo="0"></texto>
+		<imagen tipo="jpeg" x="220" y="80">impresos\img\FirmaCarlosF.jpg</imagen>		
+		<texto ID="firma" type="109" fuente="F1" size="8" x="225" y="70" x1="36" y1="13" modo="0"></texto>
+		
+		<texto ID="EtiquetaVeri" type="100" fuente="F2" size="10" x="70" y="30" x1="342" y1="12" modo="2">Código Seguro de verificación:</texto> 
+		<texto ID="TextoVeri" type="100" fuente="F2" size="10" x="230" y="30" x1="342" y1="12" modo="2">J0060900186312-232DC2DC34E8ACBF</texto> 
+		</bloque>
+		
+	</Pagina>
+	
+	</Paginas>
