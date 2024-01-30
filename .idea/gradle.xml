@@ -39,6 +39,7 @@
             <option value="$PROJECT_DIR$/WSTrasladoMaquina" />
             <option value="$PROJECT_DIR$/pa_wsNAutoliquidacionPA" />
             <option value="$PROJECT_DIR$/wsEscriturasAncert" />
+            <option value="$PROJECT_DIR$/wsModelosPDF" />
           </set>
         </option>
       </GradleProjectSettings>
