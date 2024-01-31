@@ -1,0 +1,241 @@
+PasarelaPagoST :: Wed Sep 16 13:39:47 CEST 2009 :: WARNING :: El fichero de preferencias (PasarelaPagoST/preferenciasPasarelaPagoST.xml) no existe!
+PasarelaPagoST :: Wed Sep 16 13:39:50 CEST 2009 :: INFO :: INICIO CREACION FICHERO PREFERENCIAS
+PasarelaPagoST :: Wed Sep 16 13:39:50 CEST 2009 :: TRACE :: Cargando tabla con preferencias por defecto
+PasarelaPagoST :: Wed Sep 16 13:39:50 CEST 2009 :: INFO :: Cargando en fichero preferencias ['AplicacionDestinoAnulacion' - 'ZCANT']
+PasarelaPagoST :: Wed Sep 16 13:39:50 CEST 2009 :: INFO :: Cargando en fichero preferencias ['EsquemaBaseDatos' - 'PSEUDOREAL']
+PasarelaPagoST :: Wed Sep 16 13:39:50 CEST 2009 :: INFO :: Cargando en fichero preferencias ['Entidad' - '2048']
+PasarelaPagoST :: Wed Sep 16 13:39:50 CEST 2009 :: INFO :: Cargando en fichero preferencias ['Entorno' - 'D']
+PasarelaPagoST :: Wed Sep 16 13:39:50 CEST 2009 :: INFO :: Cargando en fichero preferencias ['IpOrigen' - '10.112.10.230']
+PasarelaPagoST :: Wed Sep 16 13:39:50 CEST 2009 :: INFO :: Cargando en fichero preferencias ['AplicacionOrigen' - 'PRA']
+PasarelaPagoST :: Wed Sep 16 13:39:50 CEST 2009 :: INFO :: Cargando en fichero preferencias ['Canal' - '01']
+PasarelaPagoST :: Wed Sep 16 13:39:50 CEST 2009 :: INFO :: Cargando en fichero preferencias ['EndPointLanzador' - '']
+PasarelaPagoST :: Wed Sep 16 13:39:50 CEST 2009 :: INFO :: Cargando en fichero preferencias ['EndPointConsulta' - '']
+PasarelaPagoST :: Wed Sep 16 13:39:50 CEST 2009 :: INFO :: Cargando en fichero preferencias ['AplicacionDestinoPeticion' - 'ZCPAT']
+PasarelaPagoST :: Wed Sep 16 13:39:50 CEST 2009 :: INFO :: Cargando en fichero preferencias ['EndPointPago' - '']
+PasarelaPagoST :: Wed Sep 16 13:39:50 CEST 2009 :: INFO :: Cargando en fichero preferencias ['AplicacionDestinoConsulta' - 'ZCCPA']
+PasarelaPagoST :: Wed Sep 16 13:39:50 CEST 2009 :: INFO :: Cargando en fichero preferencias ['Idioma' - 'es-Es']
+PasarelaPagoST :: Wed Sep 16 13:39:50 CEST 2009 :: INFO :: Cargando en fichero preferencias ['MargenTiempoAnulacion' - '14400']
+PasarelaPagoST :: Wed Sep 16 13:39:50 CEST 2009 :: INFO :: Cargando en fichero preferencias ['UsuarioAplicacion' - 'STPA']
+PasarelaPagoST :: Wed Sep 16 13:39:52 CEST 2009 :: INFO :: Fichero preferencias creado en disco
+PasarelaPagoST :: Wed Sep 16 13:39:52 CEST 2009 :: INFO :: FIN CREACION FICHERO PREFERENCIAS
+PasarelaPagoST :: Wed Sep 16 13:39:52 CEST 2009 :: TRACE :: Se ha pedido la preferencia 'EndPointLanzador' a lo que el sistema devuelve ''
+PasarelaPagoST :: Wed Sep 16 13:42:10 CEST 2009 :: INFO :: INICIA CARGA DE PREFERENCIAS DESDE FICHERO
+PasarelaPagoST :: Wed Sep 16 13:42:14 CEST 2009 :: TRACE :: Fichero importado
+PasarelaPagoST :: Wed Sep 16 13:42:14 CEST 2009 :: TRACE :: Leyendo las siguientes claves -> [EsquemaBaseDatos] [AplicacionDestinoAnulacion] [IpOrigen] [Entorno] [Entidad] [AplicacionDestinoPeticion] [AplicacionDestinoConsulta] [AplicacionOrigen] [Idioma] [Canal] [UsuarioAplicacion] [MargenTiempoAnulacion] [EndPointPago] [EndPointConsulta] [EndPointLanzador] 
+PasarelaPagoST :: Wed Sep 16 13:42:14 CEST 2009 :: TRACE :: Cargando en la tabla ['EsquemaBaseDatos' - 'PSEUDOREAL']
+PasarelaPagoST :: Wed Sep 16 13:42:14 CEST 2009 :: TRACE :: Cargando en la tabla ['AplicacionDestinoAnulacion' - 'ZCANT']
+PasarelaPagoST :: Wed Sep 16 13:42:14 CEST 2009 :: TRACE :: Cargando en la tabla ['IpOrigen' - '10.112.10.230']
+PasarelaPagoST :: Wed Sep 16 13:42:14 CEST 2009 :: TRACE :: Cargando en la tabla ['Entorno' - 'D']
+PasarelaPagoST :: Wed Sep 16 13:42:14 CEST 2009 :: TRACE :: Cargando en la tabla ['Entidad' - '2048']
+PasarelaPagoST :: Wed Sep 16 13:42:14 CEST 2009 :: TRACE :: Cargando en la tabla ['AplicacionDestinoPeticion' - 'ZCPAT']
+PasarelaPagoST :: Wed Sep 16 13:42:14 CEST 2009 :: TRACE :: Cargando en la tabla ['AplicacionDestinoConsulta' - 'ZCCPA']
+PasarelaPagoST :: Wed Sep 16 13:42:14 CEST 2009 :: TRACE :: Cargando en la tabla ['AplicacionOrigen' - 'PRA']
+PasarelaPagoST :: Wed Sep 16 13:42:14 CEST 2009 :: TRACE :: Cargando en la tabla ['Idioma' - 'es-Es']
+PasarelaPagoST :: Wed Sep 16 13:42:14 CEST 2009 :: TRACE :: Cargando en la tabla ['Canal' - '01']
+PasarelaPagoST :: Wed Sep 16 13:42:14 CEST 2009 :: TRACE :: Cargando en la tabla ['UsuarioAplicacion' - 'STPA']
+PasarelaPagoST :: Wed Sep 16 13:42:14 CEST 2009 :: TRACE :: Cargando en la tabla ['MargenTiempoAnulacion' - '14400']
+PasarelaPagoST :: Wed Sep 16 13:42:14 CEST 2009 :: TRACE :: Cargando en la tabla ['EndPointPago' - '']
+PasarelaPagoST :: Wed Sep 16 13:42:14 CEST 2009 :: TRACE :: Cargando en la tabla ['EndPointConsulta' - '']
+PasarelaPagoST :: Wed Sep 16 13:42:14 CEST 2009 :: TRACE :: Cargando en la tabla ['EndPointLanzador' - '']
+PasarelaPagoST :: Wed Sep 16 13:42:14 CEST 2009 :: INFO :: FIN CARGA DE PREFERENCIAS DESDE FICHERO
+PasarelaPagoST :: Wed Sep 16 13:42:14 CEST 2009 :: TRACE :: Se ha pedido la preferencia 'EndPointLanzador' a lo que el sistema devuelve ''
+PasarelaPagoST :: Wed Sep 16 13:42:58 CEST 2009 :: INFO :: INICIA CARGA DE PREFERENCIAS DESDE FICHERO
+PasarelaPagoST :: Wed Sep 16 13:43:02 CEST 2009 :: TRACE :: Fichero importado
+PasarelaPagoST :: Wed Sep 16 13:43:02 CEST 2009 :: TRACE :: Leyendo las siguientes claves -> [EsquemaBaseDatos] [AplicacionDestinoAnulacion] [IpOrigen] [Entorno] [Entidad] [AplicacionDestinoPeticion] [AplicacionDestinoConsulta] [AplicacionOrigen] [Idioma] [Canal] [UsuarioAplicacion] [MargenTiempoAnulacion] [EndPointPago] [EndPointConsulta] [EndPointLanzador] 
+PasarelaPagoST :: Wed Sep 16 13:43:02 CEST 2009 :: TRACE :: Cargando en la tabla ['EsquemaBaseDatos' - 'PSEUDOREAL']
+PasarelaPagoST :: Wed Sep 16 13:43:02 CEST 2009 :: TRACE :: Cargando en la tabla ['AplicacionDestinoAnulacion' - 'ZCANT']
+PasarelaPagoST :: Wed Sep 16 13:43:02 CEST 2009 :: TRACE :: Cargando en la tabla ['IpOrigen' - '10.112.10.230']
+PasarelaPagoST :: Wed Sep 16 13:43:02 CEST 2009 :: TRACE :: Cargando en la tabla ['Entorno' - 'D']
+PasarelaPagoST :: Wed Sep 16 13:43:02 CEST 2009 :: TRACE :: Cargando en la tabla ['Entidad' - '2048']
+PasarelaPagoST :: Wed Sep 16 13:43:02 CEST 2009 :: TRACE :: Cargando en la tabla ['AplicacionDestinoPeticion' - 'ZCPAT']
+PasarelaPagoST :: Wed Sep 16 13:43:02 CEST 2009 :: TRACE :: Cargando en la tabla ['AplicacionDestinoConsulta' - 'ZCCPA']
+PasarelaPagoST :: Wed Sep 16 13:43:02 CEST 2009 :: TRACE :: Cargando en la tabla ['AplicacionOrigen' - 'PRA']
+PasarelaPagoST :: Wed Sep 16 13:43:02 CEST 2009 :: TRACE :: Cargando en la tabla ['Idioma' - 'es-Es']
+PasarelaPagoST :: Wed Sep 16 13:43:02 CEST 2009 :: TRACE :: Cargando en la tabla ['Canal' - '01']
+PasarelaPagoST :: Wed Sep 16 13:43:02 CEST 2009 :: TRACE :: Cargando en la tabla ['UsuarioAplicacion' - 'STPA']
+PasarelaPagoST :: Wed Sep 16 13:43:02 CEST 2009 :: TRACE :: Cargando en la tabla ['MargenTiempoAnulacion' - '14400']
+PasarelaPagoST :: Wed Sep 16 13:43:02 CEST 2009 :: TRACE :: Cargando en la tabla ['EndPointPago' - '']
+PasarelaPagoST :: Wed Sep 16 13:43:02 CEST 2009 :: TRACE :: Cargando en la tabla ['EndPointConsulta' - '']
+PasarelaPagoST :: Wed Sep 16 13:43:02 CEST 2009 :: TRACE :: Cargando en la tabla ['EndPointLanzador' - '']
+PasarelaPagoST :: Wed Sep 16 13:43:02 CEST 2009 :: INFO :: FIN CARGA DE PREFERENCIAS DESDE FICHERO
+PasarelaPagoST :: Wed Sep 16 13:43:08 CEST 2009 :: TRACE :: Se ha pedido la preferencia 'EndPointLanzador' a lo que el sistema devuelve ''
+PasarelaPagoST :: Wed Sep 16 13:45:14 CEST 2009 :: INFO :: INICIA CARGA DE PREFERENCIAS DESDE FICHERO
+PasarelaPagoST :: Wed Sep 16 13:45:18 CEST 2009 :: TRACE :: Fichero importado
+PasarelaPagoST :: Wed Sep 16 13:45:18 CEST 2009 :: TRACE :: Leyendo las siguientes claves -> [EsquemaBaseDatos] [AplicacionDestinoAnulacion] [IpOrigen] [Entorno] [Entidad] [AplicacionDestinoPeticion] [AplicacionDestinoConsulta] [AplicacionOrigen] [Idioma] [Canal] [UsuarioAplicacion] [MargenTiempoAnulacion] [EndPointPago] [EndPointConsulta] [EndPointLanzador] 
+PasarelaPagoST :: Wed Sep 16 13:45:18 CEST 2009 :: TRACE :: Cargando en la tabla ['EsquemaBaseDatos' - 'PSEUDOREAL']
+PasarelaPagoST :: Wed Sep 16 13:45:18 CEST 2009 :: TRACE :: Cargando en la tabla ['AplicacionDestinoAnulacion' - 'ZCANT']
+PasarelaPagoST :: Wed Sep 16 13:45:18 CEST 2009 :: TRACE :: Cargando en la tabla ['IpOrigen' - '10.112.10.230']
+PasarelaPagoST :: Wed Sep 16 13:45:18 CEST 2009 :: TRACE :: Cargando en la tabla ['Entorno' - 'D']
+PasarelaPagoST :: Wed Sep 16 13:45:18 CEST 2009 :: TRACE :: Cargando en la tabla ['Entidad' - '2048']
+PasarelaPagoST :: Wed Sep 16 13:45:18 CEST 2009 :: TRACE :: Cargando en la tabla ['AplicacionDestinoPeticion' - 'ZCPAT']
+PasarelaPagoST :: Wed Sep 16 13:45:18 CEST 2009 :: TRACE :: Cargando en la tabla ['AplicacionDestinoConsulta' - 'ZCCPA']
+PasarelaPagoST :: Wed Sep 16 13:45:18 CEST 2009 :: TRACE :: Cargando en la tabla ['AplicacionOrigen' - 'PRA']
+PasarelaPagoST :: Wed Sep 16 13:45:18 CEST 2009 :: TRACE :: Cargando en la tabla ['Idioma' - 'es-Es']
+PasarelaPagoST :: Wed Sep 16 13:45:18 CEST 2009 :: TRACE :: Cargando en la tabla ['Canal' - '01']
+PasarelaPagoST :: Wed Sep 16 13:45:18 CEST 2009 :: TRACE :: Cargando en la tabla ['UsuarioAplicacion' - 'STPA']
+PasarelaPagoST :: Wed Sep 16 13:45:18 CEST 2009 :: TRACE :: Cargando en la tabla ['MargenTiempoAnulacion' - '14400']
+PasarelaPagoST :: Wed Sep 16 13:45:18 CEST 2009 :: TRACE :: Cargando en la tabla ['EndPointPago' - '']
+PasarelaPagoST :: Wed Sep 16 13:45:18 CEST 2009 :: TRACE :: Cargando en la tabla ['EndPointConsulta' - '']
+PasarelaPagoST :: Wed Sep 16 13:45:18 CEST 2009 :: TRACE :: Cargando en la tabla ['EndPointLanzador' - '']
+PasarelaPagoST :: Wed Sep 16 13:45:18 CEST 2009 :: INFO :: FIN CARGA DE PREFERENCIAS DESDE FICHERO
+PasarelaPagoST :: Wed Sep 16 13:45:20 CEST 2009 :: TRACE :: Se ha pedido la preferencia 'EndPointLanzador' a lo que el sistema devuelve ''
+PasarelaPagoST :: Wed Sep 16 13:47:28 CEST 2009 :: INFO :: INICIA CARGA DE PREFERENCIAS DESDE FICHERO
+PasarelaPagoST :: Wed Sep 16 13:47:32 CEST 2009 :: TRACE :: Fichero importado
+PasarelaPagoST :: Wed Sep 16 13:47:32 CEST 2009 :: TRACE :: Leyendo las siguientes claves -> [EsquemaBaseDatos] [AplicacionDestinoAnulacion] [IpOrigen] [Entorno] [Entidad] [AplicacionDestinoPeticion] [AplicacionDestinoConsulta] [AplicacionOrigen] [Idioma] [Canal] [UsuarioAplicacion] [MargenTiempoAnulacion] [EndPointPago] [EndPointConsulta] [EndPointLanzador] 
+PasarelaPagoST :: Wed Sep 16 13:47:32 CEST 2009 :: TRACE :: Cargando en la tabla ['EsquemaBaseDatos' - 'PSEUDOREAL']
+PasarelaPagoST :: Wed Sep 16 13:47:32 CEST 2009 :: TRACE :: Cargando en la tabla ['AplicacionDestinoAnulacion' - 'ZCANT']
+PasarelaPagoST :: Wed Sep 16 13:47:32 CEST 2009 :: TRACE :: Cargando en la tabla ['IpOrigen' - '10.112.10.230']
+PasarelaPagoST :: Wed Sep 16 13:47:32 CEST 2009 :: TRACE :: Cargando en la tabla ['Entorno' - 'D']
+PasarelaPagoST :: Wed Sep 16 13:47:32 CEST 2009 :: TRACE :: Cargando en la tabla ['Entidad' - '2048']
+PasarelaPagoST :: Wed Sep 16 13:47:32 CEST 2009 :: TRACE :: Cargando en la tabla ['AplicacionDestinoPeticion' - 'ZCPAT']
+PasarelaPagoST :: Wed Sep 16 13:47:32 CEST 2009 :: TRACE :: Cargando en la tabla ['AplicacionDestinoConsulta' - 'ZCCPA']
+PasarelaPagoST :: Wed Sep 16 13:47:32 CEST 2009 :: TRACE :: Cargando en la tabla ['AplicacionOrigen' - 'PRA']
+PasarelaPagoST :: Wed Sep 16 13:47:32 CEST 2009 :: TRACE :: Cargando en la tabla ['Idioma' - 'es-Es']
+PasarelaPagoST :: Wed Sep 16 13:47:32 CEST 2009 :: TRACE :: Cargando en la tabla ['Canal' - '01']
+PasarelaPagoST :: Wed Sep 16 13:47:32 CEST 2009 :: TRACE :: Cargando en la tabla ['UsuarioAplicacion' - 'STPA']
+PasarelaPagoST :: Wed Sep 16 13:47:32 CEST 2009 :: TRACE :: Cargando en la tabla ['MargenTiempoAnulacion' - '14400']
+PasarelaPagoST :: Wed Sep 16 13:47:32 CEST 2009 :: TRACE :: Cargando en la tabla ['EndPointPago' - '']
+PasarelaPagoST :: Wed Sep 16 13:47:32 CEST 2009 :: TRACE :: Cargando en la tabla ['EndPointConsulta' - '']
+PasarelaPagoST :: Wed Sep 16 13:47:32 CEST 2009 :: TRACE :: Cargando en la tabla ['EndPointLanzador' - '']
+PasarelaPagoST :: Wed Sep 16 13:47:32 CEST 2009 :: INFO :: FIN CARGA DE PREFERENCIAS DESDE FICHERO
+PasarelaPagoST :: Wed Sep 16 13:48:20 CEST 2009 :: TRACE :: Se ha pedido la preferencia 'EndPointLanzador' a lo que el sistema devuelve ''
+PasarelaPagoST :: Wed Sep 16 13:50:24 CEST 2009 :: INFO :: INICIA CARGA DE PREFERENCIAS DESDE FICHERO
+PasarelaPagoST :: Wed Sep 16 13:50:27 CEST 2009 :: TRACE :: Fichero importado
+PasarelaPagoST :: Wed Sep 16 13:50:27 CEST 2009 :: TRACE :: Leyendo las siguientes claves -> [EsquemaBaseDatos] [AplicacionDestinoAnulacion] [IpOrigen] [Entorno] [Entidad] [AplicacionDestinoPeticion] [AplicacionDestinoConsulta] [AplicacionOrigen] [Idioma] [Canal] [UsuarioAplicacion] [MargenTiempoAnulacion] [EndPointPago] [EndPointConsulta] [EndPointLanzador] 
+PasarelaPagoST :: Wed Sep 16 13:50:27 CEST 2009 :: TRACE :: Cargando en la tabla ['EsquemaBaseDatos' - 'PSEUDOREAL']
+PasarelaPagoST :: Wed Sep 16 13:50:27 CEST 2009 :: TRACE :: Cargando en la tabla ['AplicacionDestinoAnulacion' - 'ZCANT']
+PasarelaPagoST :: Wed Sep 16 13:50:27 CEST 2009 :: TRACE :: Cargando en la tabla ['IpOrigen' - '10.112.10.230']
+PasarelaPagoST :: Wed Sep 16 13:50:27 CEST 2009 :: TRACE :: Cargando en la tabla ['Entorno' - 'D']
+PasarelaPagoST :: Wed Sep 16 13:50:27 CEST 2009 :: TRACE :: Cargando en la tabla ['Entidad' - '2048']
+PasarelaPagoST :: Wed Sep 16 13:50:27 CEST 2009 :: TRACE :: Cargando en la tabla ['AplicacionDestinoPeticion' - 'ZCPAT']
+PasarelaPagoST :: Wed Sep 16 13:50:27 CEST 2009 :: TRACE :: Cargando en la tabla ['AplicacionDestinoConsulta' - 'ZCCPA']
+PasarelaPagoST :: Wed Sep 16 13:50:27 CEST 2009 :: TRACE :: Cargando en la tabla ['AplicacionOrigen' - 'PRA']
+PasarelaPagoST :: Wed Sep 16 13:50:27 CEST 2009 :: TRACE :: Cargando en la tabla ['Idioma' - 'es-Es']
+PasarelaPagoST :: Wed Sep 16 13:50:27 CEST 2009 :: TRACE :: Cargando en la tabla ['Canal' - '01']
+PasarelaPagoST :: Wed Sep 16 13:50:27 CEST 2009 :: TRACE :: Cargando en la tabla ['UsuarioAplicacion' - 'STPA']
+PasarelaPagoST :: Wed Sep 16 13:50:27 CEST 2009 :: TRACE :: Cargando en la tabla ['MargenTiempoAnulacion' - '14400']
+PasarelaPagoST :: Wed Sep 16 13:50:27 CEST 2009 :: TRACE :: Cargando en la tabla ['EndPointPago' - '']
+PasarelaPagoST :: Wed Sep 16 13:50:27 CEST 2009 :: TRACE :: Cargando en la tabla ['EndPointConsulta' - '']
+PasarelaPagoST :: Wed Sep 16 13:50:27 CEST 2009 :: TRACE :: Cargando en la tabla ['EndPointLanzador' - '']
+PasarelaPagoST :: Wed Sep 16 13:50:27 CEST 2009 :: INFO :: FIN CARGA DE PREFERENCIAS DESDE FICHERO
+PasarelaPagoST :: Wed Sep 16 13:50:27 CEST 2009 :: TRACE :: Se ha pedido la preferencia 'EndPointLanzador' a lo que el sistema devuelve ''
+PasarelaPagoST :: Wed Sep 16 13:50:43 CEST 2009 :: INFO :: INICIA CARGA DE PREFERENCIAS DESDE FICHERO
+PasarelaPagoST :: Wed Sep 16 13:50:47 CEST 2009 :: TRACE :: Fichero importado
+PasarelaPagoST :: Wed Sep 16 13:50:47 CEST 2009 :: TRACE :: Leyendo las siguientes claves -> [EsquemaBaseDatos] [AplicacionDestinoAnulacion] [IpOrigen] [Entorno] [Entidad] [AplicacionDestinoPeticion] [AplicacionDestinoConsulta] [AplicacionOrigen] [Idioma] [Canal] [UsuarioAplicacion] [MargenTiempoAnulacion] [EndPointPago] [EndPointConsulta] [EndPointLanzador] 
+PasarelaPagoST :: Wed Sep 16 13:50:47 CEST 2009 :: TRACE :: Cargando en la tabla ['EsquemaBaseDatos' - 'PSEUDOREAL']
+PasarelaPagoST :: Wed Sep 16 13:50:47 CEST 2009 :: TRACE :: Cargando en la tabla ['AplicacionDestinoAnulacion' - 'ZCANT']
+PasarelaPagoST :: Wed Sep 16 13:50:47 CEST 2009 :: TRACE :: Cargando en la tabla ['IpOrigen' - '10.112.10.230']
+PasarelaPagoST :: Wed Sep 16 13:50:47 CEST 2009 :: TRACE :: Cargando en la tabla ['Entorno' - 'D']
+PasarelaPagoST :: Wed Sep 16 13:50:47 CEST 2009 :: TRACE :: Cargando en la tabla ['Entidad' - '2048']
+PasarelaPagoST :: Wed Sep 16 13:50:47 CEST 2009 :: TRACE :: Cargando en la tabla ['AplicacionDestinoPeticion' - 'ZCPAT']
+PasarelaPagoST :: Wed Sep 16 13:50:47 CEST 2009 :: TRACE :: Cargando en la tabla ['AplicacionDestinoConsulta' - 'ZCCPA']
+PasarelaPagoST :: Wed Sep 16 13:50:47 CEST 2009 :: TRACE :: Cargando en la tabla ['AplicacionOrigen' - 'PRA']
+PasarelaPagoST :: Wed Sep 16 13:50:47 CEST 2009 :: TRACE :: Cargando en la tabla ['Idioma' - 'es-Es']
+PasarelaPagoST :: Wed Sep 16 13:50:47 CEST 2009 :: TRACE :: Cargando en la tabla ['Canal' - '01']
+PasarelaPagoST :: Wed Sep 16 13:50:47 CEST 2009 :: TRACE :: Cargando en la tabla ['UsuarioAplicacion' - 'STPA']
+PasarelaPagoST :: Wed Sep 16 13:50:47 CEST 2009 :: TRACE :: Cargando en la tabla ['MargenTiempoAnulacion' - '14400']
+PasarelaPagoST :: Wed Sep 16 13:50:47 CEST 2009 :: TRACE :: Cargando en la tabla ['EndPointPago' - '']
+PasarelaPagoST :: Wed Sep 16 13:50:47 CEST 2009 :: TRACE :: Cargando en la tabla ['EndPointConsulta' - '']
+PasarelaPagoST :: Wed Sep 16 13:50:47 CEST 2009 :: TRACE :: Cargando en la tabla ['EndPointLanzador' - '']
+PasarelaPagoST :: Wed Sep 16 13:50:47 CEST 2009 :: INFO :: FIN CARGA DE PREFERENCIAS DESDE FICHERO
+PasarelaPagoST :: Wed Sep 16 13:50:47 CEST 2009 :: TRACE :: Se ha pedido la preferencia 'EndPointLanzador' a lo que el sistema devuelve ''
+PasarelaPagoST :: Wed Sep 16 13:59:00 CEST 2009 :: INFO :: INICIA CARGA DE PREFERENCIAS DESDE FICHERO
+PasarelaPagoST :: Wed Sep 16 13:59:07 CEST 2009 :: TRACE :: Fichero importado
+PasarelaPagoST :: Wed Sep 16 13:59:07 CEST 2009 :: TRACE :: Leyendo las siguientes claves -> [EsquemaBaseDatos] [AplicacionDestinoAnulacion] [IpOrigen] [Entorno] [Entidad] [AplicacionDestinoPeticion] [AplicacionDestinoConsulta] [AplicacionOrigen] [Idioma] [Canal] [UsuarioAplicacion] [MargenTiempoAnulacion] [EndPointPago] [EndPointConsulta] [EndPointLanzador] 
+PasarelaPagoST :: Wed Sep 16 13:59:07 CEST 2009 :: TRACE :: Cargando en la tabla ['EsquemaBaseDatos' - 'PSEUDOREAL']
+PasarelaPagoST :: Wed Sep 16 13:59:07 CEST 2009 :: TRACE :: Cargando en la tabla ['AplicacionDestinoAnulacion' - 'ZCANT']
+PasarelaPagoST :: Wed Sep 16 13:59:07 CEST 2009 :: TRACE :: Cargando en la tabla ['IpOrigen' - '10.112.10.230']
+PasarelaPagoST :: Wed Sep 16 13:59:07 CEST 2009 :: TRACE :: Cargando en la tabla ['Entorno' - 'D']
+PasarelaPagoST :: Wed Sep 16 13:59:07 CEST 2009 :: TRACE :: Cargando en la tabla ['Entidad' - '2048']
+PasarelaPagoST :: Wed Sep 16 13:59:07 CEST 2009 :: TRACE :: Cargando en la tabla ['AplicacionDestinoPeticion' - 'ZCPAT']
+PasarelaPagoST :: Wed Sep 16 13:59:07 CEST 2009 :: TRACE :: Cargando en la tabla ['AplicacionDestinoConsulta' - 'ZCCPA']
+PasarelaPagoST :: Wed Sep 16 13:59:07 CEST 2009 :: TRACE :: Cargando en la tabla ['AplicacionOrigen' - 'PRA']
+PasarelaPagoST :: Wed Sep 16 13:59:07 CEST 2009 :: TRACE :: Cargando en la tabla ['Idioma' - 'es-Es']
+PasarelaPagoST :: Wed Sep 16 13:59:07 CEST 2009 :: TRACE :: Cargando en la tabla ['Canal' - '01']
+PasarelaPagoST :: Wed Sep 16 13:59:07 CEST 2009 :: TRACE :: Cargando en la tabla ['UsuarioAplicacion' - 'STPA']
+PasarelaPagoST :: Wed Sep 16 13:59:07 CEST 2009 :: TRACE :: Cargando en la tabla ['MargenTiempoAnulacion' - '14400']
+PasarelaPagoST :: Wed Sep 16 13:59:07 CEST 2009 :: TRACE :: Cargando en la tabla ['EndPointPago' - '']
+PasarelaPagoST :: Wed Sep 16 13:59:07 CEST 2009 :: TRACE :: Cargando en la tabla ['EndPointConsulta' - '']
+PasarelaPagoST :: Wed Sep 16 13:59:07 CEST 2009 :: TRACE :: Cargando en la tabla ['EndPointLanzador' - '']
+PasarelaPagoST :: Wed Sep 16 13:59:07 CEST 2009 :: INFO :: FIN CARGA DE PREFERENCIAS DESDE FICHERO
+PasarelaPagoST :: Wed Sep 16 13:59:07 CEST 2009 :: TRACE :: Se ha pedido la preferencia 'EndPointLanzador' a lo que el sistema devuelve ''
+PasarelaPagoST :: Wed Sep 16 13:59:33 CEST 2009 :: INFO :: INICIA CARGA DE PREFERENCIAS DESDE FICHERO
+PasarelaPagoST :: Wed Sep 16 13:59:38 CEST 2009 :: TRACE :: Fichero importado
+PasarelaPagoST :: Wed Sep 16 13:59:38 CEST 2009 :: TRACE :: Leyendo las siguientes claves -> [EsquemaBaseDatos] [AplicacionDestinoAnulacion] [IpOrigen] [Entorno] [Entidad] [AplicacionDestinoPeticion] [AplicacionDestinoConsulta] [AplicacionOrigen] [Idioma] [Canal] [UsuarioAplicacion] [MargenTiempoAnulacion] [EndPointPago] [EndPointConsulta] [EndPointLanzador] 
+PasarelaPagoST :: Wed Sep 16 13:59:38 CEST 2009 :: TRACE :: Cargando en la tabla ['EsquemaBaseDatos' - 'PSEUDOREAL']
+PasarelaPagoST :: Wed Sep 16 13:59:38 CEST 2009 :: TRACE :: Cargando en la tabla ['AplicacionDestinoAnulacion' - 'ZCANT']
+PasarelaPagoST :: Wed Sep 16 13:59:38 CEST 2009 :: TRACE :: Cargando en la tabla ['IpOrigen' - '10.112.10.230']
+PasarelaPagoST :: Wed Sep 16 13:59:38 CEST 2009 :: TRACE :: Cargando en la tabla ['Entorno' - 'D']
+PasarelaPagoST :: Wed Sep 16 13:59:38 CEST 2009 :: TRACE :: Cargando en la tabla ['Entidad' - '2048']
+PasarelaPagoST :: Wed Sep 16 13:59:38 CEST 2009 :: TRACE :: Cargando en la tabla ['AplicacionDestinoPeticion' - 'ZCPAT']
+PasarelaPagoST :: Wed Sep 16 13:59:38 CEST 2009 :: TRACE :: Cargando en la tabla ['AplicacionDestinoConsulta' - 'ZCCPA']
+PasarelaPagoST :: Wed Sep 16 13:59:38 CEST 2009 :: TRACE :: Cargando en la tabla ['AplicacionOrigen' - 'PRA']
+PasarelaPagoST :: Wed Sep 16 13:59:38 CEST 2009 :: TRACE :: Cargando en la tabla ['Idioma' - 'es-Es']
+PasarelaPagoST :: Wed Sep 16 13:59:38 CEST 2009 :: TRACE :: Cargando en la tabla ['Canal' - '01']
+PasarelaPagoST :: Wed Sep 16 13:59:38 CEST 2009 :: TRACE :: Cargando en la tabla ['UsuarioAplicacion' - 'STPA']
+PasarelaPagoST :: Wed Sep 16 13:59:38 CEST 2009 :: TRACE :: Cargando en la tabla ['MargenTiempoAnulacion' - '14400']
+PasarelaPagoST :: Wed Sep 16 13:59:38 CEST 2009 :: TRACE :: Cargando en la tabla ['EndPointPago' - '']
+PasarelaPagoST :: Wed Sep 16 13:59:38 CEST 2009 :: TRACE :: Cargando en la tabla ['EndPointConsulta' - '']
+PasarelaPagoST :: Wed Sep 16 13:59:38 CEST 2009 :: TRACE :: Cargando en la tabla ['EndPointLanzador' - '']
+PasarelaPagoST :: Wed Sep 16 13:59:38 CEST 2009 :: INFO :: FIN CARGA DE PREFERENCIAS DESDE FICHERO
+PasarelaPagoST :: Wed Sep 16 13:59:38 CEST 2009 :: TRACE :: Se ha pedido la preferencia 'EndPointLanzador' a lo que el sistema devuelve ''
+PasarelaPagoST :: Wed Sep 16 14:00:53 CEST 2009 :: INFO :: INICIA CARGA DE PREFERENCIAS DESDE FICHERO
+PasarelaPagoST :: Wed Sep 16 14:00:58 CEST 2009 :: TRACE :: Fichero importado
+PasarelaPagoST :: Wed Sep 16 14:00:59 CEST 2009 :: TRACE :: Leyendo las siguientes claves -> [EsquemaBaseDatos] [AplicacionDestinoAnulacion] [IpOrigen] [Entorno] [Entidad] [AplicacionDestinoPeticion] [AplicacionDestinoConsulta] [AplicacionOrigen] [Idioma] [Canal] [UsuarioAplicacion] [MargenTiempoAnulacion] [EndPointPago] [EndPointConsulta] [EndPointLanzador] 
+PasarelaPagoST :: Wed Sep 16 14:00:59 CEST 2009 :: TRACE :: Cargando en la tabla ['EsquemaBaseDatos' - 'PSEUDOREAL']
+PasarelaPagoST :: Wed Sep 16 14:00:59 CEST 2009 :: TRACE :: Cargando en la tabla ['AplicacionDestinoAnulacion' - 'ZCANT']
+PasarelaPagoST :: Wed Sep 16 14:00:59 CEST 2009 :: TRACE :: Cargando en la tabla ['IpOrigen' - '10.112.10.230']
+PasarelaPagoST :: Wed Sep 16 14:00:59 CEST 2009 :: TRACE :: Cargando en la tabla ['Entorno' - 'D']
+PasarelaPagoST :: Wed Sep 16 14:00:59 CEST 2009 :: TRACE :: Cargando en la tabla ['Entidad' - '2048']
+PasarelaPagoST :: Wed Sep 16 14:00:59 CEST 2009 :: TRACE :: Cargando en la tabla ['AplicacionDestinoPeticion' - 'ZCPAT']
+PasarelaPagoST :: Wed Sep 16 14:00:59 CEST 2009 :: TRACE :: Cargando en la tabla ['AplicacionDestinoConsulta' - 'ZCCPA']
+PasarelaPagoST :: Wed Sep 16 14:00:59 CEST 2009 :: TRACE :: Cargando en la tabla ['AplicacionOrigen' - 'PRA']
+PasarelaPagoST :: Wed Sep 16 14:00:59 CEST 2009 :: TRACE :: Cargando en la tabla ['Idioma' - 'es-Es']
+PasarelaPagoST :: Wed Sep 16 14:00:59 CEST 2009 :: TRACE :: Cargando en la tabla ['Canal' - '01']
+PasarelaPagoST :: Wed Sep 16 14:00:59 CEST 2009 :: TRACE :: Cargando en la tabla ['UsuarioAplicacion' - 'STPA']
+PasarelaPagoST :: Wed Sep 16 14:00:59 CEST 2009 :: TRACE :: Cargando en la tabla ['MargenTiempoAnulacion' - '14400']
+PasarelaPagoST :: Wed Sep 16 14:00:59 CEST 2009 :: TRACE :: Cargando en la tabla ['EndPointPago' - '']
+PasarelaPagoST :: Wed Sep 16 14:00:59 CEST 2009 :: TRACE :: Cargando en la tabla ['EndPointConsulta' - '']
+PasarelaPagoST :: Wed Sep 16 14:00:59 CEST 2009 :: TRACE :: Cargando en la tabla ['EndPointLanzador' - '']
+PasarelaPagoST :: Wed Sep 16 14:00:59 CEST 2009 :: INFO :: FIN CARGA DE PREFERENCIAS DESDE FICHERO
+PasarelaPagoST :: Wed Sep 16 14:00:59 CEST 2009 :: TRACE :: Se ha pedido la preferencia 'EndPointLanzador' a lo que el sistema devuelve ''
+PasarelaPagoST :: Wed Sep 16 14:08:43 CEST 2009 :: INFO :: INICIA CARGA DE PREFERENCIAS DESDE FICHERO
+PasarelaPagoST :: Wed Sep 16 14:08:47 CEST 2009 :: TRACE :: Fichero importado
+PasarelaPagoST :: Wed Sep 16 14:08:47 CEST 2009 :: TRACE :: Leyendo las siguientes claves -> [EsquemaBaseDatos] [AplicacionDestinoAnulacion] [IpOrigen] [Entorno] [Entidad] [AplicacionDestinoPeticion] [AplicacionDestinoConsulta] [AplicacionOrigen] [Idioma] [Canal] [UsuarioAplicacion] [MargenTiempoAnulacion] [EndPointPago] [EndPointConsulta] [EndPointLanzador] 
+PasarelaPagoST :: Wed Sep 16 14:08:47 CEST 2009 :: TRACE :: Cargando en la tabla ['EsquemaBaseDatos' - 'PSEUDOREAL']
+PasarelaPagoST :: Wed Sep 16 14:08:47 CEST 2009 :: TRACE :: Cargando en la tabla ['AplicacionDestinoAnulacion' - 'ZCANT']
+PasarelaPagoST :: Wed Sep 16 14:08:47 CEST 2009 :: TRACE :: Cargando en la tabla ['IpOrigen' - '10.112.10.230']
+PasarelaPagoST :: Wed Sep 16 14:08:47 CEST 2009 :: TRACE :: Cargando en la tabla ['Entorno' - 'D']
+PasarelaPagoST :: Wed Sep 16 14:08:47 CEST 2009 :: TRACE :: Cargando en la tabla ['Entidad' - '2048']
+PasarelaPagoST :: Wed Sep 16 14:08:47 CEST 2009 :: TRACE :: Cargando en la tabla ['AplicacionDestinoPeticion' - 'ZCPAT']
+PasarelaPagoST :: Wed Sep 16 14:08:47 CEST 2009 :: TRACE :: Cargando en la tabla ['AplicacionDestinoConsulta' - 'ZCCPA']
+PasarelaPagoST :: Wed Sep 16 14:08:47 CEST 2009 :: TRACE :: Cargando en la tabla ['AplicacionOrigen' - 'PRA']
+PasarelaPagoST :: Wed Sep 16 14:08:47 CEST 2009 :: TRACE :: Cargando en la tabla ['Idioma' - 'es-Es']
+PasarelaPagoST :: Wed Sep 16 14:08:47 CEST 2009 :: TRACE :: Cargando en la tabla ['Canal' - '01']
+PasarelaPagoST :: Wed Sep 16 14:08:47 CEST 2009 :: TRACE :: Cargando en la tabla ['UsuarioAplicacion' - 'STPA']
+PasarelaPagoST :: Wed Sep 16 14:08:47 CEST 2009 :: TRACE :: Cargando en la tabla ['MargenTiempoAnulacion' - '14400']
+PasarelaPagoST :: Wed Sep 16 14:08:47 CEST 2009 :: TRACE :: Cargando en la tabla ['EndPointPago' - '']
+PasarelaPagoST :: Wed Sep 16 14:08:47 CEST 2009 :: TRACE :: Cargando en la tabla ['EndPointConsulta' - '']
+PasarelaPagoST :: Wed Sep 16 14:08:47 CEST 2009 :: TRACE :: Cargando en la tabla ['EndPointLanzador' - '']
+PasarelaPagoST :: Wed Sep 16 14:08:47 CEST 2009 :: INFO :: FIN CARGA DE PREFERENCIAS DESDE FICHERO
+PasarelaPagoST :: Wed Sep 16 14:08:47 CEST 2009 :: TRACE :: Se ha pedido la preferencia 'EndPointLanzador' a lo que el sistema devuelve ''
+PasarelaPagoST :: Wed Sep 16 14:09:06 CEST 2009 :: INFO :: INICIA CARGA DE PREFERENCIAS DESDE FICHERO
+PasarelaPagoST :: Wed Sep 16 14:09:10 CEST 2009 :: TRACE :: Fichero importado
+PasarelaPagoST :: Wed Sep 16 14:09:10 CEST 2009 :: TRACE :: Leyendo las siguientes claves -> [EsquemaBaseDatos] [AplicacionDestinoAnulacion] [IpOrigen] [Entorno] [Entidad] [AplicacionDestinoPeticion] [AplicacionDestinoConsulta] [AplicacionOrigen] [Idioma] [Canal] [UsuarioAplicacion] [MargenTiempoAnulacion] [EndPointPago] [EndPointConsulta] [EndPointLanzador] 
+PasarelaPagoST :: Wed Sep 16 14:09:10 CEST 2009 :: TRACE :: Cargando en la tabla ['EsquemaBaseDatos' - 'PSEUDOREAL']
+PasarelaPagoST :: Wed Sep 16 14:09:10 CEST 2009 :: TRACE :: Cargando en la tabla ['AplicacionDestinoAnulacion' - 'ZCANT']
+PasarelaPagoST :: Wed Sep 16 14:09:10 CEST 2009 :: TRACE :: Cargando en la tabla ['IpOrigen' - '10.112.10.230']
+PasarelaPagoST :: Wed Sep 16 14:09:10 CEST 2009 :: TRACE :: Cargando en la tabla ['Entorno' - 'D']
+PasarelaPagoST :: Wed Sep 16 14:09:10 CEST 2009 :: TRACE :: Cargando en la tabla ['Entidad' - '2048']
+PasarelaPagoST :: Wed Sep 16 14:09:10 CEST 2009 :: TRACE :: Cargando en la tabla ['AplicacionDestinoPeticion' - 'ZCPAT']
+PasarelaPagoST :: Wed Sep 16 14:09:10 CEST 2009 :: TRACE :: Cargando en la tabla ['AplicacionDestinoConsulta' - 'ZCCPA']
+PasarelaPagoST :: Wed Sep 16 14:09:10 CEST 2009 :: TRACE :: Cargando en la tabla ['AplicacionOrigen' - 'PRA']
+PasarelaPagoST :: Wed Sep 16 14:09:10 CEST 2009 :: TRACE :: Cargando en la tabla ['Idioma' - 'es-Es']
+PasarelaPagoST :: Wed Sep 16 14:09:10 CEST 2009 :: TRACE :: Cargando en la tabla ['Canal' - '01']
+PasarelaPagoST :: Wed Sep 16 14:09:10 CEST 2009 :: TRACE :: Cargando en la tabla ['UsuarioAplicacion' - 'STPA']
+PasarelaPagoST :: Wed Sep 16 14:09:10 CEST 2009 :: TRACE :: Cargando en la tabla ['MargenTiempoAnulacion' - '14400']
+PasarelaPagoST :: Wed Sep 16 14:09:10 CEST 2009 :: TRACE :: Cargando en la tabla ['EndPointPago' - '']
+PasarelaPagoST :: Wed Sep 16 14:09:10 CEST 2009 :: TRACE :: Cargando en la tabla ['EndPointConsulta' - '']
+PasarelaPagoST :: Wed Sep 16 14:09:10 CEST 2009 :: TRACE :: Cargando en la tabla ['EndPointLanzador' - '']
+PasarelaPagoST :: Wed Sep 16 14:09:10 CEST 2009 :: INFO :: FIN CARGA DE PREFERENCIAS DESDE FICHERO
+PasarelaPagoST :: Wed Sep 16 14:09:10 CEST 2009 :: TRACE :: Se ha pedido la preferencia 'EndPointLanzador' a lo que el sistema devuelve ''

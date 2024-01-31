@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<Paginas><Pagina>
+		<imagen tipo="jpeg" x="70" y="700">
+			
+			<orga>/portal/imagenes/LOGOORGA33_V2.JPG</orga></imagen>
+		<textobox ID="Etiqueta0" type="109" fuente="F2" size="12" x="173" y="786" x1="240" y1="15" modo="2">Etiqueta0</textobox>
+		<cuadro ID="Cuadro15" type="101" x="162" y="777" x1="348" y1="74"/>
+		<texto ID="Etiqueta19" type="100" fuente="F2" size="8" x="165" y="764">Nº del Expediente de Gestión:</texto>
+		<texto ID="Texto21" type="109" fuente="F2" size="8" x="289" y="764">Texto21</texto>
+		<texto ID="Etiqueta20" type="100" fuente="F1" size="6" x="366" y="765">(Se hará referencia a este Nº en la contestación)</texto>
+		<texto ID="Etiqueta102" type="100" fuente="F2" size="8" x="165" y="750">Organismo</texto>
+		<textobox ID="Texto101" type="109" fuente="F2" size="8" x="218" y="752" x1="286" y1="12" modo="1">Texto101</textobox>
+		<texto ID="Etiqueta68" type="100" fuente="F2" size="8" x="165" y="735">Fecha de alta</texto>
+		<textobox ID="Texto67" type="109" fuente="F1" size="8" x="224" y="737" x1="70" y1="11" modo="1">Texto67</textobox>
+		<texto ID="Etiqueta161" type="100" fuente="F2" size="8" x="298" y="735">Hora de Alta</texto>
+		<texto ID="Texto160" type="109" fuente="F1" size="8" x="360" y="736">Texto160</texto>
+		<texto ID="Etiqueta104" type="100" fuente="F2" size="8" x="165" y="721">Oficina de Alta</texto>
+		<textobox ID="Texto103" type="109" fuente="F1" size="8" x="281" y="723" x1="223" y1="12" modo="1">Texto103</textobox>
+		<texto ID="Etiqueta28" type="100" fuente="F2" size="8" x="165" y="707">Oficina del Requerimiento</texto>
+		<texto ID="Texto29" type="109" fuente="F1" size="8" x="282" y="709">Texto29</texto>
+		<cuadro ID="Cuadro16" type="101" x="80" y="697" x1="430" y1="28"/>
+		<texto ID="Etiqueta23" type="100" fuente="F2" size="8" x="82" y="684">Tipo de Solicitud o Recurso:</texto>
+		<textobox ID="Texto24" type="109" fuente="F1" size="8" x="215" y="686" x1="292" y1="11" modo="1">Texto24</textobox>
+		<textobox ID="Texto26" type="109" fuente="F1" size="8" x="216" y="677" x1="292" y1="11" modo="1">Texto26</textobox>
+		<textobox ID="Etiqueta33" type="100" fuente="F2" size="8" x="79" y="656" x1="428" y1="12" modo="2">PRESENTADOR</textobox>
+		<cuadro ID="Cuadro89" type="101" x="79" y="652" x1="431" y1="45"/>
+		<texto ID="Texto20" type="109" fuente="F1" size="8" x="176" y="639">Texto20</texto>
+		<texto ID="nomPres" type="100" fuente="F2" size="8" x="85" y="639">Apellidos y Nombre:</texto>
+		<texto ID="Etiqueta91" type="100" fuente="F2" size="8" x="85" y="625">Id. Fiscal:</texto>
+		<texto ID="Texto90" type="109" fuente="F1" size="8" x="134" y="625">Texto90</texto>
+		<texto ID="Etiqueta30" type="100" fuente="F2" size="8" x="218" y="625">Teléfono:</texto>
+		<texto ID="Texto92" type="109" fuente="F1" size="8" x="264" y="625">Texto92</texto>
+		<texto ID="Etiqueta100" type="100" fuente="F2" size="8" x="351" y="625">Relación:</texto>
+		<texto ID="Texto99" type="109" fuente="F1" size="8" x="414" y="625">Texto99</texto>
+		<texto ID="Etiqueta24" type="100" fuente="F2" size="8" x="85" y="611">Dirección:</texto>
+		<texto ID="Texto23" type="109" fuente="F1" size="8" x="134" y="611">Texto23</texto>
+		<textobox ID="Etiqueta14" type="109" fuente="F1" size="9" x="80" y="587" x1="431" y1="30" modo="4">Etiqueta14</textobox>
+		<textobox ID="Subinforme CADE_CADENAEtiqueta" type="100" fuente="F2" size="8" x="80" y="552" x1="431" y1="11" modo="2">Documentación a presentar</textobox>
+		<Fila ID="Fila1">
+			<cuadro ID="Cuadro17" type="101" x="80" y="545" x1="430" y1="18"/>
+			<textobox ID="Subinforme CADE_CADENA" type="100" fuente="F1" size="9" x="85" y="535" x1="431" y1="11" modo="1">Subinforme CADE_CADENA</textobox>
+		</Fila>
+		<bloque ID="registro">
+			<textobox ID="Etiqueta83" type="100" fuente="F2" size="8" x="80" y="510" x1="431" y1="12" modo="2">Ampliación de Información</textobox>
+			<textobox ID="comentarioRedo" type="109" fuente="F1" size="9" x="80" y="480" x1="431" y1="50" modo="4">comentarioRedo</textobox>
+			
+		</bloque>
+		
+		
+		<bloque ID="coment">
+			<textobox ID="Etiqueta47" type="109" fuente="F1" size="9" x="80" y="427" x1="431" y1="60" modo="4">Etiqueta47</textobox> 
+			<textobox ID="TEXTO3_TEIN" type="109" fuente="F1" size="9" x="80" y="370" x1="431" y1="70" modo="4">TEXTO3_TEIN</textobox>
+			<textobox ID="Texto349_avi" type="109" fuente="F1" size="8" x="185" y="290" x1="238" y1="12" modo="1">Texto349</textobox>
+			<texto ID="Etiqueta364_avi" type="109" fuente="F1" size="8" x="80" y="309">Etiqueta364_avi</texto> 
+			<texto ID="Etiqueta364" type="109" fuente="F1" size="8" x="250" y="250">Etiqueta364</texto> 
+			<!--<texto ID="Etiqueta365" type="109" fuente="F1" size="8" x="250" y="160">Etiqueta365</texto> -->
+		</bloque>
+
+	</Pagina></Paginas>

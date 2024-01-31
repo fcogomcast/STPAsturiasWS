@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://servicios.tributasenasturias.es/Asturcon/PagoDeudasEPST/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="PagoDeudasEPST" targetNamespace="http://servicios.tributasenasturias.es/Asturcon/PagoDeudasEPST/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://servicios.tributasenasturias.es/Asturcon/PagoDeudasEPST/">
+    	<xsd:include schemaLocation="esquemaPago.xsd"></xsd:include>
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="enviarPagosRequest"> 
+    <wsdl:part element="tns:enviarPagos" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="enviarPagosResponse">
+    <wsdl:part element="tns:enviarPagosResponse" name="parameters"/>
+  </wsdl:message>
+  <wsdl:portType name="PagoDeudasEPST">
+    <wsdl:operation name="enviarPagos">
+      <wsdl:input message="tns:enviarPagosRequest"/>
+      <wsdl:output message="tns:enviarPagosResponse"/>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="PagoDeudasSOAP" type="tns:PagoDeudasEPST">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="enviarPagos">
+      <soap:operation soapAction="http://servicios.tributasenasturias.es/PagosDeudasEPST/enviarPagos"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="PagoDeudasEPST">
+    <wsdl:port binding="tns:PagoDeudasSOAP" name="PagoDeudasSOAP">
+      <soap:address location="http://bus:7001/WSXXX"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

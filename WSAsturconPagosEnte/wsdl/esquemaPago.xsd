@@ -1,0 +1,207 @@
+<xs:schema attributeFormDefault="unqualified" xmlns:xs="http://www.w3.org/2001/XMLSchema"
+xmlns:tns="http://servicios.tributasenasturias.es/Asturcon/PagoDeudasEPST/" targetNamespace="http://servicios.tributasenasturias.es/Asturcon/PagoDeudasEPST/">
+   	<xs:element name="enviarPagos">
+   		<xs:complexType>
+   			<xs:sequence>
+   				<xs:element name="MENSAJE" type="tns:MENSAJEIn"/>
+   			</xs:sequence>
+   		</xs:complexType>
+   	</xs:element>
+   	<xs:element name="enviarPagosResponse">
+   		<xs:complexType>
+   			<xs:sequence>
+   				<xs:element name="MENSAJE" type="tns:MENSAJEOut"/>
+   			</xs:sequence>
+   		</xs:complexType>
+   	</xs:element>
+	<xs:complexType name="MENSAJEIn">
+		<xs:annotation>
+   					<xs:documentation>
+   						Mensaje de entrada al servicio. Contendrá datos de pagos y/o solicitudes
+						de anulación de trabas.
+   					</xs:documentation>
+    		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="PAGOS" type="tns:PAGOSType" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="ANULACIONES" type="tns:ANULACIONESType" minOccurs="0" maxOccurs="1"/>
+		</xs:sequence>
+		<xs:attribute name="ID" type="xs:string" fixed="MENSAJE">
+    		<xs:annotation>
+   					<xs:documentation>
+   						Identificador fijo. Servirá para poder firmar el mensaje.
+   					</xs:documentation>
+    		</xs:annotation>
+    	</xs:attribute>
+	</xs:complexType>
+	<xs:complexType name="MENSAJEOut">
+			<xs:annotation>
+   					<xs:documentation>
+   						Mensaje de salida del servicio.
+   					</xs:documentation>
+    		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="RESPUESTA" type="tns:RESPUESTAType"></xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	
+    <xs:complexType name="EJECUCIONType">
+      <xs:sequence>
+        <xs:element name="REGISTRO" minOccurs="1" maxOccurs="unbounded" >
+      		<xs:annotation>
+           		<xs:documentation>
+           			Estructura que contendrá los datos pagos a EPST realizado teniendo como
+           			origen la deuda del tercero que se reflejó en los servicios de Consulta de Deudas
+           			y Recepción de los datos de la Consulta de Deudas.
+					También podrá reflejar los datos de las trabas que se quieren anular de las que 
+					se produjeron como resultado de la operación de consulta de deuda.
+           		</xs:documentation>
+           	</xs:annotation>
+          <xs:complexType>
+            <xs:sequence>
+            	<xs:element name="NIF" minOccurs="1" maxOccurs="1">
+            		<xs:annotation>
+            			<xs:documentation>
+            				N.I.F. del tercero.
+            			</xs:documentation>
+            		</xs:annotation>
+            		<xs:simpleType>
+            			<xs:restriction base="xs:string">
+            				<xs:minLength value="9"></xs:minLength>
+            				<xs:maxLength value="9"></xs:maxLength>
+            			</xs:restriction>
+            		</xs:simpleType>
+            	</xs:element>
+            	<xs:element name="IMPORTETRABA" minOccurs="1"
+            		maxOccurs="1">
+            		<xs:annotation>
+            			<xs:documentation>
+            				Importe de la traba cobrada/a anular
+            			</xs:documentation>
+            		</xs:annotation>
+            		<xs:simpleType>
+            			<xs:restriction base="xs:string">
+            				<xs:pattern value="(\-)?\d{1,15}\.\d{2}"></xs:pattern>
+            			</xs:restriction>
+            		</xs:simpleType>
+            	</xs:element>
+            	<xs:element name="REFERENCIA" type="xs:string" minOccurs="1" maxOccurs="1">
+            		<xs:annotation>
+            			<xs:documentation>
+            				Referencia de cobro. Será la misma que la devuelta en la respuesta de la deuda.
+            			</xs:documentation>
+            		</xs:annotation>
+            	</xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+      <xs:attribute name="ID" type="xs:string" use="required">
+      	<xs:annotation>
+      		<xs:documentation>
+       			Identificador único que se envió en la petición de consulta de deuda.
+       		</xs:documentation>
+       	</xs:annotation>
+      </xs:attribute>
+      <xs:attribute name="FECHA" type="xs:string" use="optional">
+      	<xs:annotation>
+      		<xs:documentation>
+       			Fecha del envío de los datos del pago. Formato DD/MM/YYYY
+       		</xs:documentation>
+       	</xs:annotation>
+      </xs:attribute>
+      <xs:attribute name="HORA" type="xs:string" use="optional">
+      	<xs:annotation>
+      		<xs:documentation>
+       			Hora del envío de los datos del pago. Formato HH:MI:SS (24 horas).
+       		</xs:documentation>
+       	</xs:annotation>
+      </xs:attribute>
+    </xs:complexType>
+    <xs:complexType name="RESPUESTAType">
+		<xs:sequence>    		
+    			<xs:element name="RESULTADO" type="tns:RESULTADOType" minOccurs="1" maxOccurs="1"></xs:element>
+		</xs:sequence>
+		<xs:attribute name="ID" type="xs:string" fixed="RESPUESTA">
+      	<xs:annotation>
+      		<xs:documentation>
+       			Identificador utilizado para la firma del mensaje.
+       		</xs:documentation>
+       	</xs:annotation>
+      </xs:attribute>
+    </xs:complexType>
+    <xs:complexType name="RESULTADOType">
+    	<xs:sequence>
+    			<xs:element name="CODIGO">
+    				<xs:annotation>
+    					<xs:documentation>
+    						Código de resultado.
+    					</xs:documentation>
+    				</xs:annotation>
+    				<xs:simpleType>
+    					<xs:restriction base="xs:string">
+    						<xs:length value="4"></xs:length>
+    					</xs:restriction>
+    				</xs:simpleType>
+    			</xs:element>
+    			<xs:element name="DESCRIPCION" type="xs:string">
+    				<xs:annotation>
+    					<xs:documentation>
+    						Mensaje relacionado con el código de
+    						resultado. Normalmente será una descripción
+    						textual de ese código.
+    					</xs:documentation>
+    				</xs:annotation>
+    			</xs:element>
+   			</xs:sequence>
+		</xs:complexType>
+
+    <xs:complexType name="PAGOSType">
+    	<xs:annotation>
+    		<xs:documentation>
+    			Tipo que encapsula la información de las N ejecuciones y
+    			sus pagos correspondientes.
+    		</xs:documentation>
+    	</xs:annotation>
+    	<xs:sequence>
+    		<xs:element name="EJECUCION" type="tns:EJECUCIONType"
+    			minOccurs="1" maxOccurs="unbounded" />
+    	</xs:sequence>
+		<xs:attribute name="IMPORTE_TOTAL">
+    		<xs:annotation>
+   					<xs:documentation>
+   						Suma de todos los importes pagados.
+   					</xs:documentation>
+    		</xs:annotation>
+			<xs:simpleType>
+            			<xs:restriction base="xs:string">
+            				<xs:pattern value="(\-)?\d{1,15}\.\d{2}"></xs:pattern>
+            			</xs:restriction>
+            </xs:simpleType>
+    	</xs:attribute>
+    </xs:complexType>
+	
+	<xs:complexType name="ANULACIONESType">
+    	<xs:annotation>
+    		<xs:documentation>
+    			Tipo que encapsula la información de las N ejecuciones y 
+				las anulaciones de traba que se desean realizar.
+    		</xs:documentation>
+    	</xs:annotation>
+    	<xs:sequence>
+    		<xs:element name="EJECUCION" type="tns:EJECUCIONType"
+    			minOccurs="1" maxOccurs="unbounded" />
+    	</xs:sequence>
+		<xs:attribute name="IMPORTE_TOTAL">
+    		<xs:annotation>
+   					<xs:documentation>
+   						Suma de todos los importes cuya traba se quiere levantar.
+   					</xs:documentation>
+    		</xs:annotation>
+			<xs:simpleType>
+            			<xs:restriction base="xs:string">
+            				<xs:pattern value="(\-)?\d{1,15}\.\d{2}"></xs:pattern>
+            			</xs:restriction>
+            </xs:simpleType>
+    	</xs:attribute>
+    </xs:complexType>
+</xs:schema>

@@ -1,0 +1,70 @@
+<project name="Modelo600" basedir="." default="fork_build">
+
+
+<!--
+  When launching from eclipse we want to run clientgen with the jvm on the user's 
+  classpath, not with the jvm that was used to launch the IDE.  The fork_build
+  target accomplishes this.
+  ${java.home} - user's project's java home
+  classpath - need weblogic.jar, webservices.jar, java.home/lib/tools.jar
+  
+  The build target can be run directly with the dev environment setup by 
+  WL_HOME/common/bin/setDomainEnv.  
+  -->
+  <target name="fork_build">
+    <java
+        fork="true"
+        failonerror="true"
+        classname="org.apache.tools.ant.launch.Launcher"
+        maxmemory="512m"
+        jvm="${java.home}/bin/java"
+        >
+      <arg value="-f" />
+      <arg value="${ant.file}" />
+      <arg value="build" />
+      <classpath>
+        <pathelement path="${java.class.path}"/>
+      </classpath>
+        
+    </java>
+  </target>
+
+  <target name="build">
+    <taskdef name="wsdlc" classname="weblogic.wsee.tools.anttasks.WsdlcTask" 
+    classpath="c:/bea/wlserver_10.3/server/lib/weblogic.jar"/>
+    <!--
+       call wsdlc to generate jws.  
+       need to fork to prevent jvm jar collisions between jvm running the IDE
+         and the jvm used to run ant.
+       there are 3 different destination locations:
+            destImplDir - where the jws implementation goes
+            destJavadocDir - where the javadoc for the jws interface goes
+            destJwsDir - where the jar containing the jws interface and types goes
+    -->
+  	<!--
+  		En este xml de Ant no se ha de poner
+  		packageName - Porque el WSDL contiene referencias a objetos con el mismo nombre, y 
+  					  si intenta ponerlos bajo un mismo paquete, hay colisión.
+  		destJavadocDir - Porque si se intenta generar javadoc, falla. No sabemos cual es la razón.
+  	-->
+  	
+    <wsdlc
+        failOnError="true"
+        srcWsdl="${basedir}/src/wsdl/WSDLTercerosModelo600.wsdl"
+        destImplDir="${basedir}/src"
+        destJwsDir="${basedir}/WebContent/WEB-INF/lib"
+
+        srcPortName="TercerosModelo600"
+
+        type="JAXWS"
+
+
+        >
+
+
+
+    </wsdlc>
+    
+  </target>
+
+</project>

@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<Paginas><Pagina papel="A4">
+		<imagen tipo="jpeg" x="65" y="655">
+		<orga>impresos\\img\\LOGOORGA33_V2.JPG</orga></imagen>
+		
+		<textobox ID="Etiqueta0" type="100" fuente="F2" size="10" x="156" y="751" x1="342" y1="14" modo="2">DOCUMENTO DE COMPARECENCIA / JUSTIFICANTE DE REGISTRO</textobox>
+<!-- ** ini ** agf ** 22/10/2009 ** añadir el número de autoliquidación y cód verificación-->
+		<cuadro ID="cuadroAuto" type="101" x="320" y="786" x1="180" y1="13"/>
+		<texto ID="EtiquetaAuto" type="100" fuente="F2" size="10" x="325" y="775" x1="342" y1="12" modo="2">Nº Documento:</texto> 
+		<texto ID="TextoAuto" type="100" fuente="F2" size="10" x="420" y="775" x1="342" y1="12" modo="2"></texto> 
+
+		<texto ID="EtiquetaVeri" type="100" fuente="F2" size="10" x="70" y="50" x1="342" y1="12" modo="2">Código Seguro de verificación:</texto> 
+		<texto ID="TextoVeri" type="100" fuente="F2" size="10" x="230" y="50" x1="342" y1="12" modo="2"></texto>  
+
+<!-- ** fin ** agf ** 22/10/2009 ** añadir el número de autoliquidación y cód verificación-->		
+
+		
+		<texto ID="Etiqueta5" type="100" fuente="F2" size="8" x="72" y="638" x1="83" y1="12" modo="0">Tipo de Expediente</texto>
+		<texto ID="Etiqueta148" type="100" fuente="F2" size="8" x="73" y="624" x1="96" y1="12" modo="0">Subtipo de Expediente</texto>
+		
+		<!-- ampliacion de informacion -->
+		<textobox ID="tampliOtros" type="109" fuente="F1" size="8" x="139" y="380" x1="357" y1="34" modo="1">tampliOtros</textobox>		
+		<textobox ID="amplitros" type="100" fuente="F2" size="8" x="73" y="380" x1="63" y1="35" modo="1">Ampliación de Información</textobox>
+
+		<!--//**********************************PRESENTADOR**************************************************-->
+		<!--//*************************************************************************************************-->
+		<textobox ID="Etiqueta19" type="100" fuente="F2" size="8" x="70" y="607" x1="427" y1="11" modo="2">PRESENTADOR</textobox>
+		<texto ID="Texto20" type="109" fuente="F1" size="8" x="164" y="590" x1="331" y1="12" modo="0">Texto20</texto>
+		<texto ID="Texto26" type="109" fuente="F1" size="8" x="122" y="575" x1="82" y1="12" modo="0">Texto26</texto>
+		<texto ID="Texto29" type="109" fuente="F1" size="8" x="230" y="575" x1="85" y1="12" modo="0">Texto29</texto>
+		<texto ID="Texto99" type="109" fuente="F1" size="8" x="402" y="575" x1="94" y1="12" modo="0">Texto99</texto>
+		<texto ID="Texto23" type="109" fuente="F1" size="8" x="122" y="561" x1="373" y1="12" modo="0">Texto23</texto>
+		<!--//*************************************************************************************************-->
+		<!--//***********************************FIN PRESENTADOR*********************************************************-->
+		
+	
+		
+		<!--//**********************************SUJETO PASIVO O CAUSANTE***************************************-->
+		<!--//*************************************************************************************************-->
+		<cuadro ID="cuadroSP" type="101" x="70" y="540" x1="428" y1="31"/>
+		<textobox ID="etiSP" type="100" fuente="F2" size="8" x="70" y="544" x1="428" y1="11" modo="2">SUJETO PASIVO</textobox>
+		<texto ID="nifSP" type="100" fuente="F2" size="8" x="73" y="513" x1="48" y1="11" modo="0">Id. Fiscal:</texto>
+		<texto ID="tnifSP" type="109" fuente="F1" size="8" x="164" y="513" x1="85" y1="12" modo="0">tnifSP</texto>
+		<texto ID="nomSP" type="100" fuente="F2" size="8" x="73" y="527" x1="87" y1="11" modo="0">Apellidos y Nombre:</texto>
+		<texto ID="tnomSP" type="109" fuente="F1" size="8" x="164" y="527" x1="332" y1="12" modo="0">tnomSP</texto>
+		<!--//*************************************************************************************************-->
+		<!--//***********************************FIN  SUJETO PASIVO O CAUSANTE*********************************-->
+		
+		<!--//**********************************FECHA FALLECIMIENTO**************************************************-->
+		<!--//*************************************************************************************************-->
+		<cuadro ID="cuadroFECHAFALL" type="101" x="70" y="495" x1="428" y1="31"/>
+		<textobox ID="etiFECHAFALL" type="100" fuente="F2" size="8" x="70" y="500" x1="428" y1="11" modo="2">FECHA DE FALLECIMIENTO</textobox>
+		<texto ID="fechaFALL" type="100" fuente="F2" size="8" x="73" y="480" x1="87" y1="11" modo="0">Día/Mes/Año</texto>
+		
+		<texto ID="tFECHAFALL" type="109" fuente="F1" size="8" x="164" y="480" x1="30" y1="30" modo="0">tnomSP</texto>
+		<texto ID="tipoDECLA" type="100" fuente="F2" size="8" x="73" y="468" x1="87" y1="11" modo="0">Tipo de Declaracion:</texto>
+		<texto ID="ttipoDECLA" type="109" fuente="F1" size="8" x="164" y="468" x1="30" y1="30" modo="0">ttipoDECLA</texto>
+		<!--//*************************************************************************************************-->
+		<!--//***********************************FIN FECHA FALLECIMIENTO*********************************************************-->
+		
+		<!-- USUFRUCTUARIO -->
+		<texto ID="tnomUsu" type="100" fuente="F2" size="8" x="73" y="480" x1="87" y1="11" modo="0">Apellidos y Nombre:</texto>
+		<texto ID="nomUsu" type="100" fuente="F1" size="8" x="160" y="480" x1="87" y1="11" modo="0"></texto>
+		<texto ID="tidUsu" type="100" fuente="F2" size="8" x="73" y="468" x1="87" y1="11" modo="0">Id. Fiscal:</texto>
+		<texto ID="idUsu" type="100" fuente="F1" size="8" x="120" y="468" x1="87" y1="11" modo="0"></texto>
+		<texto ID="tfechaExti" type="100" fuente="F2" size="8" x="300" y="468" x1="87" y1="11" modo="0">Fecha de extinción:</texto>
+		<texto ID="fechaExti" type="100" fuente="F1" size="8" x="380" y="468" x1="87" y1="11" modo="0"></texto>
+		
+		
+		
+		<cuadro ID="cuadroCausantes" type="101" x="70" y="535" x1="428" y1="80"/>		
+		<textobox ID="etiCaus" type="100" fuente="F2" size="8" x="70" y="544" x1="428" y1="11" modo="2">CAUSANTES</textobox>
+		<texto ID="nombreCaus" type="100" fuente="F2" size="8" x="73" y="522" x1="48" y1="11" modo="0">Apellidos y nombre</texto>		
+		<texto ID="nifCaus" type="100" fuente="F2" size="8" x="300" y="522" x1="48" y1="11" modo="0">Id. Fiscal</texto>		
+		<texto ID="fechaCaus" type="100" fuente="F2" size="8" x="373" y="522" x1="48" y1="11" modo="0">Fecha Fallecimiento</texto>
+		
+		<texto ID="tnombreCaus1" type="109" fuente="F1" size="8" x="73" y="510" x1="85" y1="12" modo="0"></texto>
+		<texto ID="tnifCaus1" type="109" fuente="F1" size="8" x="300" y="510" x1="85" y1="12" modo="0"></texto>
+		<texto ID="tfechaCaus1" type="109" fuente="F1" size="8" x="373" y="510" x1="85" y1="12" modo="0"></texto>
+		
+		<texto ID="tnombreCaus2" type="109" fuente="F1" size="8" x="73" y="499" x1="85" y1="12" modo="0"></texto>
+		<texto ID="tnifCaus2" type="109" fuente="F1" size="8" x="300" y="499" x1="85" y1="12" modo="0"></texto>
+		<texto ID="tfechaCaus2" type="109" fuente="F1" size="8" x="373" y="499" x1="85" y1="12" modo="0"></texto>
+		
+		<texto ID="tnombreCaus3" type="109" fuente="F1" size="8" x="73" y="488" x1="85" y1="12" modo="0"></texto>
+		<texto ID="tnifCaus3" type="109" fuente="F1" size="8" x="300" y="488" x1="85" y1="12" modo="0"></texto>
+		<texto ID="tfechaCaus3" type="109" fuente="F1" size="8" x="373" y="488" x1="85" y1="12" modo="0"></texto>
+		
+		<texto ID="tnombreCaus4" type="109" fuente="F1" size="8" x="73" y="477" x1="85" y1="12" modo="0"></texto>
+		<texto ID="tnifCaus4" type="109" fuente="F1" size="8" x="300" y="477" x1="85" y1="12" modo="0"></texto>
+		<texto ID="tfechaCaus4" type="109" fuente="F1" size="8" x="373" y="477" x1="85" y1="12" modo="0"></texto>
+		
+		<texto ID="tnombreCaus5" type="109" fuente="F1" size="8" x="73" y="466" x1="85" y1="12" modo="0"></texto>
+		<texto ID="tnifCaus5" type="109" fuente="F1" size="8" x="300" y="466" x1="85" y1="12" modo="0"></texto>
+		<texto ID="tfechaCaus5" type="109" fuente="F1" size="8" x="373" y="466" x1="85" y1="12" modo="0"></texto>	
+
+		<!--//**********************************DOCUMENTO ORIGINAL**************************************************-->
+		<!--//*************************************************************************************************-->
+		<cuadro ID="cuadroDOCORI" type="101" x="70" y="440" x1="428" y1="31"/>
+		<textobox ID="etiDOCORI" type="100" fuente="F2" size="8" x="70" y="447" x1="428" y1="11" modo="2">DOCUMENTO ORIGINAL</textobox>
+		<texto ID="numDOCORI" type="100" fuente="F2" size="8" x="73" y="430" x1="87" y1="11" modo="0">Numero de Protocolo:</texto>
+		<texto ID="tnumDOCORI" type="109" fuente="F1" size="8" x="164" y="430" x1="100" y1="11" modo="0">tnumDOCORI</texto>
+		<texto ID="fechaprotDOCORI" type="100" fuente="F2" size="8" x="340" y="430" x1="30" y1="11" modo="0">Fecha de documento:</texto>
+		<texto ID="tfechaprotDOCORI" type="109" fuente="F1" size="8" x="435" y="430" x1="40" y1="11" modo="0">tfechaprotDOCORI</texto>
+		<texto ID="nombrenotDOCORI" type="100" fuente="F2" size="8" x="73" y="420" x1="48" y1="11" modo="0">Apellidos y nombre:</texto>
+		<texto ID="tnombrenotDOCORI" type="109" fuente="F1" size="8" x="164" y="420" x1="85" y1="11" modo="0">tnombrenot</texto>
+		<texto ID="tipoDOCORI" type="100" fuente="F2" size="8" x="340" y="420" x1="48" y1="11" modo="0">Tipo de Documento:</texto>
+		<texto ID="ttipoDOCORI" type="109" fuente="F1" size="8" x="435" y="420" x1="85" y1="11" modo="0">ttipoDOCORI</texto>
+		<!--//*************************************************************************************************-->
+		<!--//***********************************FIN DOCUMENTO ORIGINAL*********************************************************-->
+<!-- ** ini ** agf ** 22/10/2009 ** Inc. 5960 datos del vehículo-->
+		<!--<textobox ID="etiDoc" type="100" fuente="F2" size="8" x="71" y="355" x1="427" y1="12" modo="2">DOCUMENTOS DEL EXPEDIENTE</textobox>-->
+		<!--//**********************************DOCUMENTOS DEL EXPEDIENTE*********************************************-->
+		<!--<textobox ID="etiDocAp" type="100" fuente="F2" size="8" x="70" y="345" x1="210" y1="12" modo="2">DOCUMENTOS APORTADOS</textobox>
+		<textobox ID="etiDocNoAp" type="100" fuente="F2" size="8" x="320" y="345" x1="144" y1="12" modo="2"> DOCUMENTOS QUE SE REQUIEREN</textobox>
+		<cuadro ID="cuadroNoAp" type="101" x="286" y="338" x1="216" y1="100"/>
+		<cuadro ID="cuadroAp" type="101" x="70" y="338" x1="216" y1="100"/>
+		<textobox ID="grande2" type="109" fuente="F1" size="8" x="288" y="295" x1="205" y1="85"  modo="1" >grande2</textobox> 	      
+	        <textobox ID="grande1" type="109" fuente="F1" size="8" x="73" y="295" x1="205" y1="85" modo="1">grande1</textobox>
+	        -->
+		<textobox ID="etiDoc" type="100" fuente="F2" size="8" x="71" y="320" x1="427" y1="12" modo="2">DOCUMENTOS DEL EXPEDIENTE</textobox>
+		<textobox ID="etiDocAp" type="100" fuente="F2" size="8" x="70" y="310" x1="210" y1="12" modo="2">DOCUMENTOS APORTADOS</textobox>
+		<textobox ID="etiDocNoAp" type="100" fuente="F2" size="8" x="320" y="310" x1="144" y1="12" modo="2"> DOCUMENTOS QUE SE REQUIEREN</textobox>
+		<cuadro ID="cuadroNoAp" type="101" x="286" y="303" x1="216" y1="100"/>
+		<cuadro ID="cuadroAp" type="101" x="70" y="303" x1="216" y1="100"/>
+		<textobox ID="grande2" type="109" fuente="F1" size="8" x="288" y="260" x1="205" y1="85"  modo="1" >grande2</textobox> 	      
+	        <textobox ID="grande1" type="109" fuente="F1" size="8" x="73" y="260" x1="205" y1="85" modo="1">grande1</textobox>
+
+<!--//***********************************DATOS DEL VEHÍCULO*****************************************************-->
+		<textobox ID="etiDocVehi" type="100" fuente="F2" size="8" x="71" y="355" x1="427" y1="12" modo="2">DATOS DEL VEHÍCULO</textobox>
+		<cuadro ID="cuadroDOCVehi" type="101" x="70" y="348" x1="428" y1="20"/>
+		<texto ID="matriculaVehi" type="100" fuente="F2" size="8" x="72" y="335" x1="30" y1="11" modo="0">Matrícula:</texto>
+		<texto ID="dmatriculaVehi" type="109" fuente="F1" size="8" x="120" y="335" x1="30" y1="11" modo="0">O9999XS</texto>
+		<texto ID="CETVehi" type="100" fuente="F2" size="8" x="300" y="335" x1="30" y1="11" modo="0">CET:</texto>
+		<texto ID="dCETVehi" type="109" fuente="F2" size="8" x="330" y="335" x1="30" y1="11" modo="0">00000000</texto>
+<!-- ** fin ** agf ** 22/10/2009 ** Inc. 5960 datos del vehículo-->			
+		
+		<!--//***********************************DOCUMENTOS DEL EXPEDIENTE*****************************************************-->
+		<texto ID="Etiqueta27" type="100" fuente="F2" size="8" x="73" y="575" x1="45" y1="11" modo="0">Id. Fiscal:</texto>
+		<texto ID="Etiqueta30" type="100" fuente="F2" size="8" x="190" y="575" x1="42" y1="11" modo="0">Teléfono:</texto>
+		<texto ID="Etiqueta24" type="100" fuente="F2" size="8" x="73" y="561" x1="45" y1="11" modo="0">Dirección:</texto>
+		<texto ID="nomPres" type="100" fuente="F2" size="8" x="73" y="589" x1="87" y1="11" modo="0">Apellidos y Nombre:</texto>
+<!-- ** ini ** agf ** 22/10/2009 ** Inc. 5960 datos del vehículo-->
+<!--		<textobox ID="etiTexto1" type="109" fuente="F2" size="8" x="76" y="215" x1="418" y1="40" modo="1">etiTexto1</textobox>	
+		<textobox ID="etiTexto2" type="109" fuente="F2" size="8" x="76" y="205" x1="418" y1="40" modo="1">etiTexto2</textobox>				
+		<textobox ID="etiTexto3" type="109" fuente="F2" size="8" x="76" y="185" x1="418" y1="40" modo="1">etiTexto3</textobox>				
+		<textobox ID="etiTexto4" type="109" fuente="F2" size="8" x="76" y="165" x1="418" y1="40" modo="1">etiTexto4</textobox>				
+		<textobox ID="etiTexto5" type="109" fuente="F2" size="8" x="76" y="150" x1="418" y1="40" modo="1">etiTexto5</textobox>				
+		<textobox ID="etiTexto6" type="109" fuente="F2" size="8" x="76" y="140" x1="418" y1="40" modo="1">etiTexto6</textobox>				
+		<textobox ID="etiTexto7" type="109" fuente="F2" size="8" x="76" y="130" x1="418" y1="40" modo="1">etiTexto7</textobox>
+		<textobox ID="etiTexto8" type="109" fuente="F2" size="6" x="76" y="110" x1="418" y1="40" modo="1">etiTexto8</textobox>
+		<textobox ID="Texto158" type="109" fuente="F1" size="8" x="76" y="108" x1="419" y1="40" modo="1">Texto158</textobox>
+-->		
+		<textobox ID="etiTexto1" type="109" fuente="F2" size="8" x="76" y="180" x1="418" y1="40" modo="1">etiTexto1</textobox>	
+		<textobox ID="etiTexto2" type="109" fuente="F2" size="8" x="76" y="168" x1="418" y1="40" modo="1">etiTexto2</textobox>				
+		<textobox ID="etiTexto3" type="109" fuente="F2" size="8" x="76" y="149" x1="418" y1="40" modo="1">etiTexto3</textobox>				
+		<textobox ID="etiTexto4" type="109" fuente="F2" size="8" x="76" y="130" x1="418" y1="40" modo="1">etiTexto4</textobox>				
+		<textobox ID="etiTexto5" type="109" fuente="F2" size="8" x="76" y="115" x1="418" y1="40" modo="1">etiTexto5</textobox>				
+		<textobox ID="etiTexto6" type="109" fuente="F2" size="8" x="76" y="105" x1="418" y1="40" modo="1">etiTexto6</textobox>				
+		<textobox ID="etiTexto7" type="109" fuente="F2" size="8" x="76" y="95" x1="418" y1="40" modo="1">etiTexto7</textobox>
+		<textobox ID="etiTexto8" type="109" fuente="F2" size="6" x="76" y="75" x1="418" y1="40" modo="1">etiTexto8</textobox>
+		<textobox ID="Texto158" type="109" fuente="F1" size="8" x="76" y="73" x1="419" y1="40" modo="1">Texto158</textobox>
+<!-- ** fin ** agf ** 22/10/2009 ** Inc. 5960 datos del vehículo-->
+		<texto ID="Etiqueta161" type="100" fuente="F2" size="8" x="292" y="703" x1="59" y1="11" modo="0">Hora de Alta</texto>
+		<texto ID="Etiqueta104" type="100" fuente="F2" size="8" x="158" y="675" x1="70" y1="11" modo="0">Oficina de Alta</texto>
+		<texto ID="Etiqueta102" type="100" fuente="F2" size="8" x="158" y="717" x1="50" y1="11" modo="0">Organismo</texto>
+		<texto ID="Etiqueta71" type="100" fuente="F2" size="8" x="159" y="732" x1="59" y1="11" modo="0">Nº Expediente</texto>
+		<texto ID="Etiqueta68" type="100" fuente="F2" size="8" x="158" y="703" x1="59" y1="11" modo="0">Fecha de alta</texto>
+		<texto ID="Etiqueta11" type="100" fuente="F2" size="8" x="159" y="661" x1="76" y1="12" modo="0">Oficina de Destino</texto>
+		<texto ID="EtiquetaFechaAltaOtraAdmi" type="100" fuente="F2" size="8" x="158" y="689" x1="59" y1="12" modo="0">Fecha Alta Otra Administración</texto>
+		<texto ID="EtiquetaFechaPresent" type="100" fuente="F2" size="8" x="345" y="689" x1="59" y1="12" modo="0">Fecha Presentación</texto>
+
+		<texto ID="Etiqueta100" type="100" fuente="F2" size="8" x="280" y="575" x1="59" y1="11" modo="0">Relación:</texto>
+		
+
+		<cuadro ID="cuadroAmpli" type="101" x="70" y="400" x1="428" y1="39"/>
+		<cuadro ID="Cuadro1" type="101" x="70" y="651" x1="427" y1="31"/>
+
+		
+		<cuadro ID="Cuadro147" type="101" x="156" y="744" x1="342" y1="90"/>
+		<cuadro ID="Cuadro17" type="101" x="70" y="602" x1="428" y1="45"/>
+		<texto ID="Texto6" type="109" fuente="F1" size="8" x="169" y="624" x1="323" y1="12" modo="0">Texto6</texto>
+		<texto ID="DIR_TIT_COMP" type="109" fuente="F1" size="8" x="249" y="224" x1="85" y1="12" modo="0">DIR_TIT_COMP</texto>
+		<texto ID="Texto4" type="109" fuente="F1" size="8" x="169" y="638" x1="324" y1="12" modo="0">Texto4</texto>
+		<texto ID="Texto2" type="109" fuente="F1" size="8" x="198" y="592" x1="2" y1="0" modo="0">Texto2</texto>
+
+		<texto ID="NUMERO_NUME" type="109" fuente="F1" size="8" x="251" y="732" x1="85" y1="12" modo="0">NUMERO_NUME</texto>
+		<texto ID="etiFechaAlta" type="109" fuente="F2" size="8" x="158" y="689" x1="164" y1="12" modo="0">etiFechaAlta</texto>
+		<texto ID="fechaAlta" type="109" fuente="F1" size="8" x="425" y="689" x1="74" y1="12" modo="0">fechaAlta</texto>
+		<textobox ID="Texto103" type="109" fuente="F1" size="8" x="238" y="675" x1="256" y1="12" modo="1">Texto103</textobox>
+		<textobox ID="Texto101" type="109" fuente="F2" size="8" x="217" y="717" x1="279" y1="12" modo="1">Texto101</textobox>
+		<textobox ID="Texto70" type="109" fuente="F2" size="8" x="226" y="734" x1="111" y1="11" modo="1">Texto70</textobox>
+		<textobox ID="Texto67" type="109" fuente="F1" size="8" x="218" y="703" x1="70" y1="12" modo="1">Texto67</textobox>
+		
+		<textobox ID="Texto10" type="109" fuente="F1" size="8" x="238" y="661" x1="256" y1="12" modo="1">Texto10</textobox>
+		<texto ID="Texto160" type="109" fuente="F1" size="8" x="354" y="703" x1="85" y1="12" modo="0">Texto160</texto>
+		<texto ID="tFechaAltaOtraAdmi" type="109" fuente="F1" size="8" x="290" y="689" x1="164" y1="12" modo="0">etiFechaAlta</texto>
+		<texto ID="tFechaPresent" type="109" fuente="F1" size="8" x="430" y="689" x1="164" y1="12" modo="0">etiFechaAlta</texto>
+	</Pagina>
+	</Paginas>
