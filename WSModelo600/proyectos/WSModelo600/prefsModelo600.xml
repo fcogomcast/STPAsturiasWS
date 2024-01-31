@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE preferences SYSTEM "http://java.sun.com/dtd/preferences.dtd">
+<preferences EXTERNAL_XML_VERSION="1.0">
+  <root type="system">
+    <map/>
+    <node name="es">
+      <map/>
+      <node name="tributasenasturias">
+        <map/>
+        <node name="modelo600utils">
+          <map>
+            <entry key="Debug" value="1"/>
+            <entry key="Entorno" value="PSEUDOREAL"/>
+            <entry key="ProcedimientoAlmacenado" value="ANCERT.wsCalculoModelo600"/>
+            <entry key="pAIntegra" value="ANCERT.wsIntegraModelo600"/>
+            <entry key="pAAltaExptediente" value="ANCERT.wsAltaExpedienteModelo600"/>
+            <entry key="pAAltaDocumento" value="INTERNET_DOCUMENTOS.AltaDocumento"/>
+            <entry key="EndPointEscritura" value="http://bus:7001/WSANCERT/ProxyServices/Externos/PXEscrituras"/>
+            <entry key="EndPointLanzador" value="http://bus:7001/WSInternos/ProxyServices/PXLanzador"/>
+            <entry key="EndPointPago" value="http://bus:7001/WSPasarelaPago/ProxyServices/PXPasarelaPagoST"/>
+            <entry key="EndPointModeloPDF" value="http://bus:7001/WSANCERT/ProxyServices/PXModelosPDF"/>
+            <entry key="EndPointFirma" value="http://bus:7001/WSInternos/ProxyServices/PXFirmaDigital"/>
+            <entry key="CertificadoFirma" value=""/>
+            <entry key="ClaveFirma" value=""/>
+            <entry key="EndPointAutenticacionPA" value="http://bus:7001/WSAutenticacionPA/ProxyServices/PXAutenticacionPA"/>
+            <entry key="XmlAutorizacion" value="ConsultaCertificados/PeticionAutorizacion.xml"/>
+            <entry key="IpAutorizacion" value="10.112.10.35"/>
+            <entry key="firmaDigital" value="S"/>
+            <entry key="validaFirma" value="S"/>
+            <entry key="pAConsultaDocumento" value="INTERNET_DOCUMENTOSV2.consultaDocumento"/>
+            <entry key="DirectorioApp" value="proyectos/WSModelo600"/>
+            <entry key="ModoLog" value="ALL"/>
+            <entry key="permisoServicio" value="INTERNET.permisoServicio"/>
+            <entry key="codPermisoServicio" value="MODELO600"/>
+          </map>
+        </node>
+      </node>
+    </node>
+  </root>
+</preferences>
