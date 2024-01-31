@@ -4,4 +4,5 @@ include ("WSConsultaDoinDocumentos","WSDocumentoElectronico","WSAutenticacionLoc
         "WSNotificaGestionEnvios", "WSServiciosSmartMultas", "WSTrasladoMaquina","WSLiquidacionTasas","WSModelo046",
         "WSFirmasAdes","pa_wsNAutoliquidacionPA","PagoPresentacionModelo600","ArchivoDigital","WSCustodiaImagenes",
         "WSImagenesMultas","CalculoModelo600","ConsultaCertificados","WSAsturconConsultaDeuda","WSAsturconPagosEnte",
-        "WSGestionSubastasBOE","Cifrado_PA","wsEscriturasAncert","WSGenerarDocs600ANCERT","wsModelosPDF","WSModelo600")
+        "WSGestionSubastasBOE","Cifrado_PA","wsEscriturasAncert","WSGenerarDocs600ANCERT","wsModelosPDF","WSModelo600",
+        "PasarelaPagoST")

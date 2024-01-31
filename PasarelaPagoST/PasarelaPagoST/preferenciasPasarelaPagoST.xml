@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE preferences SYSTEM "http://java.sun.com/dtd/preferences.dtd">
+<preferences EXTERNAL_XML_VERSION="1.0">
+  <root type="system">
+    <map/>
+    <node name="es">
+      <map/>
+      <node name="tributasenasturias">
+        <map/>
+        <node name="utils">
+          <map>
+            <entry key="EsquemaBaseDatos" value="PSEUDOREAL"/>
+            <entry key="AplicacionDestinoAnulacion" value="ZCANT"/>
+            <entry key="IpOrigen" value="10.112.10.230"/>
+            <entry key="Entorno" value="D"/>
+            <entry key="Entidad" value="2048"/>
+            <entry key="AplicacionDestinoPeticion" value="ZCPAT"/>
+            <entry key="AplicacionDestinoConsulta" value="ZCCPA"/>
+            <entry key="AplicacionOrigen" value="PRA"/>
+            <entry key="Idioma" value="es-Es"/>
+            <entry key="Canal" value="01"/>
+            <entry key="UsuarioAplicacion" value="STPA"/>
+            <entry key="MargenTiempoAnulacion" value="14400"/>
+            <entry key="EndPointPago" value=""/>
+            <entry key="EndPointConsulta" value=""/>
+            <entry key="EndPointLanzador" value=""/>
+            <entry key="ValidarMac" value="SI"/>
+          </map>
+        </node>
+      </node>
+    </node>
+  </root>
+</preferences>
