@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<handler-chains xmlns="http://java.sun.com/xml/ns/javaee">
+  <handler-chain>
+    <handler>
+      <handler-name>es.stpa.itp_dgt.soap.SoapServerHandler</handler-name>
+      <handler-class>es.stpa.itp_dgt.soap.SoapServerHandler</handler-class>
+    </handler>
+    <handler>
+      <handler-name>es.stpa.itp_dgt.soap.CargaContexto</handler-name>
+      <handler-class>es.stpa.itp_dgt.soap.CargaContexto</handler-class>
+    </handler>
+  </handler-chain>
+</handler-chains>

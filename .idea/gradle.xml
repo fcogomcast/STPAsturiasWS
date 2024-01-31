@@ -10,21 +10,30 @@
           <set>
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/ArchivoDigital" />
+            <option value="$PROJECT_DIR$/BandejaEntradaCUC" />
             <option value="$PROJECT_DIR$/CalculoModelo600" />
+            <option value="$PROJECT_DIR$/Cifrado_PA" />
             <option value="$PROJECT_DIR$/ConsultaCertificados" />
             <option value="$PROJECT_DIR$/DocumentoPago" />
             <option value="$PROJECT_DIR$/PagoPresentacionModelo600" />
+            <option value="$PROJECT_DIR$/PasarelaPagoST" />
+            <option value="$PROJECT_DIR$/WSAsturconConsultaDeuda" />
+            <option value="$PROJECT_DIR$/WSAsturconPagosEnte" />
             <option value="$PROJECT_DIR$/WSAutenticacionLocalEPST" />
             <option value="$PROJECT_DIR$/WSClave" />
             <option value="$PROJECT_DIR$/WSCodigoBarras" />
             <option value="$PROJECT_DIR$/WSConsultaDoinDocumentos" />
+            <option value="$PROJECT_DIR$/WSConsultaPago048" />
             <option value="$PROJECT_DIR$/WSCustodiaImagenes" />
             <option value="$PROJECT_DIR$/WSDocumentoElectronico" />
             <option value="$PROJECT_DIR$/WSEPI" />
             <option value="$PROJECT_DIR$/WSFirmasAdes" />
+            <option value="$PROJECT_DIR$/WSGenerarDocs600ANCERT" />
+            <option value="$PROJECT_DIR$/WSGestionSubastasBOE" />
             <option value="$PROJECT_DIR$/WSImagenesMultas" />
             <option value="$PROJECT_DIR$/WSLiquidacionTasas" />
             <option value="$PROJECT_DIR$/WSModelo046" />
+            <option value="$PROJECT_DIR$/WSModelo600" />
             <option value="$PROJECT_DIR$/WSMultas" />
             <option value="$PROJECT_DIR$/WSNotificaAdviser" />
             <option value="$PROJECT_DIR$/WSNotificaGestionEnvios" />
@@ -32,7 +41,10 @@
             <option value="$PROJECT_DIR$/WSRecepcionDocumentacion" />
             <option value="$PROJECT_DIR$/WSServiciosSmartMultas" />
             <option value="$PROJECT_DIR$/WSTrasladoMaquina" />
+            <option value="$PROJECT_DIR$/WS_ITP_DGT" />
             <option value="$PROJECT_DIR$/pa_wsNAutoliquidacionPA" />
+            <option value="$PROJECT_DIR$/wsEscriturasAncert" />
+            <option value="$PROJECT_DIR$/wsModelosPDF" />
           </set>
         </option>
       </GradleProjectSettings>

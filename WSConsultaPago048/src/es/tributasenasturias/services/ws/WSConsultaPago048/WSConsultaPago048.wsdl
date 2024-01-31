@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://WSConsultaPago048.ws.services.tributasenasturias.es/WSConsultaPago048/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="WSConsultaPago048" targetNamespace="http://WSConsultaPago048.ws.services.tributasenasturias.es/WSConsultaPago048/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://WSConsultaPago048.ws.services.tributasenasturias.es/WSConsultaPago048/">
+      <xsd:element name="ConsultaPago048">
+        <xsd:complexType>
+          <xsd:sequence>
+          	<xsd:element name="numAutoliquidacion" type="xsd:string"
+          		minOccurs="1" maxOccurs="1" />
+
+          	<xsd:element name="numBastidor" type="xsd:string" minOccurs="1" maxOccurs="1"></xsd:element>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="ConsultaPago048Response">
+        <xsd:complexType>
+          <xsd:sequence>
+          	<xsd:element name="resultado" type="xsd:string" />
+          	<xsd:element name="error" type="xsd:string"></xsd:element>
+          	<xsd:element name="nrc" type="xsd:string"></xsd:element>
+          	<xsd:element name="fechaPago" type="xsd:string"></xsd:element>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="ConsultaPago048Request">
+    <wsdl:part element="tns:ConsultaPago048" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="ConsultaPago048Response">
+    <wsdl:part element="tns:ConsultaPago048Response" name="parameters"/>
+  </wsdl:message>
+  <wsdl:portType name="WSConsultaPago048">
+    <wsdl:operation name="ConsultaPago048">
+      <wsdl:input message="tns:ConsultaPago048Request"/>
+      <wsdl:output message="tns:ConsultaPago048Response"/>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="WSConsultaPago048SOAP" type="tns:WSConsultaPago048">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="ConsultaPago048">
+      <soap:operation soapAction="http://WSConsultaPago048.ws.services.tributasenasturias.es/WSConsultaPago048/ConsultaPago048"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="WSConsultaPago048">
+    <wsdl:port binding="tns:WSConsultaPago048SOAP" name="WSConsultaPago048SOAP">
+      <soap:address location="http://WSConsultaPago048.ws.services.tributasenasturias.es"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

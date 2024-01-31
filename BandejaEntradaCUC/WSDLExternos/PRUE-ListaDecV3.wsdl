@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions targetNamespace="https://www3.aeat.es/ADUA/internet/es/aeat/dit/adu/adht/banent/ListaDecV3.wsdl" 
+ 	xmlns:ListaDecV3="https://www3.aeat.es/ADUA/internet/es/aeat/dit/adu/adht/banent/ListaDecV3.wsdl" 
+	xmlns:ListaDecV3Ent="https://www3.aeat.es/ADUA/internet/es/aeat/dit/adu/adht/banent/ListaDecV3Ent.xsd"
+	xmlns:ListaDecV3Sal="https://www3.aeat.es/ADUA/internet/es/aeat/dit/adu/adht/banent/ListaDecV3Sal.xsd" 
+	xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" 
+	xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" 
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+   
+ <wsdl:types> 
+  <schema elementFormDefault="qualified" 
+  	targetNamespace="https://www3.aeat.es/ADUA/internet/es/aeat/dit/adu/adht/banent/ListaDecV3.wsdl" 
+	xmlns:ListaDecV3Ent="https://www3.aeat.es/ADUA/internet/es/aeat/dit/adu/adht/banent/ListaDecV3Ent.xsd"
+	xmlns:ListaDecV3Sal="https://www3.aeat.es/ADUA/internet/es/aeat/dit/adu/adht/banent/ListaDecV3Sal.xsd" 
+  	xmlns="http://www.w3.org/2001/XMLSchema">
+	
+	<xsd:import namespace="https://www3.aeat.es/ADUA/internet/es/aeat/dit/adu/adht/banent/ListaDecV3Ent.xsd"  schemaLocation="ListaDecV3Ent.xsd"/>
+	<xsd:import namespace="https://www3.aeat.es/ADUA/internet/es/aeat/dit/adu/adht/banent/ListaDecV3Sal.xsd"  schemaLocation="ListaDecV3Sal.xsd"/>
+  </schema>
+ </wsdl:types>
+  
+ 
+   <wsdl:message name="Entrada">
+      <wsdl:part name="ListaDecV3Ent" element="ListaDecV3Ent:ListaDecV3Ent"/> 
+   </wsdl:message>
+ 
+   <wsdl:message name="Salida">
+      <wsdl:part name="ListaDecV3Sal" element="ListaDecV3Sal:ListaDecV3Sal"/>
+   </wsdl:message>
+ 
+   <wsdl:portType name="ListaDecV3">
+      <wsdl:operation name="ListaDecV3">
+         <wsdl:input message="ListaDecV3:Entrada" name="Entrada"/>
+         <wsdl:output message="ListaDecV3:Salida" name="Salida"/>
+      </wsdl:operation>
+   </wsdl:portType>
+   
+   <wsdl:binding name="ListaDecV3SoapBinding" type="ListaDecV3:ListaDecV3">
+      <wsdlsoap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+      <wsdl:operation name="ListaDecV3">
+         <wsdlsoap:operation soapAction=""/>
+         <wsdl:input name="Entrada">
+            <wsdlsoap:body use="literal"/>
+         </wsdl:input>
+         <wsdl:output name="Salida">
+            <wsdlsoap:body use="literal"/>
+         </wsdl:output>
+      </wsdl:operation>
+   </wsdl:binding>
+
+   <wsdl:service name="ListaDecV3Service">
+      <wsdl:port binding="ListaDecV3:ListaDecV3SoapBinding" name="ListaDecV3">
+         <wsdlsoap:address location="https://www2.aeat.es/L/inwinvoc/es.aeat.dit.adu.adht.banent.ListaDecV3SOAP"/>
+      </wsdl:port>
+      <wsdl:port binding="ListaDecV3:ListaDecV3SoapBinding" name="ListaDecV3Intranet">
+         <wsdlsoap:address location="https://probdc3.www.aeat/ES98/L/iniinvoc/es.aeat.dit.adu.adht.banent.ListaDecP3SOAP"/>
+      </wsdl:port>
+      <wsdl:port binding="ListaDecV3:ListaDecV3SoapBinding" name="ListaDecV3Intranet2">
+         <wsdlsoap:address location="https://probdc3.www.aeat:19443/ES98/L/iniinvoc/es.aeat.dit.adu.adht.banent.ListaDecP3SOAP"/>
+      </wsdl:port>
+   </wsdl:service>
+
+</wsdl:definitions>

@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<schema targetNamespace="https://www3.aeat.es/ADUA/internet/es/aeat/dit/adu/adht/banent/ListaDecV3Ent.xsd" xmlns="http://www.w3.org/2001/XMLSchema" xmlns:ListaDecV3Ent="https://www3.aeat.es/ADUA/internet/es/aeat/dit/adu/adht/banent/ListaDecV3Ent.xsd" elementFormDefault="qualified">
+  <annotation>
+    <documentation>
+    		Esquema para solicitar a la Bandeja de Entrada la LISTA DE LAS RESPUESTAS pendientes
+    		de leer.
+    	</documentation>
+  </annotation>
+  <element name="ListaDecV3Ent" type="ListaDecV3Ent:ListaDecV3Ent" />
+  <complexType name="ListaDecV3Ent">
+    <sequence>
+      <element name="declarante" type="ListaDecV3Ent:declaranteType" maxOccurs="1" minOccurs="1" />
+    </sequence>
+  </complexType>
+  <complexType name="declaranteType">
+    <annotation>
+      <documentation>
+    		declaranteType: Información del declarante, de la persona en cuyo nombre se presenta la declaración.
+    		NifDeclarante: Nif del declarante
+    		NombreDeclarante: Nombre del declarante
+    	</documentation>
+    </annotation>
+    <sequence>
+      <element name="NifDeclarante" maxOccurs="1" minOccurs="1" type="string" />
+      <element name="NombreDeclarante" type="string" maxOccurs="1" minOccurs="1"></element>
+    </sequence>
+  </complexType>
+</schema>
