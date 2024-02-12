@@ -54,7 +54,7 @@ public class BandejaEntradaProxy extends ServiceProxy {
 	 * @see es.tributasenasturias.abstracts.ServiceProxy#setEndPoint(java.lang.String)
 	 */
 	@Override
-	public final void setEndPoint(String endPoint) {
+	public void setEndPoint(String endPoint) {
 		javax.xml.ws.BindingProvider bpr = (javax.xml.ws.BindingProvider) miPort;
 		bpr.getRequestContext().put(BindingProvider.ENDPOINT_ADDRESS_PROPERTY, endPoint);
 	}

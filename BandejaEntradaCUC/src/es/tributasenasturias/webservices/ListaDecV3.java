@@ -17,7 +17,7 @@ public class ListaDecV3 {
 	
 	@WebMethod (operationName="ListaDecV3")
 	@WebResult(name = "ListaDecV3Sal", partName = "ListaDecV3Sal")
-	public final ListaDecV3Sal listaDecV3(
+	public ListaDecV3Sal listaDecV3(
 			@WebParam(name = "ListaDecV3Ent", partName = "ListaDecV3Ent")
 			ListaDecV3Ent listaDecV3Ent)throws Exception
 	{

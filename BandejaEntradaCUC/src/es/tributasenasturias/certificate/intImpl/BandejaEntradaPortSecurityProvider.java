@@ -12,7 +12,7 @@ import java.util.Map;
 
 import javax.xml.ws.BindingProvider;
 
-import weblogic.xml.crypto.wss.WSSecurityContext;
+//import weblogic.xml.crypto.wss.WSSecurityContext;
 import weblogic.xml.crypto.wss.provider.CredentialProvider;
 import es.tributasenasturias.certificate.interfaces.IPortSecurityProvider;
 import es.tributasenasturias.certificate.interfaces.IPropertiesProvider;
@@ -40,10 +40,12 @@ public class BandejaEntradaPortSecurityProvider implements IPortSecurityProvider
 			{
 				credProviders.add(cp);
 				Map <String, Object> reqContext = ((BindingProvider)miPort).getRequestContext();
-				reqContext.put(WSSecurityContext.CREDENTIAL_PROVIDER_LIST, credProviders);
+				//reqContext.put(WSSecurityContext.CREDENTIAL_PROVIDER_LIST, credProviders);
+				reqContext.put("weblogic.wsee.security.wss.CredentialProviderList", credProviders);
 				javax.net.ssl.TrustManager tManager= new BandejaEntradaTrustManager();
 				//reqContext.put (WSSecurityContext.TRUST_MANAGER,tManager);
-				reqContext.put (WSSecurityContext.TRUST_MANAGER,tManager);
+				//reqContext.put (WSSecurityContext.TRUST_MANAGER,tManager);
+				reqContext.put ("weblogic.wsee.security.wss.TrustManager",tManager);
 			}
 			else
 			{
