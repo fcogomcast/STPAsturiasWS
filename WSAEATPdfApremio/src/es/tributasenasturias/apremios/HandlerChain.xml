@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<handler-chains xmlns="http://java.sun.com/xml/ns/javaee">
+  <handler-chain>
+    <handler>
+      <handler-name>es.tributasenasturias.apremios.soap.SoapServerHandler</handler-name>
+      <handler-class>es.tributasenasturias.apremios.soap.SoapServerHandler</handler-class>
+    </handler>
+    <handler>
+      <handler-name>es.tributasenasturias.apremios.soap.CargaContexto</handler-name>
+      <handler-class>es.tributasenasturias.apremios.soap.CargaContexto</handler-class>
+    </handler>
+  </handler-chain>
+</handler-chains>

@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://apremios.tributasenasturias.es/GestionPdfApremio" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="ApremioPdf" targetNamespace="http://apremios.tributasenasturias.es/GestionPdfApremio">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://apremios.tributasenasturias.es/GestionPdfApremio">
+      <xsd:element name="EnvioPdf">
+        <xsd:complexType>
+          <xsd:sequence>
+          	<xsd:element name="ClaveLiquidacion" type="xsd:string"
+          		minOccurs="1" />
+          	<xsd:element name="NifDeudor" type="xsd:string"
+          		minOccurs="1">
+          	</xsd:element>
+          	<xsd:element name="IdEperValor" type="xsd:int"
+          		minOccurs="1">
+          	</xsd:element>
+          	<xsd:element name="CodigoUsuario" type="xsd:string" minOccurs="1" maxOccurs="1"></xsd:element>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="EnvioPdfResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+
+          	<xsd:element name="EsError" type="xsd:boolean" maxOccurs="1" minOccurs="1"></xsd:element>
+
+
+
+
+
+                        <xsd:element name="CodigoResultado" type="xsd:string" minOccurs="1" maxOccurs="1"></xsd:element>
+                        <xsd:element name="ResultadoAEAT"
+          		type="tns:ResultadoAEATType" maxOccurs="1" minOccurs="0">
+          	</xsd:element>
+
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+    
+      <xsd:complexType name="ResultadoAEATType">
+      	<xsd:sequence>
+      		<xsd:element name="Respuesta" type="xsd:string"></xsd:element>
+      		<xsd:element name="TextoError" type="xsd:string"></xsd:element>
+      		<xsd:element name="CSVDeclaracion" type="xsd:string"></xsd:element>
+      		<xsd:element name="TipoHash" type="xsd:string"></xsd:element>
+      		<xsd:element name="HashPdf" type="xsd:string"></xsd:element>
+      	</xsd:sequence>
+      </xsd:complexType>
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="EnvioPdfRequest">
+    <wsdl:part element="tns:EnvioPdf" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="EnvioPdfResponse">
+    <wsdl:part element="tns:EnvioPdfResponse" name="parameters"/>
+  </wsdl:message>
+  <wsdl:portType name="GestionPdfApremio">
+    <wsdl:operation name="EnvioPdf">
+      <wsdl:input message="tns:EnvioPdfRequest"/>
+      <wsdl:output message="tns:EnvioPdfResponse"/>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="ApremioPdfSOAP" type="tns:GestionPdfApremio">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="EnvioPdf">
+      <soap:operation soapAction="http://www.tributasenasturias.es/PdfApremio/NewOperation"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="GestionPdfApremio">
+    <wsdl:port binding="tns:ApremioPdfSOAP" name="ApremioPdfSOAP">
+      <soap:address location="http://bus:7101/WSAEAT/ProxyServices/PXPdfApremio"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
