@@ -5,4 +5,4 @@ include ("WSConsultaDoinDocumentos","WSDocumentoElectronico","WSAutenticacionLoc
         "WSFirmasAdes","pa_wsNAutoliquidacionPA","PagoPresentacionModelo600", "ArchivoDigital", "WSCustodiaImagenes",
         "WSImagenesMultas", "CalculoModelo600", "ConsultaCertificados", "WSConsultaPago048", "BandejaEntradaCUC", "WS_ITP_DGT",
         "WSAsturconConsultaDeuda","WSAsturconPagosEnte","WSGestionSubastasBOE","Cifrado_PA","wsEscriturasAncert","WSGenerarDocs600ANCERT","wsModelosPDF","WSModelo600",
-        "PasarelaPagoST")
+        "PasarelaPagoST", "WSAEATPdfApremio")

@@ -48,6 +48,10 @@ war {
         into 'WEB-INF/classes'
     }
 
+    from('src/es/tributasenasturias/lanzador/impl/wsdl') {
+        into 'WEB-INF/classes/es/tributasenasturias/lanzador/impl/wsdl'
+    }
+
     from('src/es/tributasenasturias/traslado') {
         include '**/*.xml'
         into 'WEB-INF/classes/es/tributasenasturias/traslado'

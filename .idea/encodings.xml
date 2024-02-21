@@ -3,5 +3,7 @@
   <component name="Encoding">
     <file url="file://$PROJECT_DIR$/ArchivoDigital/src/es/tributasenasturias/services/ws/archivodigital/utils/log/LogHandler/LogHandler.java" charset="windows-1252" />
     <file url="file://$PROJECT_DIR$/BandejaEntradaCUC/src/es/tributasenasturias/certificate/intImpl/BandejaEntradaCertificateProvider.java" charset="windows-1252" />
+    <file url="file://$PROJECT_DIR$/WSAEATPdfApremio/src/es/tributasenasturias/apremios/GestionPdfApremio_ApremioPdfSOAPImpl.java" charset="windows-1252" />
+    <file url="file://$PROJECT_DIR$/WSTrasladoMaquina/src/es/tributasenasturias/traslado/TrasladoMaquina_TrasladoMaquinaSOAPImpl.java" charset="windows-1252" />
   </component>
 </project>
