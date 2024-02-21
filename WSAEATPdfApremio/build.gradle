@@ -42,15 +42,13 @@ war {
         into 'WEB-INF/classes'
     }
 
-    // Agrega todos los archivos WSDL
-    from('wsdl') {
-        include '**/*.wsdl'
-        into 'WEB-INF/classes'
-    }
-
     from('src/es/tributasenasturias/apremios') {
         include '**/*.xml'
         into 'WEB-INF/classes/es/tributasenasturias/apremios'
+    }
+
+    from('src/es/tributasenasturias/lanzador/impl/wsdl') {
+        into 'WEB-INF/classes/es/tributasenasturias/lanzador/impl/wsdl'
     }
 
     // Agrega solo los archivos XML de la carpeta WEB-INF
