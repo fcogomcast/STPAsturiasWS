@@ -1,0 +1,12 @@
+es.tributasenasturias.seguridad.servicio
+es.tributasenasturias.services.lanzador.client
+es.tributasenasturias.services.lanzador.client.response
+es.tributasenasturias.servicios.accesocertificado
+es.tributasenasturias.servicios.accesocertificado.certificados
+es.tributasenasturias.servicios.accesocertificado.contextoLlamadas
+es.tributasenasturias.servicios.accesocertificado.exceptions
+es.tributasenasturias.servicios.accesocertificado.log
+es.tributasenasturias.servicios.accesocertificado.preferencias
+es.tributasenasturias.servicios.accesocertificado.soap
+es.tributasenasturias.servicios.accesocertificado.utils
+es.tributasenasturias.utils.log

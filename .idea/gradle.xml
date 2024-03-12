@@ -5,7 +5,7 @@
     <option name="linkedExternalProjectsSettings">
       <GradleProjectSettings>
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="gradleJvm" value="1.8 (3)" />
+        <option name="gradleJvm" value="1.8" />
         <option name="modules">
           <set>
             <option value="$PROJECT_DIR$" />
@@ -17,6 +17,8 @@
             <option value="$PROJECT_DIR$/DocumentoPago" />
             <option value="$PROJECT_DIR$/PagoPresentacionModelo600" />
             <option value="$PROJECT_DIR$/PasarelaPagoST" />
+            <option value="$PROJECT_DIR$/WSAEATPdfApremio" />
+            <option value="$PROJECT_DIR$/WSAccesoPorCertificado" />
             <option value="$PROJECT_DIR$/WSAsturconConsultaDeuda" />
             <option value="$PROJECT_DIR$/WSAsturconPagosEnte" />
             <option value="$PROJECT_DIR$/WSAutenticacionLocalEPST" />
@@ -40,6 +42,7 @@
             <option value="$PROJECT_DIR$/WSNumeroAutoLiquidacion" />
             <option value="$PROJECT_DIR$/WSRecepcionDocumentacion" />
             <option value="$PROJECT_DIR$/WSServiciosSmartMultas" />
+            <option value="$PROJECT_DIR$/WSTEAC_EnvioExpedientes" />
             <option value="$PROJECT_DIR$/WSTrasladoMaquina" />
             <option value="$PROJECT_DIR$/WS_ITP_DGT" />
             <option value="$PROJECT_DIR$/pa_wsNAutoliquidacionPA" />

@@ -1,0 +1,278 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<wsdl:definitions name="AccesoPorCertificado" targetNamespace="http://accesoCertificado.servicios.tributasenasturias.es/AccesoPorCertificado/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://accesoCertificado.servicios.tributasenasturias.es/AccesoPorCertificado/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://accesoCertificado.servicios.tributasenasturias.es/AccesoPorCertificado/">
+      <xsd:element name="recuperarUsuarioTributasRequest">
+        <xsd:complexType>
+          <xsd:sequence>
+          	<xsd:element name="certificado" type="xsd:string"
+          		maxOccurs="1" minOccurs="1">
+          		<xsd:annotation>
+          			<xsd:documentation>
+          				Certificado para el que se recuperarán datos
+          				del usuario asociado en la aplicación
+          				TRIBUTAS. Debe ser un certificado válido y
+          				admitido por la plataforma @firma.
+          			</xsd:documentation>
+          		</xsd:annotation>
+          	</xsd:element>
+          	<xsd:element name="certificadoConfirmado" maxOccurs="1" minOccurs="1">
+          		<xsd:simpleType>
+          			<xsd:restriction base="xsd:string">
+          				<xsd:enumeration value="S"></xsd:enumeration>
+          				<xsd:enumeration value="N"></xsd:enumeration>
+          			</xsd:restriction>
+          		</xsd:simpleType>
+          	</xsd:element>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="recuperarUsuarioTributasResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+
+
+          	<xsd:element name="cif" type="xsd:string">
+          		<xsd:annotation>
+          			<xsd:documentation>
+          				Cif del certificado.
+          			</xsd:documentation>
+          		</xsd:annotation>
+          	</xsd:element>
+          	<xsd:element name="razonSocial" type="xsd:string">
+          		<xsd:annotation>
+          			<xsd:documentation>
+          				Razon social del certificado.
+          			</xsd:documentation>
+          		</xsd:annotation>
+          	</xsd:element>
+          	<xsd:element name="nifNie" type="xsd:string">
+          		<xsd:annotation>
+          			<xsd:documentation>
+          				Nif o Nie del certificado.
+          			</xsd:documentation>
+          		</xsd:annotation>
+          	</xsd:element>
+          	<xsd:element name="name" type="xsd:string">
+          		<xsd:annotation>
+          			<xsd:documentation>
+          				Nombre de usuario del certificado.
+          			</xsd:documentation>
+          		</xsd:annotation>
+          	</xsd:element>
+          	<xsd:element name="surname1" type="xsd:string">
+          		<xsd:annotation>
+          			<xsd:documentation>
+          				Primer apellido del certificado.
+          			</xsd:documentation>
+          		</xsd:annotation>
+          	</xsd:element>
+          	<xsd:element name="surname2" type="xsd:string">
+          		<xsd:annotation>
+          			<xsd:documentation>
+          				Segundo apellido del certificado.
+          			</xsd:documentation>
+          		</xsd:annotation>
+          	</xsd:element>
+          	<xsd:element name="idThirdParty" type="xsd:string">
+          		<xsd:annotation>
+          			<xsd:documentation>
+          				Id de terceros del Principado de Asturias.
+          			</xsd:documentation>
+          		</xsd:annotation>
+          	</xsd:element>
+          	<xsd:element name="datosTributas" type="tns:DatosTributasType"></xsd:element>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="confirmarAccesoPorCertificadoRequest">
+      	<xsd:complexType>
+      		<xsd:sequence>
+      			<xsd:element name="hash" type="xsd:string"
+      				maxOccurs="1" minOccurs="1">
+      			</xsd:element>
+      			<xsd:element name="certificado" type="xsd:string"
+      				maxOccurs="1" minOccurs="1">
+      			</xsd:element>
+      			<xsd:element name="dnCertificado" type="xsd:string"></xsd:element>
+      		</xsd:sequence>
+      	</xsd:complexType>
+      </xsd:element>
+      <xsd:element name="confirmarAccesoPorCertificadoResponse">
+      	<xsd:complexType>
+      		<xsd:sequence>
+
+      			<xsd:element name="resultado" type="xsd:string"></xsd:element>
+      		</xsd:sequence>
+      	</xsd:complexType>
+      </xsd:element>
+      <xsd:element name="listarCertificadosConAccesoRequest">
+      	<xsd:complexType>
+      		<xsd:sequence>
+
+      			<xsd:element name="fecha" type="xsd:string" maxOccurs="1" minOccurs="0"></xsd:element>
+      		</xsd:sequence>
+      	</xsd:complexType>
+      </xsd:element>
+      <xsd:element name="listarCertificadosConAccesoResponse">
+      	<xsd:complexType>
+      		<xsd:sequence>
+
+      			<xsd:element name="certificados"
+      				type="xsd:string">
+      			</xsd:element>
+      			<xsd:element name="resultado" type="xsd:string"></xsd:element>
+      		</xsd:sequence>
+      	</xsd:complexType>
+      </xsd:element>
+    
+      <xsd:complexType name="listaCertificadosType">
+      	<xsd:sequence>
+      		<xsd:element name="certificado" type="xsd:string"
+      			maxOccurs="unbounded" minOccurs="0">
+      		</xsd:element>
+      		<xsd:element name="resultado" type="xsd:string"></xsd:element>
+      	</xsd:sequence>
+      </xsd:complexType>
+    
+      <xsd:complexType name="DatosUsuarioTributasType">
+      	<xsd:sequence>
+      		<xsd:element name="usuarioTributas" type="xsd:string"></xsd:element>
+      		<xsd:element name="passwordTributas" type="xsd:string"></xsd:element>
+      		<xsd:element name="idFiscal" type="xsd:string"></xsd:element>
+      		<xsd:element name="idSuborganismo" type="xsd:string"></xsd:element>
+      		<xsd:element name="suborganismo" type="xsd:string"></xsd:element>
+      	</xsd:sequence>
+      </xsd:complexType>
+    
+      <xsd:complexType name="DatosTributasType">
+      	<xsd:sequence>
+      		<xsd:element name="datosUsuario" type="tns:DatosUsuarioTributasType" minOccurs="0" maxOccurs="unbounded"></xsd:element>
+      	</xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="asociarCertificadoUsuarioTributas">
+      	<xsd:complexType>
+      		<xsd:sequence>
+
+      			<xsd:element name="certificado" type="xsd:string"
+      				minOccurs="1" maxOccurs="1">
+      			</xsd:element>
+      			<xsd:element name="dnCertificado" type="xsd:string"
+      				minOccurs="1" maxOccurs="1">
+      			</xsd:element>
+      			<xsd:element name="usuario" type="xsd:string"
+      				maxOccurs="1" minOccurs="1">
+      			</xsd:element>
+      			<xsd:element name="password" type="xsd:string" maxOccurs="1" minOccurs="1"></xsd:element>
+      		</xsd:sequence>
+      	</xsd:complexType>
+      </xsd:element>
+      <xsd:element name="asociarCertificadoUsuarioTributasResponse">
+      	<xsd:complexType>
+      		<xsd:sequence>
+
+      			<xsd:element name="esError" type="xsd:boolean"
+      				maxOccurs="1" minOccurs="1">
+      			</xsd:element>
+
+
+      			<xsd:element name="resultado" type="tns:resultadoAsociacionType" maxOccurs="1" minOccurs="1"></xsd:element>
+      		</xsd:sequence>
+      	</xsd:complexType>
+      </xsd:element>
+    
+      <xsd:complexType name="resultadoAsociacionType">
+      	<xsd:sequence>
+      		<xsd:element name="codigo" type="xsd:string"></xsd:element>
+      		<xsd:element name="mensaje" type="xsd:string"></xsd:element>
+      	</xsd:sequence>
+      </xsd:complexType>
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="recuperarUsuarioTributasRequest">
+    <wsdl:part element="tns:recuperarUsuarioTributasRequest" name="request"/>
+  </wsdl:message>
+  <wsdl:message name="recuperarUsuarioTributasResponse">
+    <wsdl:part element="tns:recuperarUsuarioTributasResponse" name="response"/>
+  </wsdl:message>
+  <wsdl:message name="confirmarAccesoPorCertificadoRequest">
+  	<wsdl:part name="request" element="tns:confirmarAccesoPorCertificadoRequest"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="confirmarAccesoPorCertificadoResponse">
+  	<wsdl:part name="response" element="tns:confirmarAccesoPorCertificadoResponse"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="listarCertificadosConAccesoRequest">
+  	<wsdl:part name="request" element="tns:listarCertificadosConAccesoRequest"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="listarCertificadosConAccesoResponse">
+  	<wsdl:part name="response" element="tns:listarCertificadosConAccesoResponse"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="asociarCertificadoUsuarioTributasRequest">
+  	<wsdl:part name="parameters" element="tns:asociarCertificadoUsuarioTributas"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="asociarCertificadoUsuarioTributasResponse">
+  	<wsdl:part name="parameters" element="tns:asociarCertificadoUsuarioTributasResponse"></wsdl:part>
+  </wsdl:message>
+  <wsdl:portType name="AccesoPorCertificado">
+    <wsdl:operation name="recuperarUsuarioTributas">
+      <wsdl:input message="tns:recuperarUsuarioTributasRequest"/>
+      <wsdl:output message="tns:recuperarUsuarioTributasResponse"/>
+    </wsdl:operation>
+    <wsdl:operation name="confirmarAccesoPorCertificado">
+    	<wsdl:input message="tns:confirmarAccesoPorCertificadoRequest"></wsdl:input>
+    	<wsdl:output message="tns:confirmarAccesoPorCertificadoResponse"></wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="listarCertificadosConAcceso">
+    	<wsdl:input message="tns:listarCertificadosConAccesoRequest"></wsdl:input>
+    	<wsdl:output message="tns:listarCertificadosConAccesoResponse"></wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="asociarCertificadoUsuarioTributas">
+    	<wsdl:input message="tns:asociarCertificadoUsuarioTributasRequest"></wsdl:input>
+    	<wsdl:output message="tns:asociarCertificadoUsuarioTributasResponse"></wsdl:output>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="AccesoPorCertificadoSOAP" type="tns:AccesoPorCertificado">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="recuperarUsuarioTributas">
+      <soap:operation soapAction="http://servicios.tributasenasturias.es/AccesoPorCertificado/recuperarUsuarioTributas"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="confirmarAccesoPorCertificado">
+      <soap:operation soapAction="http://servicios.tributasenasturias.es/AccesoPorCertificado/confirmarAccesoPorCertificado"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="listarCertificadosConAcceso">
+      <soap:operation soapAction="http://servicios.tributasenasturias.es/AccesoPorCertificado/listarCertificadosConAcceso"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="asociarCertificadoUsuarioTributas">
+      <soap:operation soapAction="http://servicios.tributasenasturias.es/AccesoPorCertificado/asociarCertificadoUsuarioTributas"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="AccesoPorCertificado">
+    <wsdl:port binding="tns:AccesoPorCertificadoSOAP" name="AccesoPorCertificado">
+      <soap:address location="http://bus:7101/WSInternos/ProxyServices/PXAccesoPorCertificado"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
